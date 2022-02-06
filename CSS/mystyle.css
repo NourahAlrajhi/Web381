@@ -8,7 +8,27 @@
     font-family: sans-serif;
     background: transparent;
     padding: 12px 0;
-    color: beige;
+    color: black;
     font-size: 13px;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+}
+.tabel-cell{
+    display: table-cell;
+    width:30%;
+    text-align: center;
+    padding: 4px 0;
+    border-right: 1px solid pink;
+    vertical-align: middle;
+
+}
+.tabel-head{
+    background: powderblue;
+    box-shadow: non;
+    color: black;
+}
+.tabel-head .tabel-cell{
+    border-right: none;
+}
+.last-cell{
+    border-right: none;
 }
