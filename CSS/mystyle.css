@@ -80,14 +80,14 @@ td button:hover{
     background-color: white;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
     width: 1000px;
-    height: 490px;
+    height: 470px;
     border: 1px ;
     overflow: scroll;
     position: absolute;
     right: 177px;
     bottom: 100px;
     border-radius: 20px;
-    
+    z-index: 2;
 }
 
 .header_fixed thead th{
@@ -107,7 +107,20 @@ td button:hover{
 ::-webkit-scrollbar-thumb{
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) ;
 }
-.CAPTION{
-font-size: 50px;
+.CAPTION p{
+   font-size: large;
 color: #030229;
 }
+td a{
+    color: gray;
+}
+td a:hover{
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    color: gray;
+
+}
+
+.BACKGROUND{
+  background-position: right top;
+}
+
