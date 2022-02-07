@@ -88,6 +88,7 @@ td button:hover{
     bottom: 100px;
     border-radius: 20px;
     z-index: 2;
+    text-align: center;
 }
 
 .header_fixed thead th{
@@ -121,6 +122,8 @@ td a:hover{
 }
 
 .BACKGROUND{
-  background-position: right top;
+  background-position: center ;
+  background-attachment: fixed;
 }
+
 
