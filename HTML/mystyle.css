@@ -126,7 +126,7 @@ td a:hover{
   background-attachment: fixed;
 }
 
-.body{
+.body .Noura{
     display: flex;
     height: 100vh;
     justify-content: center;
