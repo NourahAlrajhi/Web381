@@ -221,9 +221,9 @@ font-size: 12px;
         padding: 10px;
     }
     #Base{
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(131, 132, 185);
         position: relative;
-        max-width: 10000px;
+        max-width: 1000px;
         margin-left: 20px;
         margin-right: 20px;
         margin-top: 150px;
@@ -232,16 +232,14 @@ font-size: 12px;
         
     }
     .pic{
-        background-color: rgb(255, 255, 255);
-    margin-bottom: 90px;
-    margin-left: 400px;
-    margin-right: 400px;
-    padding-left: 10%;
-    padding-right: 20%;
-    margin-top:25px;
-    
-    
+        background-color: coral;
+        align-content: center;
+      margin-left: 40%;
+      margin-right: 30%;
+
+
     }
+    
     #Heading{
     
     padding-left: 24px;
@@ -249,23 +247,25 @@ font-size: 12px;
     
     
     }
-    .field1{
+    .fieldM{
     position: relative;
     margin-top: 1px;
-    margin-left: 400px;
-    margin-right: 400px;
+    margin-left: 100px;
+    margin-right: 50px;
     font-size: 1em;
+  
+    background-color: blanchedalmond;
     
     }
     #typeEmail{
     
-    background-color: #F7F7F8;
+    background-color: #2c2c5f;
     
     
     }
     .button1{
     
-    margin-left: 450px;
+    margin-left: 200px;
     margin-top: 2%;
     
     
@@ -281,8 +281,12 @@ font-size: 12px;
         }
         .button:hover { 
             background-color: #635DAD;
+<<<<<<< Updated upstream
             box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
           }
+=======
+      }
+>>>>>>> Stashed changes
     
     
     
