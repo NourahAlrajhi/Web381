@@ -1,0 +1,22 @@
+.body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+#Base{
+    background-color: aqua;
+    position: relative;
+    max-width: 700px;
+    margin-left: 400px;
+    margin-right: 20px;
+    padding: 5%;
+}
+#Dog{
+margin: 200px
+
+
+
+
+}
