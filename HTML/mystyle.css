@@ -62,7 +62,7 @@ tr:ntn-child(even){
 
 tr:hover td{
     color: #9084C2;
-    background-color: #FEF0DD;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
 }
 tr{
     color: #9084C2;
@@ -72,12 +72,16 @@ td button{
     border: none;
     padding: 7px 20px;
     border-radius: 20px;
-    background-color: #9084C2;
+    
     color: white;
+
+    background-color: #635DAD;
+            opacity: 62%;
 }
 td button:hover{
+    opacity: 100%;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
-    background-color: #635DAD;
+    
 }
 
 
