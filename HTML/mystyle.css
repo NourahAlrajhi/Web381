@@ -64,6 +64,9 @@ tr:hover td{
     color: #9084C2;
     background-color: #FEF0DD;
 }
+tr{
+    color: #9084C2;
+}
 
 td button{
     border: none;
@@ -281,12 +284,8 @@ font-size: 12px;
         }
         .button:hover { 
             background-color: #635DAD;
-<<<<<<< Updated upstream
             box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
-          }
-=======
-      }
->>>>>>> Stashed changes
+        }
     
     
     
