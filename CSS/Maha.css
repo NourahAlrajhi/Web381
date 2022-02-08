@@ -1,20 +1,7 @@
-.body{
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
 #Base{
-    background-color: rgb(245, 245, 180);
-    margin-left: 30% ;
-    padding: 25px 30px;
-    max-width: 700px;
-    width: 100%;
-}
+background-color: aqua;
 
-#Dog{
-position: relative;
-height: 100px;
-width: 100px;
+
+
 
 }
