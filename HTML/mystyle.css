@@ -128,25 +128,16 @@ button.SETApp2:hover{
 
 .CAT{
     position: absolute;
-    top: 615px;
-    right: 1240px;
-color: #FFC17D;
-opacity: 62%;
-}
-.CAT:hover{
-    opacity: 100%;
+    top: 578px;
+    left: 163px;
 }
 
 .CAT2{
     position: absolute;
-    top: 615px;
-    right: 999px;
-color: #FFC17D;
-opacity: 62%;
+    top: 578px;
+    left: 320px;
 }
-.CAT2:hover{
-    opacity: 100%;
-}
+
 
 
 
