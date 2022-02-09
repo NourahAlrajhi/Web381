@@ -108,14 +108,43 @@ button.SETApp:hover{
     
 }
 
+button.SETApp2{
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    
+    color: white;
+
+    background-color: #635DAD;
+            opacity: 62%;
+            position: absolute;
+            top: 638px;
+            right: 1150px;
+}
+button.SETApp2:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+}
+
 .CAT{
     position: absolute;
-    top: 620px;
-    right: 960px;
+    top: 615px;
+    right: 1240px;
 color: #FFC17D;
 opacity: 62%;
 }
 .CAT:hover{
+    opacity: 100%;
+}
+
+.CAT2{
+    position: absolute;
+    top: 615px;
+    right: 999px;
+color: #FFC17D;
+opacity: 62%;
+}
+.CAT2:hover{
     opacity: 100%;
 }
 
