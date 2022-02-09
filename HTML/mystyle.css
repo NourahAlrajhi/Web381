@@ -85,6 +85,38 @@ td button:hover{
 }
 
 
+ button.SETApp{
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    
+    color: white;
+
+    background-color: #635DAD;
+            opacity: 62%;
+            position: absolute;
+            top: 638px;
+            right: 960px;
+}
+button.SETApp:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    
+}
+
+.CAT{
+    position: absolute;
+    top: 620px;
+    right: 960px;
+color: #FFC17D;
+opacity: 62%;
+}
+.CAT:hover{
+    opacity: 100%;
+}
+
+
+
 td.DELET button{
     border: none;
     padding: 7px 20px;
@@ -118,6 +150,24 @@ td.DELET button:hover{
     z-index: 2;
     text-align: center;
 }
+.header_fixed3{
+    background-color: white;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+    width: 580px;
+    height: 450px;
+    border: 1px ;
+    overflow: scroll;
+    position: absolute;
+    right: 400px;
+  
+   
+    bottom: 100px;
+    border-radius: 20px;
+    z-index: 2;
+    text-align: center;
+}
+
+
 
 .header_fixed thead th{
     position: sticky;
