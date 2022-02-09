@@ -83,6 +83,10 @@ td button:hover{
     box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
     
 }
+.EYES{
+   
+    color: #635DAD;
+}
 
 
  button.SETApp{
@@ -132,6 +136,54 @@ td.DELET button:hover{
     box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
     
 }
+
+td.PENDING button{
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    
+    color: white;
+
+    background-color:#A4A4A4;
+            opacity: 62%;
+}
+td.PENDING button:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    
+}
+td.Approved button{
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    
+    color: white;
+
+    background-color:#FEAD54;
+            opacity: 62%;
+}
+td.Approved button:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    
+}
+td.Declined button{
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    
+    color: white;
+
+    background-color:#FF765F;
+            opacity: 62%;
+}
+td.Declined button:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    
+}
+
+
 
 
 
