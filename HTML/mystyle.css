@@ -140,7 +140,7 @@ td a:hover{
   position: absolute;
   background-position: right ;
   left: 1000px;
-  top:100px
+  top:40px;
   background-attachment: fixed;
   z-index: 0;
 }
