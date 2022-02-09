@@ -137,7 +137,10 @@ td a:hover{
 }
 
 .BACKGROUND{
+  position: absolute;
   background-position: right ;
+  left: 1000px;
+  top:100px
   background-attachment: fixed;
   z-index: 0;
 }
