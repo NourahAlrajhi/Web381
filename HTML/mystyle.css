@@ -281,9 +281,6 @@ td a:hover{
   background-attachment: fixed;
   z-index: 0;
 }
-.HEADER{
-    background-color: white;
-}
 
 
 
@@ -328,7 +325,7 @@ form  .input-box{
 }
  .input-box select {
 height: 30px;
-width: 50%;
+width: 70%;
 outline: none;
 border-radius: 5px;
 border: 1px solid #dddddd ;
@@ -338,7 +335,7 @@ font-size: 12px;
 }
  .input-box input {
     height: 30px;
-    width: 50%;
+    width: 70%;
     outline: none;
     border-radius: 5px;
     border: 1px solid #dddddd ;
@@ -471,18 +468,17 @@ font-size: 12px;
         display: block;
     }*/
   
-    }
+
     /* حق مها النعيم */
-    .MBODY{
+    #MBODY{
        
-        display:flex;
+        display: flex;
         height: 100vh;
         justify-content: center;
         align-items: center;
         padding: 10px;
         background-color: #ffffff;
     }
-
     #Base{
         background-color:#ffffff;
         position: relative;
@@ -547,92 +543,59 @@ font-size: 12px;
         .button:hover { 
             opacity: 100%;
             box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
-        
-        } 
-        .MBODY2{
+        }
+        #B{
+            background-color: cornflowerblue;
+            
+            
+            background-color:#ffffff;
+            position: relative;
+            max-width: 1000px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 150px;
+            padding: 100px;
+            padding-top: 30px;
+            
+              } 
        
-           display:fixed;
-            height: 100vh;
-            width: 100%;
-            padding: 10px;
-            background-color: #ffffff;
-        }
-         .rowM{
-        
-         width: 100%;
-         height: 200px;
-         position: relative;
-         top:100px;
-         padding-left:350px;
-
-
-
-         } 
-         .field1st{
-            
-            float: left;
-           
-            margin-top: 50px;
-             
-         } 
-        
-
-         .second{
-
-         margin-top: 0%;
-         float: left;
-         margin-right: 200px;
-
-
-
-         }
-         .fieldselect{
-            width:250px;
-            height: 30px;
-            background: #F7F7F8;
-            border: #F7F7F8;
-            border-radius: 7px;
-            padding-left: 0px;
-            
-
-        }  
-        
-        .fieldselect select{
-            -webkit-appearance: none;
-        }
-
-        #circle {
-            background: #F7F7F8;
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            float: left;
-            margin-left: 50px;
-        }
-        .circle{
-           float: left;
-
-
-        }
-        .rowL{
-        
-        width: 100%;
-        height: 100px;
-        position: relative;
-        top: 70px;
-        padding-left: 370px;
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+ 
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+ 
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+ 
+  .dropdown:hover .dropdown-content {display: block;}
+ 
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
     
-        }
-        .BG{
-            position: fixed;
-            top: 160px;
-            right: 25%;
-            z-index: -1;
-            width: 100px;
-
-
-        }
-            
-       
  
     
