@@ -281,6 +281,9 @@ td a:hover{
   background-attachment: fixed;
   z-index: 0;
 }
+.HEADER{
+    background-color: white;
+}
 
 
 
@@ -402,17 +405,18 @@ font-size: 12px;
         display: block;
     }*/
   
-
+    }
     /* حق مها النعيم */
     #MBODY{
        
-        display: flex;
+        display:flex;
         height: 100vh;
         justify-content: center;
         align-items: center;
         padding: 10px;
         background-color: #ffffff;
     }
+
     #Base{
         background-color:#ffffff;
         position: relative;
