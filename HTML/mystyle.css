@@ -202,7 +202,9 @@ td.Declined button:hover{
     box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
     
 }
-
+body::-webkit-scrollbar-track{
+    background: #fff;
+}
 
 
 
@@ -231,7 +233,7 @@ td.Declined button:hover{
     overflow: scroll;
     position: absolute;
     right: 400px;
-  
+  padding-left: 18px;
    
     bottom: 100px;
     border-radius: 20px;
