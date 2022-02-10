@@ -377,12 +377,78 @@ font-size: 12px;
         margin-bottom: 5px;
     }
     .part2{
-        margin-left: 30% ;
-        margin-top:2% ;
+        margin-left: 20% ;
+        margin-top:4% ;
         padding: 20px 35px;
+        background-color: white;
         max-width: 700px;
         width: 100%;
         z-index: 1;
+        border-radius: 5px;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);}
+
+    .part2 .title {
+        font-size: 23px;
+        font-weight: 500px;
+        position: relative;
+    }
+
+    .BACKGROUND3{
+        position: absolute;
+        background-position: right ;
+        left:900px;
+        top:40px;
+        background-attachment: fixed;
+        z-index: 0;
+        width:1000px
+      }
+    .back3{
+        position: absolute;
+        background-position: left;
+        left: 600px;;
+        top: 155px  ;
+        background-attachment: fixed;
+        z-index: 0;
+        width: 150px;
+        height: 150px;
+    }
+    .back4{
+        position: absolute;
+        background-position: left;
+        left: 600px;;
+        top: 200px  ;
+        background-attachment: fixed;
+        z-index: 0;
+        width: 150px;
+        height: 150px;
+    }
+    .back5{
+        position: absolute;
+        background-position: left;
+        left: 750px;;
+        top: 180px  ;
+        background-attachment: fixed;
+        z-index: 0;
+        width: 150px;
+        height: 150px;
+    }       
+    .back6{
+        position: absolute;
+        background-position: left;
+        left: 750px;;
+        top: 180px  ;
+        background-attachment: fixed;
+        z-index: 0;
+        width: 150px;
+        height: 150px;
+    }       
+    .button2{
+    
+        margin-left: 10px;
+        margin-right: 100px;
+        margin-top: 2%;
+        
+        }
 
     /*
     form .button1{
