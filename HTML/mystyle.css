@@ -92,10 +92,8 @@ td button:hover{
  button.SETApp{
     border: none;
     padding: 7px 20px;
-    border-radius: 20px;
-    
+    border-radius: 20px;  
     color: white;
-
     background-color: #635DAD;
             opacity: 62%;
             position: absolute;
