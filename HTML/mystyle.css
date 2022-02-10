@@ -281,6 +281,9 @@ td a:hover{
   background-attachment: fixed;
   z-index: 0;
 }
+.HEADER{
+    background-color: white;
+}
 
 
 
@@ -313,40 +316,43 @@ td a:hover{
     justify-content: space-between;
     margin: 20px 0 12px 0 ;
 }
-form .appointment-details .input-box{
+form  .input-box{
     margin-bottom: 15px;
     width:calc(100% / 2 - 20px)
     
 }
-.appointment-details .input-box .details{
+ .input-box .details{
     display: block;
     font-weight: 500px;
     margin-bottom: 5px;
 }
-.appointment-details .input-box select {
+ .input-box select {
 height: 30px;
 width: 50%;
 outline: none;
 border-radius: 5px;
-border: 1px solid #FAFAFB ;
+border: 1px solid #dddddd ;
+background-color:#dddddd;
 padding-left: 15; 
 font-size: 12px;
 }
-.appointment-details .input-box input {
+ .input-box input {
     height: 30px;
     width: 50%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #FAFAFB ;
+    border: 1px solid #dddddd ;
+    background-color:#dddddd;
     padding-left: 15; 
     font-size: 12px;
     }
-.appointment-details .input-box textarea{
+ .input-box textarea{
     height: 100px;
     width: 70%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #FAFAFB ;
+    border: 1px solid #dddddd ;
+    background-color:#dddddd;
     padding-left: 15; 
     font-size: 12px;
     }
@@ -368,6 +374,18 @@ font-size: 12px;
         width: 150px;
         height: 150px;
     }
+    .input-box .email{
+        display: block;
+        font-weight: 500px;
+        margin-bottom: 5px;
+    }
+    .part2{
+        margin-left: 30% ;
+        margin-top:2% ;
+        padding: 20px 35px;
+        max-width: 700px;
+        width: 100%;
+        z-index: 1;
 
     /*
     form .button1{
@@ -387,17 +405,18 @@ font-size: 12px;
         display: block;
     }*/
   
-
+    }
     /* حق مها النعيم */
     .MBODY{
        
-        display: flex;
+        display:flex;
         height: 100vh;
         justify-content: center;
         align-items: center;
         padding: 10px;
         background-color: #ffffff;
     }
+
     #Base{
         background-color:#ffffff;
         position: relative;
