@@ -677,7 +677,87 @@ font-size: 12px;
 
             }
             
+/*حق مها البابطين*/
 
+       /*Login page*/
+
+    body.bodyMahaB{
+        text-align: center;
+        align-content: center;
+    }
+    
+    button.loginTypeButton{
+        align-content: center;
+        display: inline;
+        margin-right: 5px;
+        border: none;
+        padding: 7px 20px;
+        border-radius: 20px;
+        background-color: #dddddd;
+        color: black;
+    }
+    
+    button.loginTypeButton:focus{
+        background-color: #9084C2;
+        color: white;
+    }
+    
+    hr.horizontalLine{
+        display:inline-flex;
+        align-items: center;
+        size: 1%;
+        width: 10%;
+        color: #dddddd;
+    }
+    
+    .loginLabels{
+        float: left;
+        text-align: left;
+        margin-left: 50%;
+        color: black;
+        font-size: 17px;
+    }
+    
+    #Uname{  
+        align-content:center;
+        position: relative;
+        margin-right: 5px;
+        border: none;
+        padding: 7px 20px;
+        border-radius: 20px;
+        background-color: #dddddd;
+        color: black;
+    }
+    
+    #Pass{  
+        align-content:center;
+        position: relative;
+        margin-right: 5px;
+        border: none;
+        padding: 7px 20px;
+        border-radius: 20px;
+        background-color: #dddddd;
+        color: black;
+    }
+    
+    #log{  
+        width: 300px;  
+        height: 30px;  
+        border: none;  
+        border-radius: 17px;  
+        padding-left: 7px;  
+        background-color: #9084C2;
+        color: white;  
+    }
+    
+    a.loginLink{  
+        color:#4610c5
+    } 
+    
+    img.visibilityEye{
+        margin-left: -30px; 
+        cursor: pointer;
+    }
              
                  
        
