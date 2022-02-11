@@ -172,7 +172,7 @@ td.PENDING button{
 td.PENDING button:hover{
     opacity: 100%;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
-    
+   
 }
 td.Approved button{
     border: none;
@@ -214,7 +214,7 @@ body::-webkit-scrollbar-track{
 
 .header_fixed{
     background-color: white;
-    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 20px 0 rgba(152, 131, 245, 0.2);
     width: 1000px;
     height: 470px;
     border: 1px ;
@@ -228,7 +228,7 @@ body::-webkit-scrollbar-track{
 }
 .header_fixed3{
     background-color: white;
-    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 20px 0 rgba(152, 131, 245, 0.2);
     width: 900px;
     height: 450px;
     border: 1px ;
@@ -248,7 +248,7 @@ body::-webkit-scrollbar-track{
 .header_fixed4{
    
         background-color: white;
-        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+        box-shadow: 0 10px 20px 0 rgba(152, 131, 245, 0.2);
         width: 800px;
         height: 350px;
         padding-left: 130px;
@@ -282,7 +282,7 @@ body::-webkit-scrollbar-track{
 
 .header_fixed5{
    background-color: white;
-   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+   box-shadow: 0 10px 20px 0 rgba(152, 131, 245, 0.2);
    width: 800px;
    height: 350px;
    padding-left: 70px;
