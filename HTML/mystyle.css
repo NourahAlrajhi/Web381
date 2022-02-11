@@ -62,7 +62,7 @@ tr:ntn-child(even){
 
 tr:hover td{
     color: #9084C2;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 50, 0.3);
 }
 tr{
     color: #9084C2;
@@ -83,9 +83,126 @@ td button:hover{
     box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
     
 }
+.EYES{
+   
+    color: #635DAD;
+}
+
+
+ button.SETApp{
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;  
+    color: white;
+    background-color: #635DAD;
+            opacity: 62%;
+            position: absolute;
+            top: 638px;
+            right: 950px;
+}
+button.SETApp:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    
+}
+
+button.SETApp2{
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    
+    color: white;
+
+    background-color: #635DAD;
+            opacity: 62%;
+            position: absolute;
+            top: 611px;
+            right: 1215px;
+}
+button.SETApp2:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+}
+
+.CAT{
+    position: absolute;
+    top: 554px;
+    left: 115px;
+}
+
+.CAT2{
+    position: absolute;
+    top: 578px;
+    left: 345px;
+}
 
 
 
+
+td.DELET button{
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    
+    color: white;
+
+    background-color: #FF74AB;
+            opacity: 62%;
+}
+td.DELET button:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    
+}
+
+td.PENDING button{
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    
+    color: white;
+
+    background-color:#A4A4A4;
+            opacity: 62%;
+}
+td.PENDING button:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    
+}
+td.Approved button{
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    
+    color: white;
+
+    background-color:#FEAD54;
+            opacity: 62%;
+}
+td.Approved button:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    
+}
+td.Declined button{
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    
+    color: white;
+
+    background-color:#FF765F;
+            opacity: 62%;
+}
+td.Declined button:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    
+}
+body::-webkit-scrollbar-track{
+    background: #fff;
+}
 
 
 
@@ -105,16 +222,27 @@ td button:hover{
     z-index: 2;
     text-align: center;
 }
+.header_fixed3{
+    background-color: white;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+    width: 580px;
+    height: 450px;
+    border: 1px ;
+    overflow: scroll;
+    position: absolute;
+    right: 400px;
+  padding-left: 18px;
+   
+    bottom: 100px;
+    border-radius: 20px;
+    z-index: 2;
+    text-align: center;
+}
 
-.header_fixed thead th{
-    position: sticky;
-    top :0;
-    font-size: 15px;
-    font-weight: 800;
-}
-::-webkit-scrollbar{
-    width: 6px;
-}
+
+
+
+
 
 ::-webkit-scrollbar-track{
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) ;
@@ -137,8 +265,16 @@ td a:hover{
 }
 
 .BACKGROUND{
-  background-position: center ;
+  position: absolute;
+  background-position: right ;
+  left: 1000px;
+  top:40px;
   background-attachment: fixed;
+  z-index: 0;
+}
+div.HEADER{
+    background-color: white;
+    position: fixed;
 }
 
 
@@ -154,9 +290,11 @@ td a:hover{
 }
 .part1{
     margin-left: 30% ;
-    padding: 25px 30px;
+    margin-top:2% ;
+    padding: 20px 35px;
     max-width: 700px;
     width: 100%;
+    z-index: 1;
 }
 .part1 .title {
     font-size: 23px;
@@ -170,34 +308,144 @@ td a:hover{
     justify-content: space-between;
     margin: 20px 0 12px 0 ;
 }
-form .appointment-details .input-box{
+form  .input-box{
     margin-bottom: 15px;
     width:calc(100% / 2 - 20px)
     
 }
-.appointment-details .input-box .details{
+ .input-box .details{
     display: block;
     font-weight: 500px;
     margin-bottom: 5px;
 }
-.appointment-details .input-box select {
+ .input-box select {
 height: 30px;
-width: 50%;
+width: 70%;
 outline: none;
 border-radius: 5px;
-border: 1px solid #FAFAFB ;
+border: 1px solid #dddddd ;
+background-color:#dddddd;
 padding-left: 15; 
 font-size: 12px;
 }
-.appointment-details .input-box textarea{
-    height: 100px;
-    width: 50%;
+ .input-box input {
+    height: 30px;
+    width: 70%;
     outline: none;
-border-radius: 5px;
-border: 1px solid #FAFAFB ;
-padding-left: 15; 
-font-size: 12px;
+    border-radius: 5px;
+    border: 1px solid #dddddd ;
+    background-color:#dddddd;
+    padding-left: 15; 
+    font-size: 12px;
     }
+ .input-box textarea{
+    height: 100px;
+    width: 70%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #dddddd ;
+    background-color:#dddddd;
+    padding-left: 15; 
+    font-size: 12px;
+    }
+    .back1{
+        position: absolute;
+        background-position: left;
+        left:0;
+        bottom: 0;
+        background-attachment: fixed;
+        z-index: -1;
+    }
+    .back2{
+        position: absolute;
+        background-position: left;
+        left: 500px;;
+        bottom: 50px  ;
+        background-attachment: fixed;
+        z-index: 0;
+        width: 150px;
+        height: 150px;
+    }
+    .input-box .email{
+        display: block;
+        font-weight: 500px;
+        margin-bottom: 5px;
+    }
+    .part2{
+        margin-left: 20% ;
+        margin-top:4% ;
+        padding: 20px 35px;
+        background-color: white;
+        max-width: 700px;
+        width: 100%;
+        z-index: 1;
+        border-radius: 5px;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);}
+
+    .part2 .title {
+        font-size: 23px;
+        font-weight: 500px;
+        position: relative;
+    }
+
+    .BACKGROUND3{
+        position: absolute;
+        background-position: right ;
+        left:900px;
+        top:40px;
+        background-attachment: fixed;
+        z-index: 0;
+        width:1000px
+      }
+    .back3{
+        position: absolute;
+        background-position: left;
+        left: 600px;;
+        top: 155px  ;
+        background-attachment: fixed;
+        z-index: 0;
+        width: 150px;
+        height: 150px;
+    }
+    .back4{
+        position: absolute;
+        background-position: left;
+        left: 600px;;
+        top: 200px  ;
+        background-attachment: fixed;
+        z-index: 0;
+        width: 150px;
+        height: 150px;
+    }
+    .back5{
+        position: absolute;
+        background-position: left;
+        left: 750px;;
+        top: 180px  ;
+        background-attachment: fixed;
+        z-index: 0;
+        width: 150px;
+        height: 150px;
+    }       
+    .back6{
+        position: absolute;
+        background-position: left;
+        left: 750px;;
+        top: 180px  ;
+        background-attachment: fixed;
+        z-index: 0;
+        width: 150px;
+        height: 150px;
+    }       
+    .button2{
+    
+        margin-left: 10px;
+        margin-right: 100px;
+        margin-top: 2%;
+        
+        }
+
+    /*
     form .button1{
         height: 45px;
         margin: 45px 0 ;
@@ -213,14 +461,12 @@ font-size: 12px;
         border-radius: 5px;
         margin: 10px auto;
         display: block;
-    }
-
-
-
+    }*/
+  
 
     /* حق مها النعيم */
     #MBODY{
-    
+       
         display: flex;
         height: 100vh;
         justify-content: center;
@@ -265,6 +511,14 @@ font-size: 12px;
     background-color: #ffffff;
     
     }
+    .formlabel{
+        position: relative;
+        right: 250px;
+        top:70px;
+
+
+
+    }
     #typeEmail{
     
     background-color: #E5E5E5;
@@ -293,47 +547,113 @@ font-size: 12px;
             opacity: 100%;
             box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
         }
-        /* Dropdown Button */
-.dropbtn {
-    background-color: #04AA6D;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-  }
-  
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #ddd;}
-  
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {display: block;}
-  
-  /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .dropbtn {background-color: #3e8e41;}
-    
-    
+        #B{
+            background-color: cornflowerblue;
+            
+            
+            background-color:#ffffff;
+            position: relative;
+            max-width: 1000px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 150px;
+            padding: 100px;
+            padding-top: 30px;
+            
+              } 
+              .MBODY2{
+       
+                display:fixed;
+                 height: 100vh;
+                 width: 100%;
+                 padding: 10px;
+                 background-color: #ffffff;
+             }
+            
+              .rowM{
+             
+              width: 100%;
+              height: 200px;
+              position: relative;
+              top:150px;
+              padding-left:350px;
+     
+     
+     
+              } 
+              .field1st{
+                 
+                 float: left;
+                width: 200px;
+                 margin-top: 50px
+            
+                  
+              } 
+              .fieldm2{
+                float: left;
+                width: 200px;
+                 margin-right:300px;
+                
+                  
+
+
+
+              }
+             .secondM{
+               
+                float: left;
+                width: 200px;
+                
+            
+                  
+
+             }
+
+              .fieldselect{
+                 width:250px;
+                 height: 30px;
+                 background: #F7F7F8;
+                 border: #F7F7F8;
+                 border-radius: 7px;
+                 padding-left: 0px;
+                 
+             }  
+             
+            
+     
+             #circle {
+                 background: #F7F7F8;
+                 border-radius: 50%;
+                 width: 130px;
+                 height: 130px;
+                 
+                 margin-left: 50px;
+             }
+             .circle{
+                float: left;
+                 margin-left: 50px;
+     
+             }
+             .rowL{
+             
+             width: 100%;
+             height: 100px;
+             position: relative;
+             top: 130px;
+             padding-left: 370px;
+         
+             }
+            
+             .BG{
+                 position: fixed;
+                 top: 160px;
+                 right: 25%;
+                 z-index: -1;
+                 width: 100px;
+     
+     
+             }
+                 
+       
+
     
