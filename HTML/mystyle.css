@@ -128,8 +128,9 @@ button.SETApp2:hover{
 
 .CAT{
     position: absolute;
-    top: 554px;
-    left: 197px;
+    top: 570px;
+    left: 250px;
+    z-index: 3;
 }
 
 .CAT2{
