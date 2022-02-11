@@ -98,7 +98,7 @@ td button:hover{
             opacity: 62%;
             position: absolute;
             top: 638px;
-            right: 950px;
+            left: 180px;
           
 }
 button.SETApp:hover{
@@ -117,8 +117,8 @@ button.SETApp2{
     background-color: #635DAD;
             opacity: 62%;
             position: absolute;
-            top: 611px;
-            right: 1215px;
+            top: 630px;
+            left: 183px;
            
 }
 button.SETApp2:hover{
@@ -129,13 +129,14 @@ button.SETApp2:hover{
 .CAT{
     position: absolute;
     top: 554px;
-    left: 115px;
+    left: 197px;
 }
 
 .CAT2{
     position: absolute;
     top: 578px;
-    left: 345px;
+    left: 280px;
+    z-index: 3;
 }
 
 
@@ -227,13 +228,13 @@ body::-webkit-scrollbar-track{
 .header_fixed3{
     background-color: white;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
-    width: 580px;
+    width: 900px;
     height: 450px;
     border: 1px ;
     overflow: scroll;
     position: absolute;
-    right: 400px;
-  padding-left: 18px;
+    right: 250px;
+  padding-left: 170px;
    
     bottom: 100px;
     border-radius: 20px;
@@ -318,10 +319,11 @@ body::-webkit-scrollbar-track{
 }
 .CAPTION2 {
     position: absolute;
-    top: 98px;
-    left: 380px;
+    top: 90px;
+    left: 310px;
     font-size: x-large;
    }
+   
 td a{
     color: gray;
 }
