@@ -99,6 +99,7 @@ td button:hover{
             position: absolute;
             top: 638px;
             right: 950px;
+          
 }
 button.SETApp:hover{
     opacity: 100%;
@@ -118,6 +119,7 @@ button.SETApp2{
             position: absolute;
             top: 611px;
             right: 1215px;
+           
 }
 button.SETApp2:hover{
     opacity: 100%;
@@ -272,9 +274,12 @@ td a:hover{
   background-attachment: fixed;
   z-index: 0;
 }
-div.HEADER{
+th.HEADER{
     background-color: white;
-    position: fixed;
+    position: sticky;
+    top: 0;
+   
+    
 }
 
 
