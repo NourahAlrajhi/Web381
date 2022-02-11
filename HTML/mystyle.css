@@ -62,7 +62,7 @@ tr:ntn-child(even){
 
 tr:hover td{
     color: #9084C2;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 50, 0.3);
 }
 tr{
     color: #9084C2;
@@ -92,15 +92,13 @@ td button:hover{
  button.SETApp{
     border: none;
     padding: 7px 20px;
-    border-radius: 20px;
-    
+    border-radius: 20px;  
     color: white;
-
     background-color: #635DAD;
             opacity: 62%;
             position: absolute;
             top: 638px;
-            right: 960px;
+            right: 950px;
 }
 button.SETApp:hover{
     opacity: 100%;
@@ -118,8 +116,8 @@ button.SETApp2{
     background-color: #635DAD;
             opacity: 62%;
             position: absolute;
-            top: 638px;
-            right: 1150px;
+            top: 611px;
+            right: 1215px;
 }
 button.SETApp2:hover{
     opacity: 100%;
@@ -128,14 +126,14 @@ button.SETApp2:hover{
 
 .CAT{
     position: absolute;
-    top: 578px;
-    left: 163px;
+    top: 554px;
+    left: 115px;
 }
 
 .CAT2{
     position: absolute;
     top: 578px;
-    left: 320px;
+    left: 345px;
 }
 
 
@@ -243,15 +241,8 @@ body::-webkit-scrollbar-track{
 
 
 
-.header_fixed thead th{
-    position: sticky;
-    top :0;
-    font-size: 15px;
-    font-weight: 800;
-}
-::-webkit-scrollbar{
-    width: 6px;
-}
+
+
 
 ::-webkit-scrollbar-track{
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) ;
@@ -281,8 +272,9 @@ td a:hover{
   background-attachment: fixed;
   z-index: 0;
 }
-.HEADER{
+div.HEADER{
     background-color: white;
+    position: fixed;
 }
 
 
@@ -328,7 +320,7 @@ form  .input-box{
 }
  .input-box select {
 height: 30px;
-width: 50%;
+width: 70%;
 outline: none;
 border-radius: 5px;
 border: 1px solid #dddddd ;
@@ -338,7 +330,7 @@ font-size: 12px;
 }
  .input-box input {
     height: 30px;
-    width: 50%;
+    width: 70%;
     outline: none;
     border-radius: 5px;
     border: 1px solid #dddddd ;
@@ -380,12 +372,78 @@ font-size: 12px;
         margin-bottom: 5px;
     }
     .part2{
-        margin-left: 30% ;
-        margin-top:2% ;
+        margin-left: 20% ;
+        margin-top:4% ;
         padding: 20px 35px;
+        background-color: white;
         max-width: 700px;
         width: 100%;
         z-index: 1;
+        border-radius: 5px;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);}
+
+    .part2 .title {
+        font-size: 23px;
+        font-weight: 500px;
+        position: relative;
+    }
+
+    .BACKGROUND3{
+        position: absolute;
+        background-position: right ;
+        left:900px;
+        top:40px;
+        background-attachment: fixed;
+        z-index: 0;
+        width:1000px
+      }
+    .back3{
+        position: absolute;
+        background-position: left;
+        left: 600px;;
+        top: 155px  ;
+        background-attachment: fixed;
+        z-index: 0;
+        width: 150px;
+        height: 150px;
+    }
+    .back4{
+        position: absolute;
+        background-position: left;
+        left: 600px;;
+        top: 200px  ;
+        background-attachment: fixed;
+        z-index: 0;
+        width: 150px;
+        height: 150px;
+    }
+    .back5{
+        position: absolute;
+        background-position: left;
+        left: 750px;;
+        top: 180px  ;
+        background-attachment: fixed;
+        z-index: 0;
+        width: 150px;
+        height: 150px;
+    }       
+    .back6{
+        position: absolute;
+        background-position: left;
+        left: 750px;;
+        top: 180px  ;
+        background-attachment: fixed;
+        z-index: 0;
+        width: 150px;
+        height: 150px;
+    }       
+    .button2{
+    
+        margin-left: 10px;
+        margin-right: 100px;
+        margin-top: 2%;
+        
+        }
 
     /*
     form .button1{
@@ -405,18 +463,17 @@ font-size: 12px;
         display: block;
     }*/
   
-    }
+
     /* حق مها النعيم */
-    .MBODY{
+    #MBODY{
        
-        display:flex;
+        display: flex;
         height: 100vh;
         justify-content: center;
         align-items: center;
         padding: 10px;
         background-color: #ffffff;
     }
-
     #Base{
         background-color:#ffffff;
         position: relative;
@@ -489,92 +546,59 @@ font-size: 12px;
         .button:hover { 
             opacity: 100%;
             box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
-        
-        } 
-        .MBODY2{
+        }
+        #B{
+            background-color: cornflowerblue;
+            
+            
+            background-color:#ffffff;
+            position: relative;
+            max-width: 1000px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 150px;
+            padding: 100px;
+            padding-top: 30px;
+            
+              } 
        
-           display:fixed;
-            height: 100vh;
-            width: 100%;
-            padding: 10px;
-            background-color: #ffffff;
-        }
-         .rowM{
-        
-         width: 100%;
-         height: 200px;
-         position: relative;
-         top:100px;
-         padding-left:350px;
-
-
-
-         } 
-         .field1st{
-            
-            float: left;
-           
-            margin-top: 50px;
-             
-         } 
-        
-
-         .second{
-
-         margin-top: 0%;
-         float: left;
-         margin-right: 200px;
-
-
-
-         }
-         .fieldselect{
-            width:250px;
-            height: 30px;
-            background: #F7F7F8;
-            border: #F7F7F8;
-            border-radius: 7px;
-            padding-left: 0px;
-            
-
-        }  
-        
-        .fieldselect select{
-            -webkit-appearance: none;
-        }
-
-        #circle {
-            background: #F7F7F8;
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            float: left;
-            margin-left: 50px;
-        }
-        .circle{
-           float: left;
-
-
-        }
-        .rowL{
-        
-        width: 100%;
-        height: 100px;
-        position: relative;
-        top: 70px;
-        padding-left: 370px;
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+ 
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+ 
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+ 
+  .dropdown:hover .dropdown-content {display: block;}
+ 
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
     
-        }
-        .BG{
-            position: fixed;
-            top: 160px;
-            right: 25%;
-            z-index: -1;
-            width: 100px;
-
-
-        }
-            
-       
  
     
