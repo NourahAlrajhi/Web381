@@ -478,10 +478,10 @@ font-size: 12px;
         background-color:#ffffff;
         position: relative;
         max-width: 1000px;
-        margin-left: 20px;
+        margin-left: 230px;
         margin-right: 20px;
         margin-top: 150px;
-        padding: 100px;
+        padding: 150px;
         padding-top: 30px;
         
     }
@@ -511,23 +511,16 @@ font-size: 12px;
     background-color: #ffffff;
     
     }
-    .formlabel{
-        position: relative;
-        right: 250px;
-        top:70px;
-
-
-
-    }
+  
     #typeEmail{
     
-    background-color: #E5E5E5;
-    
+    background-color: #F7F7F8;
+    width: 500px;
     
     }
     .button1{
     
-    margin-left: 150px;
+    margin-left: 200px;
     margin-right: 100px;
     margin-top: 2%;
     
@@ -573,7 +566,7 @@ font-size: 12px;
               .rowM{
              
               width: 100%;
-              height: 200px;
+              height: 170px;
               position: relative;
               top:150px;
               padding-left:350px;
@@ -586,26 +579,21 @@ font-size: 12px;
                  float: left;
                 width: 200px;
                  margin-top: 50px
-            
-                  
+        
               } 
+              
               .fieldm2{
                 float: left;
                 width: 200px;
                  margin-right:300px;
                 
-                  
-
-
-
               }
+              
              .secondM{
                
                 float: left;
                 width: 200px;
                 
-            
-                  
 
              }
 
@@ -616,10 +604,27 @@ font-size: 12px;
                  border: #F7F7F8;
                  border-radius: 7px;
                  padding-left: 0px;
-                 
-             }  
-             
+                 box-shadow : none; 
+                
+             } 
+            .fieldselect .op1{
+              display: none;
+
+
+            }
+            .fieldselect .op2 {
+                background-color: blueviolet !important;
+  
+  
+              }
             
+             .fieldm2 .fieldselect{
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    text-indent: 1px;
+                    text-overflow: '';
+             }
+             
      
              #circle {
                  background: #F7F7F8;
@@ -653,6 +658,27 @@ font-size: 12px;
      
      
              }
+             #calendar{
+                position: relative;
+                bottom: 27px;
+                left: 230px;
+                float: left;
+                color:#635DAD;
+                opacity: 62%;
+            }
+            #camera{
+                position: relative;
+                top: 50px;
+                left: 50px;
+                color:#635DAD;
+                opacity: 62%;
+            
+
+
+            }
+            
+
+             
                  
        
 
