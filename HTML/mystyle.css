@@ -243,7 +243,56 @@ body::-webkit-scrollbar-track{
 
 
 
+.header_fixed4{
+   
+        background-color: white;
+        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+        width: 800px;
+        height: 350px;
+        padding-left: 130px;
+        border: 1px ;
+        overflow: scroll;
+        position: absolute;
+        left: 350px;
+        top: 170px;
+        border-radius: 20px;
+        z-index: 2;
+        text-align: center;
+    
+}
 
+.Tabeltitel{
+    position: absolute;
+    top: 128px;
+    left: 357px;
+}
+
+.TwoTabelBG{
+    position: absolute;
+    top: 80px;
+    right: 0px;
+}
+.TwoTabelBG2{
+    position: absolute;
+    bottom: -350px;
+    left: 0px;
+}
+
+.header_fixed5{
+   background-color: white;
+   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+   width: 800px;
+   height: 350px;
+   padding-left: 110px;
+   border: 1px ;
+   overflow: scroll;
+   position: absolute;
+   left: 350px;
+   top: 610px;
+   border-radius: 20px;
+   z-index: 2;
+   text-align: center; 
+}
 
 
 ::-webkit-scrollbar-track{
