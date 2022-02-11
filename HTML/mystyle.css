@@ -274,7 +274,7 @@ body::-webkit-scrollbar-track{
 }
 .TwoTabelBG2{
     position: absolute;
-    bottom: -350px;
+    bottom: -310px;
     left: 0px;
 }
 
@@ -292,6 +292,12 @@ body::-webkit-scrollbar-track{
    border-radius: 20px;
    z-index: 2;
    text-align: center; 
+}
+
+.Tabeltitel2{
+    position: absolute;
+    top: 560px;
+    left: 370px;
 }
 
 
