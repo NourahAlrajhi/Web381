@@ -950,23 +950,27 @@ font-size: 12px;
     #Uname{  
         align-content:center;
         position: relative;
-        margin-right: 5px;
-        border: none;
-        padding: 7px 20px;
-        border-radius: 20px;
-        background-color: #dddddd;
-        color: black;
+        height: 30px;
+        width: 70%;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid #dddddd ;
+        background-color:#dddddd;
+        padding-left: 15; 
+        font-size: 12px;
     }
     
     #Pass{  
         align-content:center;
         position: relative;
-        margin-right: 5px;
-        border: none;
-        padding: 7px 20px;
-        border-radius: 20px;
-        background-color: #dddddd;
-        color: black;
+        height: 30px;
+        width: 70%;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid #dddddd ;
+        background-color:#dddddd;
+        padding-left: 15; 
+        font-size: 12px;
     }
     
     #log{  
