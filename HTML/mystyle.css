@@ -516,13 +516,10 @@ font-size: 12px;
     .back7{
         position: absolute;
         background-position: left;
-        left: 500px;
-        bottom: 200px  ;
         background-attachment: fixed;
         z-index: 0;
         width: 15px;
         height: 15px; }
-
     .button2{
         margin-left: 10px;
         margin-right: 100px;
@@ -560,21 +557,23 @@ font-size: 12px;
         background-color: #ffffff;
     }
     #Base{
-        background-color:#ffffff;
-        position: relative;
-        max-width: 1000px;
-        margin-left: 230px;
-        margin-right: 20px;
-        margin-top: 150px;
-        padding: 150px;
-        padding-top: 30px;
+        background-color: #ffffff;
+    position: relative;
+    max-width: 1000px;
+    margin-left: 120px;
+    padding-left: 20px;
+    top: 200px;
+    left: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
         
     }
     .pic{
         background-color: #ffffff;
         align-content: center;
-      margin-left: 40%;
-      margin-right: 30%;
+        margin-left: 20%;
+        margin-right: 30%;
 
 
     }
@@ -586,28 +585,24 @@ font-size: 12px;
     
     
     }
-    .fieldM{
-    position: relative;
-    margin-top: 1px;
-    margin-left: 100px;
-    margin-right: 50px;
-    font-size: 1em;
-  
-    background-color: #ffffff;
-    
+    .fieldM input{
+        height: 35px;
+        width: 500px;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid #F7F7F8;
+        background-color: #F7F7F8;
+        padding-left: 15;
+        font-size: 12px;
     }
   
-    #typeEmail{
     
-    background-color: #F7F7F8;
-    width: 500px;
-    
-    }
     .button1{
     
-    margin-left: 200px;
-    margin-right: 100px;
-    margin-top: 2%;
+        margin-left: 350px;
+        position: absolute;
+        left: 180px;
+        top: 450px;
     
     
     
@@ -659,6 +654,7 @@ font-size: 12px;
      
      
               } 
+             
               .field1st{
                  
                  float: left;
@@ -670,7 +666,7 @@ font-size: 12px;
               .fieldm2{
                 float: left;
                 width: 200px;
-                 margin-right:300px;
+       margin-right:300px;
                 
               }
               
@@ -692,23 +688,29 @@ font-size: 12px;
                  box-shadow : none; 
                 
              } 
-            .fieldselect .op1{
-              display: none;
+             #timeS{
+                 background-color: #F7F7F8;
+                 border-radius: 10%;
+                 border: none;
+                 width:250px;
+                 height: 30px;
 
 
-            }
-            .fieldselect .op2 {
-                background-color: blueviolet !important;
-  
-  
-              }
-            
-             .fieldm2 .fieldselect{
-                    -webkit-appearance: none;
-                    -moz-appearance: none;
-                    text-indent: 1px;
-                    text-overflow: '';
              }
+             #dateS{
+                background-color: #F7F7F8;
+                border-radius: 10%;
+                border: none;
+                width:250px;
+                height: 30px;
+                
+             }
+             
+             
+           
+          
+            
+       
              
      
              #circle {
@@ -726,13 +728,21 @@ font-size: 12px;
              }
              .rowL{
              
-             width: 100%;
-             height: 100px;
-             position: relative;
-             top: 130px;
-             padding-left: 370px;
+                width: 100%;
+                height: 100px;
+                position: relative;
+                top: 130px;
+                padding-left: 370px;
+                padding-top: 50px;
+                
+            }
+            .buttonP2 {
+                position: relative;
+                position: relative;
+                left: 150px;
+            }
          
-             }
+             
             
              .BG{
                  position: fixed;
@@ -776,19 +786,21 @@ font-size: 12px;
                 position: relative;
                 top: 100px;
                 
-            };
+            }
                
-            
- 
-            .pBox{
-               
+            .Boxp p{
+                font-size: 0.8em;
+                font-weight: 150;
+                width: 600px;
                 padding-right: 50px;
                 margin-right: 50px;
-               
-            }
-            .pBox p{
-                font-size: 0.8em;
 
+
+
+            }
+            .description{
+                font-size: 0.9em;
+                font-weight: 150;
 
 
             }
@@ -809,6 +821,7 @@ font-size: 12px;
               /* Add some padding inside the card container */
               .container {
                 padding: 2px 16px;
+                padding-top: 15px;
                 
               }
               .cards{
@@ -828,6 +841,26 @@ font-size: 12px;
                 border: none;
                 
               }
+              .cardH4{
+                  font-size: 19px;
+
+
+              }
+              .EditM{
+                  position: absolute;
+                  top: 260px;
+                  left: 150px;
+
+
+
+              }
+              .EditH{
+                position: absolute;
+                float: left;
+             
+                left: 750px;
+                top: 50px;
+              }
            
 
             /* P5 Maha*/
@@ -840,11 +873,16 @@ font-size: 12px;
             .rowP5{
                 width: 100%;
                 position: relative;
-                top: 130px;
+                top: 100px;
                 padding-left: 300px;
 
 
 
+            }
+            #head5{
+                font-size: 25px;
+
+                padding-bottom: 20px;
             }
             .cardReveiw{
                 position: relative;
@@ -859,7 +897,7 @@ font-size: 12px;
                 box-shadow: 0 15px 30px 0 rgb(152 131 245 / 15%);
                 transition: 0.3s;
                 border-radius: 30px; /* 5px rounded corners */
-                height: 400px;
+                height: 430px;
                 border: none;
 
             }
@@ -901,6 +939,8 @@ font-size: 12px;
             .rate > label:hover ~ input:checked ~ label {
                 color: #c59b08;
             }
+           
+          
             .Q{
                 margin-top: 70px;
 
@@ -909,11 +949,41 @@ font-size: 12px;
             .commReview{
                 position:absolute;
                 top: 200px;
+                
             }
-            .commReview .textarea{
+            #comrev{
+                 height: 100px;
+                max-height: 141px;
+                width: 300px;
+                background-color: #F7F7F8;
+                border-radius: 10px;
 
-                border: #635DAD;
+                border:none ;
             }
+            ::placeholder{
+                color:#a3a2a2 ;
+                font-size: small;
+                text-indent: 10px;
+                padding-top: 10px;
+            }
+            .picP5{
+                position:absolute;
+                left: 400px;
+                top: 70px;
+
+            }
+            .buttonP5{
+                position: absolute;
+                top: 350px;
+                left: 270px;
+            }
+            
+            
+            
+             
+           
+
+           
 
 
     
