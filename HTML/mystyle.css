@@ -829,11 +829,15 @@ font-size: 12px;
             .rowP5{
                 width: 100%;
                 position: relative;
-                top: 130px;
+                top: 100px;
                 padding-left: 300px;
 
 
 
+            }
+            #head5{
+
+                padding-bottom: 20px;
             }
             .cardReveiw{
                 position: relative;
@@ -890,6 +894,8 @@ font-size: 12px;
             .rate > label:hover ~ input:checked ~ label {
                 color: #c59b08;
             }
+           
+          
             .Q{
                 margin-top: 70px;
 
@@ -898,11 +904,22 @@ font-size: 12px;
             .commReview{
                 position:absolute;
                 top: 200px;
+                
             }
-            .commReview .textarea{
+            #comrev{
+                 height: 100px;
+                max-height: 181px;
+                width: 300px;
+                background-color: #ffffff;
+                border-radius: 10px;
 
-                border: #635DAD;
+                border-color: #c5bdbd ;
             }
+            
+            .commReview::placeholder{
+                color: blue;
+            }
+           
 
 
     
