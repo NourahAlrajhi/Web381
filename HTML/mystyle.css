@@ -516,13 +516,10 @@ font-size: 12px;
     .back7{
         position: absolute;
         background-position: left;
-        left: 500px;
-        bottom: 200px  ;
         background-attachment: fixed;
         z-index: 0;
         width: 15px;
         height: 15px; }
-
     .button2{
         margin-left: 10px;
         margin-right: 100px;
