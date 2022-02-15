@@ -1204,6 +1204,15 @@ div#secondCol{
     color: white;
 }
 
+   /*Edit Profile Page*/
+
+div.signUpGirl{
+    position: relative;
+    top: 50px;
+    color:#635DAD;
+    opacity: 100%;
+}
+
 
    /*Add a Service Page*/
 
