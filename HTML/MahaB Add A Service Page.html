@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>My Profile</title>
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
+    </head>
+
+    <body class="addservBod">
+        <form action="#">
+            <div class="leftServ">
+                <h3>Add a Service</h3>
+                <label for="Serv">Service</label>
+                <br>
+                <select name="Serv" id="Serv" placeholder="Choose Service" required="">
+                    <option value = "Checkup"> Checkup </option>
+                    <option value = "Vaccination"> Vaccination </option>
+                    <option value = "Consultance"> Consultance </option>
+                    <option value = "Grooming"> Grooming </option>
+                </select>  
+                <br><br>
+                <label for="ServDescr">Description</label>
+                <br>  
+                <input type="text" name="ServDescr" id="ServDescr" placeholder="Enter Description..." required="">
+                <br><br>
+            </div>
+
+            <div class="rightServ">
+                <label for="ServPrice">Price</label>
+                <br>
+                <select name="ServPrice" id="ServPrice" placeholder="Choose Price" required="">
+                    <option value = "Choose1"> Choose </option>
+                    <option value = "Choose2"> Choose </option>
+                </select>
+                <br><br>
+            </div>
+            <br><br>
+            <input type="submit" name="AddServ" id="AddServ" value="Add Service">
+            <br><br>
+
+        </form>
+    </body>
+</html>
