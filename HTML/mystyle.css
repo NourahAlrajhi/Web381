@@ -1076,6 +1076,13 @@ font-size: 12px;
    
     /*Sign Up Page*/
 
+divcircPlace{
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+}
+
 body.signUpBod{
     align-content: center;
     align-items: center;
