@@ -1117,6 +1117,7 @@ div#firstCol{
 
 div#secondCol{
     display: inline-block;
+    margin top: 2ex;
 }
 
 #Fname{
