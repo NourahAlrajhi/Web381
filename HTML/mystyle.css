@@ -1028,7 +1028,7 @@ font-size: 12px;
     }
     
     button.loginTypeButton:focus{
-        background-color: #635DAD;
+        background-color: #9084C2;
         opacity: 100%;
         box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
         color: white;
@@ -1082,8 +1082,14 @@ font-size: 12px;
         border: none;  
         border-radius: 17px;  
         padding-left: 7px;  
-        background-color: #9084C2;
+        background-color: #635DAD;
+        opacity: 62%;
         color: white;  
+    }
+
+    #log:hover{
+        opacity: 100%;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
     }
     
     a.loginLink{  
