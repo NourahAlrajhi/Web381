@@ -264,7 +264,7 @@ body::-webkit-scrollbar-track{
         overflow: scroll;
         position: absolute;
         left: 350px;
-        top: 170px;
+        top: 300px;
         border-radius: 20px;
         z-index: 2;
         text-align: center;
@@ -273,7 +273,7 @@ body::-webkit-scrollbar-track{
 
 .Tabeltitel{
     position: absolute;
-    top: 120px;
+    top: 240px;
     left: 357px;
     font-weight: bold;
     font-size: x-large;
@@ -300,7 +300,7 @@ body::-webkit-scrollbar-track{
    overflow: scroll;
    position: absolute;
    left: 350px;
-   top: 1000px;
+   top: 890px;
    border-radius: 20px;
    z-index: 2;
    text-align: center; 
@@ -310,10 +310,11 @@ body::-webkit-scrollbar-track{
 
 .Tabeltitel2{
     position: absolute;
-    top: 950px;
-    left: 350px;
+    top: 830px;
+    left: 360px;
     font-weight: bold;
     font-size: x-large;
+    z-index: 3;
 }
 
 
