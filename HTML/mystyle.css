@@ -228,8 +228,8 @@ body::-webkit-scrollbar-track{
     border: 1px ;
     overflow: scroll;
     position: absolute;
-    right: 177px;
-    bottom: 100px;
+    right: 200px;
+    bottom: 60px;
     border-radius: 20px;
     z-index: 2;
     text-align: center;
@@ -322,8 +322,8 @@ body::-webkit-scrollbar-track{
 }
 .CAPTION {
  position: absolute;
- top: 70px;
- left: 260px;
+ top: 120px;
+ left: 240px;
  font-size: x-large;
 }
 .CAPTION2 {
