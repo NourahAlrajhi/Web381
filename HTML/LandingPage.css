@@ -128,7 +128,7 @@ header label{
 .home{
     display: flex;
     align-items: center;
-    background: url(../images/bg\ LP.svg) no-repeat;
+    background: url(../images/bglp.svg) no-repeat;
     background-size: cover;
     background-position: center ;
     
