@@ -1192,11 +1192,12 @@ div#secondCol{
     background-color:#dddddd;
     padding-left: 15; 
     font-size: 12px;
+    margin-bottom: 0.2ex;
 }
 
 #Gend{
-    height: 34px;
-    width: 72%;
+    height: 30px;
+    width: 70.2%;
     outline: none;
     border-radius: 5px;
     border: 1px solid #dddddd ;
