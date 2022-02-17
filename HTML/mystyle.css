@@ -1029,6 +1029,8 @@ font-size: 12px;
     
     button.loginTypeButton:focus{
         background-color: #9084C2;
+        opacity: 100%;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
         color: white;
     }
     
@@ -1080,8 +1082,14 @@ font-size: 12px;
         border: none;  
         border-radius: 17px;  
         padding-left: 7px;  
-        background-color: #9084C2;
+        background-color: #635DAD;
+        opacity: 62%;
         color: white;  
+    }
+
+    #log:hover{
+        opacity: 100%;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
     }
     
     a.loginLink{  
@@ -1204,6 +1212,7 @@ div#secondCol{
     background-color:#dddddd;
     padding-left: 15; 
     font-size: 12px;
+    margin-bottom: 1ex;
 }
 
 #regCirc {
@@ -1221,8 +1230,14 @@ div#secondCol{
     border: none;  
     border-radius: 17px;  
     padding-left: 7px;  
-    background-color: #9084C2;
+    background-color: #635DAD;
+    opacity: 62%;
     color: white;
+}
+
+#Reg:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
 }
 
    /*Edit Profile Page*/
@@ -1267,8 +1282,8 @@ div.rightServ{
 }
 
 #Serv{
-    height: 34px;
-    width: 72%;
+    height: 30px;
+    width: 70.2%;
     outline: none;
     border-radius: 5px;
     border: 1px solid #dddddd ;
@@ -1279,7 +1294,7 @@ div.rightServ{
 
 #ServDescr{
     height: 100px;
-    width: 70%;
+    width: 70.2%;
     outline: none;
     border-radius: 5px;
     border: 1px solid #dddddd ;
@@ -1289,8 +1304,8 @@ div.rightServ{
 }
 
 #ServPrice{
-    height: 34px;
-    width: 72%;
+    height: 30px;
+    width: 70.2%;
     outline: none;
     border-radius: 5px;
     border: 1px solid #dddddd ;
@@ -1305,8 +1320,14 @@ div.rightServ{
     border: none;  
     border-radius: 17px;  
     padding-left: 7px;  
-    background-color: #9084C2;
+    background-color: #635DAD;
+    opacity: 62%;
     color: white;
+}
+
+#AddServ:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
 }
                  
 
@@ -1318,7 +1339,7 @@ div.leftAddPet{
 
 div.rightAddPet{
     display: inline-block;
-    position: relative; top: 129px;
+    position: relative; top: 141px;
 }
 
 #Breed{
