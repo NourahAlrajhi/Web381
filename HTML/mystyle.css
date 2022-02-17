@@ -1028,7 +1028,9 @@ font-size: 12px;
     }
     
     button.loginTypeButton:focus{
-        background-color: #9084C2;
+        background-color: #635DAD;
+        opacity: 100%;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
         color: white;
     }
     
