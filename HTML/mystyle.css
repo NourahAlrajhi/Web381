@@ -621,9 +621,7 @@ font-size: 12px;
             box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
         }
         #B{
-            background-color: cornflowerblue;
-            
-            
+        
             background-color:#ffffff;
             position: relative;
             max-width: 1000px;
@@ -686,7 +684,7 @@ font-size: 12px;
                  border-radius: 7px;
                  padding-left: 0px;
                  box-shadow : none; 
-                
+                text-indent: 10px;
              } 
              #timeS{
                  background-color: #F7F7F8;
@@ -726,6 +724,12 @@ font-size: 12px;
                  margin-left: 50px;
      
              }
+             .EditP3{
+                 position: relative;
+                 top: 70px;
+                 left: 90px;
+             
+             }
              .rowL{
              
                 width: 100%;
@@ -738,8 +742,9 @@ font-size: 12px;
             }
             .buttonP2 {
                 position: relative;
-                position: relative;
-                left: 150px;
+                left: 50px;
+                width: 300px;
+                margin-left: 150px;
             }
          
              
@@ -860,6 +865,10 @@ font-size: 12px;
              
                 left: 750px;
                 top: 50px;
+              }
+              .dots{
+                  position: absolute;
+                  left: 260px;
               }
            
 
