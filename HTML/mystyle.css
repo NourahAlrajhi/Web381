@@ -1,10 +1,17 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+
 /* حق نورة الراجحي*/
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    
+    font-family: 'Poppins', sans-serif;
 }
+
+
+
 
 .header_fixed{
     width: 100%;
@@ -52,7 +59,7 @@ tabel{
     border-collapse: collapse;
 }
 th,td{
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px thin #dddddd;
     padding: 10px 20px;
     font-size: 14px;
 }
@@ -98,7 +105,7 @@ td button:hover{
     background-color: #635DAD;
             opacity: 62%;
             position: absolute;
-            top: 638px;
+            top: 660px;
             left: 180px;
           
 }
@@ -118,8 +125,8 @@ button.SETApp2{
     background-color: #635DAD;
             opacity: 62%;
             position: absolute;
-            top: 630px;
-            left: 183px;
+            top: 660px;
+            left: 180px;
            
 }
 button.SETApp2:hover{
@@ -129,14 +136,14 @@ button.SETApp2:hover{
 
 .CAT{
     position: absolute;
-    top: 570px;
+    top: 600px;
     left: 250px;
     z-index: 3;
 }
 
 .CAT2{
     position: absolute;
-    top: 578px;
+    top: 600px;
     left: 280px;
     z-index: 3;
 }
@@ -221,8 +228,8 @@ body::-webkit-scrollbar-track{
     border: 1px ;
     overflow: scroll;
     position: absolute;
-    right: 177px;
-    bottom: 100px;
+    right: 200px;
+    bottom: 60px;
     border-radius: 20px;
     z-index: 2;
     text-align: center;
@@ -238,7 +245,7 @@ body::-webkit-scrollbar-track{
     right: 250px;
   padding-left: 170px;
    
-    bottom: 100px;
+    bottom: 60px;
     border-radius: 20px;
     z-index: 2;
     text-align: center;
@@ -266,8 +273,10 @@ body::-webkit-scrollbar-track{
 
 .Tabeltitel{
     position: absolute;
-    top: 128px;
+    top: 120px;
     left: 357px;
+    font-weight: bold;
+    font-size: x-large;
 }
 
 .TwoTabelBG{
@@ -302,7 +311,9 @@ body::-webkit-scrollbar-track{
 .Tabeltitel2{
     position: absolute;
     top: 560px;
-    left: 370px;
+    left: 350px;
+    font-weight: bold;
+    font-size: x-large;
 }
 
 
@@ -315,14 +326,14 @@ body::-webkit-scrollbar-track{
 }
 .CAPTION {
  position: absolute;
- top: 70px;
- left: 260px;
+ top: 120px;
+ left: 240px;
  font-size: x-large;
 }
 .CAPTION2 {
     position: absolute;
-    top: 90px;
-    left: 310px;
+    top: 140px;
+    left: 300px;
     font-size: x-large;
    }
    
@@ -621,9 +632,7 @@ font-size: 12px;
             box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
         }
         #B{
-            background-color: cornflowerblue;
-            
-            
+        
             background-color:#ffffff;
             position: relative;
             max-width: 1000px;
@@ -686,7 +695,7 @@ font-size: 12px;
                  border-radius: 7px;
                  padding-left: 0px;
                  box-shadow : none; 
-                
+                text-indent: 10px;
              } 
              #timeS{
                  background-color: #F7F7F8;
@@ -726,6 +735,12 @@ font-size: 12px;
                  margin-left: 50px;
      
              }
+             .EditP3{
+                 position: relative;
+                 top: 70px;
+                 left: 90px;
+             
+             }
              .rowL{
              
                 width: 100%;
@@ -738,8 +753,9 @@ font-size: 12px;
             }
             .buttonP2 {
                 position: relative;
-                position: relative;
-                left: 150px;
+                left: 50px;
+                width: 300px;
+                margin-left: 150px;
             }
          
              
@@ -860,6 +876,10 @@ font-size: 12px;
              
                 left: 750px;
                 top: 50px;
+              }
+              .dots{
+                  position: absolute;
+                  left: 260px;
               }
            
 
@@ -1009,6 +1029,8 @@ font-size: 12px;
     
     button.loginTypeButton:focus{
         background-color: #9084C2;
+        opacity: 100%;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
         color: white;
     }
     
@@ -1060,8 +1082,14 @@ font-size: 12px;
         border: none;  
         border-radius: 17px;  
         padding-left: 7px;  
-        background-color: #9084C2;
+        background-color: #635DAD;
+        opacity: 62%;
         color: white;  
+    }
+
+    #log:hover{
+        opacity: 100%;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
     }
     
     a.loginLink{  
@@ -1172,17 +1200,19 @@ div#secondCol{
     background-color:#dddddd;
     padding-left: 15; 
     font-size: 12px;
+    margin-bottom: 0.075ex;
 }
 
 #Gend{
-    height: 34px;
-    width: 72%;
+    height: 30px;
+    width: 70.2%;
     outline: none;
     border-radius: 5px;
     border: 1px solid #dddddd ;
     background-color:#dddddd;
     padding-left: 15; 
     font-size: 12px;
+    margin-bottom: 1ex;
 }
 
 #regCirc {
@@ -1200,8 +1230,14 @@ div#secondCol{
     border: none;  
     border-radius: 17px;  
     padding-left: 7px;  
-    background-color: #9084C2;
+    background-color: #635DAD;
+    opacity: 62%;
     color: white;
+}
+
+#Reg:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
 }
 
    /*Edit Profile Page*/
@@ -1246,8 +1282,8 @@ div.rightServ{
 }
 
 #Serv{
-    height: 34px;
-    width: 72%;
+    height: 30px;
+    width: 70.2%;
     outline: none;
     border-radius: 5px;
     border: 1px solid #dddddd ;
@@ -1258,7 +1294,7 @@ div.rightServ{
 
 #ServDescr{
     height: 100px;
-    width: 70%;
+    width: 70.2%;
     outline: none;
     border-radius: 5px;
     border: 1px solid #dddddd ;
@@ -1268,8 +1304,8 @@ div.rightServ{
 }
 
 #ServPrice{
-    height: 34px;
-    width: 72%;
+    height: 30px;
+    width: 70.2%;
     outline: none;
     border-radius: 5px;
     border: 1px solid #dddddd ;
@@ -1284,8 +1320,14 @@ div.rightServ{
     border: none;  
     border-radius: 17px;  
     padding-left: 7px;  
-    background-color: #9084C2;
+    background-color: #635DAD;
+    opacity: 62%;
     color: white;
+}
+
+#AddServ:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
 }
                  
 
@@ -1297,7 +1339,7 @@ div.leftAddPet{
 
 div.rightAddPet{
     display: inline-block;
-    position: relative; top: 129px;
+    position: relative; top: 141px;
 }
 
 #Breed{
