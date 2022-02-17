@@ -125,8 +125,8 @@ button.SETApp2{
     background-color: #635DAD;
             opacity: 62%;
             position: absolute;
-            top: 630px;
-            left: 183px;
+            top: 660px;
+            left: 180px;
            
 }
 button.SETApp2:hover{
@@ -136,7 +136,7 @@ button.SETApp2:hover{
 
 .CAT{
     position: absolute;
-    top: 570px;
+    top: 600px;
     left: 250px;
     z-index: 3;
 }
@@ -273,8 +273,10 @@ body::-webkit-scrollbar-track{
 
 .Tabeltitel{
     position: absolute;
-    top: 128px;
+    top: 120px;
     left: 357px;
+    font-weight: bold;
+    font-size: x-large;
 }
 
 .TwoTabelBG{
@@ -309,7 +311,9 @@ body::-webkit-scrollbar-track{
 .Tabeltitel2{
     position: absolute;
     top: 560px;
-    left: 370px;
+    left: 350px;
+    font-weight: bold;
+    font-size: x-large;
 }
 
 
