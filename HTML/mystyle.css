@@ -401,6 +401,7 @@ form  .input-box{
 }
  .input-box .details{
     display: block;
+    font-size: 15px;
     font-weight: 500px;
     margin-bottom: 5px;
 }
@@ -444,7 +445,7 @@ font-size: 12px;
     .back2{
         position: absolute;
         left: 40%;;
-        bottom: -20%;
+        bottom: -15%;
         background-attachment: fixed;
         z-index: 0;
         width: 150px;
