@@ -347,12 +347,16 @@ header label{
         margin: 2rem 0;
         font-size: 2rem;
     }
+    .sub-menu li a{
+        font-size: 1.2rem;
+
+    }
 
     header input:checked ~ .navbar{
         transform-origin: top;
         transform: scaleY(1);
         opacity: 1;
-        transition: .1s linear;
+        transition: .12s linear;
 
     }
     header input:checked ~ label::before{
