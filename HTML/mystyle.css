@@ -1081,11 +1081,16 @@ div.regCol{
 
 .firstCol{
     display: inline-block;
+    position: relative;
+    width: 27.5%;
     margin-right: 24ex;
 }
 
 .secondCol{
     display: inline-block;
+    position: relative;
+    top: 6px;
+    width: 27.5%;
 }
 
 #Fname{
@@ -1323,5 +1328,9 @@ div.addPetCirc{
 }
 
 .editPetFinalPos{
-    
+    margin-top: -12%;
+}
+
+.editMyProfFinalPos{
+    margin-top: -15%;;
 }
