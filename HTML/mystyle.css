@@ -420,8 +420,8 @@ height: 30px;
 width: 70%;
 outline: none;
 border-radius: 5px;
-border: 1px solid #dddddd ;
-background-color:#dddddd;
+border: 1px solid #F0EFEF ;
+background-color:#F0EFEF;
 padding-left: 15; 
 font-size: 12px;
 }
@@ -430,8 +430,8 @@ font-size: 12px;
     width: 70%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #dddddd ;
-    background-color:#dddddd;
+    border: 1px solid #F0EFEF;
+    background-color:#F0EFEF     ;
     padding-left: 15; 
     font-size: 12px;
     }
@@ -440,8 +440,8 @@ font-size: 12px;
     width: 70%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #dddddd ;
-    background-color:#dddddd;
+    border: 1px solid #F0EFEF ;
+    background-color:#F0EFEF;
     padding-left: 15; 
     font-size: 12px;
     }
@@ -1291,7 +1291,7 @@ div.addPetCirc{
 
 .rightAddPet{
     display: inline-block;
-    position: relative; top: 124px;
+    position: relative; top: 123px;
 }
 
 #Breed{
@@ -1320,4 +1320,7 @@ div.addPetCirc{
 .addPetFinalPos{
     margin-top: -21%;
 }
-  
+
+.editPetFinalPos{
+    
+}
