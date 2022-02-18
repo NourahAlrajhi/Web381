@@ -407,6 +407,7 @@ form  .input-box{
 }
  .input-box .details{
     display: block;
+    font-size: 15px;
     font-weight: 500px;
     margin-bottom: 5px;
 }
@@ -450,7 +451,7 @@ font-size: 12px;
     .back2{
         position: absolute;
         left: 40%;;
-        bottom: -20%;
+        bottom: -15%;
         background-attachment: fixed;
         z-index: 0;
         width: 150px;
@@ -602,31 +603,8 @@ font-size: 12px;
         border: 1px solid #ebebee;
         background-color: #F7F7F8;
         padding-left: 20px;
-        font-size: 12px;
-    }
-    .pinkBG{
-
-    opacity: 60%;
-    z-index: -1;
-    position: absolute;
-    top: 1%; 
-    
-
-}
-.purbleBG{
-    opacity: 10%;
-    z-index: -2;
-    position: absolute;
-    top: 1%;
-    left: 50%;
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(2);
-}
-
-.purbleBG img{
-    filter: invert(63%) sepia(84%) saturate(412%) hue-rotate(334deg) brightness(107%) contrast(102%);
- 
-}
+        font-size: 12px;}
+  
 .Resetbutton{     
     position: absolute;
     left: 90px;
@@ -649,6 +627,10 @@ font-size: 12px;
      }
 
      /* Add Appointment-Appointment Details*/
+.AppointmentSec{
+    background-image:url("BGpink.svg");
+    
+}
 .PageBase{
     padding-left: 200px;
     margin-top: 50px;
@@ -667,17 +649,19 @@ font-size: 12px;
    width: 200px;
    margin-top: 50px;
    position: relative;
+   font-size: 1.5em;
 }
 
   .DateSelect{
     float: left;
    margin-right:300px; 
+   font-size: 1.5em;
 }
            
  .TimeSelect{             
  float: left;
  width: 200px;
-
+ font-size: 1.5em;
 
  }
 
@@ -686,7 +670,7 @@ font-size: 12px;
     height: 50px;
     background: #F7F7F8;
     border: #f7f7f7;
-    border-radius: 7px;
+    border-radius: 15px;
     padding-left: 0px;
     box-shadow : none; 
    text-indent: 15px;
@@ -697,7 +681,7 @@ font-size: 12px;
     width: 300px;
     height: 50px;
     background: #F7F7F8;
-    border-radius: 10%;
+    border-radius: 15px;
     text-indent: 15px;
     color: #403e63;
 }
@@ -705,10 +689,11 @@ font-size: 12px;
     width: 300px;
     height: 50px;
     background: #F7F7F8;
-   border-radius: 10%;
+   border-radius: 15px;
    border: none;
    text-indent: 15px;
    color: #403e63; 
+
 }
   
 #circle {
@@ -760,6 +745,7 @@ font-size: 12px;
     color:#635DAD;
     opacity: 62%;
 }
+
        
 /*About Us Pages*/
 
