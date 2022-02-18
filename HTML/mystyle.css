@@ -578,15 +578,18 @@ font-size: 12px;
     #Heading{
     
     padding-left: 24px;
-    font-size: 1.5em;
+    font-size: 2.5em;
+    font-weight: 300;
     
     
     }
     .ResetPasswordfield{
-        margin-top: 2%;
+        margin-top: 7%;
         width: 500px;
         position: absolute;
         top: 100px;
+        font-size: 1.7em;
+        font-weight: 150;
 
     }
     .ResetPasswordfield input{
@@ -626,7 +629,7 @@ font-size: 12px;
     position: absolute;
     left: 90px;
     margin-top: 50px;
-    top: 150px;
+    top: 200px;
 }
  .button{
         border: none;
@@ -650,7 +653,6 @@ font-size: 12px;
 .HeadingsMaha{
     font-size: 3em;
     font-weight: 200;
-    padding-bottom: 100px;
 }
 .PageRows{
     width: 100%;
@@ -662,12 +664,11 @@ font-size: 12px;
    width: 200px;
    margin-top: 50px;
    position: relative;
+}
 
-}            
   .DateSelect{
     float: left;
-   margin-right:300px;
-   
+   margin-right:300px; 
 }
            
  .TimeSelect{             
@@ -685,16 +686,17 @@ font-size: 12px;
     border-radius: 7px;
     padding-left: 0px;
     box-shadow : none; 
-   text-indent: 10px;
-} 
+   text-indent: 15px;
+   color: #403e63;
+}
+
 #timeS{
     width: 300px;
     height: 50px;
     background: #F7F7F8;
     border-radius: 10%;
-    
-
-
+    text-indent: 15px;
+    color: #403e63;
 }
 #dateS{
     width: 300px;
@@ -702,8 +704,8 @@ font-size: 12px;
     background: #F7F7F8;
    border-radius: 10%;
    border: none;
-  
-   
+   text-indent: 15px;
+   color: #403e63; 
 }
   
 #circle {
@@ -760,206 +762,177 @@ font-size: 12px;
     opacity: 62%;
 }
        
+/*About Us Pages*/
+
+.AboutMRow{
+    padding-left: 100px;
+    width: 100%;
+    height: 170px;
+    padding-right: 100px;
+    
+}
+.Boxp p{
+    font-size: 1.5em;
+    font-weight: 150;
+    word-wrap: break-word;
+}
+.Aboutdescription{
+    font-size: 0.9em;
+    font-weight: 150;
 
 
-            .rowP4{
-                padding-left: 200px;
-                width: 100%;
-                height: 170px;
-                position: relative;
-                top: 100px;
-                
-            }
-               
-            .Boxp p{
-                font-size: 0.8em;
-                font-weight: 150;
-                width: 600px;
-                padding-right: 50px;
-                margin-right: 50px;
+}
+ .AboutMRow2{  
+    width: 100%;
+    padding-left: 100px;
+ }
+ .AboutMRow2 h4{
+    font-size: 19px;  
+ }
 
-
-
-            }
-            .description{
-                font-size: 0.9em;
-                font-weight: 150;
-
-
-            }
-             .row2P4{  
-                width: 100%;
-                padding-left: 300px;
-                position: relative;
-                top: 70px;
-             }
-        
-              
-              /* On mouse-over, add a deeper shadow */
-              .cards .card:hover {
-                box-shadow: 0 20px 20px 0 rgba(152, 131, 245, 0.2);
-              }
   
-
-              /* Add some padding inside the card container */
-              .container {
-                padding: 2px 16px;
-                padding-top: 15px;
-                
-              }
-              .cards{
-                  width: 200px;
-                  height: 300px;
-                  float: left;
-                  margin-right: 50px;
-                  margin-top: 15px;
-
-              }
-              .cards .card {
-                /* Add shadows to create the "card" effect */
-                box-shadow: -4px 30px 30px -20px rgba(152, 131, 245, 0.2);
-                transition: 0.3s;
-                border-radius: 30px; /* 5px rounded corners */
-                height: 300px;
-                border: none;
-                
-              }
-              .cardH4{
-                  font-size: 19px;
+  /* On mouse-over, add a deeper shadow */
+  .cards .card:hover {
+    box-shadow: 0 20px 20px 0 rgba(152, 131, 245, 0.2);
+  }
 
 
-              }
-              .EditM{
-                  position: absolute;
-                  top: 260px;
-                  left: 150px;
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+    padding-top: 15px;
+    
+  }
+  .cards{
+      width: 200px;
+      height: 300px;
+      float: left;
+      margin-right: 50px;
+      margin-top: 15px;
 
+  }
+  .cards .card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: -4px 30px 30px -20px rgba(152, 131, 245, 0.2);
+    transition: 0.3s;
+    border-radius: 30px; /* 5px rounded corners */
+    height: 300px;
+    border: none;
+    
+  }
 
-
-              }
-              .EditH{
-                position: absolute;
-                float: left;
-             
-                left: 750px;
-                top: 50px;
-              }
-              .dots{
-                  position: absolute;
-                  left: 260px;
-              }
+  .EditM{
+      position: absolute;
+      top: 260px;
+      left: 150px;
+  }
+  .EditH{
+    float: left;
+    left: 850px;
+  }
+  .dots{
+      position: absolute;
+      left: 260px;
+  }
            
 
             /* P5 Maha*/
        
-            .rowP5{
-                width: 100%;
-                position: relative;
-                top: 100px;
-                padding-left: 300px;
+.ReviewRow{
+width: 100%;
+position: relative;
+left: 130px;
+}
+#head5{
+    font-size: 25px;
+    padding-bottom: 20px;
+}
 
+    .cardReveiw{
+        position: relative;
+        width: 800px;
+        height: 500px;
+    }
+    .cardReveiw .card{
+        box-shadow: 0 15px 30px 0 rgb(152 131 245 / 15%);
+        transition: 0.3s;
+        border-radius: 30px; /* 5px rounded corners */
+        height: 430px;
+        border: none;
+    }
+    .rate {
+        float: left;
+        height: 46px;
+        padding: 0 10px;
 
+    }
+    
+    .rate:not(:checked) > input {
+        position:absolute;
+        top:-9999px;
+    }
+    .rate:not(:checked) > label {
+        float:right;
+        width:1em;
+        overflow:hidden;
+        white-space:nowrap;
+        cursor:pointer;
+        font-size:30px;
+        color:#ccc;
+        margin-right:10px;
+    }
+    .rate:not(:checked) > label:before {
+        content: '★ ';
+    }
+    .rate > input:checked ~ label {
+        color: #ffc700;    
+    }
+    .rate:not(:checked) > label:hover,
+    .rate:not(:checked) > label:hover ~ label {
+        color: #deb217;  
+    }
+    .rate > input:checked + label:hover,
+    .rate > input:checked + label:hover ~ label,
+    .rate > input:checked ~ label:hover,
+    .rate > input:checked ~ label:hover ~ label,
+    .rate > label:hover ~ input:checked ~ label {
+        color: #c59b08;
+    }
+    
+    .Q{
+        margin-top: 70px;
+    }
+    .commReview{
+        position:absolute;
+        top: 200px;
+    }
+    #comrev{
+            height: 100px;
+        max-height: 141px;
+        width: 300px;
+        background-color: #F7F7F8;
+        border-radius: 10px;
 
-            }
-            #head5{
-                font-size: 25px;
+        border:none ;
+    }
+    ::placeholder{
+        color:#a3a2a2 ;
+        font-size: small;
+        text-indent: 10px;
+        padding-top: 10px;
+    }
+    .picP5{
+        position:absolute;
+        left: 400px;
+        top: 70px;
 
-                padding-bottom: 20px;
-            }
-            .cardReveiw{
-                position: relative;
-                width: 800px;
-                height: 500px;
-
-   
-            
-
-            }
-            .cardReveiw .card{
-                box-shadow: 0 15px 30px 0 rgb(152 131 245 / 15%);
-                transition: 0.3s;
-                border-radius: 30px; /* 5px rounded corners */
-                height: 430px;
-                border: none;
-
-            }
-            .rate {
-                float: left;
-                height: 46px;
-                padding: 0 10px;
-
-            }
-            
-            .rate:not(:checked) > input {
-                position:absolute;
-                top:-9999px;
-            }
-            .rate:not(:checked) > label {
-                float:right;
-                width:1em;
-                overflow:hidden;
-                white-space:nowrap;
-                cursor:pointer;
-                font-size:30px;
-                color:#ccc;
-                margin-right:10px;
-            }
-            .rate:not(:checked) > label:before {
-                content: '★ ';
-            }
-            .rate > input:checked ~ label {
-                color: #ffc700;    
-            }
-            .rate:not(:checked) > label:hover,
-            .rate:not(:checked) > label:hover ~ label {
-                color: #deb217;  
-            }
-            .rate > input:checked + label:hover,
-            .rate > input:checked + label:hover ~ label,
-            .rate > input:checked ~ label:hover,
-            .rate > input:checked ~ label:hover ~ label,
-            .rate > label:hover ~ input:checked ~ label {
-                color: #c59b08;
-            }
-           
-          
-            .Q{
-                margin-top: 70px;
-
-
-            }
-            .commReview{
-                position:absolute;
-                top: 200px;
-                
-            }
-            #comrev{
-                 height: 100px;
-                max-height: 141px;
-                width: 300px;
-                background-color: #F7F7F8;
-                border-radius: 10px;
-
-                border:none ;
-            }
-            ::placeholder{
-                color:#a3a2a2 ;
-                font-size: small;
-                text-indent: 10px;
-                padding-top: 10px;
-            }
-            .picP5{
-                position:absolute;
-                left: 400px;
-                top: 70px;
-
-            }
-            .buttonP5{
-                position: absolute;
-                top: 350px;
-                left: 270px;
-            }
-            
+    }
+    .buttonP5{
+        position: absolute;
+        top: 350px;
+        left: 270px;
+    }
+    
             
             
              
