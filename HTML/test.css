@@ -49,6 +49,13 @@ section{
     background-clip: text;
     font-size: 3.5rem;
 }
+.AboutUs-P{
+  text-align: center;
+  font-size: 2em;
+  font-weight: 200;
+  margin-bottom: 150px;
+  
+}
 
 .Services{
     background: url(../images/srvices3.svg) no-repeat;
@@ -110,6 +117,9 @@ section{
         font-size: 1.3rem;
         color: #666;
         padding: 1rem  0;}*/
+        .Aboutuscard{
+          height: 250px;
+        }
     
     
         .cards {
@@ -193,7 +203,7 @@ section{
           }
           
           .card__title {
-            font-size: 1em;
+            font-size: 2em;
             margin: 0 0 .3em;
             color: #333;
           }
@@ -218,11 +228,6 @@ section{
               color: var(--orange);
               text-shadow: 20px var(--orange);
               transition: 0.2s ease-out;
-
-
-
-
-
           }
           
           .card__description {
