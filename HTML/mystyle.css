@@ -969,7 +969,7 @@ left: 130px;
         border: none;
         padding: 7px 20px;
         border-radius: 20px;
-        background-color: #dddddd;
+        background-color: ##F0EFEF;
         color: black;
         box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
     }
@@ -997,8 +997,8 @@ left: 130px;
         width: 20%;
         outline: none;
         border-radius: 5px;
-        border: 1px solid #dddddd ;
-        background-color:#dddddd;
+        border: 1px solid ##F0EFEF; 
+        background-color:##F0EFEF;
         padding-left: 15; 
         font-size: 12px;
     }
@@ -1010,8 +1010,8 @@ left: 130px;
         width: 20%;
         outline: none;
         border-radius: 5px;
-        border: 1px solid #dddddd ;
-        background-color:#dddddd;
+        border: 1px solid #F0EFEF;
+        background-color:#F0EFEF;
         padding-left: 15; 
         font-size: 12px;
     }
@@ -1046,7 +1046,7 @@ left: 130px;
 
 div.signUpCirc{
     position: relative; left: 39%; top: 100px;
-    background: #dddddd;
+    background: #F0EFEF;
     border-radius: 50%;
     width: 130px;
     height: 130px;
@@ -1098,8 +1098,8 @@ div.regCol{
     width: 70%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #dddddd ;
-    background-color:#dddddd;
+    border: 1px solid #F0EFEF ;
+    background-color:#F0EFEF;
     padding-left: 15; 
     font-size: 12px;
 }
@@ -1109,8 +1109,8 @@ div.regCol{
     width: 70%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #dddddd ;
-    background-color:#dddddd;
+    border: 1px solid #F0EFEF ;
+    background-color:#F0EFEF;
     padding-left: 15; 
     font-size: 12px;
 }
@@ -1120,8 +1120,8 @@ div.regCol{
     width: 70%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #dddddd ;
-    background-color:#dddddd;
+    border: 1px solid #F0EFEF ;
+    background-color:#F0EFEF;
     padding-left: 15; 
     font-size: 12px;
 }
@@ -1131,8 +1131,8 @@ div.regCol{
     width: 70%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #dddddd ;
-    background-color:#dddddd;
+    border: 1px solid #F0EFEF ;
+    background-color:#F0EFEF;
     padding-left: 15; 
     font-size: 12px;
 }
@@ -1142,8 +1142,8 @@ div.regCol{
     width: 70%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #dddddd ;
-    background-color:#dddddd;
+    border: 1px solid #F0EFEF ;
+    background-color:#F0EFEF;
     padding-left: 15; 
     font-size: 12px;
     margin-bottom: 0.075ex;
@@ -1154,8 +1154,8 @@ div.regCol{
     width: 70.2%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #dddddd ;
-    background-color:#dddddd;
+    border: 1px solid #F0EFEF ;
+    background-color:#F0EFEF;
     padding-left: 15; 
     font-size: 12px;
     margin-bottom: 1ex;
@@ -1232,8 +1232,8 @@ div.rightServ{
     width: 70.2%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #dddddd ;
-    background-color:#dddddd;
+    border: 1px solid #F0EFEF ;
+    background-color:#F0EFEF;
     padding-left: 15; 
     font-size: 12px;
 }
@@ -1243,8 +1243,8 @@ div.rightServ{
     width: 70.2%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #dddddd ;
-    background-color:#dddddd;
+    border: 1px solid #F0EFEF ;
+    background-color:#F0EFEF;
     padding-left: 15; 
     font-size: 12px;
 }
@@ -1254,8 +1254,8 @@ div.rightServ{
     width: 70.2%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #dddddd ;
-    background-color:#dddddd;
+    border: 1px solid #F0EFEF ;
+    background-color:#F0EFEF;
     padding-left: 15; 
     font-size: 12px;
 }
@@ -1281,7 +1281,7 @@ div.rightServ{
 
 div.addPetCirc{
     position: relative; left: 39%; top: 210px;
-    background: #dddddd;
+    background: #F0EFEF;
     border-radius: 50%;
     width: 130px;
     height: 130px;
@@ -1312,8 +1312,8 @@ div.addPetCirc{
     width: 70%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #dddddd ;
-    background-color:#dddddd;
+    border: 1px solid #F0EFEF ;
+    background-color:#F0EFEF;
     padding-left: 15; 
     font-size: 12px;
 }
