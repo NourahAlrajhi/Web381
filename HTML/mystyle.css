@@ -547,35 +547,20 @@ font-size: 12px;
   
 
     /* حق مها النعيم */
-    #MBODY{
-       
-        display: flex;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        background-color: #ffffff;
-    }
+  /* Rest Password*/
     #Base{
-        background-color: #ffffff;
+        
     position: relative;
     max-width: 1000px;
-    margin-left: 120px;
-    padding-left: 20px;
-    top: 200px;
-    left: 300px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    top: 100px;
+    left: 350px;
         
     }
-    .pic{
-        background-color: #ffffff;
-        align-content: center;
+    .Dogpic{
+  
+        position: absolute;
         margin-left: 20%;
         margin-right: 30%;
-
-
     }
     
     #Heading{
@@ -585,205 +570,186 @@ font-size: 12px;
     
     
     }
-    .fieldM input{
+    .ResetPasswordfield{
+        margin-top: 2%;
+        width: 500px;
+        position: absolute;
+        top: 100px;
+
+    }
+    .ResetPasswordfield input{
         height: 35px;
         width: 500px;
         outline: none;
         border-radius: 5px;
-        border: 1px solid #F7F7F8;
+        border: 1px solid #ebebee;
         background-color: #F7F7F8;
-        padding-left: 15;
+        padding-left: 20px;
         font-size: 12px;
     }
-  
+    .pinkBG{
+
+    opacity: 60%;
+    z-index: -1;
+    position: absolute;
+    top: 1%; 
     
-    .button1{
-    
-        margin-left: 350px;
-        position: absolute;
-        left: 180px;
-        top: 450px;
-    
-    
-    
-    }
-     .button{
-            border: none;
-            padding: 7px 80px;
-            border-radius: 20px;
-            background-color: #635DAD;
-            opacity: 62%;
-            color: white;
-            
-        }
-        .button:hover { 
-            opacity: 100%;
-            box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
-        }
-        #B{
+
+}
+.purbleBG{
+    opacity: 10%;
+    z-index: -2;
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(2);
+}
+
+.purbleBG img{
+    filter: invert(63%) sepia(84%) saturate(412%) hue-rotate(334deg) brightness(107%) contrast(102%);
+ 
+}
+.Resetbutton{     
+    position: absolute;
+    left: 90px;
+    margin-top: 50px;
+    top: 150px;
+}
+ .button{
+        border: none;
+        padding: 7px 80px;
+        border-radius: 20px;
+        background-color: #635DAD;
+        opacity: 62%;
+        color: white;
         
-            background-color:#ffffff;
-            position: relative;
-            max-width: 1000px;
-            margin-left: 20px;
-            margin-right: 20px;
-            margin-top: 150px;
-            padding: 100px;
-            padding-top: 30px;
-            
-              } 
-              .MBODY2{
-       
-                display:fixed;
-                 height: 100vh;
-                 width: 100%;
-                 padding: 10px;
-                 background-color: #ffffff;
-             }
-            
-              .rowM{
-             
-              width: 100%;
-              height: 170px;
-              position: relative;
-              top:150px;
-              padding-left:350px;
-     
-     
-     
-              } 
-             
-              .field1st{
-                 
-                 float: left;
-                width: 200px;
-                 margin-top: 50px
-        
-              } 
-              
-              .fieldm2{
-                float: left;
-                width: 200px;
-       margin-right:300px;
-                
-              }
-              
-             .secondM{
-               
-                float: left;
-                width: 200px;
-                
+}
+.button:hover { 
+        opacity: 100%;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+     }
 
-             }
+     /* Add Appointment-Appointment Details*/
+.PageBase{
+    padding-left: 200px;
+    margin-top: 50px;
+}
+.HeadingsMaha{
+    font-size: 3em;
+    font-weight: 200;
+    padding-bottom: 100px;
+}
+.PageRows{
+    width: 100%;
+    height: 170px;
+    
+        } 
+ .ServiceSelect{               
+    float: left;
+   width: 200px;
+   margin-top: 50px;
+   position: relative;
 
-              .fieldselect{
-                 width:250px;
-                 height: 30px;
-                 background: #F7F7F8;
-                 border: #F7F7F8;
-                 border-radius: 7px;
-                 padding-left: 0px;
-                 box-shadow : none; 
-                text-indent: 10px;
-             } 
-             #timeS{
-                 background-color: #F7F7F8;
-                 border-radius: 10%;
-                 border: none;
-                 width:250px;
-                 height: 30px;
-
-
-             }
-             #dateS{
-                background-color: #F7F7F8;
-                border-radius: 10%;
-                border: none;
-                width:250px;
-                height: 30px;
-                
-             }
-             
-             
+}            
+  .DateSelect{
+    float: left;
+   margin-right:300px;
+   
+}
            
-          
-            
+ .TimeSelect{             
+ float: left;
+ width: 200px;
+
+
+ }
+
+ .fieldselect{
+    width: 300px;
+    height: 50px;
+    background: #F7F7F8;
+    border: #f7f7f7;
+    border-radius: 7px;
+    padding-left: 0px;
+    box-shadow : none; 
+   text-indent: 10px;
+} 
+#timeS{
+    width: 300px;
+    height: 50px;
+    background: #F7F7F8;
+    border-radius: 10%;
+    
+
+
+}
+#dateS{
+    width: 300px;
+    height: 50px;
+    background: #F7F7F8;
+   border-radius: 10%;
+   border: none;
+  
+   
+}
+  
+#circle {
+    background: #F7F7F8;
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    
+    margin-left: 50px;
+}
+.circle{
+   float: left;
+    margin-left: 70px;
+
+}
+.EditP3{
+    position: relative;
+    top: 70px;
+    left: 90px;
+
+}
+.ButtonRow{          
+    width: 100%;
+    height: 100px;
+    position: relative;
+    padding-top: 100px;
+}
+.AddButton{
+    position: relative;
+    left: 50px;
+    width: 300px;
+    margin-left: 150px;
+}          
+.BG{         
+    position: absolute;
+    left: 20%;
+    top: 0;
+    z-index: -1;
+
+ }
+ .BG2{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    z-index: -1;   
+ }
+ 
+
+#camera{
+    position: relative;
+    top: 50px;
+    left: 50px;
+    color:#635DAD;
+    opacity: 62%;
+}
        
-             
-     
-             #circle {
-                 background: #F7F7F8;
-                 border-radius: 50%;
-                 width: 130px;
-                 height: 130px;
-                 
-                 margin-left: 50px;
-             }
-             .circle{
-                float: left;
-                 margin-left: 50px;
-     
-             }
-             .EditP3{
-                 position: relative;
-                 top: 70px;
-                 left: 90px;
-             
-             }
-             .rowL{
-             
-                width: 100%;
-                height: 100px;
-                position: relative;
-                top: 130px;
-                padding-left: 370px;
-                padding-top: 50px;
-                
-            }
-            .buttonP2 {
-                position: relative;
-                left: 50px;
-                width: 300px;
-                margin-left: 150px;
-            }
-         
-             
-            
-             .BG{
-                 position: fixed;
-                 top: 160px;
-                 right: 25%;
-                 z-index: -1;
-                 width: 100px;
-     
-     
-             }
-             #calendar{
-                position: relative;
-                bottom: 27px;
-                left: 230px;
-                float: left;
-                color:#635DAD;
-                opacity: 62%;
-            }
-            #camera{
-                position: relative;
-                top: 50px;
-                left: 50px;
-                color:#635DAD;
-                opacity: 62%;
-            
 
 
-            }
-            
-            .MBODY3{
-                display:fixed;
-                height: 100vh;
-                width: 100%;
-                padding: 10px;
-                background-color: #ffffff;
-            }
             .rowP4{
                 padding-left: 200px;
                 width: 100%;
@@ -873,12 +839,7 @@ font-size: 12px;
            
 
             /* P5 Maha*/
-            .MBODY5{
-                height: 100vh;
-                padding: 10px;
-                background-color: #ffffff;
-           
-            }
+       
             .rowP5{
                 width: 100%;
                 position: relative;
