@@ -364,6 +364,12 @@ th.HEADER{
 }
 
 
+.PetImage:hover{
+ 
+ border-radius: -30%;
+}
+
+
 
 
 /* حق نورة الخريف*/
@@ -375,8 +381,7 @@ th.HEADER{
     padding: 10px;
 }
 .part1{
-    margin-left: 30% ;
-    margin-top:2% ;
+    margin-left: 23% ;
     padding: 20px 35px;
     max-width: 700px;
     width: 100%;
@@ -402,6 +407,7 @@ form  .input-box{
 }
  .input-box .details{
     display: block;
+    font-size: 15px;
     font-weight: 500px;
     margin-bottom: 5px;
 }
@@ -434,21 +440,18 @@ font-size: 12px;
     background-color:#dddddd;
     padding-left: 15; 
     font-size: 12px;
-    overflow: scroll;
     }
     .back1{
         position: absolute;
         background-position: left;
-        left:0;
-        bottom: 0;
+        left:0%;
         background-attachment: fixed;
         z-index: -1;
     }
     .back2{
         position: absolute;
-        background-position: left;
-        left: 540px;;
-        bottom: 32px  ;
+        left: 40%;;
+        bottom: -15%;
         background-attachment: fixed;
         z-index: 0;
         width: 150px;
@@ -600,36 +603,14 @@ font-size: 12px;
         border: 1px solid #ebebee;
         background-color: #F7F7F8;
         padding-left: 20px;
-        font-size: 12px;
-    }
-    .pinkBG{
-
-    opacity: 60%;
-    z-index: -1;
-    position: absolute;
-    top: 1%; 
-    
-
-}
-.purbleBG{
-    opacity: 10%;
-    z-index: -2;
-    position: absolute;
-    top: 1%;
-    left: 50%;
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(2);
-}
-
-.purbleBG img{
-    filter: invert(63%) sepia(84%) saturate(412%) hue-rotate(334deg) brightness(107%) contrast(102%);
- 
-}
+        font-size: 12px;}
+  
 .Resetbutton{     
     position: absolute;
     left: 90px;
     margin-top: 50px;
     top: 200px;
+    font-size: 1.8em;
 }
  .button{
         border: none;
@@ -646,6 +627,10 @@ font-size: 12px;
      }
 
      /* Add Appointment-Appointment Details*/
+.AppointmentSec{
+    background-image:url("BGpink.svg");
+    
+}
 .PageBase{
     padding-left: 200px;
     margin-top: 50px;
@@ -664,17 +649,19 @@ font-size: 12px;
    width: 200px;
    margin-top: 50px;
    position: relative;
+   font-size: 1.5em;
 }
 
   .DateSelect{
     float: left;
    margin-right:300px; 
+   font-size: 1.5em;
 }
            
  .TimeSelect{             
  float: left;
  width: 200px;
-
+ font-size: 1.5em;
 
  }
 
@@ -683,7 +670,7 @@ font-size: 12px;
     height: 50px;
     background: #F7F7F8;
     border: #f7f7f7;
-    border-radius: 7px;
+    border-radius: 15px;
     padding-left: 0px;
     box-shadow : none; 
    text-indent: 15px;
@@ -694,7 +681,7 @@ font-size: 12px;
     width: 300px;
     height: 50px;
     background: #F7F7F8;
-    border-radius: 10%;
+    border-radius: 15px;
     text-indent: 15px;
     color: #403e63;
 }
@@ -702,10 +689,11 @@ font-size: 12px;
     width: 300px;
     height: 50px;
     background: #F7F7F8;
-   border-radius: 10%;
+   border-radius: 15px;
    border: none;
    text-indent: 15px;
    color: #403e63; 
+
 }
   
 #circle {
@@ -731,14 +719,10 @@ font-size: 12px;
     width: 100%;
     height: 100px;
     position: relative;
-    padding-top: 100px;
+    padding-left: 250px;
+    font-size: 1.8em;
 }
-.AddButton{
-    position: relative;
-    left: 50px;
-    width: 300px;
-    margin-left: 150px;
-}          
+         
 .BG{         
     position: absolute;
     left: 20%;
@@ -761,6 +745,7 @@ font-size: 12px;
     color:#635DAD;
     opacity: 62%;
 }
+
        
 /*About Us Pages*/
 
@@ -818,6 +803,7 @@ font-size: 12px;
     border-radius: 30px; /* 5px rounded corners */
     height: 300px;
     border: none;
+  
     
   }
 
@@ -852,6 +838,11 @@ left: 130px;
         position: relative;
         width: 800px;
         height: 500px;
+        
+    }
+    .cardReveiw p{
+        font-size: 1.7em;
+        font-weight: 300;
     }
     .cardReveiw .card{
         box-shadow: 0 15px 30px 0 rgb(152 131 245 / 15%);
@@ -859,6 +850,7 @@ left: 130px;
         border-radius: 30px; /* 5px rounded corners */
         height: 430px;
         border: none;
+        background-color: #ffffff;
     }
     .rate {
         float: left;
@@ -927,10 +919,11 @@ left: 130px;
         top: 70px;
 
     }
-    .buttonP5{
+    .Reviewbutton{
         position: absolute;
         top: 350px;
         left: 270px;
+        font-size: 1.8em;
     }
     
             
@@ -1047,17 +1040,18 @@ left: 130px;
     /*Sign Up Page*/
 
 div.signUpCirc{
-    position: relative; left: 520px; top: 100px;
+    position: relative; left: 39%; top: 100px;
     background: #dddddd;
     border-radius: 50%;
     width: 130px;
     height: 130px;
     margin-left: 50px;
+    margin-bottom: 2%;
 }
 
 div.signUpCam{
     position: relative;
-    top: 50px;
+    top: 45%;
     color:#635DAD;
     opacity: 62%;
 }
@@ -1276,12 +1270,13 @@ div.rightServ{
    /*Add Pet Page*/
 
 div.addPetCirc{
-    position: relative; left: 520px; top: 210px;
+    position: relative; left: 39%; top: 210px;
     background: #dddddd;
     border-radius: 50%;
     width: 130px;
     height: 130px;
     margin-left: 50px;
+    margin-bottom: 2%;
 }
 
 div.leftAddPet{
@@ -1290,14 +1285,15 @@ div.leftAddPet{
 
 div.rightAddPet{
     display: inline-block;
-    position: relative; top: 147px;
+    position: relative; top: 124.5px;
+    margin-left: 1%;
 }
 
 #Breed{
     margin-top: 50ex;;
 }
 #VaccList{
-    margin-left: 5ex;
+    margin-left: 15%;
 }
 
 #MedHist{
@@ -1311,5 +1307,12 @@ div.rightAddPet{
     font-size: 12px;
 }
        
+/*final positions*/
+.addServiceFinalPos{
+    margin-top: -15%;
+}
 
+.addPetFinalPos{
+    margin-top: -21%;
+}
   
