@@ -1039,7 +1039,7 @@ left: 130px;
     /*Sign Up Page*/
 
 div.signUpCirc{
-    position: relative; left: 520vh; top: 100vh;
+    position: relative; left: 520vw; top: 100vw;
     background: #dddddd;
     border-radius: 50%;
     width: 130px;
