@@ -950,7 +950,20 @@ left: 130px;
         align-content: center;
     }
     
-    button.loginTypeButton{
+    button.loginTypeButtonChosen{
+        align-content: center;
+        display: inline;
+        margin-right: 5px;
+        border: none;
+        padding: 7px 20px;
+        border-radius: 20px;
+        background-color: #9084C2;
+        opacity: 100%;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+        color: white;
+    }
+    
+    button.loginTypeButtonNotChosen{
         align-content: center;
         display: inline;
         margin-right: 5px;
@@ -959,11 +972,6 @@ left: 130px;
         border-radius: 20px;
         background-color: #dddddd;
         color: black;
-    }
-    
-    button.loginTypeButton:focus{
-        background-color: #9084C2;
-        opacity: 100%;
         box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
         color: white;
     }
