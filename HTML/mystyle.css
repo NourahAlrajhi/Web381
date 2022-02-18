@@ -630,6 +630,7 @@ font-size: 12px;
     left: 90px;
     margin-top: 50px;
     top: 200px;
+    font-size: 1.8em;
 }
  .button{
         border: none;
@@ -731,14 +732,10 @@ font-size: 12px;
     width: 100%;
     height: 100px;
     position: relative;
-    padding-top: 100px;
+    padding-left: 250px;
+    font-size: 1.8em;
 }
-.AddButton{
-    position: relative;
-    left: 50px;
-    width: 300px;
-    margin-left: 150px;
-}          
+         
 .BG{         
     position: absolute;
     left: 20%;
@@ -853,6 +850,11 @@ left: 130px;
         position: relative;
         width: 800px;
         height: 500px;
+        
+    }
+    .cardReveiw p{
+        font-size: 1.7em;
+        font-weight: 300;
     }
     .cardReveiw .card{
         box-shadow: 0 15px 30px 0 rgb(152 131 245 / 15%);
@@ -929,10 +931,11 @@ left: 130px;
         top: 70px;
 
     }
-    .buttonP5{
+    .Reviewbutton{
         position: absolute;
         top: 350px;
         left: 270px;
+        font-size: 1.8em;
     }
     
             
