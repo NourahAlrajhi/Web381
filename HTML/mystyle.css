@@ -1076,12 +1076,12 @@ div.regCol{
     
 }
 
-div#firstCol{
+.firstCol{
     display: inline-block;
     margin-right: 24ex;
 }
 
-div#secondCol{
+.secondCol{
     display: inline-block;
 }
 
@@ -1281,11 +1281,11 @@ div.addPetCirc{
     margin-bottom: 2%;
 }
 
-div.leftAddPet{
+.leftAddPet{
     display: inline-block;
 }
 
-div.rightAddPet{
+.rightAddPet{
     display: inline-block;
     position: relative; top: 124.5px;
     margin-left: 1%;
