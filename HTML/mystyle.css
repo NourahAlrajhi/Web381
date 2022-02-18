@@ -726,21 +726,17 @@ font-size: 12px;
     padding-left: 250px;
     font-size: 1.8em;
 }
-         
-.BG{         
+.parrotimg{
+    position: relative;
+    top: 30px;
+    z-index: 1;
+}
+.GirlDogimg{
     position: absolute;
-    left: 20%;
-    top: 0;
-    z-index: -1;
-
- }
- .BG2{
-    position: absolute;
-    left: 50%;
-    top: 0;
-    z-index: -1;   
- }
- 
+    top: 69%;
+    right: 50px;
+    z-index: 1;
+}
 
 #camera{
     position: relative;
@@ -833,6 +829,9 @@ width: 100%;
 position: relative;
 left: 130px;
 }
+.ReviewMsec{
+   background-image: url(BackgroundB.svg); 
+}
 #head5{
     font-size: 25px;
     padding-bottom: 20px;
@@ -904,12 +903,14 @@ left: 130px;
     }
     #comrev{
             height: 100px;
-        max-height: 141px;
+        max-height: 150px;
         width: 300px;
         background-color: #F7F7F8;
         border-radius: 10px;
-
         border:none ;
+        max-width: 400px;
+    padding: 10px;
+
     }
     ::placeholder{
         color:#a3a2a2 ;
