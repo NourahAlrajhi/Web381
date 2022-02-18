@@ -364,6 +364,12 @@ th.HEADER{
 }
 
 
+.PetImage:hover{
+ 
+ border-radius: -30%;
+}
+
+
 
 
 /* حق نورة الخريف*/
