@@ -1295,6 +1295,7 @@ div.leftAddPet{
 div.rightAddPet{
     display: inline-block;
     position: relative; top: 124.5px;
+    margin-left: 1%;
 }
 
 #Breed{
@@ -1318,5 +1319,9 @@ div.rightAddPet{
 /*final positions*/
 .addServiceFinalPos{
     margin-top: -15%;
+}
+
+.addPetFinalPos{
+    margin-top: -21%;
 }
   
