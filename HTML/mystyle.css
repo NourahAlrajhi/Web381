@@ -521,8 +521,8 @@ font-size: 12px;
     .back6{
         position: absolute;
         background-position: left;
-        left: 280px;
-        bottom: 173px  ;
+        left: 80%;
+        bottom: 120%  ;
         background-attachment: fixed;
         z-index: 0;
         width: 25px;
