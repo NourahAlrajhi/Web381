@@ -1,19 +1,73 @@
-<!DOCTYPE html>>
+<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <title> Edit Appointment Request </title>
     <link rel = "stylesheet" type = "text/css" href ="mystyle.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/logo.svg">
+    <title>Healed</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="Header and Footer.css">
+    <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
+    
+
 </head>
 
 
 <body class="Noura">
 
+     <!-- header section starts  -->
+
+<header>
+
+    <a href="#" class="logo"><img src="../images/logo.svg" alt="logo" height="50rem" ><span>ealed</span></a>
+
+    <input type="checkbox" id="menu-bar">
+    <label for="menu-bar" class="fas fa-bars"></label>
+
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li  ><a href="./Home Pet Owner.html">Home</a>
+              <ul class="sub-menu" id="sub-menu-arrow"> 
+                <li > <a href="./MahaB Add New Pet.html">Add a New Pet</a></li>
+                <li><a href="./my pit list pet owner.html">View Pet List</a></li>
+                <li><a href="./rquest list pet owner.html">View Requests List</a></li>
+
+                <li><a href="./upcoming and previous pet owner.html">View Appointments List</a> </li>
+        
+              </ul>
+            </li>
+          
+            
+           <li><a href="./Services Pet Owner.html">Services</a></li> 
+           <li><a href="./About us PetOwner.html">About Us</a></li> 
+            <li><a href="./Contact Clinic.html">Contact Us</a></li>
+            <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user" ></i></a>
+                <ul class="sub-menu" id="sub-menu-arrow2"> 
+                    <li ><a href="MahaB Edit Profile Page.html">View Profile</a></li>
+                    <li><a href="./LnadingPage.html">Sign Out</a></li>
+            
+                  </ul></li>
+          </ul>
+        
+        <!-- ****if you're working on a pet owner view replace <i class="fa-solid fa-user-doctor"> with <i class="fa-solid fa-user"></i>  -->
+
+
+    </nav>
+
+</header>
+
+<!-- header section ends -->
+
+<section>
     <div class = "part1">
         <div class="title">  Edit Request </div>
-           <form action="#">
+           <form action="rquest list pet owner.html">
               <div class ="appointment-details"> 
     
                 <div class = "input-box">
@@ -22,7 +76,6 @@
                             <option > Choose </option>
                             </select>
                     </lable>
-                    <a <img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 640px; top:150px">> </a>
                     </div>
     
                 <div class = "input-box">
@@ -30,6 +83,7 @@
                         <textarea name= "note" class = "field2"> </textarea>
                            
                     </lable>
+                    <img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 940px; top:240px">
                 </div>
     
                 <div class = "input-box">
@@ -38,33 +92,18 @@
                             <option > Choose </option>
                             </select>
                     </lable>
-                    <img class = "back8" src ="./edit icon.svg " style=" Position:absolute; left: 640px; top:300px">
                 </div>
     
                 <div class = "input-box">
                     <lable class = "details"> Time <br>
                         <input type="time">
-                       <!-- <select name= "time" class = "field1">
-                            <option > Choose </option>
-                            </select>
-                    </lable>
-                    <img  src="./Clock.svg" style=" position: absolute;left: 760px;bottom: 244px;width:200px">
-                --> 
             </lable>
-            <img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 640px; top:372px">
             </div>
     
     
                 <div class = "input-box" >
                     <lable class = "details"> Date <br>
                         <input type="date">
-                       <!--<select name= "Date" class = "field1">
-                            <option > Choose </option>
-                            </select>   
-                    </lable>
-                    <img class = "back7" src ="./calender.svg" style=" left: 602px;
-                    bottom: 178px  ;">-->
-                   <img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 980px; top:296px">
                 </lable> 
                 </div>
         
@@ -72,79 +111,78 @@
                </div>
             
                <div class="button1">
-                <td>  <input type = "submit"  value ="Save"class="button">
+                <input type = "submit"  value ="Save" class="button" style="  font-size:150% ; position: absolute; 
+                left:45%;">
                 </div>
             
     </form>
     </div>
 
-    <img class = "back1" src ="./back1.svg">
+    <img class = "back1" src ="../images/back1.svg" style="bottom:-21% ;">
 
 
-     <!-- <div class="button1">
-                 <input type="submit" value ="Send"> 
-                </div> -->
-<!--
-<div class = "part1">
-    <h5> Edit Request  </h5>
 
-    <div>
-        <lable class = "title"> Pet <br>
-            <select name= "petname" class = "field1">
-                <option > Choose </option>
-                </select>
-        </lable>
+   </section>
+
+   <!-- Footer section starts -->
+<div class="footer">
+    <div class="box-container">
+        <div class="box" id="footeraboutus">
+            <h3>About Us</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
+                Nulla quis sem at nibh elementumn.</p>
+                
+        </div>
+        <div class="box">
+            <h3>Quick links</h3>
+            <a href="./Home Pet Owner.html">Home</a>
+            <a href="./Services Pet Owner.html">Services</a>
+            <a href="./About us PetOwner.html">About US</a>
+            <a href="./Contact Clinic.html">Contact Us</a>
+                
+        </div>
+        <div class="box">
+            <h3>Find Us</h3>
+            <div class="info">
+                <i class="fa-brands fa-facebook-f"></i>
+                 <a href="#">Facebook</a>
+            </div>
+            <div class="info">
+                
+                <i class="fab fa-instagram"></i>
+                            <a href="#">Instagram</a>
+            </div>
+            <div class="info">
+
+                <i class="fa-brands fa-twitter"></i>
+                            <a href="#">Twitter</a>
+            </div>
+                
+        </div>
+        <div class="box">
+            <h3>Contact Information</h3>
+            <div class="info">
+                <i class="fas fa-phone"></i>
+                <p>+123-456-789 <br> +111-222-3333</p>
+            </div>
+                <div class="info">
+                    <i class="fas fa-envelope"></i>
+                    <p>costumerService@Healed.com <br> costumerService2@Healed.com</p>
+                </div>
+                <div class="info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Riyadh, Saudi Arabia - 13315</p>
+                </div>
+                
+        </div>
+        
     </div>
-
-    <div>
-        <lable class = "title"> Service <br>
-            <select name= "service" class = "field1">
-                <option > Choose </option>
-                </select>
-        </lable>
-    </div>
-
-    <div>
-        <lable class = "title"> Date <br>
-            <select name= "Date" class = "field1">
-                <option > Choose </option>
-                </select>   
-        </lable>
-    </div>
-
-    <div>
-        <lable class = "title"> Note <br>
-            <textarea name= "note" class = "field2"> </textarea>
-               
-        </lable>
-    </div>
-
-    <div>
-        <lable class = "title"> Time <br>
-            <select name= "time" class = "field1">
-                <option > Choose </option>
-                </select>
-        </lable>
-    </div>
-
-    <div>
-        <a href="#" > <button class="button1" type="submit">Save</button></a>
-    </div>
-
+    <h1 class="credit">&copy; copyright @ 2022 by KSU Engineers</h1>
 </div>
 
--->
 
-   
+
+<!--Footer section ends-->
 </body>
-
-
-<footer>
-
-</footer>
-
-
-
-
 
 </html>

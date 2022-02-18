@@ -375,8 +375,7 @@ th.HEADER{
     padding: 10px;
 }
 .part1{
-    margin-left: 30% ;
-    margin-top:2% ;
+    margin-left: 23% ;
     padding: 20px 35px;
     max-width: 700px;
     width: 100%;
@@ -434,21 +433,18 @@ font-size: 12px;
     background-color:#dddddd;
     padding-left: 15; 
     font-size: 12px;
-    overflow: scroll;
     }
     .back1{
         position: absolute;
         background-position: left;
-        left:0;
-        bottom: 0;
+        left:0%;
         background-attachment: fixed;
         z-index: -1;
     }
     .back2{
         position: absolute;
-        background-position: left;
-        left: 540px;;
-        bottom: 32px  ;
+        left: 40%;;
+        bottom: -20%;
         background-attachment: fixed;
         z-index: 0;
         width: 150px;
