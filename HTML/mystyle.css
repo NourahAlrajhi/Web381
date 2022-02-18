@@ -1074,12 +1074,12 @@ div.regCol{
     
 }
 
-div#firstCol{
+.firstCol{
     display: inline-block;
     margin-right: 24ex;
 }
 
-div#secondCol{
+.secondCol{
     display: inline-block;
 }
 
