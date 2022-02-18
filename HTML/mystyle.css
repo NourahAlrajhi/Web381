@@ -375,8 +375,7 @@ th.HEADER{
     padding: 10px;
 }
 .part1{
-    margin-left: 30% ;
-    margin-top:2% ;
+    margin-left: 23% ;
     padding: 20px 35px;
     max-width: 700px;
     width: 100%;
@@ -402,6 +401,7 @@ form  .input-box{
 }
  .input-box .details{
     display: block;
+    font-size: 15px;
     font-weight: 500px;
     margin-bottom: 5px;
 }
@@ -434,21 +434,18 @@ font-size: 12px;
     background-color:#dddddd;
     padding-left: 15; 
     font-size: 12px;
-    overflow: scroll;
     }
     .back1{
         position: absolute;
         background-position: left;
-        left:0;
-        bottom: 0;
+        left:0%;
         background-attachment: fixed;
         z-index: -1;
     }
     .back2{
         position: absolute;
-        background-position: left;
-        left: 540px;;
-        bottom: 32px  ;
+        left: 40%;;
+        bottom: -15%;
         background-attachment: fixed;
         z-index: 0;
         width: 150px;
@@ -1037,12 +1034,13 @@ left: 130px;
     /*Sign Up Page*/
 
 div.signUpCirc{
-    position: relative; left: 40%; top: 100px;
+    position: relative; left: 39%; top: 100px;
     background: #dddddd;
     border-radius: 50%;
     width: 130px;
     height: 130px;
     margin-left: 50px;
+    margin-bottom: 2%;
 }
 
 div.signUpCam{
@@ -1266,12 +1264,13 @@ div.rightServ{
    /*Add Pet Page*/
 
 div.addPetCirc{
-    position: relative; left: 520px; top: 210px;
+    position: relative; left: 39%; top: 210px;
     background: #dddddd;
     border-radius: 50%;
     width: 130px;
     height: 130px;
     margin-left: 50px;
+    margin-bottom: 2%;
 }
 
 div.leftAddPet{
@@ -1280,14 +1279,15 @@ div.leftAddPet{
 
 div.rightAddPet{
     display: inline-block;
-    position: relative; top: 147px;
+    position: relative; top: 124.5px;
+    margin-left: 1%;
 }
 
 #Breed{
     margin-top: 50ex;;
 }
 #VaccList{
-    margin-left: 5ex;
+    margin-left: 15%;
 }
 
 #MedHist{
@@ -1301,5 +1301,12 @@ div.rightAddPet{
     font-size: 12px;
 }
        
+/*final positions*/
+.addServiceFinalPos{
+    margin-top: -15%;
+}
 
+.addPetFinalPos{
+    margin-top: -21%;
+}
   
