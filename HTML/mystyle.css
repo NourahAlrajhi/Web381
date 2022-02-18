@@ -76,6 +76,8 @@ tr{
     color: #9084C2;
 }
 
+
+
 td button{
     border: none;
     padding: 7px 20px;
@@ -139,12 +141,14 @@ button.SETApp2:hover{
     top: 600px;
     left: 250px;
     z-index: 3;
+    width: 240px;
+    height: 226px;
 }
 
 .CAT2{
     position: absolute;
     top: 600px;
-    left: 280px;
+    left: 270px;
     z-index: 3;
 }
 
@@ -1287,7 +1291,7 @@ div.addPetCirc{
 
 .rightAddPet{
     display: inline-block;
-    position: relative; top: 124px;
+    position: relative; top: 123px;
 }
 
 #Breed{
@@ -1316,4 +1320,7 @@ div.addPetCirc{
 .addPetFinalPos{
     margin-top: -21%;
 }
-  
+
+.editPetFinalPos{
+    
+}
