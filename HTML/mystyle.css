@@ -818,6 +818,7 @@ font-size: 12px;
     border-radius: 30px; /* 5px rounded corners */
     height: 300px;
     border: none;
+  
     
   }
 
@@ -859,6 +860,7 @@ left: 130px;
         border-radius: 30px; /* 5px rounded corners */
         height: 430px;
         border: none;
+        background-color: #ffffff;
     }
     .rate {
         float: left;
