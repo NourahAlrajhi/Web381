@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <title>Sign Up</title>
         <link rel="stylesheet" type="text/css" href="mystyle.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://kit.fontawesome.com/3473b55fc1.js" crossorigin="anonymous"></script>
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/3473b55fc1.js" crossorigin="anonymous"></script> -->
 
 <!-- added 1 here -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,22 +27,40 @@
 
 <header>
 
-  <a href="#" class="logo"><img src="../images/logo.svg" alt="logo" height="50rem" ><span>ealed</span></a>
+    <a href="#" class="logo"><img src="../images/logo.svg" alt="logo" height="50rem" ><span>ealed</span></a>
 
-  <input type="checkbox" id="menu-bar">
-  <label for="menu-bar" class="fas fa-bars"></label>
+    <input type="checkbox" id="menu-bar">
+    <label for="menu-bar" class="fas fa-bars"></label>
 
-  <nav class="navbar">
-      <a href="#home">Home</a>
-      <a href="#Services">Services</a>
-      <a href="#about us">About Us</a>
-      <a href="#contact us">Contact Us</a>
-      <a href="#" id="profile"><i class="fa-solid fa-user"></i>
-      </a>
-      <!-- ****if you're working on a pet owner view replace <i class="fa-solid fa-user-doctor"> with <i class="fa-solid fa-user"></i>  -->
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li  ><a href="./Home Pet Owner.html">Home</a>
+              <ul class="sub-menu" id="sub-menu-arrow"> 
+                <li > <a href="./MahaB Add New Pet.html">Add a New Pet</a></li>
+                <li><a href="./my pit list pet owner.html">View Pet List</a></li>
+                <li><a href="./rquest list pet owner.html">View Requests List</a></li>
+
+                <li><a href="./upcoming and previous pet owner.html">View Appointments List</a> </li>
+        
+              </ul>
+            </li>
+          
+            
+           <li><a href="./Services Pet Owner.html">Services</a></li> 
+           <li><a href="./About us PetOwner.html">About Us</a></li> 
+            <li><a href="./Contact Clinic.html">Contact Us</a></li>
+            <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user" ></i></a>
+                <ul class="sub-menu" id="sub-menu-arrow2"> 
+                    <li ><a href="MahaB Edit Profile Page.html">View Profile</a></li>
+                    <li><a href="./LnadingPage.html">Sign Out</a></li>
+            
+                  </ul></li>
+          </ul>
+        
+        <!-- ****if you're working on a pet owner view replace <i class="fa-solid fa-user-doctor"> with <i class="fa-solid fa-user"></i>  -->
 
 
-  </nav>
+    </nav>
 
 </header>
 

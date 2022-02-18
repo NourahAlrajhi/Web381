@@ -1052,7 +1052,7 @@ left: 130px;
     /*Sign Up Page*/
 
 div.signUpCirc{
-    position: relative; left: 520px; top: 100px;
+    position: relative; left: 40%; top: 100px;
     background: #dddddd;
     border-radius: 50%;
     width: 130px;
@@ -1062,7 +1062,7 @@ div.signUpCirc{
 
 div.signUpCam{
     position: relative;
-    top: 50px;
+    top: 45%;
     color:#635DAD;
     opacity: 62%;
 }
