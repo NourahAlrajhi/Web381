@@ -1294,6 +1294,7 @@ div.leftAddPet{
 div.rightAddPet{
     display: inline-block;
     position: relative; top: 124.5px;
+    margin-left: 1%;
 }
 
 #Breed{
