@@ -567,7 +567,13 @@ font-size: 12px;
 
     /* حق مها النعيم */
   /* Rest Password*/
-    #Base{
+    .ResetPage{
+        background-image: url(../images/backreset1.svg);
+   
+        
+
+    }
+  #Base{
         
     position: relative;
     max-width: 1000px;
@@ -728,9 +734,11 @@ font-size: 12px;
 }
 .parrotimg{
     position: relative;
-    top: 30px;
+    left: 300px;
+    top: 26px;
     z-index: 1;
 }
+
 .GirlDogimg{
     position: absolute;
     top: 69%;
@@ -744,6 +752,14 @@ font-size: 12px;
     left: 50px;
     color:#635DAD;
     opacity: 62%;
+}
+.BackButtonDetails{
+    width: 100%;
+    height: 100px;
+    position: relative;
+    padding-left: 300px;
+    font-size: 1.8em;
+    top: 100px;
 }
 
        
@@ -823,7 +839,7 @@ font-size: 12px;
            
 
             /* P5 Maha*/
-       
+    
 .ReviewRow{
 width: 100%;
 position: relative;
