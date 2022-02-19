@@ -568,10 +568,8 @@ font-size: 12px;
     /* حق مها النعيم */
   /* Rest Password*/
     .ResetPage{
-        background-image: url(../images/backreset1.svg);
-   
-        
-
+        background-image: url(../images/ResetB.svg);
+        background-repeat: no-repeat;
     }
   #Base{
         
