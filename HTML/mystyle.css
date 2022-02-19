@@ -525,8 +525,8 @@ font-size: 12px;
     .back6{
         position: absolute;
         background-position: left;
-        left: 280px;
-        bottom: 173px  ;
+        left: 80%;
+        bottom: 120%  ;
         background-attachment: fixed;
         z-index: 0;
         width: 25px;
@@ -567,7 +567,13 @@ font-size: 12px;
 
     /* حق مها النعيم */
   /* Rest Password*/
-    #Base{
+    .ResetPage{
+        background-image: url(../images/backreset1.svg);
+   
+        
+
+    }
+  #Base{
         
     position: relative;
     max-width: 1000px;
@@ -726,21 +732,19 @@ font-size: 12px;
     padding-left: 250px;
     font-size: 1.8em;
 }
-         
-.BG{         
-    position: absolute;
-    left: 20%;
-    top: 0;
-    z-index: -1;
+.parrotimg{
+    position: relative;
+    left: 300px;
+    top: 26px;
+    z-index: 1;
+}
 
- }
- .BG2{
+.GirlDogimg{
     position: absolute;
-    left: 50%;
-    top: 0;
-    z-index: -1;   
- }
- 
+    top: 69%;
+    right: 50px;
+    z-index: 1;
+}
 
 #camera{
     position: relative;
@@ -748,6 +752,14 @@ font-size: 12px;
     left: 50px;
     color:#635DAD;
     opacity: 62%;
+}
+.BackButtonDetails{
+    width: 100%;
+    height: 100px;
+    position: relative;
+    padding-left: 300px;
+    font-size: 1.8em;
+    top: 100px;
 }
 
        
@@ -827,11 +839,14 @@ font-size: 12px;
            
 
             /* P5 Maha*/
-       
+    
 .ReviewRow{
 width: 100%;
 position: relative;
 left: 130px;
+}
+.ReviewMsec{
+   background-image: url(BackgroundB.svg); 
 }
 #head5{
     font-size: 25px;
@@ -904,12 +919,14 @@ left: 130px;
     }
     #comrev{
             height: 100px;
-        max-height: 141px;
+        max-height: 150px;
         width: 300px;
         background-color: #F7F7F8;
         border-radius: 10px;
-
         border:none ;
+        max-width: 400px;
+    padding: 10px;
+
     }
     ::placeholder{
         color:#a3a2a2 ;
@@ -968,7 +985,7 @@ left: 130px;
         border: none;
         padding: 7px 20px;
         border-radius: 20px;
-        background-color: #dddddd;
+        background-color: #F0EFEF;
         color: black;
         box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
     }
@@ -996,8 +1013,8 @@ left: 130px;
         width: 20%;
         outline: none;
         border-radius: 5px;
-        border: 1px solid #dddddd ;
-        background-color:#dddddd;
+        border: 1px solid #F0EFEF; 
+        background-color:#F0EFEF;
         padding-left: 15; 
         font-size: 12px;
     }
@@ -1009,8 +1026,8 @@ left: 130px;
         width: 20%;
         outline: none;
         border-radius: 5px;
-        border: 1px solid #dddddd ;
-        background-color:#dddddd;
+        border: 1px solid #F0EFEF;
+        background-color:#F0EFEF;
         padding-left: 15; 
         font-size: 12px;
     }
@@ -1045,7 +1062,7 @@ left: 130px;
 
 div.signUpCirc{
     position: relative; left: 39%; top: 100px;
-    background: #dddddd;
+    background: #F0EFEF;
     border-radius: 50%;
     width: 130px;
     height: 130px;
@@ -1080,11 +1097,16 @@ div.regCol{
 
 .firstCol{
     display: inline-block;
+    position: relative;
+    width: 27.5%;
     margin-right: 24ex;
 }
 
 .secondCol{
     display: inline-block;
+    position: relative;
+    top: 6px;
+    width: 27.5%;
 }
 
 #Fname{
@@ -1092,8 +1114,8 @@ div.regCol{
     width: 70%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #dddddd ;
-    background-color:#dddddd;
+    border: 1px solid #F0EFEF ;
+    background-color:#F0EFEF;
     padding-left: 15; 
     font-size: 12px;
 }
@@ -1103,8 +1125,8 @@ div.regCol{
     width: 70%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #dddddd ;
-    background-color:#dddddd;
+    border: 1px solid #F0EFEF ;
+    background-color:#F0EFEF;
     padding-left: 15; 
     font-size: 12px;
 }
@@ -1114,8 +1136,8 @@ div.regCol{
     width: 70%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #dddddd ;
-    background-color:#dddddd;
+    border: 1px solid #F0EFEF ;
+    background-color:#F0EFEF;
     padding-left: 15; 
     font-size: 12px;
 }
@@ -1125,8 +1147,8 @@ div.regCol{
     width: 70%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #dddddd ;
-    background-color:#dddddd;
+    border: 1px solid #F0EFEF ;
+    background-color:#F0EFEF;
     padding-left: 15; 
     font-size: 12px;
 }
@@ -1136,8 +1158,8 @@ div.regCol{
     width: 70%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #dddddd ;
-    background-color:#dddddd;
+    border: 1px solid #F0EFEF ;
+    background-color:#F0EFEF;
     padding-left: 15; 
     font-size: 12px;
     margin-bottom: 0.075ex;
@@ -1148,8 +1170,8 @@ div.regCol{
     width: 70.2%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #dddddd ;
-    background-color:#dddddd;
+    border: 1px solid #F0EFEF ;
+    background-color:#F0EFEF;
     padding-left: 15; 
     font-size: 12px;
     margin-bottom: 1ex;
@@ -1226,8 +1248,8 @@ div.rightServ{
     width: 70.2%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #dddddd ;
-    background-color:#dddddd;
+    border: 1px solid #F0EFEF ;
+    background-color:#F0EFEF;
     padding-left: 15; 
     font-size: 12px;
 }
@@ -1237,8 +1259,8 @@ div.rightServ{
     width: 70.2%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #dddddd ;
-    background-color:#dddddd;
+    border: 1px solid #F0EFEF ;
+    background-color:#F0EFEF;
     padding-left: 15; 
     font-size: 12px;
 }
@@ -1248,8 +1270,8 @@ div.rightServ{
     width: 70.2%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #dddddd ;
-    background-color:#dddddd;
+    border: 1px solid #F0EFEF ;
+    background-color:#F0EFEF;
     padding-left: 15; 
     font-size: 12px;
 }
@@ -1275,7 +1297,7 @@ div.rightServ{
 
 div.addPetCirc{
     position: relative; left: 39%; top: 210px;
-    background: #dddddd;
+    background: #F0EFEF;
     border-radius: 50%;
     width: 130px;
     height: 130px;
@@ -1306,8 +1328,8 @@ div.addPetCirc{
     width: 70%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #dddddd ;
-    background-color:#dddddd;
+    border: 1px solid #F0EFEF ;
+    background-color:#F0EFEF;
     padding-left: 15; 
     font-size: 12px;
 }
@@ -1322,5 +1344,13 @@ div.addPetCirc{
 }
 
 .editPetFinalPos{
-    
+    margin-top: -12%;
+}
+
+.editMyProfFinalPos{
+    margin-top: -15%;;
+}
+
+.signUpFinalPos{
+    margin-top: -10%;;
 }
