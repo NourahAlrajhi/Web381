@@ -138,8 +138,8 @@ button.SETApp2:hover{
 
 .CAT{
     position: absolute;
-    bottom: -12rem;
-    left: 250px;
+    bottom: -13rem;
+    left: 12%;
     z-index: 3;
     width: 240px;
     height: 226px;
@@ -331,7 +331,7 @@ body::-webkit-scrollbar-track{
 }
 .CAPTION {
  position: absolute;
- top: 120px;
+ top: 30vh;
  left: 240px;
  font-size: x-large;
 }
