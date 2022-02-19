@@ -568,8 +568,9 @@ font-size: 12px;
     /* حق مها النعيم */
   /* Rest Password*/
     .ResetPage{
-        background-image: url(../images/ResetB.svg);
+        background-image: url(../images/bglp.svg);
         background-repeat: no-repeat;
+        background-position:right ;
     }
   #Base{
         
@@ -609,7 +610,7 @@ font-size: 12px;
         outline: none;
         border-radius: 5px;
         border: 1px solid #ebebee;
-        background-color: #F7F7F8;
+        background-color: #F0EFEF;
         padding-left: 20px;
         font-size: 12px;}
   
@@ -636,8 +637,10 @@ font-size: 12px;
 
      /* Add Appointment-Appointment Details*/
 .AppointmentSec{
-    background-image:url("BGpink.svg");
-    
+    background-image:url("image 9.46.53 PM.svg");
+    background-repeat: no-repeat;
+    background-size: 500px;
+    background-position: bottom left;
 }
 .PageBase{
     padding-left: 200px;
@@ -676,7 +679,7 @@ font-size: 12px;
  .fieldselect{
     width: 300px;
     height: 50px;
-    background: #F7F7F8;
+    background: #F0EFEF;
     border: #f7f7f7;
     border-radius: 15px;
     padding-left: 0px;
@@ -688,7 +691,7 @@ font-size: 12px;
 #timeS{
     width: 300px;
     height: 50px;
-    background: #F7F7F8;
+    background: #F0EFEF;
     border-radius: 15px;
     text-indent: 15px;
     color: #403e63;
@@ -696,7 +699,7 @@ font-size: 12px;
 #dateS{
     width: 300px;
     height: 50px;
-    background: #F7F7F8;
+    background: #F0EFEF;
    border-radius: 15px;
    border: none;
    text-indent: 15px;
@@ -705,7 +708,7 @@ font-size: 12px;
 }
   
 #circle {
-    background: #F7F7F8;
+    background: #F0EFEF;
     border-radius: 50%;
     width: 140px;
     height: 140px;
