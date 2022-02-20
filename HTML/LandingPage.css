@@ -804,15 +804,30 @@ header label{
 .options img{
     width: 50px;
     position: absolute;
-top:-4.3rem;
+top:-4.2rem;
 z-index: 1;
 
 }
+.optionsspanright img{
+    width: 50px;
+    position: absolute;
+top: 5rem;
+right: 0rem;
+z-index: 1;
+    
+}
 .optionsspan1{
     position: absolute;
-left: 7rem; 
+left: 0rem; 
 right: 8rem;
-margin-left: 4%;  
+top: 3rem;
+
+
+}
+.optionsspanright{
+    position: absolute;
+right: 0rem; 
+
 top: 3rem;
 
 
@@ -911,6 +926,32 @@ top: 3rem;
     html{
         font-size: 50%;
 
+    }
+    .options img{
+        width: 50px;
+        position: absolute;
+    top:-4.5rem;
+    z-index: 1;
+    
+    }
+    .optionsspan1{
+        position: absolute;
+    left: 0rem; 
+    top: 3rem;
+    
+    
+    }
+    .optionsspanright{
+        position: absolute;
+    right: -7rem; 
+    
+    top: 3rem;
+    
+    
+    }
+    
+    .option .btn{
+        line-height: 0rem;
     }
 
 
