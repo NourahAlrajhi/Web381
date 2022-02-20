@@ -1387,20 +1387,13 @@ div.addPetCirc{
     background-size: cover;
     background-position: center ;
 }
-.addaservicepageback {
-    
-   
-}
-.bodybg{
-    background: url(./background.svg) no-repeat; /*******/
+
+.addaservicepageback{
+    background: url(../images/right\ purpl\ backg.svg) no-repeat; /*******/
     background-size: cover;
     background-position: center;
     z-index: -1;
 }
-.addaservicepageback{
-    background: url(./BGpink.svg) no-repeat;
-    background-size: cover;
-    background-position: center ;
 }
 .animalphot{
     position: relative;
