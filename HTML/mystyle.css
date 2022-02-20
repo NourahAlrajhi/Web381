@@ -457,7 +457,7 @@ font-size: 12px;
     .back2{
         position: absolute;
         left: 40%;;
-        bottom: -15%;
+        bottom: 0%;
         background-attachment: fixed;
         z-index: 0;
         width: 150px;
