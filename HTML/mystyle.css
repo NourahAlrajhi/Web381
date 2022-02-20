@@ -138,8 +138,8 @@ button.SETApp2:hover{
 
 .CAT{
     position: absolute;
-    bottom: -12rem;
-    left: 250px;
+    bottom: -13rem;
+    left: 12%;
     z-index: 3;
     width: 240px;
     height: 226px;
@@ -168,6 +168,7 @@ td.DELET button{
 td.DELET button:hover{
     opacity: 100%;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    cursor: pointer;
     
 }
 
@@ -331,7 +332,7 @@ body::-webkit-scrollbar-track{
 }
 .CAPTION {
  position: absolute;
- top: 120px;
+ top: 30vh;
  left: 240px;
  font-size: x-large;
 }
@@ -1354,4 +1355,9 @@ div.addPetCirc{
 
 .signUpFinalPos{
     margin-top: -10%;;
+}
+.loginpage{
+    background: url(./mahaback1.svg) no-repeat;
+    background-size: cover;
+    background-position: center ;
 }
