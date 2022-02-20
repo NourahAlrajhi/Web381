@@ -2,10 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Add New Pet</title>
+        <title>Pet Profile</title>
         <link rel="stylesheet" type="text/css" href="mystyle.css">
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://kit.fontawesome.com/3473b55fc1.js" crossorigin="anonymous"></script> -->
 
 <!-- added 1 here -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -69,43 +67,49 @@
 
 <!-- section for whole code -->
 <section>
-    <div class="addPetFinalPos">
-        <div class="addPetCirc">
-               <div class="signUpCam">
-                   <i class="fa-solid fa-camera fa-2xl"></i>
-               </div>
-        </div>
-        
-        <form action="my pit list pet owner.html">
-           <div class="leftAddPet">
-            <h3>Add New Pet</h3>
-             <label for="Fname">*Pet name</label>
+  
+    <div class="signUpGirl">
+        <img src="./petnoback.svg" height="70px" width="70px">
+    </div>
+
+
+<div class="editPetFinalPos">
+        <form action="MahaB Pet Profile Page Updated.html">
+           
+  
+            <div class="leftAddPet">
+              <h3>Pet Profile</h3>
+             <label for="Fname">Pet name</label>
              <br>
-             <input type="text" name="Fname" id="Fname" placeholder="Enter Pet name" required="">  
+             <input type="text" name="Fname" id="Fname" placeholder="Enter Pet name" value="Lorem" required="">  
+             
              <br><br>  
                 
-             <label for="Pnum">*Date of Birth</label>
+             <label for="Pnum">Date of Birth</label>
              <br>
-             <input type="date" name="Pnum" id="Pnum" required="">    
+             <input type="date" name="Pnum" id="Pnum" value="2022-01-01" required="">  
+             
              <br><br>
     
-             <label for="Gend">*Gender</label>
+             <label for="Gend">Gender</label>
              <br>
              <select name="Gend" id="Gend" placeholder="Choose Gender" required="">
                <option value = "Male"> Male </option>
                <option value = "Female"> Female </option>
              </select>
+            
              <br><br>
     
            </div>
           
            <div class="rightAddPet">
-             <label for="Lname">*Breed</label>
+             <label for="Lname">Breed</label>
              <br>  
-             <input type="text" name="Breed" id="Lname" placeholder="Enter Breed" required="">
+             <input type="text" name="Breed" id="Lname" placeholder="Enter Breed" value="ipsum" required="">
+          
              <br><br>
      
-             <label for="Gend">*Spayed/Neutered Status</label>
+             <label for="Gend">Spayed/Neutered Status</label>
              <br>
              <select name="Gend" id="Gend" placeholder="Choose Status" required="">
                <option value = "Male"> Spayed/Neutered </option>
@@ -122,14 +126,16 @@
              <input type="text" name="MedHist" id="MedHist" placeholder="Enter Medical History">
              <br><br>
            </div>
-
+<!--
            <br><br><br><br><br>
            <br><br><br><br><br>
-           <input type="submit" name="Reg" id="Reg" value="Add Pet">
+           <input type="submit" name="Reg" id="Reg" value="Save">
            
            <br><br><br><br>
+-->
+
         </form>
-    </div>
+  </div>
       </section>
       <!-- ended section for whole code -->
 
@@ -196,4 +202,3 @@
 <!-- ended 3 here -->
     </body>
 </html>
-

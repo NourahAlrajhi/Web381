@@ -2,10 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Add A Service</title>
+        <title>Pet Profile</title>
         <link rel="stylesheet" type="text/css" href="mystyle.css">
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://kit.fontawesome.com/3473b55fc1.js" crossorigin="anonymous"></script> -->
 
 <!-- added 1 here -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,8 +17,8 @@
 <!-- ended 1 here -->
 
     </head>
-    
-    <body class="addservBod">
+
+    <body class="signUpBod">
 
 <!-- added 2 here -->
 <!-- header section starts  -->
@@ -68,52 +66,79 @@
 
 <!-- section for whole code -->
 <section>
-    <div class="addaservicepageback">
-    <div class="addServiceFinalPos">
-    <br><br><br><br><br><br>
-        <div class="signUpCirc">
-               <div class="signUpCam">
-                   <i class="fa-solid fa-camera fa-2xl"></i>
-               </div>
-            </div>
-        
-        <form action="Home Manager.html">
-            <div class="leftServ">
-                <h3>Add a Service</h3>
-                <label for="Serv">Service</label>
-                <br>
-                <select name="Serv" id="Serv" placeholder="Choose Service" required="">
-                    <option value = "Checkup"> Checkup </option>
-                    <option value = "Vaccination"> Vaccination </option>
-                    <option value = "Consultance"> Consultance </option>
-                </select>  
-                <br><br>
-                <label for="ServDescr">Description</label>
-                <br>  
-                <input type="text" name="ServDescr" id="ServDescr" placeholder="Enter Description..." required="">
-                <br><br>
-            </div>
+  
+    <div class="signUpGirl">
+        <img src="./petnoback.svg" height="70px" width="70px">
+    </div>
 
-            <div class="rightServ">
-                <label for="ServPrice">Price</label>
-                <br>
-                <select name="ServPrice" id="ServPrice" placeholder="Choose Price" required="">
-                    <option value = "Choose1"> Choose </option>
-                    <option value = "Choose2"> Choose </option>
-                </select>
-                <br><br>
-            </div>
-            <br><br>
-            <input type="submit" name="AddServ" id="AddServ" value="Add Service">
+
+<div class="editPetFinalPos">
+        <form action="MahaB Pet Profile Page Updated.html">
+           
+  
+            <div class="leftAddPet">
+              <h3>Pet Profile</h3>
+             <label for="Fname">Pet name</label>
+             <br>
+             <input type="text" name="Fname" id="Fname" placeholder="Enter Pet name" value="Lorem" required="">  
+             
+             <br><br>  
+                
+             <label for="Pnum">Date of Birth</label>
+             <br>
+             <input type="date" name="Pnum" id="Pnum" value="2022-01-01" required="">  
+             
+             <br><br>
+    
+             <label for="Gend">Gender</label>
+             <br>
+             <select name="Gend" id="Gend" placeholder="Choose Gender" required="">
+               <option value = "Male"> Male </option>
+               <option value = "Female"> Female </option>
+             </select>
+            
+             <br><br>
+    
+           </div>
+          
+           <div class="rightAddPet">
+             <label for="Lname">Breed</label>
+             <br>  
+             <input type="text" name="Breed" id="Lname" placeholder="Enter Breed" value="ipsum" required="">
+          
+             <br><br>
+     
+             <label for="Gend">Spayed/Neutered Status</label>
+             <br>
+             <select name="Gend" id="Gend" placeholder="Choose Status" required="">
+               <option value = "Male"> Spayed/Neutered </option>
+               <option value = "Female"> Not Spayed/Neutered </option>
+             </select>
+             <br><br>
+    
+             <label for="VaccList">Vaccination List</label>
+             <br>
+             <input type="file" name="VaccList" id="VaccList">
+             <br><br>
+             <label for="Lname">Medical History</label>
+             <br>  
+             <input type="text" name="MedHist" id="MedHist" placeholder="Enter Medical History">
+             <br><br>
+           </div>
+<!--
+           <br><br><br><br><br>
+           <br><br><br><br><br>
+           <input type="submit" name="Reg" id="Reg" value="Save">
+           
+           <br><br><br><br>
+-->
 
         </form>
-    </section>
-</div>
-</div>
-</body>
-    <!-- ended section for whole code -->
+  </div>
+      </section>
+      <!-- ended section for whole code -->
 
-    <!-- added 3 here -->
+      <!-- added 3 here -->
     <!-- Footer section starts -->
 <div class="footer">
     <div class="box-container">
