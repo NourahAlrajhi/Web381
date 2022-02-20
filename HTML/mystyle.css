@@ -1358,7 +1358,6 @@ div.addPetCirc{
     background-size: cover;
     background-position: center ;
 }
-<<<<<<< HEAD
 .addaservicepageback {
     
    
@@ -1368,11 +1367,10 @@ div.addPetCirc{
     background-size: cover;
     background-position: center;
     z-index: -1;
-=======
+}
 .addaservicepageback{
     background: url(./BGpink.svg) no-repeat;
     background-size: cover;
     background-position: center ;
     min-height: 100%;
->>>>>>> 8283efcc58f06c50f0ac2148eca260e951c20147
 }
