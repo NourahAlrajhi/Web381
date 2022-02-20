@@ -1194,6 +1194,7 @@ div.regCol{
     background-color: #635DAD;
     opacity: 62%;
     color: white;
+    cursor: pointer;
 }
 
 #Reg:hover{
@@ -1340,7 +1341,7 @@ div.addPetCirc{
 }
 
 .editPetFinalPos{
-    margin-top: -12%;
+    margin-top: -15%;
 }
 
 .editMyProfFinalPos{
@@ -1372,5 +1373,11 @@ div.addPetCirc{
     background: url(./BGpink.svg) no-repeat;
     background-size: cover;
     background-position: center ;
-    min-height: 100%;
+}
+.animalphot{
+    position: relative;
+    top: -25px;
+}
+.label.makeLeft{
+    text-align: left;
 }
