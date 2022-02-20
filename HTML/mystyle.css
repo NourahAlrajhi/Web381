@@ -1374,3 +1374,7 @@ div.addPetCirc{
     background-size: cover;
     background-position: center ;
 }
+.animalphot{
+    position: relative;
+    top: 10%;
+}
