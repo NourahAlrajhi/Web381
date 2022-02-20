@@ -648,10 +648,6 @@ font-size: 12px;
     padding-left: 200px;
     margin-top: 50px;
 }
-.HeadingsMaha{
-    font-size: 3em;
-    font-weight: 200;
-}
 .PageRows{
     width: 100%;
     height: 170px;
@@ -851,10 +847,7 @@ left: 130px;
 .ReviewMsec{
    background-image: url(BackgroundB.svg); 
 }
-#head5{
-    font-size: 25px;
-    padding-bottom: 20px;
-}
+
 
     .cardReveiw{
         position: relative;
@@ -903,7 +896,7 @@ left: 130px;
     }
     .rate:not(:checked) > label:hover,
     .rate:not(:checked) > label:hover ~ label {
-        color: #000000;  
+        color: #ffc700;  
     }
     .rate > input:checked + label:hover,
     .rate > input:checked + label:hover ~ label,
