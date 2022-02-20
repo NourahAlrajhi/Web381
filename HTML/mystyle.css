@@ -1341,7 +1341,7 @@ div.addPetCirc{
 }
 
 .editPetFinalPos{
-    margin-top: -12%;
+    margin-top: -15%;
 }
 
 .editMyProfFinalPos{
@@ -1377,9 +1377,4 @@ div.addPetCirc{
 .animalphot{
     position: relative;
     top: -25px;
-}
-
-.petProfFinalPos{
-    position: relative;
-    top: 10%;
 }
