@@ -1378,3 +1378,8 @@ div.addPetCirc{
     position: relative;
     top: -25px;
 }
+
+.petProfFinalPos{
+    position: relative;
+    top: 10%;
+}
