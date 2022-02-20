@@ -19,7 +19,7 @@
 
     </head>
 
-    <body class="signUpBod">
+    <body class="addaservicepageback">
 
 <!-- added 2 here -->
 <!-- header section starts  -->
@@ -67,7 +67,7 @@
 <!-- ended 2 here -->
 
 <!-- section for whole code -->
-<section>
+<section style="text-align: center">
         <br><br><br><br><br><br>
         
    <div class="editMyProfFinalPos">
@@ -80,8 +80,8 @@
         <form action="Home Pet Owner.html">
     
            <div class="firstCol">
-             <h3>My Profile</h3>
-             <label for="Fname">First name</label>
+            <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -38px;">My Profile</h3>
+             <label sfor="Fname">First name</label>
              <br>
              <input type="text" name="Fname" id="Fname" value="Lorem" required="">  
                <img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 87.4%; top:16.4%">
@@ -89,7 +89,7 @@
                 
              <label for="Pnum">Phone number</label>
              <br>
-             <input type="tel" name="Pnum" id="Pnum" value="05xxxxxxxx" required="">
+             <input type="number" name="Pnum" id="Pnum" value="0512345678" required="" min="0500000000" max="0599999999"> 
                <img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 87.4%; top:46.8%">
              <br><br>
     
@@ -114,14 +114,14 @@
     
              <label for="Email">Email</label>
              <br>  
-             <input type="email" name="Email" id="Email" placeholder="Enter Email" value="Loremipsum@example.com" required="">
+             <input style="color: gray;" type="email" name="Email" id="Email" placeholder="Enter Email" value="Loremipsum@example.com" readonly required="">
              <br><br>
     
              <label for="Gend">Gender</label>
              <br>
-             <select name="Gend" id="Gend" placeholder="Choose Gender" required="">
+             <select name="Gend" id="Gend" placeholder="Choose Gender" required="" disabled="true">
                <option value = "Male"> Male </option>
-               <option value = "Female"> Female </option>
+               <option value = "Female" selected> Female </option>
              </select>
              <br><br>
            </div>
@@ -129,6 +129,12 @@
            <br><br><br><br>
            
            <input type="submit" name="Reg" id="Reg" value="Save">
+
+           <br><br>
+
+           <a href="./LnadingPage.html">
+           <button type="button" id="delAcc">Delete Account</button></a>
+
            <br><br>
         </form>
       </div>
@@ -136,21 +142,20 @@
       <!-- ended section for whole code -->
 
       <!-- added 3 here -->
-    <!-- Footer secton starts -->
+    <!-- Footer section starts -->
 <div class="footer">
   <div class="box-container">
       <div class="box" id="footeraboutus">
           <h3>About Us</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
-              Nulla quis sem at nibh elementumn.</p>
+          <p>We are a full-service animal hospital that offers a wide selection of comprehensive veterinary services to maintain your pet's health, from routine exams and vaccinations to dental care, geriatric care, surgery, and internal medicine.</p>
               
       </div>
       <div class="box">
           <h3>Quick links</h3>
-          <a href="#">Home</a>
-          <a href="#">Services</a>
-          <a href="#">About US</a>
-          <a href="#">Contact Us</a>
+          <a href="./Home Pet Owner.html">Home</a>
+          <a href="./Services Pet Owner.html">Services</a>
+          <a href="./About us PetOwner.html">About US</a>
+          <a href="./Contact Clinic.html">Contact Us</a>
               
       </div>
       <div class="box">
@@ -194,7 +199,7 @@
 
 
 
-<!--Footer secton ends-->
+<!--Footer section ends-->
 <!-- ended 3 here -->
        </body>
     </html>

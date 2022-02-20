@@ -18,7 +18,7 @@
 
     </head>
 
-    <body class="signUpBod">
+    <body class="petprofbackg">
 
 <!-- added 2 here -->
 <!-- header section starts  -->
@@ -66,38 +66,39 @@
 <!-- ended 2 here -->
 
 <!-- section for whole code -->
-<section>
+<section style="text-align: center">
+  
   
     <div class="signUpGirl">
-        <img src="./petnoback.svg" height="70px" width="70px">
+        <div class="animalphot">
+        <img src="../images/pet profile photo new.svg" height="125px" width="125px">
+        </div>
     </div>
 
 
 <div class="editPetFinalPos">
-        <form action="MahaB Pet Profile Page Updated.html">
+        <form action="MahaB Pet Profile My Pet List Pet Owner.html">
            
   
             <div class="leftAddPet">
-              <h3>Pet Profile</h3>
+             <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -36px;">Pet Profile</h3>
              <label for="Fname">Pet name</label>
              <br>
              <input type="text" name="Fname" id="Fname" placeholder="Enter Pet name" value="Lorem" required="">  
-             <img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 42.15%; top:38.6%">
+             <img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 42.15%; top:42.5%">
              <br><br>  
                 
              <label for="Pnum">Date of Birth</label>
              <br>
-             <input type="date" name="Pnum" id="Pnum" value="2022-01-01" required="">  
-             <img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 42.15%; top:48.5%">  
+             <input style="color: gray;" type="date" name="Pnum" id="Pnum" value="2022-01-01" readonly required="">  
              <br><br>
     
              <label for="Gend">Gender</label>
              <br>
-             <select name="Gend" id="Gend" placeholder="Choose Gender" required="">
-               <option value = "Male"> Male </option>
+             <select name="Gend" id="Gend" placeholder="Choose Gender" required="" disabled="true">
+               <option value = "Male" selected> Male </option>
                <option value = "Female"> Female </option>
              </select>
-             <img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 42.15%; top:58.4%">
              <br><br>
     
            </div>
@@ -105,8 +106,8 @@
            <div class="rightAddPet">
              <label for="Lname">Breed</label>
              <br>  
-             <input type="text" name="Breed" id="Lname" placeholder="Enter Breed" value="ipsum" required="">
-             <img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 87.5%; top:5%">
+             <input style="color: gray;" type="text" name="Breed" id="Lname" placeholder="Enter Breed" value="ipsum" readonly required="">
+             <img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 87.5%; top:24.5%">
              <br><br>
      
              <label for="Gend">Spayed/Neutered Status</label>
@@ -123,12 +124,15 @@
              <br><br>
              <label for="Lname">Medical History</label>
              <br>  
-             <input type="text" name="MedHist" id="MedHist" placeholder="Enter Medical History">
+             <input type="text" name="MedHist" id="MedHist" placeholder="Enter Medical History" value="Back legs weakness - minor">
+             <img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 87.5%; top:63%">
+
              <br><br>
            </div>
 
            <br><br><br><br><br>
            <br><br><br><br><br>
+           
            <input type="submit" name="Reg" id="Reg" value="Save">
            
            <br><br><br><br>
@@ -143,8 +147,7 @@
   <div class="box-container">
       <div class="box" id="footeraboutus">
           <h3>About Us</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
-              Nulla quis sem at nibh elementumn.</p>
+          <p>We are a full-service animal hospital that offers a wide selection of comprehensive veterinary services to maintain your pet's health, from routine exams and vaccinations to dental care, geriatric care, surgery, and internal medicine.</p>
               
       </div>
       <div class="box">

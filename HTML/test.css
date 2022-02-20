@@ -212,7 +212,7 @@ section{
             display: block;
             margin: 1em 0;
             font-family: "MockFlowFont";  
-            font-size: .8em; 
+            font-size: 1em; 
             color: #D7BDCA;  
           }
           
@@ -238,6 +238,7 @@ section{
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 3;
             overflow: hidden;
+            font-size: 1em;
           }
 
           /* media queries */

@@ -84,12 +84,12 @@ td button{
     border-radius: 20px;
     
     color: white;
-
-    background-color: #635DAD;
-            opacity: 62%;
+   background-color:  #9084C2;
+    
+            opacity: 100%;
 }
 td button:hover{
-    opacity: 100%;
+    background-color: #635DAD;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
     
 }
@@ -107,7 +107,7 @@ td button:hover{
     background-color: #635DAD;
             opacity: 62%;
             position: absolute;
-            top: 660px;
+            bottom: 1%;
             left: 180px;
           
 }
@@ -127,8 +127,9 @@ button.SETApp2{
     background-color: #635DAD;
             opacity: 62%;
             position: absolute;
-            top: 660px;
+            bottom:.5%;
             left: 180px;
+           
            
 }
 button.SETApp2:hover{
@@ -138,8 +139,8 @@ button.SETApp2:hover{
 
 .CAT{
     position: absolute;
-    top: 600px;
-    left: 250px;
+    bottom: -13rem;
+    left: 17%;
     z-index: 3;
     width: 240px;
     height: 226px;
@@ -147,8 +148,8 @@ button.SETApp2:hover{
 
 .CAT2{
     position: absolute;
-    top: 600px;
-    left: 270px;
+    bottom:4%;
+    left: 19%;
     z-index: 3;
 }
 
@@ -163,11 +164,12 @@ td.DELET button{
     color: white;
 
     background-color: #FF74AB;
-            opacity: 62%;
+            opacity: 100%;
 }
 td.DELET button:hover{
     opacity: 100%;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    cursor: pointer;
     
 }
 
@@ -179,7 +181,7 @@ td.PENDING button{
     color: white;
 
     background-color:#A4A4A4;
-            opacity: 62%;
+            opacity: 100%;
 }
 td.PENDING button:hover{
     opacity: 100%;
@@ -193,12 +195,12 @@ td.Approved button{
     
     color: white;
 
-    background-color:#FEAD54;
-            opacity: 62%;
+    background-color:#fcb76d;
+            opacity: 100%;
 }
 td.Approved button:hover{
-    opacity: 100%;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    background-color:#FEAD54;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
     
 }
 td.Declined button{
@@ -331,13 +333,13 @@ body::-webkit-scrollbar-track{
 }
 .CAPTION {
  position: absolute;
- top: 120px;
+ top: 30vh;
  left: 240px;
  font-size: x-large;
 }
 .CAPTION2 {
     position: absolute;
-    top: 140px;
+    top: 30vh;
     left: 300px;
     font-size: x-large;
    }
@@ -568,10 +570,9 @@ font-size: 12px;
     /* حق مها النعيم */
   /* Rest Password*/
     .ResetPage{
-        background-image: url(../images/backreset1.svg);
-   
-        
-
+        background-image: url(../images/bglp.svg);
+        background-repeat: no-repeat;
+        background-position:right ;
     }
   #Base{
         
@@ -611,13 +612,13 @@ font-size: 12px;
         outline: none;
         border-radius: 5px;
         border: 1px solid #ebebee;
-        background-color: #F7F7F8;
+        background-color: #F0EFEF;
         padding-left: 20px;
         font-size: 12px;}
   
 .Resetbutton{     
     position: absolute;
-    left: 90px;
+    left:120px;;
     margin-top: 50px;
     top: 200px;
     font-size: 1.8em;
@@ -638,16 +639,14 @@ font-size: 12px;
 
      /* Add Appointment-Appointment Details*/
 .AppointmentSec{
-    background-image:url("BGpink.svg");
-    
+    background-image:url("image 9.46.53 PM.svg");
+    background-repeat: no-repeat;
+    background-size: 500px;
+    background-position: bottom left;
 }
 .PageBase{
     padding-left: 200px;
     margin-top: 50px;
-}
-.HeadingsMaha{
-    font-size: 3em;
-    font-weight: 200;
 }
 .PageRows{
     width: 100%;
@@ -678,7 +677,7 @@ font-size: 12px;
  .fieldselect{
     width: 300px;
     height: 50px;
-    background: #F7F7F8;
+    background: #F0EFEF;
     border: #f7f7f7;
     border-radius: 15px;
     padding-left: 0px;
@@ -690,7 +689,7 @@ font-size: 12px;
 #timeS{
     width: 300px;
     height: 50px;
-    background: #F7F7F8;
+    background: #F0EFEF;
     border-radius: 15px;
     text-indent: 15px;
     color: #403e63;
@@ -698,7 +697,7 @@ font-size: 12px;
 #dateS{
     width: 300px;
     height: 50px;
-    background: #F7F7F8;
+    background: #F0EFEF;
    border-radius: 15px;
    border: none;
    text-indent: 15px;
@@ -707,12 +706,11 @@ font-size: 12px;
 }
   
 #circle {
-    background: #F7F7F8;
+    background: #F0EFEF;
     border-radius: 50%;
     width: 140px;
     height: 140px;
-    
-    margin-left: 50px;
+    margin-left: 80px;
 }
 .circle{
    float: left;
@@ -731,6 +729,7 @@ font-size: 12px;
     position: relative;
     padding-left: 250px;
     font-size: 1.8em;
+    bottom: 10px;
 }
 .parrotimg{
     position: relative;
@@ -848,10 +847,7 @@ left: 130px;
 .ReviewMsec{
    background-image: url(BackgroundB.svg); 
 }
-#head5{
-    font-size: 25px;
-    padding-bottom: 20px;
-}
+
 
     .cardReveiw{
         position: relative;
@@ -892,7 +888,7 @@ left: 130px;
         color:#ccc;
         margin-right:10px;
     }
-    .rate:not(:checked) > label:before {
+   .rate:not(:checked) > label:before {
         content: '★ ';
     }
     .rate > input:checked ~ label {
@@ -900,7 +896,7 @@ left: 130px;
     }
     .rate:not(:checked) > label:hover,
     .rate:not(:checked) > label:hover ~ label {
-        color: #deb217;  
+        color: #ffc700;  
     }
     .rate > input:checked + label:hover,
     .rate > input:checked + label:hover ~ label,
@@ -908,6 +904,33 @@ left: 130px;
     .rate > input:checked ~ label:hover ~ label,
     .rate > label:hover ~ input:checked ~ label {
         color: #c59b08;
+    }
+    .rateM {
+        float: left;
+        height: 46px;
+        padding: 0 10px;
+
+    }
+    
+    .rateM:not(:checked) > input {
+        position:absolute;
+        top:-9999px;
+    }
+    .rateM:not(:checked) > label {
+        float:right;
+        width:1em;
+        overflow:hidden;
+        white-space:nowrap;
+        cursor:pointer;
+        font-size:30px;
+        color:#ccc;
+        margin-right:10px;
+    }
+   .rateM:not(:checked) > label:before {
+        content: '★ ';
+    }
+    .rateM > input:checked ~ label {
+        color: #ffc700;    
     }
     
     .Q{
@@ -918,8 +941,8 @@ left: 130px;
         top: 200px;
     }
     #comrev{
-            height: 100px;
-        max-height: 150px;
+     height: 100px;
+        max-height:  135px;
         width: 300px;
         background-color: #F7F7F8;
         border-radius: 10px;
@@ -1077,13 +1100,9 @@ div.signUpCam{
     opacity: 62%;
 }
 
-body.signUpBod{
-    align-content: center;
-    align-items: center;
-    align-self: center;
-    text-align: center;
-}
-
+body.signUpBod{}
+   
+  
 div.regCol{
     align-content: center;
     display: inline-block;
@@ -1195,6 +1214,7 @@ div.regCol{
     background-color: #635DAD;
     opacity: 62%;
     color: white;
+    cursor: pointer;
 }
 
 #Reg:hover{
@@ -1215,10 +1235,7 @@ div.signUpGirl{
    /*Add a Service Page*/
 
 body.addservBod{
-    text-align: center;
-    align-items: center;
-    align-self: center;
-    align-content: center;
+
 }
 
 div.leftServ{
@@ -1344,7 +1361,7 @@ div.addPetCirc{
 }
 
 .editPetFinalPos{
-    margin-top: -12%;
+    margin-top: -15%;
 }
 
 .editMyProfFinalPos{
@@ -1352,5 +1369,60 @@ div.addPetCirc{
 }
 
 .signUpFinalPos{
-    margin-top: -10%;;
+    margin-top: -11%;;
+}
+
+/*backgroud images*/
+
+.loginpage{
+    background: url(./mahaback1.svg) no-repeat;
+    background-size: cover;
+    background-position: center ;
+}
+
+.addaservicepageback{
+    background: url(../images/right\ purpl\ backg.svg) no-repeat; /*******/
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+}
+.animalphot{
+    position: relative;
+    top: -25px;
+}
+.label.makeLeft{
+    text-align: left;
+}
+
+#delAcc{
+  width: 300px;
+  height: 30px;;
+  border: none;
+  border-radius: 17px;
+  padding-left: 7px;
+  background-color: #FF74AB;
+  opacity: 100%;
+  color: white;
+  cursor: pointer;
+    }
+
+#delAcc:hover{
+  opacity: 100%;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+  cursor: pointer;
+    }
+
+.addpetbackg{
+    background: url(../images/background\ pinkpurp\ maha.svg) no-repeat; /*******/
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.petprofbackg{
+    background: url(../images/ResetB.svg) no-repeat; /*******/
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
 }
