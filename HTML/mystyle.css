@@ -1378,3 +1378,6 @@ div.addPetCirc{
     position: relative;
     top: -25px;
 }
+.label.makeLeft{
+    text-align: left;
+}
