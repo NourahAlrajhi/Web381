@@ -1080,13 +1080,9 @@ div.signUpCam{
     opacity: 62%;
 }
 
-body.signUpBod{
-    align-content: center;
-    align-items: center;
-    align-self: center;
-    text-align: center;
-}
-
+body.signUpBod{}
+   
+  
 div.regCol{
     align-content: center;
     display: inline-block;
@@ -1218,10 +1214,7 @@ div.signUpGirl{
    /*Add a Service Page*/
 
 body.addservBod{
-    text-align: center;
-    align-items: center;
-    align-self: center;
-    align-content: center;
+
 }
 
 div.leftServ{
@@ -1365,8 +1358,13 @@ div.addPetCirc{
     background-size: cover;
     background-position: center ;
 }
-.addaservicepageback{
-    background: url(../images/pinkbackk1.svg) no-repeat;
+.addaservicepageback {
+    
+   
+}
+.bodybg{
+    background: url(./background.svg) no-repeat; /*******/
     background-size: cover;
-    background-position: center ;
+    background-position: center;
+    z-index: -1;
 }
