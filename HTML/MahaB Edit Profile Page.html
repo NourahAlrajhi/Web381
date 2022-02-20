@@ -89,7 +89,7 @@
                 
              <label for="Pnum">Phone number</label>
              <br>
-             <input type="tel" name="Pnum" id="Pnum" value="05xxxxxxxx" required="">
+             <input type="number" name="Pnum" id="Pnum" value="0512345678" required="" min="0500000000" max="0599999999"> 
                <img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 87.4%; top:46.8%">
              <br><br>
     
@@ -114,14 +114,14 @@
     
              <label for="Email">Email</label>
              <br>  
-             <input type="email" name="Email" id="Email" placeholder="Enter Email" value="Loremipsum@example.com" required="">
+             <input style="color: gray;" type="email" name="Email" id="Email" placeholder="Enter Email" value="Loremipsum@example.com" readonly required="">
              <br><br>
     
              <label for="Gend">Gender</label>
              <br>
-             <select name="Gend" id="Gend" placeholder="Choose Gender" required="">
+             <select name="Gend" id="Gend" placeholder="Choose Gender" required="" disabled="true">
                <option value = "Male"> Male </option>
-               <option value = "Female"> Female </option>
+               <option value = "Female" selected> Female </option>
              </select>
              <br><br>
            </div>
