@@ -1428,7 +1428,7 @@ div.addPetCirc{
 }
 
 .petprofbackg{
-    background: url(../images/back1.svg) no-repeat; /*******/
+    background: url(../images/ResetB.svg) no-repeat; /*******/
     background-size: cover;
     background-position: center;
     z-index: -1;
