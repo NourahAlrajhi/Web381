@@ -1,22 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <title> View Appointment Request </title>
+    <link rel = "stylesheet" type = "text/css" href ="mystyle.css">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../images/logo.svg">
-    <title>Contact Pet Owner</title>
+ 
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="./Header and Footer.css">
+    <link rel="stylesheet" href="Header and Footer.css">
     <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./contact template.css">
     
-
 
 </head>
 
-<body>
+
+<body class = "Noura">
+
     <!-- header section starts  -->
 
 <header>
@@ -59,34 +63,58 @@
 
 <!-- header section ends -->
 
+<section>
+    <div class = "part1">
+        <div class="title"> Appointment Request </div>
+           <form action="request list manager.html">
+              <div class ="appointment-details" > 
+    
+                <div class = "input-box">
+                    <lable class = "details"> Pet <br>
+                        <input name= "petname" class = "field1" value="Broc">
+                    </lable>
+                </div>
+    
+                <div class = "input-box">
+                    <lable class = "details"> Note <br>
+                        <textarea name= "note" class = "field2" > Lorem ipsum </textarea>
+                    </lable>
+                </div>
+    
+                <div class = "input-box">
+                    <lable class = "details"> Service <br>
+                        <input name= "service" class = "field1" value=" Grooming And Bathing">
+                    </lable>
+                </div>
+    
+                <div class = "input-box">
+                    <lable class = "details"> Time <br>
+                        <input   type="time"name= "time" class = "field1" value="08:30:00"> 
+                    </lable>
+                    </div>
+    
+    
+                <div class = "input-box" >
+                    <lable class = "details"> Date <br>
+                        <input  type="date"name= "Date" class = "field1" value="2022-02-22">  
+                    </lable>
+                </div>
+        
+    
+               </div>
 
- <!-- Contact Us section starts  -->
-<section class="contactus" id="contact us">
-    <div class="image">
-        <img src="../images/CONTACTUSS.svg" alt="">
-    </div>
-    <form action="Home Manager.html">
-        <h1 class="heading">Contact Pet Owner</h1>
-        <div class="inputbox">
-            <input type="text" required>
-            <label >Name</label>
-        </div>
-        <div class="inputbox">
-            <input type="email" required>
-            <label >Email</label>
-        </div>
-        <div class="inputbox">
-            <textarea required name="" id="" cols="30" rows="10"></textarea>
-            <label >Message</label>
-        </div>
-        <input type="submit" class="btn" value="send">
+               <div class="button1">
+                <input type = "submit"  value ="Back" class="button" style="  font-size:150% ; position: absolute; 
+                left:45%;">
+               </div>
+                </div>
     </form>
+    </div>
+
+    <img class = "back1" src ="../images/back1.svg" style="bottom: -15%;">
+
 
 </section>
-
-
-
-<!-- Contact Us section ends  -->
 
 <!-- Footer section starts -->
 <div class="footer">
@@ -149,4 +177,5 @@
 <!--Footer section ends-->
 
 </body>
+
 </html>
