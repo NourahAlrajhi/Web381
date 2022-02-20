@@ -82,20 +82,20 @@
               <h3>Pet Profile</h3>
              <label for="Fname">Pet name</label>
              <br>
-             <input type="text" name="Fname" id="Fname" placeholder="Enter Pet name" value="Lorem" required="">  
+             <input type="text" name="Fname" id="Fname" placeholder="Enter Pet name" value="Lorem" readonly required="">  
              
              <br><br>  
                 
              <label for="Pnum">Date of Birth</label>
              <br>
-             <input type="date" name="Pnum" id="Pnum" value="2022-01-01" required="">  
+             <input type="date" name="Pnum" id="Pnum" value="2022-01-01" readonly required="">  
              
              <br><br>
     
              <label for="Gend">Gender</label>
              <br>
-             <select name="Gend" id="Gend" placeholder="Choose Gender" required="">
-               <option value = "Male"> Male </option>
+             <select name="Gend" id="Gend" placeholder="Choose Gender" required="" disabled="true">
+                <option value = "Male" selected> Male </option>
                <option value = "Female"> Female </option>
              </select>
             
@@ -106,14 +106,14 @@
            <div class="rightAddPet">
              <label for="Lname">Breed</label>
              <br>  
-             <input type="text" name="Breed" id="Lname" placeholder="Enter Breed" value="ipsum" required="">
+             <input type="text" name="Breed" id="Lname" placeholder="Enter Breed" value="ipsum" readonly required="">
           
              <br><br>
      
              <label for="Gend">Spayed/Neutered Status</label>
              <br>
-             <select name="Gend" id="Gend" placeholder="Choose Status" required="">
-               <option value = "Male"> Spayed/Neutered </option>
+             <select name="Gend" id="Gend" placeholder="Choose Status" required="" disabled="true">
+               <option value = "Male" selected> Spayed/Neutered </option>
                <option value = "Female"> Not Spayed/Neutered </option>
              </select>
              <br><br>
@@ -124,7 +124,7 @@
              <br><br>
              <label for="Lname">Medical History</label>
              <br>  
-             <input type="text" name="MedHist" id="MedHist" placeholder="Enter Medical History">
+             <input type="text" name="MedHist" id="MedHist" placeholder="Enter Medical History" value="Back legs weakness - minor" readonly>
              <br><br>
            </div>
 
