@@ -1402,3 +1402,21 @@ div.addPetCirc{
 .label.makeLeft{
     text-align: left;
 }
+
+#delAcc{
+  width: 300px;
+  height: 30px;;
+  border: none;
+  border-radius: 17px;
+  padding-left: 7px;
+  background-color: #FF74AB;
+  opacity: 100%;
+  color: white;
+  cursor: pointer;
+    }
+
+#delAcc:hover{
+  opacity: 100%;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+  cursor: pointer;
+    }
