@@ -1369,7 +1369,7 @@ div.addPetCirc{
 }
 
 .editPetFinalPos{
-    margin-top: -12%;
+    margin-top: -15%;
 }
 
 .editMyProfFinalPos{
@@ -1401,4 +1401,11 @@ div.addPetCirc{
     background: url(./BGpink.svg) no-repeat;
     background-size: cover;
     background-position: center ;
+}
+.animalphot{
+    position: relative;
+    top: -25px;
+}
+.label.makeLeft{
+    text-align: left;
 }

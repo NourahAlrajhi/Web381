@@ -67,13 +67,8 @@
 <!-- ended 2 here -->
 
 <!-- section for whole code -->
-<<<<<<< HEAD
-<div class="addaservicepageback">
-<section>
-=======
 <section style="text-align: center" >
     <div class="addaservicepageback">
->>>>>>> 964180c233a5dd8893c050fa1a38379c51a9655b
     <div class="addServiceFinalPos">
     <br><br><br><br><br><br>
         <div class="signUpCirc">
@@ -85,9 +80,10 @@
         <form action="Home Manager.html">
             <div class="leftServ">
                 <h3>Add a Service</h3>
-                <label for="Serv">Service</label>
+                <label for="Serv" class="makeLeft">Service</label>
                 <br>
                 <select name="Serv" id="Serv" placeholder="Choose Service" required="">
+                    <option value = "" disabled selected hidden> Choose Service </option>
                     <option value = "Checkup"> Checkup </option>
                     <option value = "Vaccination"> Vaccination </option>
                     <option value = "Consultance"> Consultance </option>
@@ -102,11 +98,9 @@
             <div class="rightServ">
                 <label for="ServPrice">Price</label>
                 <br>
-                <select name="ServPrice" id="ServPrice" placeholder="Choose Price" required="">
-                    <option value = "Choose1"> Choose </option>
-                    <option value = "Choose2"> Choose </option>
-                </select>
+                <input type="number" name="ServPrice" id="ServPrice" placeholder="Choose Price" required="">
                 <br><br>
+                
             </div>
             <br><br>
             <input type="submit" name="AddServ" id="AddServ" value="Add Service">
@@ -124,8 +118,7 @@
     <div class="box-container">
         <div class="box" id="footeraboutus">
             <h3>About Us</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
-                Nulla quis sem at nibh elementumn.</p>
+            <p>We are a full-service animal hospital that offers a wide selection of comprehensive veterinary services to maintain your pet's health, from routine exams and vaccinations to dental care, geriatric care, surgery, and internal medicine.</p>
                 
         </div>
         <div class="box">
