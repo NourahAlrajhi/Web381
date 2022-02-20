@@ -130,6 +130,7 @@ button.SETApp2{
             bottom:.5%;
             left: 180px;
            
+           
 }
 button.SETApp2:hover{
     opacity: 100%;
@@ -139,7 +140,7 @@ button.SETApp2:hover{
 .CAT{
     position: absolute;
     bottom: -13rem;
-    left: 12%;
+    left: 17%;
     z-index: 3;
     width: 240px;
     height: 226px;
@@ -147,8 +148,8 @@ button.SETApp2:hover{
 
 .CAT2{
     position: absolute;
-    bottom:4.5%;
-    left: 13%;
+    bottom:4%;
+    left: 19%;
     z-index: 3;
 }
 
