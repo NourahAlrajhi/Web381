@@ -61,7 +61,7 @@
 </header>
 
 <!-- header section ends -->
-<section>
+<section class="requestbg">
 <div class = "part1">
     <div class="title"> New Appointment Request </div>
        <form action="rquest list pet owner.html">
@@ -69,10 +69,21 @@
 
             <div class = "input-box">
                 <lable class = "details"> Pet <br>
-                    <select  required name= "petname" class = "field1" >
-                        <option > Choose </option>
-                        <option > Lorem ipsum </option>
-                        <option > Lorem ipsum </option>
+                    <select  required name= "petname" class = "field1" value="Choose" >
+                        <option value="" selected hidden>Choose a pet</option>
+                        <option value="lily"> lily </option>
+                        <option value="brock"> Brock </option>
+                        <option> Myla </option>
+                        <option> cava </option>
+                        <option> Kiwi </option>
+                        <option> Oreo </option>
+                        <option> Mellow </option>
+                        <option> lolly </option>
+
+
+
+
+                        <option >  </option>
                         </select>
                 </lable>
             </div>
@@ -87,9 +98,12 @@
             <div class = "input-box">
                 <lable class = "details"> Service <br>
                     <select  required name= "service" class = "field1">
-                        <option > Choose </option>
-                        <option > Lorem ipsum </option>
-                        <option > Lorem ipsum </option>
+                        <option value="" selected hidden>Choose a service</option>
+
+                        <option > Grooming and Bathing </option>
+                        <option > Dentistry</option>
+                        <option > Boarding</option>
+
                         </select>
                 </lable>
             </div>
@@ -111,7 +125,7 @@
         
            <div class="button1">
             <input type = "submit"  value ="Send" class="button" style=" font-size:150% ; position: absolute; 
-            left:45%; bottom: 10%;">
+            left:45%; bottom: 20%;">
              <img class = "back2" src ="../images/girl1.svg">
             </div>
           
@@ -119,7 +133,6 @@
 <br> <br><br> <br> 
 </div>
 
-<img class = "back1" src ="../images/back1.svg" style="bottom: -15%;">
 
 
 

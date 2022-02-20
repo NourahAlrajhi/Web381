@@ -457,7 +457,7 @@ font-size: 12px;
     .back2{
         position: absolute;
         left: 40%;;
-        bottom: 0%;
+        bottom: 13.5%;
         background-attachment: fixed;
         z-index: 0;
         width: 150px;
@@ -1280,6 +1280,7 @@ div.rightServ{
     background-color:#F0EFEF;
     padding-left: 15; 
     font-size: 12px;
+    overflow: scroll;
 }
 
 #ServPrice{
@@ -1425,4 +1426,11 @@ div.addPetCirc{
     background-size: cover;
     background-position: center;
     z-index: -1;
+}
+
+.requestbg{
+    background: url(../images/aboutusblank.svg) no-repeat; /*******/
+    background-size: cover;
+    background-position: center;
+
 }
