@@ -714,8 +714,7 @@ font-size: 12px;
     border-radius: 50%;
     width: 140px;
     height: 140px;
-    
-    margin-left: 50px;
+    margin-left: 80px;
 }
 .circle{
    float: left;
@@ -949,8 +948,8 @@ left: 130px;
         top: 200px;
     }
     #comrev{
-            height: 100px;
-        max-height: 150px;
+     height: 100px;
+        max-height:  135px;
         width: 300px;
         background-color: #F7F7F8;
         border-radius: 10px;
