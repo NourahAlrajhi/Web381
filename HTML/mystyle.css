@@ -1084,7 +1084,7 @@ left: 130px;
     /*Sign Up Page*/
 
 div.signUpCirc{
-    position: relative; left: 39%; top: 100px;
+    position: relative; left: 41.5%; top: 100px;
     background: #F0EFEF;
     border-radius: 50%;
     width: 130px;
@@ -1314,7 +1314,7 @@ div.rightServ{
    /*Add Pet Page*/
 
 div.addPetCirc{
-    position: relative; left: 39%; top: 210px;
+    position: relative; left: 41.5%; top: 210px;
     background: #F0EFEF;
     border-radius: 50%;
     width: 130px;
