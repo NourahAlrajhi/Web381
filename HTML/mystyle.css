@@ -84,12 +84,12 @@ td button{
     border-radius: 20px;
     
     color: white;
-
-    background-color: #635DAD;
-            opacity: 62%;
+   background-color:  #9084C2;
+    
+            opacity: 100%;
 }
 td button:hover{
-    opacity: 100%;
+    background-color: #635DAD;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
     
 }
@@ -107,7 +107,7 @@ td button:hover{
     background-color: #635DAD;
             opacity: 62%;
             position: absolute;
-            top: 660px;
+            bottom: 1%;
             left: 180px;
           
 }
@@ -127,8 +127,9 @@ button.SETApp2{
     background-color: #635DAD;
             opacity: 62%;
             position: absolute;
-            top: 660px;
+            bottom:.5%;
             left: 180px;
+           
            
 }
 button.SETApp2:hover{
@@ -138,8 +139,8 @@ button.SETApp2:hover{
 
 .CAT{
     position: absolute;
-    top: 600px;
-    left: 250px;
+    bottom: -13rem;
+    left: 17%;
     z-index: 3;
     width: 240px;
     height: 226px;
@@ -147,8 +148,8 @@ button.SETApp2:hover{
 
 .CAT2{
     position: absolute;
-    top: 600px;
-    left: 270px;
+    bottom:4%;
+    left: 19%;
     z-index: 3;
 }
 
@@ -163,11 +164,12 @@ td.DELET button{
     color: white;
 
     background-color: #FF74AB;
-            opacity: 62%;
+            opacity: 100%;
 }
 td.DELET button:hover{
     opacity: 100%;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    cursor: pointer;
     
 }
 
@@ -179,7 +181,7 @@ td.PENDING button{
     color: white;
 
     background-color:#A4A4A4;
-            opacity: 62%;
+            opacity: 100%;
 }
 td.PENDING button:hover{
     opacity: 100%;
@@ -193,12 +195,12 @@ td.Approved button{
     
     color: white;
 
-    background-color:#FEAD54;
-            opacity: 62%;
+    background-color:#fcb76d;
+            opacity: 100%;
 }
 td.Approved button:hover{
-    opacity: 100%;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    background-color:#FEAD54;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
     
 }
 td.Declined button{
@@ -331,13 +333,13 @@ body::-webkit-scrollbar-track{
 }
 .CAPTION {
  position: absolute;
- top: 120px;
+ top: 30vh;
  left: 240px;
  font-size: x-large;
 }
 .CAPTION2 {
     position: absolute;
-    top: 140px;
+    top: 30vh;
     left: 300px;
     font-size: x-large;
    }
@@ -1354,4 +1356,9 @@ div.addPetCirc{
 
 .signUpFinalPos{
     margin-top: -10%;;
+}
+.loginpage{
+    background: url(./mahaback1.svg) no-repeat;
+    background-size: cover;
+    background-position: center ;
 }
