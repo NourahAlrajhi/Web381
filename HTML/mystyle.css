@@ -618,7 +618,7 @@ font-size: 12px;
   
 .Resetbutton{     
     position: absolute;
-    left: 90px;
+    left:120px;;
     margin-top: 50px;
     top: 200px;
     font-size: 1.8em;
@@ -734,6 +734,7 @@ font-size: 12px;
     position: relative;
     padding-left: 250px;
     font-size: 1.8em;
+    bottom: 10px;
 }
 .parrotimg{
     position: relative;
@@ -895,7 +896,7 @@ left: 130px;
         color:#ccc;
         margin-right:10px;
     }
-    .rate:not(:checked) > label:before {
+   .rate:not(:checked) > label:before {
         content: '★ ';
     }
     .rate > input:checked ~ label {
@@ -903,7 +904,7 @@ left: 130px;
     }
     .rate:not(:checked) > label:hover,
     .rate:not(:checked) > label:hover ~ label {
-        color: #deb217;  
+        color: #000000;  
     }
     .rate > input:checked + label:hover,
     .rate > input:checked + label:hover ~ label,
@@ -911,6 +912,33 @@ left: 130px;
     .rate > input:checked ~ label:hover ~ label,
     .rate > label:hover ~ input:checked ~ label {
         color: #c59b08;
+    }
+    .rateM {
+        float: left;
+        height: 46px;
+        padding: 0 10px;
+
+    }
+    
+    .rateM:not(:checked) > input {
+        position:absolute;
+        top:-9999px;
+    }
+    .rateM:not(:checked) > label {
+        float:right;
+        width:1em;
+        overflow:hidden;
+        white-space:nowrap;
+        cursor:pointer;
+        font-size:30px;
+        color:#ccc;
+        margin-right:10px;
+    }
+   .rateM:not(:checked) > label:before {
+        content: '★ ';
+    }
+    .rateM > input:checked ~ label {
+        color: #ffc700;    
     }
     
     .Q{
