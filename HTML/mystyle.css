@@ -84,12 +84,12 @@ td button{
     border-radius: 20px;
     
     color: white;
-
-    background-color: #635DAD;
-            opacity: 62%;
+   background-color:  #9084C2;
+    
+            opacity: 100%;
 }
 td button:hover{
-    opacity: 100%;
+    background-color: #635DAD;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
     
 }
@@ -164,7 +164,7 @@ td.DELET button{
     color: white;
 
     background-color: #FF74AB;
-            opacity: 62%;
+            opacity: 100%;
 }
 td.DELET button:hover{
     opacity: 100%;
@@ -181,7 +181,7 @@ td.PENDING button{
     color: white;
 
     background-color:#A4A4A4;
-            opacity: 62%;
+            opacity: 100%;
 }
 td.PENDING button:hover{
     opacity: 100%;
@@ -195,12 +195,12 @@ td.Approved button{
     
     color: white;
 
-    background-color:#FEAD54;
-            opacity: 62%;
+    background-color:#fcb76d;
+            opacity: 100%;
 }
 td.Approved button:hover{
-    opacity: 100%;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    background-color:#FEAD54;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
     
 }
 td.Declined button{
