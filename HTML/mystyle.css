@@ -925,12 +925,19 @@ left: 130px;
         font-size:30px;
         color:#ccc;
         margin-right:10px;
+        cursor:auto;
+
     }
    .rateM:not(:checked) > label:before {
         content: '★ ';
     }
     .rateM > input:checked ~ label {
         color: #ffc700;    
+        cursor:auto;
+
+    }
+    .rateM:hover{
+        cursor:auto;
     }
     
     .Q{
