@@ -1377,7 +1377,11 @@ div.addPetCirc{
 }
 
 .signUpFinalPos{
-    margin-top: -11%;;
+    margin-top: 1%;;
+}
+.loginFinalPos{
+    margin-top: 40px;;
+
 }
 
 /*backgroud images*/
@@ -1386,6 +1390,7 @@ div.addPetCirc{
     background: url(./mahaback1.svg) no-repeat;
     background-size: cover;
     background-position: center ;
+
 }
 
 .addaservicepageback{
