@@ -108,7 +108,7 @@ $id = $row['Petid'];
       <td> <?php echo $row['Breed'] ?> </td>
 
        
-      <td> <a href="#" ><button >View</button></a>
+      <td> <a href="Edit_Pet_Profile.php?id= <?php  echo $id; ?>" ><button >View</button></a>
                     
                     </td>
                     <td class="DELET"><a href="delete.php?id= <?php  echo $id; ?>" onclick = "return confirm('Are you sure?')"><button>delete</button></a>
