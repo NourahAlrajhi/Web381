@@ -83,7 +83,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
                </div>
         </div>
         
-        <form method="post">
+        <form method="post" action ="../PHP/Pet_List.php">
            <div class="leftAddPet">
             <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -16px;">Add New Pet</h3>
              <label for="Fname">*Pet name</label>
