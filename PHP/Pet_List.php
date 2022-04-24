@@ -7,7 +7,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 <head>
    <meta charset="utf-8">
     <title>Pet List</title>
-    <link rel="stylesheet" type="text/css" href="../HTML/mystyle.css">
+    <link rel="stylesheet" type="text/css" href="Nourah's.css">
    
    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><-->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -97,7 +97,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 $run = $db -> query($qry);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
-
+$id = $row['Petid'];
         
         ?>
 
@@ -108,10 +108,10 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
       <td> <?php echo $row['Breed'] ?> </td>
 
        
-      <td> <a href="../HTML/MahaB Edit Pet Profile Page DD.html" ><button >View</button></a>
+      <td> <a href="#" ><button >View</button></a>
                     
                     </td>
-                    <td class="DELET"><a href="../HTML/my pit list pet owner2.html" onclick = "return comfirm('Are you sure?')"><button>delete</button></a>
+                    <td class="DELET"><a href="delete.php?id= <?php  echo $id; ?>" onclick = "return confirm('Are you sure?')"><button>delete</button></a>
                         
                     </td>
     </tr>

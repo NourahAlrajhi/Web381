@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+
+/* حق نورة الراجحي*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+.header_fixed{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+.tabel-box{
+    margin: 50px auto;
+
+}
+.tabel-row{
+    display: table;
+    width: 80%;
+    margin: 10px auto;
+    font-family: sans-serif;
+    background: transparent;
+    padding: 12px 0;
+    color: black;
+    font-size: 13px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+}
+.tabel-cell{
+    display: table-cell;
+    width:30%;
+    text-align: center;
+    padding: 4px 0;
+    border-right: 1px solid pink;
+    vertical-align: middle;
+
+}
+.tabel-head{
+    background: powderblue;
+    box-shadow: non;
+    color: #030229;
+}
+.tabel-head .tabel-cell{
+    border-right: none;
+}
+.last-cell{
+    border-right: none;
+}
+
+tabel{
+    border-collapse: collapse;
+}
+th,td{
+    border-bottom: 1px thin #dddddd;
+    padding: 14px 36px;
+    font-size: 14px;
+}
+
+tr:ntn-child(even){
+    background-color: #dddddd;
+}
+
+tr:hover td{
+    color: #9084C2;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 50, 0.3);
+}
+tr{
+    color: #9084C2;
+}
+
+
+
+td button{
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    
+    color: white;
+   background-color:  #9084C2;
+    
+            opacity: 100%;
+}
+td button:hover{
+    background-color: #635DAD;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    
+}
+.EYES{
+   
+    color: #635DAD;
+}
+
+
+ button.SETApp{
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;  
+    color: white;
+    background-color: #635DAD;
+            opacity: 62%;
+            position: absolute;
+            bottom: 1%;
+            left: 180px;
+          
+}
+button.SETApp:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    
+}
+
+button.SETApp2{
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    
+    color: white;
+
+    background-color: #635DAD;
+            opacity: 62%;
+            position: absolute;
+            bottom:.5%;
+            left: 180px;
+           
+           
+}
+button.SETApp2:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+}
+
+.CAT{
+    position: absolute;
+    bottom: -13rem;
+    left: 17%;
+    z-index: 3;
+    width: 240px;
+    height: 226px;
+}
+
+.CAT2{
+    position: absolute;
+    bottom:4%;
+    left: 19%;
+    z-index: 3;
+}
+
+
+
+
+td.DELET button{
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    
+    color: white;
+
+    background-color: #FF74AB;
+            opacity: 100%;
+}
+td.DELET button:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    cursor: pointer;
+    
+}
+
+td.PENDING button{
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    
+    color: white;
+
+    background-color:#A4A4A4;
+            opacity: 100%;
+}
+td.PENDING button:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+   
+}
+td.Approved button{
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    
+    color: white;
+
+    background-color:#fcb76d;
+            opacity: 100%;
+}
+td.Approved button:hover{
+    background-color:#FEAD54;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    
+}
+td.Declined button{
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    
+    color: white;
+
+    background-color:#FF765F;
+            opacity: 62%;
+}
+td.Declined button:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    
+}
+body::-webkit-scrollbar-track{
+    background: #fff;
+}
+
+
+
+
+
+.header_fixed{
+    background-color: white;
+    box-shadow: 0 10px 20px 0 rgba(152, 131, 245, 0.2);
+    width: 1000px;
+    height: 470px;
+    border: 1px ;
+    overflow: scroll;
+    position: absolute;
+    right: 200px;
+    bottom: 60px;
+    border-radius: 20px;
+    z-index: 2;
+    text-align: center;
+}
+.header_fixed3{
+    background-color: white;
+    box-shadow: 0 10px 20px 0 rgba(152, 131, 245, 0.2);
+    width: 900px;
+    height: 450px;
+    border: 1px ;
+    overflow: scroll;
+    position: absolute;
+    right: 250px;
+  padding-left: 170px;
+   
+    bottom: 60px;
+    border-radius: 20px;
+    z-index: 2;
+    text-align: center;
+}
+
+
+
+.header_fixed4{
+   
+        background-color: white;
+        box-shadow: 0 10px 20px 0 rgba(152, 131, 245, 0.2);
+        width: 800px;
+        height: 350px;
+        padding-left: 130px;
+        border: 1px ;
+        overflow: scroll;
+        position: absolute;
+        left: 350px;
+        top: 300px;
+        border-radius: 20px;
+        z-index: 2;
+        text-align: center;
+    
+}
+
+.Tabeltitel{
+    position: absolute;
+    top: 240px;
+    left: 357px;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.TwoTabelBG{
+    position: absolute;
+    top: 80px;
+    right: 0px;
+}
+.TwoTabelBG2{
+    position: absolute;
+    bottom: -310px;
+    left: 0px;
+}
+
+.header_fixed5{
+   background-color: white;
+   box-shadow: 0 10px 20px 0 rgba(152, 131, 245, 0.2);
+   width: 800px;
+   height: 350px;
+   padding-left: 70px;
+   border: 1px ;
+   overflow: scroll;
+   position: absolute;
+   left: 350px;
+   top: 890px;
+   border-radius: 20px;
+   z-index: 2;
+   text-align: center; 
+}
+
+
+
+.Tabeltitel2{
+    position: absolute;
+    top: 830px;
+    left: 360px;
+    font-weight: bold;
+    font-size: x-large;
+    z-index: 3;
+}
+
+
+::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) ;
+}
+
+::-webkit-scrollbar-thumb{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) ;
+}
+.CAPTION {
+ position: absolute;
+ top: 30vh;
+ left: 240px;
+ font-size: x-large;
+}
+.CAPTION2 {
+    position: absolute;
+    top: 30vh;
+    left: 300px;
+    font-size: x-large;
+   }
+   
+td a{
+    color: gray;
+}
+td a:hover{
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    color: gray;
+
+}
+
+.BACKGROUND{
+  position: absolute;
+  background-position: right ;
+  left: 1000px;
+  top:40px;
+  background-attachment: fixed;
+  z-index: 0;
+}
+th.HEADER{
+    background-color: white;
+    position: sticky;
+    top: 0;
+   
+    
+}
+
+
+.PetImage:hover{
+ 
+ border-radius: -30%;
+}
