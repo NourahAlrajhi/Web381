@@ -83,7 +83,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
                </div>
         </div>
         
-        <form action="../HTML my pit list pet owner.html" method="post">
+        <form method="post">
            <div class="leftAddPet">
             <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -16px;">Add New Pet</h3>
              <label for="Fname">*Pet name</label>
@@ -220,7 +220,7 @@ $DOB = $_POST['Pnum'];
 
 $qry = "insert into Pet values(null , '$PetName' , '$Gender' , '$Breed' , '$Spayed' , '$MH' , '$DOB')";
 if(mysqli_query($db,$qry)){
-echo '<script>alert("Pet added successfully.");</script>';
+echo '<script>alert("Pet added successfully.!!");</script>';
 header('location : Add_New_Pet.php');
 }else{
     echo mysqli_error($db);
