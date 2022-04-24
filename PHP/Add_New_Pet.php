@@ -42,7 +42,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
             <li  ><a href="../HTML/Home Pet Owner.html">Home</a>
               <ul class="sub-menu" id="sub-menu-arrow"> 
                 <li > <a href="../HTML/MahaB Add New Pet.html">Add a New Pet</a></li>
-                <li><a href="../HTML/my pit list pet owner.html">View Pet List</a></li>
+                <li><a href="Pet_List.php">View Pet List</a></li>
                 <li><a href="../HTML/rquest list pet owner.html">View Requests List</a></li>
 
                 <li><a href="../HTML/upcoming and previous pet owner.html">View Appointments List</a> </li>
@@ -83,7 +83,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
                </div>
         </div>
         
-        <form method="post" action ="../PHP/Pet_List.php">
+        <form method="post">
            <div class="leftAddPet">
             <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -16px;">Add New Pet</h3>
              <label for="Fname">*Pet name</label>

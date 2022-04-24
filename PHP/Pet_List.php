@@ -7,7 +7,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 <head>
    <meta charset="utf-8">
     <title>Pet List</title>
-    <link rel="stylesheet" type="text/css" href="../HTML mystyle.css">
+    <link rel="stylesheet" type="text/css" href="../HTML/mystyle.css">
    
    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><-->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,7 +23,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 
 <!-- font awesome cdn link  -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<link rel="stylesheet" href="Header and Footer.css">
+<link rel="stylesheet" href="../HTML/Header and Footer.css">
 <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
 </head>
 <body class="NBODY2">
@@ -40,23 +40,23 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
         <ul class="nav-list">
             <li  ><a href="./Home Pet Owner.html">Home</a>
               <ul class="sub-menu" id="sub-menu-arrow"> 
-                <li > <a href="../HTMLMahaB Add New Pet.html">Add a New Pet</a></li>
-                <li><a href="../HTMLmy pit list pet owner.html">View Pet List</a></li>
-                <li><a href="../HTMLrquest list pet owner.html">View Requests List</a></li>
+                <li > <a href="Add_New_Pet.php">Add a New Pet</a></li>
+                <li><a href="../HTML/my pit list pet owner.html">View Pet List</a></li>
+                <li><a href="../HTML/rquest list pet owner.html">View Requests List</a></li>
 
-                <li><a href="../HTMLupcoming and previous pet owner.html">View Appointments List</a> </li>
+                <li><a href="../HTML/upcoming and previous pet owner.html">View Appointments List</a> </li>
         
               </ul>
             </li>
           
             
-           <li><a href="../HTMLServices Pet Owner.html">Services</a></li> 
-           <li><a href="../HTMLAbout us PetOwner.html">About Us</a></li> 
-            <li><a href="../HTMLContact Clinic.html">Contact Us</a></li>
+           <li><a href="../HTML/Services Pet Owner.html">Services</a></li> 
+           <li><a href="../HTML/About us PetOwner.html">About Us</a></li> 
+            <li><a href="../HTML/Contact Clinic.html">Contact Us</a></li>
             <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
-                    <li ><a href="../HTMLMahaB Edit Profile Page.html">View Profile</a></li>
-                    <li><a href="../HTML LnadingPage.html">Sign Out</a></li>
+                    <li ><a href="../HTML/MahaB Edit Profile Page.html">View Profile</a></li>
+                    <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
             
                   </ul></li>
           </ul>
@@ -93,9 +93,9 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 
         <?php 
         $i=1;
-        $qry = "select * from healed";
+        $qry = "select * from Pet";
 $run = $db -> query($qry);
-if($run  -> num_row >0){
+if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
 
         
@@ -103,15 +103,15 @@ if($run  -> num_row >0){
 
       <tr>
       <td><?php echo  $i++; ?></td>
-      <td><img src="../HTML image (1).svg"  height="50px" width="50px"></td>
+      <td><img src="../HTML/image (1).svg"  height="50px" width="50px"></td>
       <td> <?php echo $row['Pet_Name'] ?> </td>
       <td> <?php echo $row['Breed'] ?> </td>
 
        
-      <td> <a href="../HTML MahaB Edit Pet Profile Page DD.html" ><button >View</button></a>
+      <td> <a href="../HTML/MahaB Edit Pet Profile Page DD.html" ><button >View</button></a>
                     
                     </td>
-                    <td class="DELET"><a href="../HTML my pit list pet owner2.html" onclick = "return comfirm('Are you sure?')"><button>delete</button></a>
+                    <td class="DELET"><a href="../HTML/my pit list pet owner2.html" onclick = "return comfirm('Are you sure?')"><button>delete</button></a>
                         
                     </td>
     </tr>
@@ -232,7 +232,7 @@ if($run  -> num_row >0){
     </table>
 </div>
 
-<img class="BACKGROUND" src="../HTML background.svg">
+<img class="BACKGROUND" src="../HTML/background.svg">
 </section>
 <!-- Footer secton starts -->
 <div class="footer">
