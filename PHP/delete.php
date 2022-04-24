@@ -16,5 +16,5 @@ if(mysqli_query($db,$qry)){
     echo mysqli_error($db);
 }
 
-
+mysqli_close($db);
 ?>

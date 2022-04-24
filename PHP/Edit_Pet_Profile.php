@@ -11,15 +11,16 @@ if(!$db){
     $run = $db -> query($qry);
     if(!empty($run->num_rows) && ($run->num_rows > 0)){
         while($row = $run -> fetch_assoc()){
-            $PetName = $row['Fname'];
-            $Gender = $row['Gend'];
+            $PetName = $row['Pet_Name'];
+            $Gender = $row['Gender'];
             $Breed = $row['Breed'];
-            $Spayed = $row['Gend2'];
-            $MH = $row['MedHist'];
-            $DOB = $row['Pnum'];
+            $Spayed = $row['Spayed'];
+            $MH = $row['Medical_History'];
+            $DOB = $row['DOB'];
 }
 
-
+    }
+}
 
 ?>
 <!DOCTYPE html>
@@ -56,7 +57,7 @@ if(!$db){
 
     <nav class="navbar">
         <ul class="nav-list">
-            <li  ><a href="./Home Pet Owner.html">Home</a>
+            <li  ><a href="../HTML/Home Pet Owner.html">Home</a>
               <ul class="sub-menu" id="sub-menu-arrow"> 
                 <li > <a href="../HTML/MahaB Add New Pet.html">Add a New Pet</a></li>
                 <li><a href="../HTML/my pit list pet owner.html">View Pet List</a></li>
@@ -104,7 +105,7 @@ if(!$db){
 
 
 <div class="editPetFinalPos">
-        <form action="MahaB Pet Profile My Pet List Pet Owner.html">
+        <form method="post">
            
   
             <div class="leftAddPet">
@@ -112,7 +113,7 @@ if(!$db){
              <label for="Fname">Pet name</label>
              <br>
              <input type="text" name="Fname" id="Fname"  value="<?php echo $PetName;?>" required="">  
-             <a href="#"><img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 43.3%; top:28.5%"></a>
+             <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 43.3%; top:28.5%"></a>
              <br><br>  
                 
              <label for="Pnum">Date of Birth</label>
@@ -134,14 +135,15 @@ if(!$db){
              <label for="Lname">Breed</label>
              <br>  
              <input style="color: gray;" type="text" name="Breed" id="Lname"  value="<?php echo   $Breed ;?>" readonly required="">
-             <a href="#"><img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 87.5%; top:24.5%"></a>
+             <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 87.5%; top:24.5%"></a>
              <br><br>
      
              <label for="Gend">Spayed/Neutered Status</label>
              <br>
-             <select name="Gend" id="Gend" value="<?php echo   $Spayed ;?>" required="">
-               <option value = "Male"> Spayed/Neutered </option>
-               <option value = "Female"> Not Spayed/Neutered </option>
+             <select name="Spayed" id="Gend" required="">
+             <option value="hid" hidden > <?php echo $Spayed;?></option>
+               <option value = "Spayed/Neutered " > Spayed/Neutered </option>
+               <option value = "Not Spayed/Neutered"> Not Spayed/Neutered </option>
              </select>
              <br><br>
     
@@ -151,8 +153,8 @@ if(!$db){
              <br><br>
              <label for="Lname">Medical History</label>
              <br>  
-             <textarea name="MedHist" id="MedHist" value="<?php echo  $MH ;?>"></textarea>
-             <a href="#"><img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 87.5%; top:63%"></a>
+             <textarea name="MedHist" id="MedHist" ><?php echo $MH;?></textarea>
+             <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 87.5%; top:63%"></a>
 
              <br><br>
            </div>
@@ -230,3 +232,30 @@ if(!$db){
 <!-- ended 3 here -->
     </body>
 </html>
+
+
+<?php  
+
+if(isset($_POST['Reg'])){
+
+$PetName = $_POST['Fname'];
+$Gender = $_POST['Gend'];
+$Breed = $_POST['Breed'];
+$Spayed = $_POST['Spayed'];
+$MH = $_POST['MedHist'];
+$DOB = $_POST['Pnum'];
+
+$qry = "update  Pet set Pet_Name = '$PetName' , Gender='$Gender' , Breed= '$Breed' , Spayed= '$Spayed' , Medical_History='$MH' , DOB='$DOB' where Petid = $id";
+
+if(mysqli_query($db,$qry)){
+    echo '<script>alert("changes updated successfully.!!");</script>';
+    header('location :Edit_Pet_Profile.php');
+    }else{
+        echo mysqli_error($db);
+    }
+
+}
+
+mysqli_close($db);
+
+?>

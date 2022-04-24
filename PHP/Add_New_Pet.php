@@ -78,7 +78,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
         <div class="addPetCirc">
                <div class="signUpCam">
                    <i class="fa-solid fa-camera fa-2xl"></i>
-                   <a href="#"><img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 72.4%; top:40px"></a>
+                   <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 72.4%; top:40px"></a>
 
                </div>
         </div>
@@ -115,10 +115,10 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
      
              <label for="Gend">*Spayed/Neutered Status</label>
              <br>
-             <select name="Gend2" id="Gend" placeholder="Choose Status" required="">
+             <select name="Spayed" id="Gend" placeholder="Choose Status" required="">
                <option value = "" disabled selected hidden> Choose Status </option>
-               <option value = "Male"> Spayed/Neutered </option>
-               <option value = "Female"> Not Spayed/Neutered </option>
+               <option value = "Spayed/Neutered Status"> Spayed/Neutered </option>
+               <option value = "Not Spayed/Neutered"> Not Spayed/Neutered </option>
              </select>
              <br><br>
     
@@ -214,7 +214,7 @@ if(isset($_POST['Reg'])){
 $PetName = $_POST['Fname'];
 $Gender = $_POST['Gend'];
 $Breed = $_POST['Breed'];
-$Spayed = $_POST['Gend2'];
+$Spayed = $_POST['Spayed'];
 $MH = $_POST['MedHist'];
 $DOB = $_POST['Pnum'];
 
@@ -226,5 +226,5 @@ header('location : Add_New_Pet.php');
     echo mysqli_error($db);
 }
 }
-
+mysqli_close($db);
 ?>
