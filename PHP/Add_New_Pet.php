@@ -1,3 +1,8 @@
+
+<?php 
+$db = mysqli_connect("localhost" , "root" ,"","healed");
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -78,7 +83,7 @@
                </div>
         </div>
         
-        <form action="my pit list pet owner.html" method="post">
+        <form action="../HTML my pit list pet owner.html" method="post">
            <div class="leftAddPet">
             <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -16px;">Add New Pet</h3>
              <label for="Fname">*Pet name</label>
@@ -110,7 +115,7 @@
      
              <label for="Gend">*Spayed/Neutered Status</label>
              <br>
-             <select name="Gend" id="Gend" placeholder="Choose Status" required="">
+             <select name="Gend2" id="Gend" placeholder="Choose Status" required="">
                <option value = "" disabled selected hidden> Choose Status </option>
                <option value = "Male"> Spayed/Neutered </option>
                <option value = "Female"> Not Spayed/Neutered </option>
@@ -200,3 +205,26 @@
     </body>
 </html>
 
+<?php    
+
+
+
+if(isset($_POST['Reg'])){
+
+$PetName = $_POST['Fname'];
+$Gender = $_POST['Gend'];
+$Breed = $_POST['Breed'];
+$Spayed = $_POST['Gend2'];
+$MH = $_POST['MedHist'];
+$DOB = $_POST['Pnum'];
+
+$qry = "insert into Pet values(null , '$PetName' , '$Gender' , '$Breed' , '$Spayed' , '$MH' , '$DOB')";
+if(mysqli_query($db,$qry)){
+echo '<script>alert("Pet added successfully.");</script>';
+header('location : Add_New_Pet.php');
+}else{
+    echo mysqli_error($db);
+}
+}
+
+?>
