@@ -10,7 +10,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 <head>
    <meta charset="utf-8">
     <title>Request List</title>
-    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <link rel="stylesheet" type="text/css" href="../HTML/mystyle.css">
    
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -41,7 +41,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 
     <nav class="navbar">
         <ul class="nav-list">
-            <li  ><a href="./Home Pet Owner.html">Home</a>
+            <li  ><a href="../HTML/Home Pet Owner.html">Home</a>
               <ul class="sub-menu" id="sub-menu-arrow"> 
                 <li > <a href="Add_New_Pet.php">Add a New Pet</a></li>
                 <li><a href="Pet_List.php">View Pet List</a></li>
@@ -117,7 +117,7 @@ $id = $row['Appointmentid'];
                     </td>
 
                   
-                    <td class="EYES"> <a href="Edit_Pet_Profile.php?id=<?php echo $id; ?>"><i class="fa fa-eye" style="font-size:24px"></i></a></td>    
+                    <td class="EYES"> <a href="Edit_Appo.php?id=<?php echo $id; ?>"><i class="fa fa-eye" style="font-size:24px"></i></a></td>    
                 </tr>
                 <?php 
 
