@@ -9,7 +9,7 @@ if(!$db){
     die('error in db'. mysqli_error($db));
 }else{
     $id = $_GET['id'];
-    $qry = "select * from Pet where Petid = $id ";
+    $qry = "select * from PETT where Petid = $id ";
     $run = $db -> query($qry);
     if(!empty($run->num_rows) && ($run->num_rows > 0)){
         while($row = $run -> fetch_assoc()){
@@ -165,7 +165,8 @@ if(!$db){
            <br><br><br><br><br>
            <br><br><br><br><br>
            
-           <input type="submit" name="Reg" id="Reg" value="Save">
+        <!-- <a href="View_Pet_Profile.php?id=<?php echo $id; ?>"><button  name="Reg" id="Reg" >Save</button></a>-->
+         <a href="View_Pet_Profile.php?id=<?php echo $id; ?>"><input type="submit" name="Reg" id="Reg" value="Save"></a>
            
            <br><br><br><br>
         </form>
