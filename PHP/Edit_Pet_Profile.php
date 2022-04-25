@@ -1,5 +1,7 @@
 
 <?php 
+ob_start();
+    session_start();
 $db = mysqli_connect("localhost" , "root" ,"","healed");
 
 if(!$db){
@@ -7,7 +9,7 @@ if(!$db){
     die('error in db'. mysqli_error($db));
 }else{
     $id = $_GET['id'];
-    $qry = "select * from Pet where Petid = $id";
+    $qry = "select * from Pet where Petid = $id ";
     $run = $db -> query($qry);
     if(!empty($run->num_rows) && ($run->num_rows > 0)){
         while($row = $run -> fetch_assoc()){
@@ -105,7 +107,7 @@ if(!$db){
 
 
 <div class="editPetFinalPos">
-        <form method="post">
+        <form method="post" >
            
   
             <div class="leftAddPet">
@@ -123,9 +125,10 @@ if(!$db){
     
              <label for="Gend">Gender</label>
              <br>
-             <select name="Gend" id="Gend" value="<?php echo  $Gender ;?>" required="" disabled="true">
+             <select name="Gend111" id="Gend" required="" disabled="true">  
+             <option value="hid" hidden ><?php echo $Gender;?></option>      
                <option value = "Male" > Male </option>
-               <option value = "Female"selected> Female </option>
+               <option value = "Female"> Female </option>
              </select>
              <br><br>
     
@@ -138,11 +141,11 @@ if(!$db){
              <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 87.5%; top:24.5%"></a>
              <br><br>
      
-             <label for="Gend">Spayed/Neutered Status</label>
+             <label for="Spayed">Spayed/Neutered Status</label>
              <br>
              <select name="Spayed" id="Gend" required="">
              <option value="hid" hidden > <?php echo $Spayed;?></option>
-               <option value = "Spayed/Neutered " > Spayed/Neutered </option>
+               <option value = "Spayed/Neutered "> Spayed/Neutered </option>
                <option value = "Not Spayed/Neutered"> Not Spayed/Neutered </option>
              </select>
              <br><br>
@@ -235,27 +238,27 @@ if(!$db){
 
 
 <?php  
-
+    $id = $_GET['id'];
 if(isset($_POST['Reg'])){
 
 $PetName = $_POST['Fname'];
-$Gender = $_POST['Gend'];
-$Breed = $_POST['Breed'];
 $Spayed = $_POST['Spayed'];
 $MH = $_POST['MedHist'];
-$DOB = $_POST['Pnum'];
 
-$qry = "update  Pet set Pet_Name = '$PetName' , Gender='$Gender' , Breed= '$Breed' , Spayed= '$Spayed' , Medical_History='$MH' , DOB='$DOB' where Petid = $id";
+
+$qry = "update PETT set Pet_Name = '$PetName'  , Spayed= '$Spayed' , Medical_History= '$MH'  where Petid = $id ";
 
 if(mysqli_query($db,$qry)){
-    echo '<script>alert("changes updated successfully.!!");</script>';
+   // echo '<script>alert("changes updated successfully.!!");</script>';
     header('location :Edit_Pet_Profile.php');
+    ob_end_flush();
     }else{
         echo mysqli_error($db);
     }
 
 }
 
-mysqli_close($db);
+
+
 
 ?>

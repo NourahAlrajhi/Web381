@@ -1,4 +1,5 @@
 <?php 
+session_start();
 $db = mysqli_connect("localhost" , "root" ,"","healed");
 ?>
 
@@ -93,7 +94,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 
         <?php 
         $i=1;
-        $qry = "select * from Pet";
+        $qry = "select * from PETT";
 $run = $db -> query($qry);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
@@ -121,7 +122,7 @@ $id = $row['Petid'];
     }
 }
 
-mysqli_close($db);
+
     ?>
            <!-- <tr>
                 <td>1</td>

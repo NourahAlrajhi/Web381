@@ -1,4 +1,6 @@
 <?php 
+ob_start();
+    session_start();
 $db = mysqli_connect("localhost" , "root" ,"","healed");
 
 if(!$db){
@@ -12,6 +14,7 @@ $qry = "delete from Pet where Petid = $id";
 
 if(mysqli_query($db,$qry)){
     header('location:Pet_List.php');
+    ob_end_flush();
 }else{
     echo mysqli_error($db);
 }

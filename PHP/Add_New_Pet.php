@@ -1,8 +1,10 @@
 
 <?php 
-$db = mysqli_connect("localhost" , "root" ,"","healed");
-?>
+ob_start();
+session_start();
 
+//$db = mysqli_connect("localhost" , "root" ,"","healed");
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -83,7 +85,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
                </div>
         </div>
         
-        <form method="post">
+        <form method="post" action="Add_New_Pet.php">
            <div class="leftAddPet">
             <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -16px;">Add New Pet</h3>
              <label for="Fname">*Pet name</label>
@@ -209,7 +211,35 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 
 
 
-if(isset($_POST['Reg'])){
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ( !( $database = mysqli_connect( "localhost", "root", "" ) ) )
+       die( "<p>Could not connect to database</p>" );
+
+    if ( !mysqli_select_db( $database, "healed") )
+       die( "<p>Could not open URL database</p>" );
+
+       $PetName = $_POST['Fname'];
+       $Gender = $_POST['Gend'];
+       $Breed = $_POST['Breed'];
+       $Spayed = $_POST['Spayed'];
+       $MH = $_POST['MedHist'];
+       $DOB = $_POST['Pnum'];
+
+    $query="INSERT INTO PETT (Pet_Name, Gender, Breed ,Spayed , Medical_History,DOB) VALUES ('".$PetName."','".$Gender."','". $Breed."','".$Spayed."','".$MH."','".$DOB."');";
+    $result=mysqli_query($database, $query);
+
+    if($result){
+        header("location: Pet_List.php");
+ob_end_flush();}
+    else{
+        echo "An error occured while inserting into the branch table.";}
+}
+
+
+
+
+/*if(isset($_POST['Reg'])){
 
 $PetName = $_POST['Fname'];
 $Gender = $_POST['Gend'];
@@ -218,13 +248,16 @@ $Spayed = $_POST['Spayed'];
 $MH = $_POST['MedHist'];
 $DOB = $_POST['Pnum'];
 
+
+
 $qry = "insert into Pet values(null , '$PetName' , '$Gender' , '$Breed' , '$Spayed' , '$MH' , '$DOB')";
 if(mysqli_query($db,$qry)){
+    header("location: Pet_List.php");
 echo '<script>alert("Pet added successfully.!!");</script>';
-header('location : Add_New_Pet.php');
+
 }else{
     echo mysqli_error($db);
 }
-}
-mysqli_close($db);
+}*/
+
 ?>
