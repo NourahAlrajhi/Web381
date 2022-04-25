@@ -43,7 +43,7 @@ session_start();
         <ul class="nav-list">
             <li  ><a href="../HTML/Home Pet Owner.html">Home</a>
               <ul class="sub-menu" id="sub-menu-arrow"> 
-                <li > <a href="../HTML/MahaB Add New Pet.html">Add a New Pet</a></li>
+                <li > <a href="Add_New_Pet.php">Add a New Pet</a></li>
                 <li><a href="Pet_List.php">View Pet List</a></li>
                 <li><a href="../HTML/rquest list pet owner.html">View Requests List</a></li>
 

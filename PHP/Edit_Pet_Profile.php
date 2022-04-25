@@ -61,8 +61,8 @@ if(!$db){
         <ul class="nav-list">
             <li  ><a href="../HTML/Home Pet Owner.html">Home</a>
               <ul class="sub-menu" id="sub-menu-arrow"> 
-                <li > <a href="../HTML/MahaB Add New Pet.html">Add a New Pet</a></li>
-                <li><a href="../HTML/my pit list pet owner.html">View Pet List</a></li>
+                <li > <a href="Add_New_Pet.php">Add a New Pet</a></li>
+                <li><a href="Pet_List.php">View Pet List</a></li>
                 <li><a href="../HTML/rquest list pet owner.html">View Requests List</a></li>
 
                 <li><a href="../HTML/upcoming and previous pet owner.html">View Appointments List</a> </li>
@@ -251,7 +251,7 @@ $qry = "update PETT set Pet_Name = '$PetName'  , Spayed= '$Spayed' , Medical_His
 
 if(mysqli_query($db,$qry)){
    // echo '<script>alert("changes updated successfully.!!");</script>';
-   header('location: View_Pet_Profile.php?id={$id}');
+   header('location: Pet_List.php?id={$id}');
     ob_end_flush();
     }else{
         echo mysqli_error($db);
