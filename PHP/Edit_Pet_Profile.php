@@ -63,7 +63,7 @@ if(!$db){
               <ul class="sub-menu" id="sub-menu-arrow"> 
                 <li > <a href="Add_New_Pet.php">Add a New Pet</a></li>
                 <li><a href="Pet_List.php">View Pet List</a></li>
-                <li><a href="../HTML/rquest list pet owner.html">View Requests List</a></li>
+                <li><a href="Request_List_Pet_Owner.php">View Requests List</a></li>
 
                 <li><a href="../HTML/upcoming and previous pet owner.html">View Appointments List</a> </li>
         
