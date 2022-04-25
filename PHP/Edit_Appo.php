@@ -8,7 +8,7 @@ if(!$db){
     die('error in db'. mysqli_error($db));
 }else{
     $id = $_GET['id'];
-    $qry = "select * from Appointment where Petid = $id ";
+    $qry = "select * from Appointment where Appointmentid = $id ";
     $run = $db -> query($qry);
     if(!empty($run->num_rows) && ($run->num_rows > 0)){
         while($row = $run -> fetch_assoc()){
@@ -38,7 +38,7 @@ if(!$db){
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="Header and Footer.css">
+    <link rel="stylesheet" href="../HTML/Header and Footer.css">
     <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
     
 
@@ -93,7 +93,7 @@ if(!$db){
 <section class="requestbg">
     <div class = "part1"><br><br><br>
         <div class="title">  Edit Request </div>
-           <form action="rquest list pet owner.html">
+           <form method="post">
               <div class ="appointment-details"> 
     
                 <div class = "input-box">
@@ -215,25 +215,22 @@ if(!$db){
 
 
 <?php  
-    $id = $_GET['id'];
+$id = $_GET['id'];
 if(isset($_POST['SAVE'])){
 
  $Note = $_POST['note'];
 
 
-$qry = "update Appointment set Note = '$Note' where Petid = $id ";
+$qry = "update Appointment set Note = '$Note' where Appointmentid = $id ";
 
 if(mysqli_query($db,$qry)){
    // echo '<script>alert("changes updated successfully.!!");</script>';
-   header('location: Request_List_Pet_Owner.php?id={$id}');
+   header('location: Request_List_Pet_Owner.php');
     ob_end_flush();
     }else{
         echo mysqli_error($db);
     }
 
 }
-
-
-
 
 ?>

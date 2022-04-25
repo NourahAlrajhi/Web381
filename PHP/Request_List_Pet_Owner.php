@@ -1,5 +1,4 @@
 
-
 <?php 
 session_start();
 $db = mysqli_connect("localhost" , "root" ,"","healed");
@@ -25,7 +24,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 
 <!-- font awesome cdn link  -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<link rel="stylesheet" href="Header and Footer.css">
+<link rel="stylesheet" href="../HTML/Header and Footer.css">
 <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
 
 </head>
@@ -105,7 +104,7 @@ $id = $row['Appointmentid'];
         ?>
                 <tr>
                     <td><?php echo  $i++; ?></td>
-                    <td ><a  href="../HTMLMahaB Pet Profile Request List Pet Owner.html" style="box-shadow: 0 0 black;"> <img src="./image (1).svg"  height="50px" width="50px"></a></td>
+                    <td ><a  href="../HTML/MahaB Pet Profile Request List Pet Owner.html" style="box-shadow: 0 0 black;"> <img src="../HTML/image (1).svg"  height="50px" width="50px"></a></td>
                     <td> <?php echo $row['Pet_name'] ?> </td>
                 <td> <?php echo $row['Service'] ?></td>
                     
@@ -117,7 +116,7 @@ $id = $row['Appointmentid'];
                     </td>
 
                   
-                    <td class="EYES"> <a href="Edit_Appo.php?id=<?php echo $id; ?>"><i class="fa fa-eye" style="font-size:24px"></i></a></td>    
+                    <td class="EYES"> <a href="Edit_Appo.php?id=<?php echo $id;?>"><i class="fa fa-eye" style="font-size:24px"></i></a></td>    
                 </tr>
                 <?php 
 
@@ -222,11 +221,11 @@ $id = $row['Appointmentid'];
         </table>
     </div>
     
-    <img class="BACKGROUND" src="./background.svg">
+    <img class="BACKGROUND" src="../HTML/background.svg">
    
     
     <div class="AddButtons2">
-    <a href="New Appointment Request.html"><button class="SETApp2">New Request</button></a>
+    <a href="Add_Appointment.php"><button class="SETApp2">New Request</button></a>
                     
 
  <div class="CAT"><img src="../images/image 10.09.42 PM.svg" width=" 60px" ;

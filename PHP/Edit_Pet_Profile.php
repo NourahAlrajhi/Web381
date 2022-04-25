@@ -251,7 +251,7 @@ $qry = "update PETT set Pet_Name = '$PetName'  , Spayed= '$Spayed' , Medical_His
 
 if(mysqli_query($db,$qry)){
    // echo '<script>alert("changes updated successfully.!!");</script>';
-   header('location: Pet_List.php?id={$id}');
+   header('location: Pet_List.php');
     ob_end_flush();
     }else{
         echo mysqli_error($db);

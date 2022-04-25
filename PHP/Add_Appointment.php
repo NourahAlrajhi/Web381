@@ -19,7 +19,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="Header and Footer.css">
+    <link rel="stylesheet" href="../HTML/Header and Footer.css">
     <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
 
 </head>
@@ -120,13 +120,13 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
                         <option value="" selected hidden>Choose a service</option>
                         <?php   
 
-$qry = "select Service from Appointment";
+$qry = "select Service_name from Services";
 $run = $db -> query($qry);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
 ?>
 
-                        <option value=<?php echo $row['Service'] ?> > <?php echo $row['Service'] ?> </option>
+                        <option value=<?php echo $row['Service_name'] ?> > <?php echo $row['Service_name'] ?> </option>
                       <!--  <option > Dentistry</option>
                         <option > Boarding</option>-->
                         <?php 
