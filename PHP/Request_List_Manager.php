@@ -180,7 +180,7 @@ $id = $row['Appointmentid'];
                 <td> ... </td>
                 <td> <?php echo $row['Pet_name'] ?>  </td>
                 <td><?php echo $row['Service'] ?></td>
-                <td> <a href="../HTML/View Appointment Request(1).html"><button >See more</button> </a></td>
+                <td> <a href="View_Appo_Request.php?id=<?php  echo $id; ?>"><button >See more</button> </a></td>
                     <td><a href="Accept_Appo.php?id= <?php  echo $id; ?>" name="Cheack"><i class="fa fa-check" style="font-size:24px"></i></a></td>
                     <td><a href="DeletApp2.php?id= <?php  echo $id; ?>" onclick = "return confirm('Are you sure?')"><i class="fas fa-times" style="font-size: x-large;"></i></a>
                 </td>
