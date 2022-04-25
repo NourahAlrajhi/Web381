@@ -1,6 +1,4 @@
 
-
-
 <?php 
 ob_start();
     session_start();
@@ -170,8 +168,8 @@ if(!$db){
       
 
 
-              <a href="Pet_List.php"><button  name="Reg" id="Reg" value="Back">Back</button></a>
-         <!--  <input type="submit" name="Reg" id="Reg" value="Back"></a>-->
+            
+         <input type="submit" name="Reg" id="Reg" value="Back">
            
            <br><br><br><br>
 
@@ -243,3 +241,9 @@ if(!$db){
 <!-- ended 3 here -->
     </body>
 </html>
+
+<?php
+
+header('location: Pet_List.php');
+
+?>

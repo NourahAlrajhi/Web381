@@ -165,8 +165,8 @@ if(!$db){
            <br><br><br><br><br>
            <br><br><br><br><br>
            
-        <!-- <a href="View_Pet_Profile.php?id=<?php echo $id; ?>"><button  name="Reg" id="Reg" >Save</button></a>-->
-         <a href="View_Pet_Profile.php?id=<?php echo $id; ?>"><input type="submit" name="Reg" id="Reg" value="Save"></a>
+     
+         <input type="submit" name="Reg" id="Reg" value="Save">
            
            <br><br><br><br>
         </form>
@@ -251,7 +251,7 @@ $qry = "update PETT set Pet_Name = '$PetName'  , Spayed= '$Spayed' , Medical_His
 
 if(mysqli_query($db,$qry)){
    // echo '<script>alert("changes updated successfully.!!");</script>';
-    header('location :Edit_Pet_Profile.php');
+   header('location: View_Pet_Profile.php?id={$id}');
     ob_end_flush();
     }else{
         echo mysqli_error($db);
