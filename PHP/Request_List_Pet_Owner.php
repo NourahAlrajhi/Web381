@@ -102,13 +102,16 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
 $id = $row['Appointmentid'];
         
         ?>
+     
                 <tr>
                     <td><?php echo  $i++; ?></td>
                     <td ><a  href="../HTML/MahaB Pet Profile Request List Pet Owner.html" style="box-shadow: 0 0 black;"> <img src="../HTML/image (1).svg"  height="50px" width="50px"></a></td>
                     <td> <?php echo $row['Pet_name'] ?> </td>
                 <td> <?php echo $row['Service'] ?></td>
-                    
-                  <td class="PENDING"> <button>Pending  </button>
+                   
+           
+                
+                  <td class="PENDING"> <button>Pending </button>
                         
                     </td>
                     <td class="DELET"><a href="DeletApp.php?id= <?php  echo $id; ?>" onclick = "return confirm('Are you sure?')"><button>Cancel</button></a>

@@ -1,5 +1,6 @@
 
 <?php 
+ob_start();
 session_start();
 $db = mysqli_connect("localhost" , "root" ,"","healed");
 ?>
@@ -180,10 +181,16 @@ $id = $row['Appointmentid'];
                 <td> <?php echo $row['Pet_name'] ?>  </td>
                 <td><?php echo $row['Service'] ?></td>
                 <td> <a href="../HTML/View Appointment Request(1).html"><button >See more</button> </a></td>
-                    <td><a href="#" name="Cheack"><i class="fa fa-check" style="font-size:24px"></i></a></td>
-                    <td><a href="DeletApp.php?id= <?php  echo $id; ?>" onclick = "return confirm('Are you sure?')"><i class="fas fa-times" style="font-size: x-large;"></i></a>
+                    <td><a href="Accept_Appo.php?id= <?php  echo $id; ?>" name="Cheack"><i class="fa fa-check" style="font-size:24px"></i></a></td>
+                    <td><a href="DeletApp2.php?id= <?php  echo $id; ?>" onclick = "return confirm('Are you sure?')"><i class="fas fa-times" style="font-size: x-large;"></i></a>
                 </td>
             </tr>
+
+            <?php 
+
+}
+}
+?>
          <!--   <tr>
                 <td>2</td>
                 <td><a href="./MahaB Pet Profile Request List Manager 2.html"style="box-shadow: 0 0 black;"><img src="./image (1).svg"  height="50px" width="50px"></a></td>

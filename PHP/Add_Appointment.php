@@ -253,13 +253,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        $Time = $_POST['TIME'];
     
 
-    $query="INSERT INTO Appointment (Pet_name, Service, Date ,Note , Time) VALUES ('".$PetName."','".$Service."','".$Date."','".$Note."','".$Time."');";
+    $query="INSERT INTO Appointment (Pet_name,Service,Date,Note,Time,Status) VALUES ('".$PetName."','".$Service."','".$Date."','".$Note."','".$Time."','".''."');";
     $result=mysqli_query($database, $query);
 
     if($result){
         header("location: Request_List_Pet_Owner.php");
 ob_end_flush();}
     else{
-        echo "An error occured while inserting into the branch table.";}
+        echo "An error occured while inserting into the Appointment table.";}
 }
 ?>
