@@ -237,6 +237,7 @@ header label{
     }
     50%{
         transform: translateY(-1rem);
+
     }
 }
 .home .content{
@@ -773,6 +774,20 @@ header label{
     padding:.2rem 1rem;
     text-align: center;
 
+}
+.options img{
+animation: move 3s linear infinite;
+
+}
+
+ @keyframes  move {
+    0%, 100%{
+        transform: translateY(0rem);
+    }
+    50%{
+        transform: translatex(-.5rem);
+
+    }
 }
 
 

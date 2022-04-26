@@ -1,9 +1,15 @@
+
+<?php 
+session_start();
+$db = mysqli_connect("localhost" , "root" ,"","healed");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
    <meta charset="utf-8">
     <title>Request List</title>
-    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <link rel="stylesheet" type="text/css" href="../HTML/mystyle.css">
    
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -18,7 +24,7 @@
 
 <!-- font awesome cdn link  -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<link rel="stylesheet" href="Header and Footer.css">
+<link rel="stylesheet" href="../HTML/Header and Footer.css">
 <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
 
 </head>
@@ -34,25 +40,25 @@
 
     <nav class="navbar">
         <ul class="nav-list">
-            <li  ><a href="./Home Pet Owner.html">Home</a>
+            <li  ><a href="../HTML/Home Pet Owner.html">Home</a>
               <ul class="sub-menu" id="sub-menu-arrow"> 
-                <li > <a href="./MahaB Add New Pet.html">Add a New Pet</a></li>
-                <li><a href="./my pit list pet owner.html">View Pet List</a></li>
-                <li><a href="./rquest list pet owner.html">View Requests List</a></li>
+                <li > <a href="Add_New_Pet.php">Add a New Pet</a></li>
+                <li><a href="Pet_List.php">View Pet List</a></li>
+                <li><a href="Request_List_Pet_Owner.php">View Requests List</a></li>
 
-                <li><a href="./upcoming and previous pet owner.html">View Appointments List</a> </li>
+                <li><a href="../HTML/upcoming and previous pet owner.html">View Appointments List</a> </li>
         
               </ul>
             </li>
           
             
-           <li><a href="./Services Pet Owner.html">Services</a></li> 
-           <li><a href="./About us PetOwner.html">About Us</a></li> 
-            <li><a href="./Contact Clinic.html">Contact Us</a></li>
+           <li><a href="../HTML/Services Pet Owner.html">Services</a></li> 
+           <li><a href="../HTML/About us PetOwner.html">About Us</a></li> 
+            <li><a href="../HTML/Contact Clinic.html">Contact Us</a></li>
             <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
-                    <li ><a href="MahaB Edit Profile Page.html">View Profile</a></li>
-                    <li><a href="./LnadingPage.html">Sign Out</a></li>
+                    <li ><a href="../HTML/MahaB Edit Profile Page.html">View Profile</a></li>
+                    <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
             
                   </ul></li>
           </ul>
@@ -86,22 +92,50 @@
             </thead>
     
             <tbody>
+
+            <?php 
+        $i=1;
+        $qry = "select * from Appointment";
+$run = $db -> query($qry);
+if(!empty($run->num_rows) && ($run->num_rows > 0)){
+    while($row = $run -> fetch_assoc()){
+$id = $row['Appointmentid'];
+$UName = $row['Pet_name'];     
+        ?>
+     
                 <tr>
-                    <td>1</td>
-                    <td ><a  href="./MahaB Pet Profile Request List Pet Owner.html" style="box-shadow: 0 0 black;"> <img src="./image (1).svg"  height="50px" width="50px"></a></td>
-                    <td> Broc </td>
-                <td> Grooming and Bathing</td>
-                    
-                    <td class="PENDING"> <button>Pending  </button>
+                    <td><?php echo  $i++; ?></td>
+                    <td ><a  href="View_Pet_Profile.php?id=<?php echo $UName;?>" style="box-shadow: 0 0 black;"> <img src="../HTML/image (1).svg"  height="50px" width="50px"></a></td>
+                    <td> <?php echo $row['Pet_name'] ?> </td>
+                <td> <?php echo $row['Service'] ?></td>
+                   
+           
+               
+            <?php   
+            if($row['Status']==''){
+                echo ' <td class="PENDING"><button>PENDING</button></td>';
+            }elseif($row['Status']=='yes'){
+                echo ' <td class="Approved"><button>Approved</button></td>';
+            }else{
+                echo ' <td class="Declined"><button>Declined</button></td>'; 
+            }
+            ?>        
+            
                         
                     </td>
-                    <td class="DELET"> <a href="./rquest list pet owner2.html"><button>Cancel</button></a>
+                    <td class="DELET"><a href="DeletApp.php?id= <?php  echo $id; ?>" onclick = "return confirm('Are you sure?')"><button>Cancel</button></a>
                         
                     </td>
-                    <td class="EYES"><a href="./Edit Appointment Request(1).html"> <i class="fa fa-eye" style="font-size:24px"></i></a></td>    
+
+                  
+                    <td class="EYES"> <a href="Edit_Appo.php?id=<?php echo $id;?>"><i class="fa fa-eye" style="font-size:24px"></i></a></td>    
                 </tr>
-    
-                <tr>
+                <?php 
+
+}
+}
+?>
+             <!--   <tr>
                     <td>2</td>
                     <td ><a href="./MahaB Pet Profile Request List Pet Owner 2.html" style="box-shadow: 0 0 black;"> <img src="./image (1).svg"  height="50px" width="50px"></a></td>
                     <td> Myla </td>
@@ -194,16 +228,16 @@
                         
                     </td>
                     <td class="EYES"><a href="./Edit Appointment Request.html"> <i class="fa fa-eye" style="font-size:24px"></i></a></td>
-                </tr>
+                </tr>-->
             </tbody>
         </table>
     </div>
     
-    <img class="BACKGROUND" src="./background.svg">
+    <img class="BACKGROUND" src="../HTML/background.svg">
    
     
     <div class="AddButtons2">
-    <a href="New Appointment Request.html"><button class="SETApp2">New Request</button></a>
+    <a href="Add_Appointment.php"><button class="SETApp2">New Request</button></a>
                     
 
  <div class="CAT"><img src="../images/image 10.09.42 PM.svg" width=" 60px" ;

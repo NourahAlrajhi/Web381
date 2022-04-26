@@ -1,9 +1,14 @@
+<?php 
+session_start();
+$db = mysqli_connect("localhost" , "root" ,"","healed");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
    <meta charset="utf-8">
     <title>Pet List</title>
-    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <link rel="stylesheet" type="text/css" href="Nourah's.css">
    
    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><-->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,7 +24,7 @@
 
 <!-- font awesome cdn link  -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<link rel="stylesheet" href="Header and Footer.css">
+<link rel="stylesheet" href="../HTML/Header and Footer.css">
 <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
 </head>
 <body class="NBODY2">
@@ -36,23 +41,23 @@
         <ul class="nav-list">
             <li  ><a href="./Home Pet Owner.html">Home</a>
               <ul class="sub-menu" id="sub-menu-arrow"> 
-                <li > <a href="./MahaB Add New Pet.html">Add a New Pet</a></li>
-                <li><a href="./my pit list pet owner.html">View Pet List</a></li>
-                <li><a href="./rquest list pet owner.html">View Requests List</a></li>
+                <li > <a href="Add_New_Pet.php">Add a New Pet</a></li>
+                <li><a href="Pet_List.php">View Pet List</a></li>
+                <li><a href="Request_List_Pet_Owner.php">View Requests List</a></li>
 
-                <li><a href="./upcoming and previous pet owner.html">View Appointments List</a> </li>
+                <li><a href="../HTML/upcoming and previous pet owner.html">View Appointments List</a> </li>
         
               </ul>
             </li>
           
             
-           <li><a href="./Services Pet Owner.html">Services</a></li> 
-           <li><a href="./About us PetOwner.html">About Us</a></li> 
-            <li><a href="./Contact Clinic.html">Contact Us</a></li>
+           <li><a href="../HTML/Services Pet Owner.html">Services</a></li> 
+           <li><a href="../HTML/About us PetOwner.html">About Us</a></li> 
+            <li><a href="../HTML/Contact Clinic.html">Contact Us</a></li>
             <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
-                    <li ><a href="MahaB Edit Profile Page.html">View Profile</a></li>
-                    <li><a href="./LnadingPage.html">Sign Out</a></li>
+                    <li ><a href="../HTML/MahaB Edit Profile Page.html">View Profile</a></li>
+                    <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
             
                   </ul></li>
           </ul>
@@ -86,16 +91,49 @@
         </thead>
 
         <tbody>
-            <tr>
+
+        <?php 
+        $i=1;
+        $qry = "select * from PETT";
+$run = $db -> query($qry);
+if(!empty($run->num_rows) && ($run->num_rows > 0)){
+    while($row = $run -> fetch_assoc()){
+$id = $row['Petid'];
+        
+        ?>
+
+      <tr>
+      <td><?php echo  $i++; ?></td>
+      <td><img src="../HTML/image (1).svg"  height="50px" width="50px"></td>
+      <td> <?php echo $row['Pet_Name'] ?> </td>
+      <td> <?php echo $row['Breed'] ?> </td>
+
+       
+      <td><a href="Edit_Pet_Profile.php?id=<?php echo $id; ?>" ><button >View</button></a>
+                    
+                    </td>
+                    <td class="DELET"><a href="delete.php?id= <?php  echo $id; ?>" onclick = "return confirm('Are you sure?')"><button>delete</button></a>
+                        
+                    </td>
+    </tr>
+
+    <?php 
+
+    }
+}
+
+
+    ?>
+           <!-- <tr>
                 <td>1</td>
-                <td><img src="./image (1).svg"  height="50px" width="50px"></td>
+                <td><img src="../HTML image (1).svg"  height="50px" width="50px"></td>
                 <td> Lily </td>
                 <td> Ragdoll </td>
                 
-                <td> <a href="./MahaB Edit Pet Profile Page DD.html" ><button >View  </button></a>
+                <td> <a href="../HTML MahaB Edit Pet Profile Page DD.html" ><button >View  </button></a>
                     
                 </td>
-                <td class="DELET"><a href="./my pit list pet owner2.html">  <button>delete</button></a>
+                <td class="DELET"><a href="../HTML my pit list pet owner2.html">  <button>delete</button></a>
                     
                 </td>
 
@@ -192,12 +230,12 @@
                                 <td class="DELET"> <button>delete</button>
                     
                 </td> 
-            </tr>
-        </tbody>
+            </tr>-->
+        </tbody> 
     </table>
 </div>
 
-<img class="BACKGROUND" src="./background.svg">
+<img class="BACKGROUND" src="../HTML/background.svg">
 </section>
 <!-- Footer secton starts -->
 <div class="footer">

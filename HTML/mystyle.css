@@ -925,12 +925,19 @@ left: 130px;
         font-size:30px;
         color:#ccc;
         margin-right:10px;
+        cursor:auto;
+
     }
    .rateM:not(:checked) > label:before {
         content: '★ ';
     }
     .rateM > input:checked ~ label {
         color: #ffc700;    
+        cursor:auto;
+
+    }
+    .rateM:hover{
+        cursor:auto;
     }
     
     .Q{
@@ -1280,7 +1287,6 @@ div.rightServ{
     background-color:#F0EFEF;
     padding-left: 15; 
     font-size: 12px;
-    overflow: scroll;
 }
 
 #ServPrice{
@@ -1354,11 +1360,11 @@ div.addPetCirc{
        
 /*final positions*/
 .addServiceFinalPos{
-    margin-top: -15%;
+    margin-top: -3%;
 }
 
 .addPetFinalPos{
-    margin-top: -21%;
+    margin-top: -3%;
 }
 
 .editPetFinalPos{
@@ -1370,7 +1376,11 @@ div.addPetCirc{
 }
 
 .signUpFinalPos{
-    margin-top: -11%;;
+    margin-top: 1%;;
+}
+.loginFinalPos{
+    margin-top: 40px;;
+
 }
 
 /*backgroud images*/
@@ -1379,6 +1389,7 @@ div.addPetCirc{
     background: url(./mahaback1.svg) no-repeat;
     background-size: cover;
     background-position: center ;
+
 }
 
 .addaservicepageback{

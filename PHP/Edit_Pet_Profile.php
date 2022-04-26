@@ -1,9 +1,36 @@
+
+<?php 
+ob_start();
+    session_start();
+$db = mysqli_connect("localhost" , "root" ,"","healed");
+
+if(!$db){
+
+    die('error in db'. mysqli_error($db));
+}else{
+    $id = $_GET['id'];
+    $qry = "select * from PETT where Petid = $id ";
+    $run = $db -> query($qry);
+    if(!empty($run->num_rows) && ($run->num_rows > 0)){
+        while($row = $run -> fetch_assoc()){
+            $PetName = $row['Pet_Name'];
+            $Gender = $row['Gender'];
+            $Breed = $row['Breed'];
+            $Spayed = $row['Spayed'];
+            $MH = $row['Medical_History'];
+            $DOB = $row['DOB'];
+}
+
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>Pet Profile</title>
-        <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <link rel="stylesheet" type="text/css" href="../HTML/mystyle.css">
 
 <!-- added 1 here -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +39,7 @@
 
         <!-- font awesome cdn link  -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        <link rel="stylesheet" href="Header and Footer.css">
+        <link rel="stylesheet" href="../HTML/Header and Footer.css">
         <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
 <!-- ended 1 here -->
 
@@ -32,25 +59,25 @@
 
     <nav class="navbar">
         <ul class="nav-list">
-            <li  ><a href="./Home Pet Owner.html">Home</a>
+            <li  ><a href="../HTML/Home Pet Owner.html">Home</a>
               <ul class="sub-menu" id="sub-menu-arrow"> 
-                <li > <a href="./MahaB Add New Pet.html">Add a New Pet</a></li>
-                <li><a href="./my pit list pet owner.html">View Pet List</a></li>
-                <li><a href="./rquest list pet owner.html">View Requests List</a></li>
+                <li > <a href="Add_New_Pet.php">Add a New Pet</a></li>
+                <li><a href="Pet_List.php">View Pet List</a></li>
+                <li><a href="Request_List_Pet_Owner.php">View Requests List</a></li>
 
-                <li><a href="./upcoming and previous pet owner.html">View Appointments List</a> </li>
+                <li><a href="../HTML/upcoming and previous pet owner.html">View Appointments List</a> </li>
         
               </ul>
             </li>
           
             
-           <li><a href="./Services Pet Owner.html">Services</a></li> 
-           <li><a href="./About us PetOwner.html">About Us</a></li> 
-            <li><a href="./Contact Clinic.html">Contact Us</a></li>
+           <li><a href="../HTML/Services Pet Owner.html">Services</a></li> 
+           <li><a href="../HTML/About us PetOwner.html">About Us</a></li> 
+            <li><a href="../HTML/Contact Clinic.html">Contact Us</a></li>
             <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
-                    <li ><a href="MahaB Edit Profile Page.html">View Profile</a></li>
-                    <li><a href="./LnadingPage.html">Sign Out</a></li>
+                    <li ><a href="../HTML/MahaB Edit Profile Page.html">View Profile</a></li>
+                    <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
             
                   </ul></li>
           </ul>
@@ -72,7 +99,7 @@
     <div class="signUpGirl">
         <div class="animalphot">
         <img src="../images/pet profile photo new.svg" height="125px" width="125px">
-        <a href="#"><img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 52.4%; top:70.5%"></a>
+        <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 52.4%; top:70.5%"></a>
 
 
         </div>
@@ -80,27 +107,28 @@
 
 
 <div class="editPetFinalPos">
-        <form action="MahaB Pet Profile My Pet List Pet Owner.html">
+        <form method="post" >
            
   
             <div class="leftAddPet">
              <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -36px;">Pet Profile</h3>
              <label for="Fname">Pet name</label>
              <br>
-             <input type="text" name="Fname" id="Fname" placeholder="Enter Pet name" value="Lily" required="">  
-             <a href="#"><img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 43.3%; top:28.5%"></a>
+             <input type="text" name="Fname" id="Fname"  value="<?php echo $PetName;?>" required="">  
+             <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 43.3%; top:28.5%"></a>
              <br><br>  
                 
              <label for="Pnum">Date of Birth</label>
              <br>
-             <input style="color: gray;" type="date" name="Pnum" id="Pnum" value="2022-01-01" readonly required="">  
+             <input style="color: gray;" type="date" name="Pnum" id="Pnum"  value="<?php echo $DOB ;?>" readonly required="">  
              <br><br>
     
              <label for="Gend">Gender</label>
              <br>
-             <select name="Gend" id="Gend" placeholder="Choose Gender" required="" disabled="true">
+             <select name="Gend111" id="Gend" required="" disabled="true">  
+             <option value="hid" hidden ><?php echo $Gender;?></option>      
                <option value = "Male" > Male </option>
-               <option value = "Female"selected> Female </option>
+               <option value = "Female"> Female </option>
              </select>
              <br><br>
     
@@ -109,15 +137,16 @@
            <div class="rightAddPet">
              <label for="Lname">Breed</label>
              <br>  
-             <input style="color: gray;" type="text" name="Breed" id="Lname" placeholder="Enter Breed" value="Ragdoll" readonly required="">
-             <a href="#"><img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 87.5%; top:24.5%"></a>
+             <input style="color: gray;" type="text" name="Breed" id="Lname"  value="<?php echo   $Breed ;?>" readonly required="">
+             <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 87.5%; top:24.5%"></a>
              <br><br>
      
-             <label for="Gend">Spayed/Neutered Status</label>
+             <label for="Spayed">Spayed/Neutered Status</label>
              <br>
-             <select name="Gend" id="Gend" placeholder="Choose Status" required="">
-               <option value = "Male"> Spayed/Neutered </option>
-               <option value = "Female"> Not Spayed/Neutered </option>
+             <select name="Spayed" id="Gend" required="">
+             <option value="hid" hidden > <?php echo $Spayed;?></option>
+               <option value = "Spayed/Neutered "> Spayed/Neutered </option>
+               <option value = "Not Spayed/Neutered"> Not Spayed/Neutered </option>
              </select>
              <br><br>
     
@@ -127,8 +156,8 @@
              <br><br>
              <label for="Lname">Medical History</label>
              <br>  
-             <textarea name="MedHist" id="MedHist" placeholder="Enter Medical History" value="Back legs weakness - minor"></textarea>
-             <a href="#"><img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 87.5%; top:63%"></a>
+             <textarea name="MedHist" id="MedHist" ><?php echo $MH;?></textarea>
+             <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 87.5%; top:63%"></a>
 
              <br><br>
            </div>
@@ -136,7 +165,8 @@
            <br><br><br><br><br>
            <br><br><br><br><br>
            
-           <input type="submit" name="Reg" id="Reg" value="Save">
+     
+         <input type="submit" name="Reg" id="Reg" value="Save">
            
            <br><br><br><br>
         </form>
@@ -206,3 +236,30 @@
 <!-- ended 3 here -->
     </body>
 </html>
+
+
+<?php  
+    $id = $_GET['id'];
+if(isset($_POST['Reg'])){
+
+$PetName = $_POST['Fname'];
+$Spayed = $_POST['Spayed'];
+$MH = $_POST['MedHist'];
+
+
+$qry = "update PETT set Pet_Name = '$PetName'  , Spayed= '$Spayed' , Medical_History= '$MH'  where Petid = $id ";
+
+if(mysqli_query($db,$qry)){
+   // echo '<script>alert("changes updated successfully.!!");</script>';
+   header('location: Pet_List.php');
+    ob_end_flush();
+    }else{
+        echo mysqli_error($db);
+    }
+
+}
+
+
+
+
+?>

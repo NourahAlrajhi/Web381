@@ -1,9 +1,16 @@
+
+<?php 
+ob_start();
+session_start();
+$db = mysqli_connect("localhost" , "root" ,"","healed");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
    <meta charset="utf-8">
     <title>Request List</title>
-    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <link rel="stylesheet" type="text/css" href="../HTML/mystyle.css">
    
    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><-->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,7 +24,7 @@
 
 <!-- font awesome cdn link  -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<link rel="stylesheet" href="Header and Footer.css">
+<link rel="stylesheet" href="../HTML/Header and Footer.css">
 <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
 
 
@@ -28,7 +35,7 @@
 
 <header>
 
-    <a href="./Home Manager.html" class="logo"><img src="../images/logo.svg" alt="logo" height="50rem" ><span>ealed</span></a>
+    <a href="../HTML/Home Manager.html" class="logo"><img src="../images/logo.svg" alt="logo" height="50rem" ><span>ealed</span></a>
 
     <input type="checkbox" id="menu-bar">
     <label for="menu-bar" class="fas fa-bars"></label>
@@ -37,22 +44,22 @@
         <ul class="nav-list">
             <li  ><a href="./Home Manager.html">Home</a>
                 <ul class="sub-menu" id="sub-menu-arrow"> 
-                  <li > <a href="./MahaB Add A Service Page.html">Add a New Service</a></li>
-                  <li><a href="./availabel apointment manager.html">Set a New Appointment</a></li>
-                  <li><a href="./request list manager.html">View Requests List</a></li>
+                  <li > <a href="../HTML/MahaB Add A Service Page.html">Add a New Service</a></li>
+                  <li><a href="../HTML/availabel apointment manager.html">Set a New Appointment</a></li>
+                  <li><a href="Request_List_Manager.php">View Requests List</a></li>
   
-                  <li><a href="./upcoming and previous manager.html">View Appointments List</a> </li>
+                  <li><a href="../HTML/upcoming and previous manager.html">View Appointments List</a> </li>
           
                 </ul>
               </li>
           
             
-           <li><a href="./Services Manager.html">Services</a></li> 
-           <li><a href="./About Us Manager.html">About Us</a></li> 
+           <li><a href="../HTML/Services Manager.html">Services</a></li> 
+           <li><a href="../HTML/About Us Manager.html">About Us</a></li> 
             <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user-doctor" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
                     <li ><a href="#">View Profile</a></li>
-                    <li><a href="./LnadingPage.html">Sign Out</a></li>
+                    <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
             
                   </ul></li>
           </ul>
@@ -157,18 +164,34 @@
         </thead>
 
         <tbody>
+
+        <?php 
+        $i=1;
+        $qry = "select * from Appointment where Status='' ";
+$run = $db -> query($qry);
+if(!empty($run->num_rows) && ($run->num_rows > 0)){
+    while($row = $run -> fetch_assoc()){
+$id = $row['Appointmentid'];
+        
+        ?>
             <tr>
-                <td>1</td>
-                <td><a href="./MahaB Pet Profile Request List Manager.html" style="box-shadow: 0 0 black;"><img src="./image (1).svg"  height="50px" width="50px"></a></td>
-                <td> Kevin </td>
-                <td> Broc </td>
-                <td> Grooming and Bathing</td>
-                <td> <a href="./View Appointment Request(1).html"><button >See more</button> </a></td>
-                    <td><a href="#"><i class="fa fa-check" style="font-size:24px"></i></a></td>
-                    <td> <a href="./request list manager2.html"><i class="fas fa-times" style="font-size: x-large;"></i></a>
+                <td><?php echo  $i++; ?></td>
+                <td><a href="../HTML/MahaB Pet Profile Request List Manager.html" style="box-shadow: 0 0 black;"><img src="../HTML/image (1).svg"  height="50px" width="50px"></a></td>
+                <td> ... </td>
+                <td> <?php echo $row['Pet_name'] ?>  </td>
+                <td><?php echo $row['Service'] ?></td>
+                <td> <a href="View_Appo_Request.php?id= <?php echo $id;?>" ><button >See more</button> </a></td>
+                    <td><a href="Accept_Appo.php?id= <?php  echo $id; ?>" name="Cheack"><i class="fa fa-check" style="font-size:24px"></i></a></td>
+                    <td><a href="DeletApp2.php?id= <?php  echo $id; ?>" onclick = "return confirm('Are you sure?')"><i class="fas fa-times" style="font-size: x-large;"></i></a>
                 </td>
             </tr>
-            <tr>
+
+            <?php 
+
+}
+}
+?>
+         <!--   <tr>
                 <td>2</td>
                 <td><a href="./MahaB Pet Profile Request List Manager 2.html"style="box-shadow: 0 0 black;"><img src="./image (1).svg"  height="50px" width="50px"></a></td>
                 <td> Stephanie </td>
@@ -238,7 +261,7 @@
                     <td><a href="#"><i class="fa fa-check" style="font-size:24px"></i></a></td>
                     <td> <a href="#"><i class="fas fa-times" style="font-size: x-large;"></i></a>
                     </td>
-            </tr>
+            </tr>-->
         </tbody>
     </table>
 </div>

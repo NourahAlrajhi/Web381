@@ -1,9 +1,16 @@
+
+<?php 
+ob_start();
+session_start();
+
+//$db = mysqli_connect("localhost" , "root" ,"","healed");
+?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>Add New Pet</title>
-        <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <link rel="stylesheet" type="text/css" href="../HTML/mystyle.css">
         <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/3473b55fc1.js" crossorigin="anonymous"></script> -->
 
@@ -14,7 +21,7 @@
 
         <!-- font awesome cdn link  -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        <link rel="stylesheet" href="Header and Footer.css">
+        <link rel="stylesheet" href="../HTML/Header and Footer.css">
         <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
 <!-- ended 1 here -->
 
@@ -34,25 +41,25 @@
 
     <nav class="navbar">
         <ul class="nav-list">
-            <li  ><a href="./Home Pet Owner.html">Home</a>
+            <li  ><a href="../HTML/Home Pet Owner.html">Home</a>
               <ul class="sub-menu" id="sub-menu-arrow"> 
-                <li > <a href="./MahaB Add New Pet.html">Add a New Pet</a></li>
-                <li><a href="./my pit list pet owner.html">View Pet List</a></li>
-                <li><a href="./rquest list pet owner.html">View Requests List</a></li>
+                <li > <a href="Add_New_Pet.php">Add a New Pet</a></li>
+                <li><a href="Pet_List.php">View Pet List</a></li>
+                <li><a href="Request_List_Pet_Owner.php">View Requests List</a></li>
 
-                <li><a href="./upcoming and previous pet owner.html">View Appointments List</a> </li>
+                <li><a href="../HTML/upcoming and previous pet owner.html">View Appointments List</a> </li>
         
               </ul>
             </li>
           
             
-           <li><a href="./Services Pet Owner.html">Services</a></li> 
-           <li><a href="./About us PetOwner.html">About Us</a></li> 
-            <li><a href="./Contact Clinic.html">Contact Us</a></li>
+           <li><a href="../HTML/Services Pet Owner.html">Services</a></li> 
+           <li><a href="../HTML/About us PetOwner.html">About Us</a></li> 
+            <li><a href="../HTML/Contact Clinic.html">Contact Us</a></li>
             <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
-                    <li ><a href="MahaB Edit Profile Page.html">View Profile</a></li>
-                    <li><a href="./LnadingPage.html">Sign Out</a></li>
+                    <li ><a href="../HTML/MahaB Edit Profile Page.html">View Profile</a></li>
+                    <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
             
                   </ul></li>
           </ul>
@@ -73,12 +80,12 @@
         <div class="addPetCirc">
                <div class="signUpCam">
                    <i class="fa-solid fa-camera fa-2xl"></i>
-                   <a href="#"><img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 72.4%; top:40px"></a>
+                   <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 72.4%; top:40px"></a>
 
                </div>
         </div>
         
-        <form action="my pit list pet owner.html">
+        <form method="post" action="Add_New_Pet.php">
            <div class="leftAddPet">
             <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -16px;">Add New Pet</h3>
              <label for="Fname">*Pet name</label>
@@ -110,10 +117,10 @@
      
              <label for="Gend">*Spayed/Neutered Status</label>
              <br>
-             <select name="Gend" id="Gend" placeholder="Choose Status" required="">
+             <select name="Spayed" id="Gend" placeholder="Choose Status" required="">
                <option value = "" disabled selected hidden> Choose Status </option>
-               <option value = "Male"> Spayed/Neutered </option>
-               <option value = "Female"> Not Spayed/Neutered </option>
+               <option value = "Spayed/Neutered Status"> Spayed/Neutered </option>
+               <option value = "Not Spayed/Neutered"> Not Spayed/Neutered </option>
              </select>
              <br><br>
     
@@ -148,10 +155,10 @@
         </div>
         <div class="box">
             <h3>Quick links</h3>
-            <a href="./Home Pet Owner.html">Home</a>
-            <a href="./Services Pet Owner.html">Services</a>
-            <a href="./About us PetOwner.html">About US</a>
-            <a href="./Contact Clinic.html">Contact Us</a>
+            <a href="../HTML/Home Pet Owner.html">Home</a>
+            <a href="../HTML/Services Pet Owner.html">Services</a>
+            <a href="../HTML/About us PetOwner.html">About US</a>
+            <a href="../HTML/Contact Clinic.html">Contact Us</a>
                 
         </div>
         <div class="box">
@@ -200,3 +207,57 @@
     </body>
 </html>
 
+<?php    
+
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ( !( $database = mysqli_connect( "localhost", "root", "" ) ) )
+       die( "<p>Could not connect to database</p>" );
+
+    if ( !mysqli_select_db( $database, "healed") )
+       die( "<p>Could not open URL database</p>" );
+
+       $PetName = $_POST['Fname'];
+       $Gender = $_POST['Gend'];
+       $Breed = $_POST['Breed'];
+       $Spayed = $_POST['Spayed'];
+       $MH = $_POST['MedHist'];
+       $DOB = $_POST['Pnum'];
+
+    $query="INSERT INTO PETT (Pet_Name, Gender, Breed ,Spayed , Medical_History,DOB) VALUES ('".$PetName."','".$Gender."','". $Breed."','".$Spayed."','".$MH."','".$DOB."');";
+    $result=mysqli_query($database, $query);
+
+    if($result){
+        header("location: Pet_List.php");
+ob_end_flush();}
+    else{
+        echo "An error occured while inserting into the branch table.";}
+}
+
+
+
+
+/*if(isset($_POST['Reg'])){
+
+$PetName = $_POST['Fname'];
+$Gender = $_POST['Gend'];
+$Breed = $_POST['Breed'];
+$Spayed = $_POST['Spayed'];
+$MH = $_POST['MedHist'];
+$DOB = $_POST['Pnum'];
+
+
+
+$qry = "insert into Pet values(null , '$PetName' , '$Gender' , '$Breed' , '$Spayed' , '$MH' , '$DOB')";
+if(mysqli_query($db,$qry)){
+    header("location: Pet_List.php");
+echo '<script>alert("Pet added successfully.!!");</script>';
+
+}else{
+    echo mysqli_error($db);
+}
+}*/
+
+?>

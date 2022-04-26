@@ -1,10 +1,36 @@
+<?php 
+ob_start();
+    session_start();
+$db = mysqli_connect("localhost" , "root" ,"","healed");
+
+if(!$db){
+
+    die('error in db'. mysqli_error($db));
+}else{
+    $id = $_GET['id'];
+    $qry = "select * from Appointment where Appointmentid = $id ";
+    $run = $db -> query($qry);
+    if(!empty($run->num_rows) && ($run->num_rows > 0)){
+        while($row = $run -> fetch_assoc()){
+            $PetName = $row['Pet_name'];
+            $Service = $row['Service'];
+            $Date = $row['Date'];
+            $Note = $row['Note'];
+            $Time = $row['Time'];
+        
+}
+
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <title> Edit Appointment Request </title>
-    <link rel = "stylesheet" type = "text/css" href ="mystyle.css">
+    <link rel = "stylesheet" type = "text/css" href ="../HTML/mystyle.css">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../images/logo.svg">
@@ -12,7 +38,7 @@
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="Header and Footer.css">
+    <link rel="stylesheet" href="../HTML/Header and Footer.css">
     <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
     
 
@@ -32,25 +58,25 @@
 
     <nav class="navbar">
         <ul class="nav-list">
-            <li  ><a href="./Home Pet Owner.html">Home</a>
+            <li  ><a href="../HTML/Home Pet Owner.html">Home</a>
               <ul class="sub-menu" id="sub-menu-arrow"> 
-                <li > <a href="./MahaB Add New Pet.html">Add a New Pet</a></li>
-                <li><a href="./my pit list pet owner.html">View Pet List</a></li>
-                <li><a href="./rquest list pet owner.html">View Requests List</a></li>
+                <li > <a href="Add_New_Pet.php">Add a New Pet</a></li>
+                <li><a href="Pet_List.php">View Pet List</a></li>
+                <li><a href="Request_List_Pet_Owner.php">View Requests List</a></li>
 
-                <li><a href="./upcoming and previous pet owner.html">View Appointments List</a> </li>
+                <li><a href="../HTML/upcoming and previous pet owner.html">View Appointments List</a> </li>
         
               </ul>
             </li>
           
             
-           <li><a href="./Services Pet Owner.html">Services</a></li> 
-           <li><a href="./About us PetOwner.html">About Us</a></li> 
-            <li><a href="./Contact Clinic.html">Contact Us</a></li>
+           <li><a href="../HTML/Services Pet Owner.html">Services</a></li> 
+           <li><a href="../HTML/About us PetOwner.html">About Us</a></li> 
+            <li><a href="../HTML/Contact Clinic.html">Contact Us</a></li>
             <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
-                    <li ><a href="MahaB Edit Profile Page.html">View Profile</a></li>
-                    <li><a href="./LnadingPage.html">Sign Out</a></li>
+                    <li ><a href="../HTML/MahaB Edit Profile Page.html">View Profile</a></li>
+                    <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
             
                   </ul></li>
           </ul>
@@ -67,43 +93,43 @@
 <section class="requestbg">
     <div class = "part1"><br><br><br>
         <div class="title">  Edit Request </div>
-           <form action="rquest list pet owner.html">
+           <form method="post">
               <div class ="appointment-details"> 
     
                 <div class = "input-box">
                     <lable class = "details"> Pet <br>
                         <select disabled="true" name= "petname" class = "field1" >
-                            <option  > Myla </option>
+                        <option value="hid" hidden ><?php echo $PetName;?></option>   
                             </select>
                     </lable>
                     </div>
     
                 <div class = "input-box">
                     <lable class = "details"> Note <br>
-                        <textarea name= "note" class = "field2" > Lorem ipsum</textarea>
+                        <textarea name= "note" class = "field2" ><?php echo $Note;?></textarea>
                            
                     </lable>
-                    <a href="">  <img class = "back8" src ="./edit icon.svg" style=" Position:absolute; right: 29.5%; top:35%"></a>
+                    <a href="">  <img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; right: 29.5%; top:35%"></a>
                 </div>
     
                 <div class = "input-box">
                     <lable class = "details"> Service <br>
                         <select name= "service" class = "field1">
-                            <option > Dentistry </option>
+                        <option value="hid" hidden ><?php echo $Service;?></option>   
                             </select>
                     </lable>
                 </div>
     
                 <div class = "input-box">
                     <lable class = "details"> Time <br>
-                        <input type="time" value="12:30:00">
+                        <input type="time"value="<?php echo $Time ;?>">
             </lable>
             </div>
     
     
                 <div class = "input-box" >
                     <lable class = "details"> Date <br>
-                        <input type="date" value="2022-02-22">
+                        <input type="date" value="<?php echo $Date ;?>">
                 </lable> 
                 </div>
         
@@ -111,7 +137,7 @@
                </div>
             
                <div class="button1">
-                <input type = "submit"  value ="Save" class="button" style="  font-size:150% ; position: absolute; 
+                <input name="SAVE"  type = "submit"  value ="Save" class="button" style="  font-size:150% ; position: absolute; 
                 left:45%;">
                 </div>
             
@@ -135,10 +161,10 @@
         </div>
         <div class="box">
             <h3>Quick links</h3>
-            <a href="./Home Pet Owner.html">Home</a>
-            <a href="./Services Pet Owner.html">Services</a>
-            <a href="./About us PetOwner.html">About US</a>
-            <a href="./Contact Clinic.html">Contact Us</a>
+            <a href="../HTML/Home Pet Owner.html">Home</a>
+            <a href="../HTML/Services Pet Owner.html">Services</a>
+            <a href="../HTML/About us PetOwner.html">About US</a>
+            <a href="../HTML/Contact Clinic.html">Contact Us</a>
                 
         </div>
         <div class="box">
@@ -186,3 +212,25 @@
 </body>
 
 </html>
+
+
+<?php  
+$id = $_GET['id'];
+if(isset($_POST['SAVE'])){
+
+ $Note = $_POST['note'];
+
+
+$qry = "update Appointment set Note = '$Note' where Appointmentid = $id ";
+
+if(mysqli_query($db,$qry)){
+   // echo '<script>alert("changes updated successfully.!!");</script>';
+   header('location: Request_List_Pet_Owner.php');
+    ob_end_flush();
+    }else{
+        echo mysqli_error($db);
+    }
+
+}
+
+?>
