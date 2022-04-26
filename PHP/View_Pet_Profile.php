@@ -66,7 +66,7 @@ die('error in db'. mysqli_error($db));
                 <li><a href="Pet_List.php">View Pet List</a></li>
                 <li><a href="Request_List_Pet_Owner.php">View Requests List</a></li>
 
-                <li><a href="../HTML/upcoming and previous pet owner.html">View Appointments List</a> </li>
+                <li><a href="upcoming and previous pet owner.php">View Appointments List</a> </li>
         
               </ul>
             </li>
