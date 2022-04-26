@@ -55,7 +55,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
             <li><a href="../HTML/Contact Clinic.html">Contact Us</a></li>
             <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
-                    <li ><a href="MahaB Edit Profile Page.html">View Profile</a></li>
+                    <li ><a href="../HTML/MahaB Edit Profile Page.html">View Profile</a></li>
                     <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
             
                   </ul></li>
@@ -94,15 +94,29 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
             </thead>
     
             <tbody>
+            <?php 
+        $i=1;
+        $qry = "select * from Appointment where Status='yes' ";
+$run = $db -> query($qry);
+if(!empty($run->num_rows) && ($run->num_rows > 0)){
+    while($row = $run -> fetch_assoc()){
+$id = $row['Appointmentid'];
+$UName = $row['Pet_name'];   
+        ?>
                 <tr>
-                    <td>1</td>
-                    <td ><a href="View_Pet_Profile.php" style="box-shadow: 0 0 black;"> <img src="../HTML/image (1).svg"  height="50px" width="50px"></a></td>
-                    <td> Buffy </td>
-                    <td> Grooming and Bathing </td>
-                    <td> <a href="../HTML/Appointment Details PetOwner.html"><button >View</button></a></td>
+                    <td><?php echo  $i++; ?></td>
+                    <td ><a href="View_Pet_Profile.php?id=<?php echo $UName;?>" style="box-shadow: 0 0 black;"> <img src="../HTML/image (1).svg"  height="50px" width="50px"></a></td>
+                    <td> <?php echo $row['Pet_name'] ?> </td>
+                    <td><?php echo $row['Service'] ?></td>
+                    <td> <a href="Upcoming_Appo_details.php?id= <?php echo $id;?>"><button >View</button></a></td>
                         
                     </td>
                 </tr>
+                <?php 
+
+}
+}
+?>
             <!--    <tr>
                     <td>2</td>
                     <td ><a href="./MahaB Pet Profile Appointment List Pet Owner 2.html" style="box-shadow: 0 0 black;"> <img src="./image (1).svg"  height="50px" width="50px"></a></td>
