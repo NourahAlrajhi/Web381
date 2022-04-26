@@ -10,7 +10,7 @@ die('error in db'. mysqli_error($db));
 }else{
  $id = $_GET['id'];
   
-    $qry = "select * from Appointment where Appointmentid = '$id' ";
+    $qry = "select * from Appointment where Appointmentid = $id ";
     $run = $db -> query($qry);
     if(!empty($run->num_rows) && ($run->num_rows > 0)){
         while($row = $run -> fetch_assoc()){
@@ -22,6 +22,7 @@ die('error in db'. mysqli_error($db));
     }
 }
 
+}
 
 ?>
 <!DOCTYPE html>
@@ -80,6 +81,7 @@ die('error in db'. mysqli_error($db));
   </header>
   
   <!-- header section ends -->
+  <form action="#" method="post">
 <section class="AppointmentSec">
      <div class="PageBase">
 <div class="PageRows">
@@ -128,6 +130,7 @@ die('error in db'. mysqli_error($db));
    
 </form>
 <div class="GirlDogimg"><img src="../HTML/girl and dog.svg" width="300px"></div>
+</form>
 </section>
 
 <!-- Footer secton starts -->
@@ -198,6 +201,6 @@ if(isset($_POST['BACK'])){
 
    header('location: upcoming and previous pet owner.php');
     ob_end_flush();
-}
+
 }
 ?>

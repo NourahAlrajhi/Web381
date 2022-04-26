@@ -66,7 +66,7 @@ if(!$db){
                   <li><a href="../HTML/availabel apointment manager.html">Set a New Appointment</a></li>
                   <li><a href="Request_List_Manager.php">View Requests List</a></li>
   
-                  <li><a href="../HTML/upcoming and previous manager.html">View Appointments List</a> </li>
+                  <li><a href="upcoming and previous manager.php">View Appointments List</a> </li>
           
                 </ul>
               </li>

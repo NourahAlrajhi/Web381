@@ -1,36 +1,37 @@
+
 <?php 
 ob_start();
-    session_start();
+session_start();
 $db = mysqli_connect("localhost" , "root" ,"","healed");
 
 if(!$db){
 
-    die('error in db'. mysqli_error($db));
+die('error in db'. mysqli_error($db));
 }else{
-    $id = $_GET['id'];
-    $qry = "select * from Services where Serviceid = $id ";
+ $id = $_GET['id'];
+  
+    $qry = "select * from Appointment where Appointmentid = $id ";
     $run = $db -> query($qry);
     if(!empty($run->num_rows) && ($run->num_rows > 0)){
         while($row = $run -> fetch_assoc()){
-            $service = $row['Service_name'];
+            $PetName = $row['Pet_name'];
+            $Service = $row['Service'];
             $Date = $row['Date'];
             $Time = $row['Time'];
-            
-}
 
     }
 }
 
+}
 
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="icon" href="../images/logo.svg">
-    <title>Appointment Details </title>
+    <title>Appointment Details  </title>
     <link rel="stylesheet" type="text/css" href="../HTML/mystyle.css">
      <!-- font awesome cdn link  -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -38,32 +39,35 @@ if(!$db){
      <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
    <script src="https://kit.fontawesome.com/3473b55fc1.js" crossorigin="anonymous"></script>
 </head>
-<body>
-   <header>
-      <a href="../HTML/Home Manager.html" class="logo"><img src="../images/logo.svg" alt="logo" height="50rem" ><span>ealed</span></a>
+<body>   <!-- header section starts  -->
 
+    <header>
+
+      <a href="#" class="logo"><img src="../images/logo.svg" alt="logo" height="50rem" ><span>ealed</span></a>
+  
       <input type="checkbox" id="menu-bar">
       <label for="menu-bar" class="fas fa-bars"></label>
   
       <nav class="navbar">
           <ul class="nav-list">
-              <li  ><a href="../HTML/Home Manager.html">Home</a>
-                  <ul class="sub-menu" id="sub-menu-arrow"> 
-                    <li > <a href="Add_service.php">Add a New Service</a></li>
-                    <li><a href="Appo_List.php">Set a New Appointment</a></li>
-                    <li><a href="Request_List_Manager.php">View Requests List</a></li>
-    
-                    <li><a href="upcoming and previous manager.php">View Appointments List</a> </li>
-            
-                  </ul>
-                </li>
+              <li  ><a href="../HTML/Home Pet Owner.html">Home</a>
+                <ul class="sub-menu" id="sub-menu-arrow"> 
+                  <li > <a href="Add_New_Pet.php">Add a New Pet</a></li>
+                  <li><a href="Pet_List.php">View Pet List</a></li>
+                  <li><a href="Request_List_Pet_Owner.php">View Requests List</a></li>
+  
+                  <li><a href="upcoming and previous pet owner.php">View Appointments List</a> </li>
+          
+                </ul>
+              </li>
             
               
-             <li><a href="../HTML/Services Manager.html">Services</a></li> 
-             <li><a href="../HTML/About Us Manager.html">About Us</a></li> 
-              <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user-doctor" ></i></a>
+             <li><a href="../HTML/Services Pet Owner.html">Services</a></li> 
+             <li><a href="../HTML/About us PetOwner.html">About Us</a></li> 
+              <li><a href="../HTML/Contact Clinic.html">Contact Us</a></li>
+              <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user" ></i></a>
                   <ul class="sub-menu" id="sub-menu-arrow2"> 
-                      <li ><a href="#">View Profile</a></li>
+                      <li ><a href="../HTML/MahaB Edit Profile Page.html">View Profile</a></li>
                       <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
               
                     </ul></li>
@@ -77,32 +81,17 @@ if(!$db){
   </header>
   
   <!-- header section ends -->
-  <section class="AppointmentSec">
+  <form action="#" method="post">
+<section class="AppointmentSec">
      <div class="PageBase">
 <div class="PageRows">
 
 <h3 class="Heading" style="font-size: 3rem;">Appointment Details</h3>
-
-<form action="#" method="post">
+<h1 class="Heading" style="font-size: 1.7rem;">Pet Name: <span style="color: gray;"><?php echo $PetName;?></span> </h1>
+<form action="#">
   <div class= "ServiceSelect">
    <lable class = "LablM"> Service <br>
-   <select name="service" id="Gend" required="">
-   <option value="hid" hidden > <?php echo  $service;?></option>
-   <?php   
-
-$qry = "select Service_NAME from Manager_Services";
-$run = $db -> query($qry);
-if(!empty($run->num_rows) && ($run->num_rows > 0)){
-    while($row = $run -> fetch_assoc()){
-?>
-
-<option value=<?php echo $row['Service_NAME'] ?> > <?php echo $row['Service_NAME'] ?> </option>
-<?php 
-
-}
-}
-?>
-</select>
+      <input style="color: gray;" type="text" class = "fieldselect" value="<?php echo $Service ;?>" >
    </lable>
      
   </div>
@@ -118,14 +107,14 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
    
      <div class= "DateSelect" >
    <lable class = "LablM">Date <br>
-      <input style="color: gray;" type="Date" id="dateS" value="<?php echo $Date ;?>" name="DATE" >
+      <input style="color: gray;" type="text" id="dateS" value="<?php echo  $Date ;?>" >
      </lable>
      </div>
 
  
   <div class="TimeSelect" >
    <lable class = "LablM"> Time <br>
-     <input style="color: gray;" type="time" id="timeS" value="<?php echo $Time ;?>" name="TIME" >
+     <input style="color: gray;" type="text" id="timeS" value="<?php echo  $Time;?>" >
      </lable>
     
   </div>
@@ -135,12 +124,13 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
    
    </div>
    <div class="BackButtonDetails">
-    <button name="BACK"><a class="button" >Back</a></button>
+    <button name="BACK"><a class="button">Back</a></button>
       </div>
     </div>
    
 </form>
 <div class="GirlDogimg"><img src="../HTML/girl and dog.svg" width="300px"></div>
+</form>
 </section>
 
 <!-- Footer secton starts -->
@@ -153,10 +143,10 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
        </div>
        <div class="box">
            <h3>Quick links</h3>
-           <a href="./Home Manager.html">Home</a>
-           <a href="./Services Manager.html">Services</a>
-           <a href="./About Us Manager.html">About US</a>
-           <a href="./Contact Clinic.html">Contact Us</a>
+           <a href="#">Home</a>
+           <a href="#">Services</a>
+           <a href="#">About US</a>
+           <a href="#">Contact Us</a>
                
        </div>
        <div class="box">
@@ -206,27 +196,11 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
 </html>
 
 <?php  
-    $id = $_GET['id'];
+
 if(isset($_POST['BACK'])){
 
-    $Service = $_POST['service'];
-    $Date = $_POST['DATE'];
-    $Time = $_POST['TIME'];
-    
-
-$qry = "update Services set Service_name = '$Service'  , Date= '$Date' , Time= '$Time'  where Serviceid = $id ";
-
-if(mysqli_query($db,$qry)){
-   // echo '<script>alert("changes updated successfully.!!");</script>';
-   header('location: Appo_List.php');
+   header('location: upcoming and previous manager.php');
     ob_end_flush();
-    }else{
-        echo mysqli_error($db);
-    }
 
 }
-
-
-
-
 ?>
