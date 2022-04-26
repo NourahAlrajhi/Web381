@@ -94,7 +94,7 @@ if(!$db){
 <section class="requestbg">
     <div class = "part1">
         <div class="title"> Appointment Request </div>
-           <form action="request list manager.html">
+        <form method="post">
               <div class ="appointment-details" > 
     
                 <div class = "input-box">
@@ -132,7 +132,7 @@ if(!$db){
                </div>
 
                <div class="button1">
-                <input type = "submit"  value ="Back" class="button" style="  font-size:150% ; position: absolute; 
+                <input name="SAVE" type = "submit"  value ="Back" class="button" style="  font-size:150% ; position: absolute; 
                 left:45%;">
                </div>
                 </div>
@@ -207,9 +207,16 @@ if(!$db){
 
 </html>
 
+<?php  
 
-<?php
+if(isset($_POST['SAVE'])){
 
-header('location: Reuest_List_Manager.php');
+
+
+
+   header('location: Request_List_Manager.php');
+    ob_end_flush();
+   
+}
 
 ?>

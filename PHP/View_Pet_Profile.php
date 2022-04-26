@@ -108,7 +108,7 @@ if(!$db){
 
 
 <div class="editPetFinalPos">
-        <form action="upcoming and previous pet owner.html">
+        <form action="post">
            
   
             <div class="leftAddPet">

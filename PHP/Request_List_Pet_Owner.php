@@ -110,8 +110,17 @@ $id = $row['Appointmentid'];
                 <td> <?php echo $row['Service'] ?></td>
                    
            
-                
-                  <td class="PENDING"> <button>Pending </button>
+               
+            <?php   
+            if($row['Status']==''){
+                echo ' <td class="PENDING"><button>PENDING</button></td>';
+            }elseif($row['Status']=='yes'){
+                echo ' <td class="Approved"><button>Approved</button></td>';
+            }else{
+                echo ' <td class="Declined"><button>Declined</button></td>'; 
+            }
+            ?>        
+            
                         
                     </td>
                     <td class="DELET"><a href="DeletApp.php?id= <?php  echo $id; ?>" onclick = "return confirm('Are you sure?')"><button>Cancel</button></a>
