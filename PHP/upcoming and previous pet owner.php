@@ -108,7 +108,7 @@ $UName = $row['Pet_name'];
                     <td ><a href="View_Pet_Profile.php?id=<?php echo $UName;?>" style="box-shadow: 0 0 black;"> <img src="../HTML/image (1).svg"  height="50px" width="50px"></a></td>
                     <td> <?php echo $row['Pet_name'] ?> </td>
                     <td><?php echo $row['Service'] ?></td>
-                    <td> <a href="Upcoming_Appo_details.php?id= <?php echo $id;?>"><button >View</button></a></td>
+                    <td> <a href="Upcoming_Appo_details.php?id=<?php echo $id;?>"><button >View</button></a></td>
                         
                     </td>
                 </tr>

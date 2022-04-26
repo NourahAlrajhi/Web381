@@ -8,7 +8,7 @@ if(!$db){
 
 die('error in db'. mysqli_error($db));
 }else{
-    $id = $_GET['id'];
+ $id = $_GET['id'];
   
     $qry = "select * from Appointment where Appointmentid = '$id' ";
     $run = $db -> query($qry);
@@ -85,7 +85,7 @@ die('error in db'. mysqli_error($db));
 <div class="PageRows">
 
 <h3 class="Heading" style="font-size: 3rem;">Appointment Details</h3>
-<h1 class="Heading" style="font-size: 1.7rem;">Pet Name: <span style="color: gray;"><?php echo $PetName ;?></span> </h1>
+<h1 class="Heading" style="font-size: 1.7rem;">Pet Name: <span style="color: gray;"><?php echo $PetName;?></span> </h1>
 <form action="#">
   <div class= "ServiceSelect">
    <lable class = "LablM"> Service <br>
@@ -122,7 +122,7 @@ die('error in db'. mysqli_error($db));
    
    </div>
    <div class="BackButtonDetails">
-    <button name="BACK">  <a class="button">Back</a></button>
+    <button name="BACK"><a class="button">Back</a></button>
       </div>
     </div>
    
@@ -192,14 +192,12 @@ die('error in db'. mysqli_error($db));
 
 </html>
 
-
 <?php  
 
 if(isset($_POST['BACK'])){
 
    header('location: upcoming and previous pet owner.php');
     ob_end_flush();
-   
 }
-
+}
 ?>
