@@ -71,13 +71,13 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
          <option value="" disabled selected hidden>Choose Service</option>
          <?php   
 
-$qry = "select Service_name from Services";
+$qry = "select Service_NAME from Manager_Services";
 $run = $db -> query($qry);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
 ?>
 
-<option value=<?php echo $row['Service_name'] ?> > <?php echo $row['Service_name'] ?> </option>
+<option value=<?php echo $row['Service_NAME'] ?> > <?php echo $row['Service_NAME'] ?> </option>
        <!--  <option class="op"> Grooming And Bathing </option>
           <option class="op"> Dentistry </option>
           <option class="op"> Boarding </option>-->
@@ -221,3 +221,4 @@ ob_end_flush();}
     else{
         echo "An error occured while inserting into the Services table.";}
 }
+?>

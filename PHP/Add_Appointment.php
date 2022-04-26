@@ -120,13 +120,13 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
                         <option value="" selected hidden>Choose a service</option>
                         <?php   
 
-$qry = "select Service_name from Services";
+$qry = "select Service_NAME from Manager_Services";
 $run = $db -> query($qry);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
 ?>
 
-                        <option value=<?php echo $row['Service_name'] ?> > <?php echo $row['Service_name'] ?> </option>
+                        <option value=<?php echo $row['Service_NAME'] ?> > <?php echo $row['Service_NAME'] ?> </option>
                       <!--  <option > Dentistry</option>
                         <option > Boarding</option>-->
                         <?php 
