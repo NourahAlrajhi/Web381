@@ -45,7 +45,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
             <li  ><a href="./Home Manager.html">Home</a>
                 <ul class="sub-menu" id="sub-menu-arrow"> 
                   <li > <a href="../HTML/MahaB Add A Service Page.html">Add a New Service</a></li>
-                  <li><a href="../HTML/availabel apointment manager.html">Set a New Appointment</a></li>
+                  <li><a href="Appo_List.php">Set a New Appointment</a></li>
                   <li><a href="Request_List_Manager.php">View Requests List</a></li>
   
                   <li><a href="../HTML/upcoming and previous manager.html">View Appointments List</a> </li>
