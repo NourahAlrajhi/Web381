@@ -1,15 +1,14 @@
-
 <?php 
 ob_start();
-    session_start();
+session_start();
 $db = mysqli_connect("localhost" , "root" ,"","healed");
 
 if(!$db){
 
-    die('error in db'. mysqli_error($db));
+die('error in db'. mysqli_error($db));
 }else{
     $id = $_GET['id'];
-    $qry = "select * from PETT where Petid = $id ";
+    $qry = "select * from PETT where Pet_Name = '$id' ";
     $run = $db -> query($qry);
     if(!empty($run->num_rows) && ($run->num_rows > 0)){
         while($row = $run -> fetch_assoc()){
@@ -26,9 +25,6 @@ if(!$db){
 
 
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html>
@@ -108,14 +104,14 @@ if(!$db){
 
 
 <div class="editPetFinalPos">
-        <form action="post">
+        <form method="post">
            
   
             <div class="leftAddPet">
                 <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -38px;">Pet Profile</h3>
                 <label for="Fname">Pet name</label>
                 <br>
-                <input style="color: gray;" type="text" name="Fname" id="Fname" value="<?php echo $PetName;?>" readonly required="">  
+                <input style="color: gray;" type="text" name="Fname" id="Fname" value="<?php echo $PetName ;?>" readonly required="">  
                 
                 <br><br>  
                    
@@ -129,7 +125,7 @@ if(!$db){
                 <br>
                 <select name="Gend" id="Gend"  required="" disabled="true">
                 <option value="hid" hidden ><?php echo $Gender;?></option>   
-                   <option value = "Male" selected> Male </option>
+                   <option value = "Male" > Male </option>
                   <option value = "Female"> Female </option>
                 </select>
                
@@ -140,7 +136,7 @@ if(!$db){
               <div class="rightAddPet">
                 <label for="Lname">Breed</label>
                 <br>  
-                <input style="color: gray;" type="text" name="Breed" id="Lname"  value="<?php echo   $Breed ;?>" readonly required="">
+                <input style="color: gray;" type="text" name="Breed" id="Lname"  value="<?php echo $Breed ;?>" readonly required="">
              
                 <br><br>
         
@@ -148,7 +144,7 @@ if(!$db){
                 <br>
                 <select name="Gend" id="Gend" required="" disabled="true">
                 <option value="hid" hidden > <?php echo $Spayed;?></option>
-                  <option value = "Spayed/Neutered" selected> Spayed/Neutered </option>
+                  <option value = "Spayed/Neutered" > Spayed/Neutered </option>
                   <option value = "Not Spayed/Neutered "> Not Spayed/Neutered </option>
                 </select>
                 <br><br>
@@ -159,7 +155,7 @@ if(!$db){
                 <br><br>
                 <label for="Lname">Medical History</label>
                 <br>  
-                <textarea style="color: gray;" name="MedHist" id="MedHist"  readonly><?php echo $MH;?></textarea>
+                <textarea style="color: gray;" name="MedHist" id="MedHist" readonly> <?php echo $MH;?> </textarea>
                 <br><br>
               </div>
    
@@ -242,8 +238,13 @@ if(!$db){
     </body>
 </html>
 
-<?php
+<?php  
 
-header('location: Pet_List.php');
+if(isset($_POST['Reg'])){
+
+   header('location: Request_List_Pet_Owner.php');
+    ob_end_flush();
+   
+}
 
 ?>
