@@ -222,7 +222,7 @@ $id = $row['Serviceid'];
     </table>
 </div>
 
-<img class="BACKGROUND" src="./background.svg">
+<img class="BACKGROUND" src="../HTML/background.svg">
 
 <div class="AddButtons">
  <a href="Set_Appo.php"><button class="SETApp">Set Appointment</button></a>

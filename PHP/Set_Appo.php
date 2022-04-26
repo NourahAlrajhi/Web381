@@ -3,7 +3,7 @@
 ob_start();
 session_start();
 
-//$db = mysqli_connect("localhost" , "root" ,"","healed");
+$db = mysqli_connect("localhost" , "root" ,"","healed");
 ?>
 
 <!DOCTYPE html>

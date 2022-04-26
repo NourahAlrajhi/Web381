@@ -118,14 +118,14 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
    
      <div class= "DateSelect" >
    <lable class = "LablM">Date <br>
-      <input style="color: gray;" type="Date" id="dateS" value="<?php echo $Date ;?>" name="DATE" readonly>
+      <input style="color: gray;" type="Date" id="dateS" value="<?php echo $Date ;?>" name="DATE" >
      </lable>
      </div>
 
  
   <div class="TimeSelect" >
    <lable class = "LablM"> Time <br>
-     <input style="color: gray;" type="time" id="timeS" value="<?php echo $Time ;?>" name="TIME" readonly>
+     <input style="color: gray;" type="time" id="timeS" value="<?php echo $Time ;?>" name="TIME" >
      </lable>
     
   </div>
@@ -135,7 +135,7 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
    
    </div>
    <div class="BackButtonDetails">
-      <a class="button" name="BACK">Back</a>
+    <button name="BACK"><a class="button" >Back</a></button>
       </div>
     </div>
    
