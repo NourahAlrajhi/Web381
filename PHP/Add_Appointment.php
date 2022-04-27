@@ -85,7 +85,7 @@ $run = $db -> query($qry);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
 ?>
-                        <option value=<?php echo $row['Pet_Name'] ?> > <?php echo $row['Pet_Name'] ?> </option>
+                        <option value=<?php echo $row['Petid'] ?> > <?php echo $row['Pet_Name'] ?> </option>
                        <!-- <option value="brock"> Brock </option>
                         <option> Myla </option>
                         <option> cava </option>
@@ -282,16 +282,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ( !mysqli_select_db( $database, "healed") )
        die( "<p>Could not open URL database</p>" );
 
-       $PetName = $_POST['petname'];
-       //$QUERY=select Petid from PETT where Pet_Name='$PetName';
-       //$RESULT=mysqli_query($database, $QUERY);
+     //  $result = $_POST['petname'];
+     //  $result_explode = explode('|', $result);
+     //  $PetName=$result_explode[0];
+       $PETID=$_POST['petname'];
+       //$PetName = $_POST['petname'];
+       $QUERY="select Pet_Name from PETT where Petid= $PETID";
+       $RESULT = mysqli_query($database, $QUERY);
+       
        $Service = $_POST['service'];
        $Date = $_POST['DATE'];
        $Note = $_POST['note'];
        $Time = $_POST['TIME'];
     
+    while ($row = $RESULT->fetch_assoc()) { 
+        $PetName = $row['Pet_Name'];
+    $query="INSERT INTO Appointment (Pet_name,Service,Date,Note,Time,Status,PETid) VALUES ('".$PetName."','".$Service."','".$Date."','".$Note."','".$Time."','".''."', $PETID);";}
 
-    $query="INSERT INTO Appointment (Pet_name,Service,Date,Note,Time,Status) VALUES ('".$PetName."','".$Service."','".$Date."','".$Note."','".$Time."','".''."');";
     $result=mysqli_query($database, $query);
 
     if($result){

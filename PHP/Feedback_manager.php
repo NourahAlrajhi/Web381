@@ -15,6 +15,7 @@ if(!$db){
             $FEEDBACK = $row['FEEDBACK'];
             $Service_rate = $row['Service_rate'];
             $Visit_rate = $row['Visit_rate'];
+         
             
 }
 
@@ -85,7 +86,7 @@ if(!$db){
         <div class="card">
          
           <div class="picP5">
-           <img src="doctor3.svg" alt="Doctor and cat picture">
+           <img src="../HTML/doctor3.svg" alt="Doctor and cat picture">
           </div>
           
             <div class="container">
@@ -93,26 +94,23 @@ if(!$db){
                <p class="Heading" style="font-size: 1.8rem;" >How was our service?</p>
               <div class="rateM">
                  
-              <?php if($Service_rate == '5') {
-              echo '<input type="radio" id="star5" name="rate" value="5" checked/>
-              <label for="star5" title="text">5 stars</label>';}
-              elseif($Service_rate == '4'){
-                echo '<input type="radio" id="star4" name="rate" value="4" checked  />
-                <label for="star4" title="text">4 stars</label>';
-              }elseif($Service_rate == '3'){
-                echo '  
-                <input type="radio" id="star3" name="rate" value="3" checked/>
-                <label for="star3" title="text">3 stars</label>';  
-              }elseif($Service_rate == '2'){
-                echo '  
-                <input type="radio" id="star2" name="rate" value="2" checked/>
-                <label for="star2" title="text">2 stars</label>';    
-              }else{
-                echo '  
-                <input type="radio" id="star1" name="rate" value="1" checked/>
-                <label for="star1" title="text">1 star</label>';    
-              }
-              ?>
+             
+            <input type="radio" id="star5" name="rate" value="5" <?php if($Service_rate  == '5') echo 'checked' ?> disabled/>
+              <label for="star5" title="text">5 stars</label>
+  
+           <input type="radio" id="star4" name="rate" value="4"  <?php if($Service_rate  == '4') echo 'checked' ?> disabled  />
+                <label for="star4" title="text">4 stars</label>
+     
+         
+                <input type="radio" id="star3" name="rate" value="3"  <?php if($Service_rate  == '3') echo 'checked' ?> disabled/>
+                <label for="star3" title="text">3 stars</label>  
+
+                <input type="radio" id="star2" name="rate" value="2"  <?php if($Service_rate  == '2') echo 'checked' ?> disabled/>
+                <label for="star2" title="text">2 stars</label>    
+           
+                <input type="radio" id="star1" name="rate" value="1"  <?php if($Service_rate  == '1') echo 'checked' ?> disabled/>
+                <label for="star1" title="text">1 star</label>   
+           
          
               </div>
          
@@ -122,46 +120,26 @@ if(!$db){
                 <p class="Heading" style="font-size: 1.8rem;">How was your visit?</p>
 
 
-              <div class="rateM" id="rate2">
-              <?php if( $Visit_rate == '5') {
-              echo '<input type="radio" id="stars5" name="rate2" value="5" checked/>
-              <label for="stars5" title="text">5 stars</label>';}
-              elseif( $Visit_rate == '4'){
-                echo '<input type="radio" id="stars4" name="rate2" value="4" checked/>
-                <label for="stars4" title="text">4 stars</label>';
-              }elseif( $Visit_rate == '3'){
-                echo '  
-                <input type="radio" id="stars3" name="rate2" value="3" checked/>
-                <label for="stars3" title="text">3 stars</label>';  
-              }elseif( $Visit_rate== '2'){
-                echo '  
-                <input type="radio" id="stars2" name="rate2" value="2"checked />
-                <label for="stars2" title="text">2 stars</label>';    
-              }else{
-                echo '  
-                <input type="radio" id="stars1" name="rate2" value="1" checked/>
-                <label for="stars1" title="text">1 star</label>';    
-              }
-              ?> 
-              <!--  <input type="radio" id="stars5" name="rate2" value="5" disabled/>
+              <div class="rateM" id="rate2"> 
+              <input type="radio" id="stars5" name="rate2" value="5" <?php if($Visit_rate  == '5') echo 'checked' ?> disabled/>
                 <label for="stars5" title="text">5 stars</label>
-                <input type="radio" id="stars4" name="rate2" value="4" disabled/>
+                <input type="radio" id="stars4" name="rate2" value="4" <?php if($Visit_rate  == '4') echo 'checked' ?>disabled/>
                 <label for="stars4" title="text">4 stars</label>
-                <input type="radio" id="stars3" name="rate2" value="3" disabled/>
+                <input type="radio" id="stars3" name="rate2" value="3" <?php if($Visit_rate  == '3') echo 'checked' ?>disabled/>
                 <label for="stars3" title="text">3 stars</label>
-                <input type="radio" id="stars2" name="rate2" value="2"checked />
+                <input type="radio" id="stars2" name="rate2" value="2" <?php if($Visit_rate  == '2') echo 'checked' ?> disabled/>
                 <label for="stars2" title="text">2 stars</label>
-                <input type="radio" id="stars1" name="rate2" value="1" disabled/>
-                <label for="stars1" title="text">1 star</label>-->
+                <input type="radio" id="stars1" name="rate2" value="1" <?php if($Visit_rate  == '1') echo 'checked' ?>disabled/>
+                <label for="stars1" title="text">1 star</label>
               </div>
             </div>
             <div class="commReview">
-            <textarea id="comrev" name="comments review"  value="" readonly><?php echo  $FEEDBACK ?> </textarea>
+            <textarea id="comrev" name="comments review"  value="" readonly><?php echo $FEEDBACK ?> </textarea>
           </div>
         </div>
         </div>
         <div class="Reviewbutton">
-          <button name="BACK"><a href="#" class="button">Back</a></button>
+          <button name="BACK"><a class="button">Back</a></button>
             </div>
           </div>
 

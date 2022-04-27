@@ -201,7 +201,7 @@ $UName = $row['Pet_name'];
                     <td> <?php echo $row['Pet_name'] ?>  </td>
                     <td><?php echo $row['Service'] ?></td>
                     <td><a href="Upcoming_Appo_details.php?id= <?php echo $id;?>"><button >View</button></a></td>
-                    <td class="Approved"><a href="Feedback_pet owner.php"> <button>Feedback</button></a>
+                    <td class="Approved"><a href="Feedback_pet owner.php?id= <?php echo $id;?>"> <button>Feedback</button></a>
                         
                     </td>
                     <td><a href="Delet_prev_appo2.php?id= <?php  echo $id; ?>" onclick = "return confirm('Are you sure?')"><i class="fas fa-times" style="font-size: x-large;"></i></a></td>

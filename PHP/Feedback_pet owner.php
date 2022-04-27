@@ -73,7 +73,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
           
             <div class="container">
               
-              <form action="Feedback_pet owner.php#prevappt" method="post">
+              <form  method="post">
                <p class="Heading" style="font-size: 1.8rem;">How was our service?</p>
                
               <div class="rate">
@@ -201,9 +201,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        $Service_rate = $_POST['rate'];
        $visit_rate = $_POST['rate2'];
 
-    
+       $id = $_GET['id'];
 
-    $query="INSERT INTO Feedback (FEEDBACK,Service_rate,Visit_rate) VALUES ('".$FEEDBACK."','".$Service_rate."','".$visit_rate."');";
+    $query="INSERT INTO Feedback (FEEDBACK,Service_rate,Visit_rate,Appid) VALUES ('".$FEEDBACK."','".$Service_rate."','".$visit_rate."','". $id ."');";
     $result=mysqli_query($database, $query);
 
     if($result){
