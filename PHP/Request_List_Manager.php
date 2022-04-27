@@ -172,11 +172,11 @@ $run = $db -> query($qry);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
 $id = $row['Appointmentid'];
-$UName = $row['Pet_name']; 
+
         ?>
             <tr>
                 <td><?php echo  $i++; ?></td>
-                <td><a href="View_Pet_Profile.php?id=<?php echo $UName;?>" style="box-shadow: 0 0 black;"><img src="../HTML/image (1).svg"  height="50px" width="50px"></a></td>
+                <td><a href="View_Pet_Profile4.php?id=<?php echo $id;?>" style="box-shadow: 0 0 black;"><img src="../HTML/image (1).svg"  height="50px" width="50px"></a></td>
                 <td> ... </td>
                 <td> <?php echo $row['Pet_name'] ?>  </td>
                 <td><?php echo $row['Service'] ?></td>
