@@ -9,7 +9,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 <head>
    <meta charset="utf-8">
     <title>Request List</title>
-    <link rel="stylesheet" type="text/css" href="../HTML/mystyle.css">
+    <link rel="stylesheet" type="text/css" href="Nourah's.css">
    
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -116,8 +116,10 @@ $UName = $row['Pet_name'];
                 echo ' <td class="PENDING"><button>PENDING</button></td>';
             }elseif($row['Status']=='yes'){
                 echo ' <td class="Approved"><button>Approved</button></td>';
-            }else{
+            }elseif($row['Status']=='No'){
                 echo ' <td class="Declined"><button>Declined</button></td>'; 
+            }else{
+                echo ' <td class="Complete"><button>Complete</button></td>'; 
             }
             ?>        
             

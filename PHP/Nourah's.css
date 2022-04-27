@@ -202,6 +202,21 @@ td.Approved button:hover{
         box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
     
 }
+td.Complete button{
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    
+    color: white;
+
+    background-color:rgb(158, 231, 158);
+            opacity: 100%;
+}
+td.Complete button:hover{
+    background-color:rgb(158, 231, 158);
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+    
+}
 td.Declined button{
     border: none;
     padding: 7px 20px;

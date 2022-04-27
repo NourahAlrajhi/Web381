@@ -10,7 +10,7 @@ if(!$db){
 
 $id = $_GET['id'];
 
-$qry = "delete from Appointment where Appointmentid = $id";
+$qry = "update Appointment set Status ='Complete' where Appointmentid = $id";
 
 if(mysqli_query($db,$qry)){
     header('location: upcoming and previous manager.php');
