@@ -262,13 +262,13 @@ body::-webkit-scrollbar-track{
    
         background-color: white;
         box-shadow: 0 10px 20px 0 rgba(152, 131, 245, 0.2);
-        width: 800px;
+        width: 933px;
         height: 350px;
-        padding-left: 130px;
+        padding-left: 10px;
         border: 1px ;
         overflow: scroll;
         position: absolute;
-        left: 350px;
+        left: 282px;
         top: 300px;
         border-radius: 20px;
         z-index: 2;
@@ -298,13 +298,13 @@ body::-webkit-scrollbar-track{
 .header_fixed5{
    background-color: white;
    box-shadow: 0 10px 20px 0 rgba(152, 131, 245, 0.2);
-   width: 800px;
+   width: 961px;
    height: 350px;
-   padding-left: 70px;
+   padding-left: 10px;
    border: 1px ;
    overflow: scroll;
    position: absolute;
-   left: 350px;
+   left: 282px;
    top: 890px;
    border-radius: 20px;
    z-index: 2;

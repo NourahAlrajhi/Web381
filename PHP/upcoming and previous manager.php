@@ -10,7 +10,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 <head>
    <meta charset="utf-8">
     <title>Appointment List</title>
-    <link rel="stylesheet" type="text/css" href="../HTML/mystyle.css">
+    <link rel="stylesheet" type="text/css" href="Nourah's.css">
    
    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><-->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -109,9 +109,9 @@ $UName = $row['Pet_name'];
                     <td><?php echo  $i++; ?></td>
                     <td ><a href="View_Pet_Profile.php?id=<?php echo $UName;?>" style="box-shadow: 0 0 black;"> <img src="../HTML/image (1).svg"  height="50px" width="50px"></a></td>
                     <td>  <?php echo $row['Pet_name'] ?> </td>
-                <td><?php echo $row['Service'] ?></td>
+                 <td><?php echo $row['Service'] ?></td>
                     <td><a href="Upcoming_Appo_details_manager.php?id= <?php echo $id;?>"><button >View</button></a></td>
-                    <td><a href="complet_appo.php?id= <?php echo $id;?>"><button >Complete</button></a></td>
+                    <td><a href="complet_appo.php?id= <?php echo $id;?>" onclick = "return confirm('Are you sure?')"><button >Complete</button></a></td>
                         <td> <a href="../HTML/Contact Pet Owner.html"><i class="fas fa-envelope"></i></a>
                     </td>
                 </tr>
@@ -181,6 +181,7 @@ $UName = $row['Pet_name'];
                     <th class="HEADER" style="background-color: white;"></th>
                    
                     <th class="HEADER" style="background-color: white;"></th>
+                    <th class="HEADER" style="background-color: white;"></th>
                 </tr>
           
             </thead>
@@ -204,6 +205,8 @@ $UName = $row['Pet_name'];
                         <td class="Approved"> <a href="../HTML/Review Manager.html"><button style="font-size: xx-small;">Customer Feedback</button></a>
                         
                     </td>
+                    <td><a href="Delet_prev_appo.php?id= <?php  echo $id; ?>" onclick = "return confirm('Are you sure?')"><i class="fas fa-times" style="font-size: x-large;"></i></a></td>
+
                 </tr>
                 <?php 
 

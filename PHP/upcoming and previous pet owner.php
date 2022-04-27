@@ -180,6 +180,7 @@ $UName = $row['Pet_name'];
                     <th class="HEADER" style="background-color: white;"></th>
                    
                     <th class="HEADER" style="background-color: white;"></th>
+                    <th class="HEADER" style="background-color: white;"></th>
                 </tr>
           
             </thead>
@@ -203,6 +204,8 @@ $UName = $row['Pet_name'];
                     <td class="Approved"><a href="../HTML/Review Page.html"> <button>Feedback</button></a>
                         
                     </td>
+                    <td><a href="Delet_prev_appo2.php?id= <?php  echo $id; ?>" onclick = "return confirm('Are you sure?')"><i class="fas fa-times" style="font-size: x-large;"></i></a></td>
+
                 </tr>
                 <?php 
 
