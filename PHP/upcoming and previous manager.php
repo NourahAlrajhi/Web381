@@ -112,7 +112,7 @@ $id = $row['Appointmentid'];
                  <td><?php echo $row['Service'] ?></td>
                     <td><a href="Upcoming_Appo_details_manager.php?id= <?php echo $id;?>"><button >View</button></a></td>
                     <td><a href="complet_appo.php?id= <?php echo $id;?>" onclick = "return confirm('Are you sure?')"><button >Complete</button></a></td>
-                        <td> <a href="../HTML/Contact Pet Owner.html"><i class="fas fa-envelope"></i></a>
+                        <td> <a href="Contact Pet Owner.php"><i class="fas fa-envelope"></i></a>
                     </td>
                 </tr>
                 <?php 

@@ -204,7 +204,7 @@ $id = $row['Appointmentid'];
                     <td class="Approved"><a href="Feedback_pet owner.php?id= <?php echo $id;?>"> <button>Feedback</button></a>
                         
                     </td>
-                    <td><a href="Delet_prev_appo2.php?id= <?php echo $id; ?>" onclick = "return confirm('Are you sure?')"><i class="fas fa-times" style="font-size: x-large;"></i></a></td>
+                    <td><a href="Delet_prev_appo2.php?id= <?php echo $id;?>" onclick = "return confirm('Are you sure?')"><i class="fas fa-times" style="font-size: x-large;"></i></a></td>
 
                 </tr>
                 <?php 

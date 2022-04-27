@@ -60,29 +60,27 @@ die('error in db'. mysqli_error($db));
 
     <nav class="navbar">
         <ul class="nav-list">
-            <li  ><a href="../HTML/Home Pet Owner.html">Home</a>
-              <ul class="sub-menu" id="sub-menu-arrow"> 
-                <li > <a href="Add_New_Pet.php">Add a New Pet</a></li>
-                <li><a href="Pet_List.php">View Pet List</a></li>
-                <li><a href="Request_List_Pet_Owner.php">View Requests List</a></li>
-
-                <li><a href="upcoming and previous pet owner.php">View Appointments List</a> </li>
-        
-              </ul>
-            </li>
+        <li  ><a href="../HTML/Home Manager.html">Home</a>
+                <ul class="sub-menu" id="sub-menu-arrow"> 
+                  <li > <a href="Add_service.php">Add a New Service</a></li>
+                  <li><a href="Appo_List.php">Set a New Appointment</a></li>
+                  <li><a href="Request_List_Manager.php">View Requests List</a></li>
+  
+                  <li><a href="upcoming and previous manager.php">View Appointments List</a> </li>
+          
+                </ul>
+              </li>
           
             
-           <li><a href="../HTML/Services Pet Owner.html">Services</a></li> 
-           <li><a href="../HTML/About us PetOwner.html">About Us</a></li> 
-            <li><a href="../HTML/Contact Clinic.html">Contact Us</a></li>
-            <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user" ></i></a>
+            <li><a href="../HTML/Services Manager.html">Services</a></li> 
+           <li><a href="../HTML/About Us Manager.html">About Us</a></li> 
+            <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user-doctor" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
-                    <li ><a href="../HTML/MahaB Edit Profile Page.html">View Profile</a></li>
+                    <li ><a href="#">View Profile</a></li>
                     <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
             
                   </ul></li>
           </ul>
-        
         <!-- ****if you're working on a pet owner view replace <i class="fa-solid fa-user-doctor"> with <i class="fa-solid fa-user"></i>  -->
 
 
