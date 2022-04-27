@@ -1,3 +1,10 @@
+<?php 
+ob_start();
+session_start();
+
+$db = mysqli_connect("localhost" , "root" ,"","healed");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,10 +12,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="../images/logo.svg">
 	<title>Give Us Your Feedback! </title>
-   <link rel="stylesheet" type="text/css" href="mystyle.css">
+   <link rel="stylesheet" type="text/css" href="../HTML/mystyle.css">
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="Header and Footer.css">
+    <link rel="stylesheet" href="../HTML/Header and Footer.css">
     <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
     
   
@@ -23,25 +30,25 @@
 
     <nav class="navbar">
         <ul class="nav-list">
-            <li  ><a href="./Home Pet Owner.html">Home</a>
+            <li  ><a href="../HTML/Home Pet Owner.html">Home</a>
               <ul class="sub-menu" id="sub-menu-arrow"> 
-                <li > <a href="./MahaB Add New Pet.html">Add a New Pet</a></li>
-                <li><a href="./my pit list pet owner.html">View Pet List</a></li>
-                <li><a href="./rquest list pet owner.html">View Requests List</a></li>
+                <li > <a href="Add_New_Pet.php">Add a New Pet</a></li>
+                <li><a href="Pet_List.php">View Pet List</a></li>
+                <li><a href="Request_List_Pet_Owner.php">View Requests List</a></li>
 
-                <li><a href="./upcoming and previous pet owner.html">View Appointments List</a> </li>
+                <li><a href="upcoming and previous pet owner.php">View Appointments List</a> </li>
         
               </ul>
             </li>
           
             
-           <li><a href="./Services Pet Owner.html">Services</a></li> 
-           <li><a href="./About us PetOwner.html">About Us</a></li> 
-            <li><a href="./Contact Clinic.html">Contact Us</a></li>
+           <li><a href="../HTML/Services Pet Owner.html">Services</a></li> 
+           <li><a href="../HTML/About us PetOwner.html">About Us</a></li> 
+            <li><a href="../HTML/Contact Clinic.html">Contact Us</a></li>
             <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
-                    <li ><a href="MahaB Edit Profile Page.html">View Profile</a></li>
-                    <li><a href="./LnadingPage.html">Sign Out</a></li>
+                    <li ><a href="../HTML/MahaB Edit Profile Page.html">View Profile</a></li>
+                    <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
             
                   </ul></li>
           </ul>
@@ -61,16 +68,16 @@
         <div class="card">
          
           <div class="picP5">
-           <img src="doctor3.svg" alt="Doctor and cat picture">
+           <img src="../HTML/doctor3.svg" alt="Doctor and cat picture">
           </div>
           
             <div class="container">
               
-              <form action="./upcoming and previous pet owner.html#prevappt">
+              <form action="Feedback_pet owner.php#prevappt" method="post">
                <p class="Heading" style="font-size: 1.8rem;">How was our service?</p>
                
               <div class="rate">
-                <input type="radio" id="star5" name="rate" value="5"  />
+                <input type="radio" id="star5" name="rate" value="5" />
                 <label for="star5" title="text">5 stars</label>
                 <input type="radio" id="star4" name="rate" value="4" />
                 <label for="star4" title="text">4 stars</label>
@@ -87,9 +94,9 @@
               <div class="Q">
                 <p class="Heading" style="font-size: 1.8rem;">How was your visit?</p>
 
-               
+               <!-- checked -->
               <div class="rate" >
-                <input type="radio" id="stars5" name="rate2" value="5" />
+                <input type="radio" id="stars5" name="rate2" value="5"  />
                 <label for="stars5" title="text">5 stars</label>
                 <input type="radio" id="stars4" name="rate2" value="4" />
                 <label for="stars4" title="text">4 stars</label>
@@ -103,7 +110,7 @@
             </div>
           
             <div class="commReview">
-            <textarea id="comrev" name="comments review" placeholder="  Would you like to add any comments?" ></textarea>
+            <textarea id="comrev" name="comments_review" placeholder="Would you like to add any comments?" ></textarea>
           </div>
         </div>
         <div class="Reviewbutton">
@@ -181,3 +188,28 @@
 </body>
 
 </html>
+<?php    
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ( !( $database = mysqli_connect( "localhost", "root", "" ) ) )
+       die( "<p>Could not connect to database</p>" );
+
+    if ( !mysqli_select_db( $database, "healed") )
+       die( "<p>Could not open URL database</p>" );
+
+       $FEEDBACK = $_POST['comments_review'];
+       $Service_rate = $_POST['rate'];
+       $visit_rate = $_POST['rate2'];
+
+    
+
+    $query="INSERT INTO Feedback (FEEDBACK,Service_rate,Visit_rate) VALUES ('".$FEEDBACK."','".$Service_rate."','".$visit_rate."');";
+    $result=mysqli_query($database, $query);
+
+    if($result){
+        header("location: upcoming and previous pet owner.php");
+ob_end_flush();}
+    else{
+        echo "An error occured while inserting into the Feedback table.";}
+}
+?>

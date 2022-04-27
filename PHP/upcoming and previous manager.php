@@ -202,7 +202,7 @@ $UName = $row['Pet_name'];
                     <td> <?php echo $row['Pet_name'] ?> </td>
                 <td> <?php echo $row['Service'] ?></td> 
                     <td><a href="Upcoming_Appo_details_manager.php?id= <?php echo $id;?>"><button >View</button></a></td>
-                        <td class="Approved"> <a href="../HTML/Review Manager.html"><button style="font-size: xx-small;">Customer Feedback</button></a>
+                        <td class="Approved"> <a href="Feedback_manager.php?id= <?php echo $id;?>"><button style="font-size: xx-small;">Customer Feedback</button></a>
                         
                     </td>
                     <td><a href="Delet_prev_appo.php?id= <?php  echo $id; ?>" onclick = "return confirm('Are you sure?')"><i class="fas fa-times" style="font-size: x-large;"></i></a></td>

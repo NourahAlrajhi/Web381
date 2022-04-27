@@ -80,7 +80,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
                         <option value="" selected hidden>Choose a pet</option>
 <?php   
 
-$qry = "select Pet_Name from PETT";
+$qry = "select Pet_Name,Petid from PETT";
 $run = $db -> query($qry);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
@@ -283,6 +283,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        die( "<p>Could not open URL database</p>" );
 
        $PetName = $_POST['petname'];
+       //$QUERY=select Petid from PETT where Pet_Name='$PetName';
+       //$RESULT=mysqli_query($database, $QUERY);
        $Service = $_POST['service'];
        $Date = $_POST['DATE'];
        $Note = $_POST['note'];
