@@ -101,11 +101,11 @@ $run = $db -> query($qry);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
 $id = $row['Appointmentid'];
-$UName = $row['Pet_name'];   
+  
         ?>
                 <tr>
                     <td><?php echo  $i++; ?></td>
-                    <td ><a href="View_Pet_Profile.php?id=<?php echo $UName;?>" style="box-shadow: 0 0 black;"> <img src="../HTML/image (1).svg"  height="50px" width="50px"></a></td>
+                    <td ><a href="View_Pet_Profile2.php?id=<?php echo $id;?>" style="box-shadow: 0 0 black;"> <img src="../HTML/image (1).svg"  height="50px" width="50px"></a></td>
                     <td> <?php echo $row['Pet_name'] ?> </td>
                     <td><?php echo $row['Service'] ?></td>
                     <td> <a href="Upcoming_Appo_details.php?id= <?php echo $id;?>"> <button >View</button></a></td>
@@ -193,18 +193,18 @@ $run = $db -> query($qry);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
 $id = $row['Appointmentid'];
-$UName = $row['Pet_name'];   
+   
         ?>
                 <tr>
                     <td><?php echo  $i++; ?></td>
-                    <td ><a href="View_Pet_Profile.php?id=<?php echo $UName;?>" style="box-shadow: 0 0 black;"> <img src="../HTML/image (1).svg"  height="50px" width="50px"></a></td>
+                    <td ><a href="View_Pet_Profile2.php?id=<?php echo $id;?>" style="box-shadow: 0 0 black;"> <img src="../HTML/image (1).svg"  height="50px" width="50px"></a></td>
                     <td> <?php echo $row['Pet_name'] ?>  </td>
                     <td><?php echo $row['Service'] ?></td>
                     <td><a href="Upcoming_Appo_details.php?id= <?php echo $id;?>"><button >View</button></a></td>
                     <td class="Approved"><a href="Feedback_pet owner.php?id= <?php echo $id;?>"> <button>Feedback</button></a>
                         
                     </td>
-                    <td><a href="Delet_prev_appo2.php?id= <?php  echo $id; ?>" onclick = "return confirm('Are you sure?')"><i class="fas fa-times" style="font-size: x-large;"></i></a></td>
+                    <td><a href="Delet_prev_appo2.php?id= <?php echo $id; ?>" onclick = "return confirm('Are you sure?')"><i class="fas fa-times" style="font-size: x-large;"></i></a></td>
 
                 </tr>
                 <?php 
