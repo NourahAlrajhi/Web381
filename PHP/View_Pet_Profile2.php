@@ -242,7 +242,7 @@ die('error in db'. mysqli_error($db));
 
 if(isset($_POST['Reg'])){
 
-   header('location: Request_List_Pet_Owner.php');
+   header('location: upcoming and previous pet owner.php');
     ob_end_flush();
    
 }

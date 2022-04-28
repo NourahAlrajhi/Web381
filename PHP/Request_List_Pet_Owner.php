@@ -9,7 +9,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 <head>
    <meta charset="utf-8">
     <title>Request List</title>
-    <link rel="stylesheet" type="text/css" href="../HTML/mystyle.css">
+    <link rel="stylesheet" type="text/css" href="Nourah's.css">
    
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -46,7 +46,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
                 <li><a href="Pet_List.php">View Pet List</a></li>
                 <li><a href="Request_List_Pet_Owner.php">View Requests List</a></li>
 
-                <li><a href="../HTML/upcoming and previous pet owner.html">View Appointments List</a> </li>
+                <li><a href="upcoming and previous pet owner.php">View Appointments List</a> </li>
         
               </ul>
             </li>
@@ -100,12 +100,12 @@ $run = $db -> query($qry);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
 $id = $row['Appointmentid'];
-$UName = $row['Pet_name'];     
+    
         ?>
      
                 <tr>
                     <td><?php echo  $i++; ?></td>
-                    <td ><a  href="View_Pet_Profile.php?id=<?php echo $UName;?>" style="box-shadow: 0 0 black;"> <img src="../HTML/image (1).svg"  height="50px" width="50px"></a></td>
+                    <td ><a  href="View_Pet_Profile.php?id=<?php echo $id;?>" style="box-shadow: 0 0 black;"> <img src="../HTML/image (1).svg"  height="50px" width="50px"></a></td>
                     <td> <?php echo $row['Pet_name'] ?> </td>
                 <td> <?php echo $row['Service'] ?></td>
                    
@@ -116,8 +116,10 @@ $UName = $row['Pet_name'];
                 echo ' <td class="PENDING"><button>PENDING</button></td>';
             }elseif($row['Status']=='yes'){
                 echo ' <td class="Approved"><button>Approved</button></td>';
-            }else{
+            }elseif($row['Status']=='No'){
                 echo ' <td class="Declined"><button>Declined</button></td>'; 
+            }else{
+                echo ' <td class="Complete"><button>Complete</button></td>'; 
             }
             ?>        
             

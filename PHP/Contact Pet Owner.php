@@ -1,69 +1,45 @@
 
 <?php 
 ob_start();
-    session_start();
+session_start();
+
 $db = mysqli_connect("localhost" , "root" ,"","healed");
-
-if(!$db){
-
-    die('error in db'. mysqli_error($db));
-}else{
-    $id = $_GET['id'];
-    $qry = "select * from Appointment where Appointmentid = $id ";
-    $run = $db -> query($qry);
-    if(!empty($run->num_rows) && ($run->num_rows > 0)){
-        while($row = $run -> fetch_assoc()){
-            $PetName = $row['Pet_name'];
-            $Service = $row['Service'];
-            $Date = $row['Date'];
-            $Note = $row['Note'];
-            $Time = $row['Time'];
-}
-
-    }
-}
-
-
 ?>
 
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title> View Appointment Request </title>
-    <link rel = "stylesheet" type = "text/css" href ="../HTML/mystyle.css">
-    
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../images/logo.svg">
- 
+    <title>Contact Pet Owner</title>
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="../HTML/Header and Footer.css">
     <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../HTML/contact template.css">
     
+
 
 </head>
 
-
-<body class = "Noura">
-
+<body>
     <!-- header section starts  -->
 
 <header>
 
-    <a href=".../HTML/Home Manager.html" class="logo"><img src="../images/logo.svg" alt="logo" height="50rem" ><span>ealed</span></a>
+    <a href="../HTML/Home Manager.html" class="logo"><img src="../images/logo.svg" alt="logo" height="50rem" ><span>ealed</span></a>
 
     <input type="checkbox" id="menu-bar">
     <label for="menu-bar" class="fas fa-bars"></label>
 
     <nav class="navbar">
         <ul class="nav-list">
-            <li  ><a href="../HTML/Home Manager.html">Home</a>
+        <li  ><a href="../HTML/Home Manager.html">Home</a>
                 <ul class="sub-menu" id="sub-menu-arrow"> 
-                  <li > <a href="../HTML/MahaB Add A Service Page.html">Add a New Service</a></li>
-                  <li><a href="../HTML/availabel apointment manager.html">Set a New Appointment</a></li>
+                  <li > <a href="Add_service.php">Add a New Service</a></li>
+                  <li><a href="Appo_List.php">Set a New Appointment</a></li>
                   <li><a href="Request_List_Manager.php">View Requests List</a></li>
   
                   <li><a href="upcoming and previous manager.php">View Appointments List</a> </li>
@@ -72,7 +48,7 @@ if(!$db){
               </li>
           
             
-           <li><a href="../HTML/Services Manager.html">Services</a></li> 
+              <li><a href="../HTML/Services Manager.html">Services</a></li> 
            <li><a href="../HTML/About Us Manager.html">About Us</a></li> 
             <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user-doctor" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
@@ -91,57 +67,31 @@ if(!$db){
 
 <!-- header section ends -->
 
-<section class="requestbg">
-    <div class = "part1">
-        <div class="title"> Appointment Request </div>
-        <form method="post">
-              <div class ="appointment-details" > 
-    
-                <div class = "input-box">
-                    <lable class = "details"> Pet <br>
-                        <input disabled name= "petname" class = "field1" value="<?php echo $PetName ;?>">
-                    </lable>
-                </div>
-    
-                <div class = "input-box">
-                    <lable class = "details"> Note <br>
-                        <textarea disabled name= "note" class = "field2" ><?php echo $Note;?></textarea>
-                    </lable>
-                </div>
-    
-                <div class = "input-box">
-                    <lable class = "details"> Service <br>
-                        <input disabled name= "service" class = "field1" value="<?php echo $Service;?>">
-                    </lable>
-                </div>
-    
-                <div class = "input-box">
-                    <lable class = "details"> Time <br>
-                        <input  disabled type="time"name= "time" class = "field1" value="<?php echo $Time ;?>"> 
-                    </lable>
-                    </div>
-    
-    
-                <div class = "input-box" >
-                    <lable class = "details"> Date <br>
-                        <input disabled type="date"name= "Date" class = "field1" value="<?php echo $Date ;?>">  
-                    </lable>
-                </div>
-        
-    
-               </div>
 
-               <div class="button1">
-                <input name="SAVE" type = "submit"  value ="Back" class="button" style="  font-size:150% ; position: absolute; 
-                left:45%;">
-               </div>
-                </div>
-    </form>
+ <!-- Contact Us section starts  -->
+<section class="contactus" id="contact us">
+    <div class="image">
+        <img src="../images/CONTACTUSS.svg" alt="">
     </div>
-
-
+    <form method="post">
+        <h1 class="heading">Contact Pet Owner</h1>
+        <div class="inputbox">
+            <input type="text" required>
+            <label >Name</label>
+        </div>
+        
+        <div class="inputbox">
+            <textarea required name="" id="" cols="30" rows="10"></textarea>
+            <label >Message</label>
+        </div>
+        <input type="submit" class="btn" value="send" name="Reg">
+    </form>
 
 </section>
+
+
+
+<!-- Contact Us section ends  -->
 
 <!-- Footer section starts -->
 <div class="footer">
@@ -204,17 +154,14 @@ if(!$db){
 <!--Footer section ends-->
 
 </body>
-
 </html>
+
 
 <?php  
 
-if(isset($_POST['SAVE'])){
+if(isset($_POST['Reg'])){
 
-
-
-
-   header('location: Request_List_Manager.php');
+   header('location: upcoming and previous manager.php');
     ob_end_flush();
    
 }

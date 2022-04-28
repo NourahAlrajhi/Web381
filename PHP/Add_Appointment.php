@@ -43,7 +43,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
                 <li><a href="Pet_List.php">View Pet List</a></li>
                 <li><a href="Request_List_Pet_Owner.php">View Requests List</a></li>
 
-                <li><a href="../HTML/upcoming and previous pet owner.html">View Appointments List</a> </li>
+                <li><a href="upcoming and previous pet owner.php">View Appointments List</a> </li>
         
               </ul>
             </li>
@@ -80,12 +80,12 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
                         <option value="" selected hidden>Choose a pet</option>
 <?php   
 
-$qry = "select Pet_Name from PETT";
+$qry = "select Pet_Name,Petid from PETT";
 $run = $db -> query($qry);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
 ?>
-                        <option value=<?php echo $row['Pet_Name'] ?> > <?php echo $row['Pet_Name'] ?> </option>
+                        <option value=<?php echo $row['Petid'] ?> > <?php echo $row['Pet_Name'] ?> </option>
                        <!-- <option value="brock"> Brock </option>
                         <option> Myla </option>
                         <option> cava </option>
@@ -120,13 +120,13 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
                         <option value="" selected hidden>Choose a service</option>
                         <?php   
 
-$qry = "select Service_name from Services";
+$qry = "select Service_NAME from Manager_Services";
 $run = $db -> query($qry);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
 ?>
 
-                        <option value=<?php echo $row['Service_name'] ?> > <?php echo $row['Service_name'] ?> </option>
+                        <option value=<?php echo $row['Service_NAME'] ?> > <?php echo $row['Service_NAME'] ?> </option>
                       <!--  <option > Dentistry</option>
                         <option > Boarding</option>-->
                         <?php 
@@ -140,13 +140,49 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
 
             <div class = "input-box">
                 <lable class = "details"> Time <br>
-                    <input  required type="time" name="TIME">
+                <select  required name="TIME" class = "field1">
+                        <option value="" selected hidden>Choose a Time</option>
+                        <?php   
+
+$qry = "select Time from Services";
+$run = $db -> query($qry);
+if(!empty($run->num_rows) && ($run->num_rows > 0)){
+    while($row = $run -> fetch_assoc()){
+?>
+
+                        <option value=<?php echo $row['Time'] ?> > <?php echo $row['Time'] ?> </option>
+
+                        <?php 
+
+}
+}
+?>
+                        </select>
+                  <!--  <input  required type="time" name="TIME">-->
              </lable></div>
 
 
             <div class = "input-box" >
                 <lable class = "details"> Date <br>
-                   <input  required type="date" name="DATE">
+                <select  required name="DATE" class = "field1">
+                        <option value="" selected hidden>Choose a Date</option>
+                        <?php   
+
+$qry = "select Date from Services";
+$run = $db -> query($qry);
+if(!empty($run->num_rows) && ($run->num_rows > 0)){
+    while($row = $run -> fetch_assoc()){
+?>
+
+                        <option value=<?php echo $row['Date'] ?> > <?php echo $row['Date'] ?> </option>
+
+                        <?php 
+
+}
+}
+?>
+                        </select>
+               <!--    <input  required type="date" name="DATE">-->
             </lable>
             </div>
     
@@ -246,14 +282,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ( !mysqli_select_db( $database, "healed") )
        die( "<p>Could not open URL database</p>" );
 
-       $PetName = $_POST['petname'];
+     //  $result = $_POST['petname'];
+     //  $result_explode = explode('|', $result);
+     //  $PetName=$result_explode[0];
+       $PETID=$_POST['petname'];
+       //$PetName = $_POST['petname'];
+       $QUERY="select Pet_Name from PETT where Petid= $PETID";
+       $RESULT = mysqli_query($database, $QUERY);
+       
        $Service = $_POST['service'];
        $Date = $_POST['DATE'];
        $Note = $_POST['note'];
        $Time = $_POST['TIME'];
     
+    while ($row = $RESULT->fetch_assoc()) { 
+        $PetName = $row['Pet_Name'];
+    $query="INSERT INTO Appointment (Pet_name,Service,Date,Note,Time,Status,PETid) VALUES ('".$PetName."','".$Service."','".$Date."','".$Note."','".$Time."','".''."', $PETID);";}
 
-    $query="INSERT INTO Appointment (Pet_name,Service,Date,Note,Time,Status) VALUES ('".$PetName."','".$Service."','".$Date."','".$Note."','".$Time."','".''."');";
     $result=mysqli_query($database, $query);
 
     if($result){

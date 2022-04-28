@@ -10,11 +10,9 @@ if(!$db){
 
 $id = $_GET['id'];
 
-$qry2 = "update Appointment set Status ='No' where Appointmentid = $id";
-//$qry = "delete from Appointment where Appointmentid = $id";
-
-if(mysqli_query($db,$qry2) /*&& mysqli_query($db,$qry)*/){
-    header('location: Request_List_Manager.php');
+$qry = "update Appointment set Status ='Complete' where Appointmentid = $id ";
+if(mysqli_query($db,$qry)){
+    header('location: upcoming and previous pet owner.php');
     ob_end_flush();
 }else{
     echo mysqli_error($db);

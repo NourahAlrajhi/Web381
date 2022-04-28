@@ -44,11 +44,11 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
         <ul class="nav-list">
             <li  ><a href="./Home Manager.html">Home</a>
                 <ul class="sub-menu" id="sub-menu-arrow"> 
-                  <li > <a href="../HTML/MahaB Add A Service Page.html">Add a New Service</a></li>
-                  <li><a href="../HTML/availabel apointment manager.html">Set a New Appointment</a></li>
+                  <li > <a href="Add_service.php">Add a New Service</a></li>
+                  <li><a href="Appo_List.php">Set a New Appointment</a></li>
                   <li><a href="Request_List_Manager.php">View Requests List</a></li>
   
-                  <li><a href="../HTML/upcoming and previous manager.html">View Appointments List</a> </li>
+                  <li><a href="upcoming and previous manager.php">View Appointments List</a> </li>
           
                 </ul>
               </li>
@@ -172,11 +172,11 @@ $run = $db -> query($qry);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
 $id = $row['Appointmentid'];
-        
+
         ?>
             <tr>
                 <td><?php echo  $i++; ?></td>
-                <td><a href="../HTML/MahaB Pet Profile Request List Manager.html" style="box-shadow: 0 0 black;"><img src="../HTML/image (1).svg"  height="50px" width="50px"></a></td>
+                <td><a href="View_Pet_Profile4.php?id=<?php echo $id;?>" style="box-shadow: 0 0 black;"><img src="../HTML/image (1).svg"  height="50px" width="50px"></a></td>
                 <td> ... </td>
                 <td> <?php echo $row['Pet_name'] ?>  </td>
                 <td><?php echo $row['Service'] ?></td>
