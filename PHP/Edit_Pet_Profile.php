@@ -65,7 +65,7 @@ if(!$db){
                 <li><a href="Pet_List.php">View Pet List</a></li>
                 <li><a href="Request_List_Pet_Owner.php">View Requests List</a></li>
 
-                <li><a href="upcoming and previous manager.php">View Appointments List</a> </li>
+                <li><a href="upcoming and previous pet owner.php">View Appointments List</a> </li>
         
               </ul>
             </li>
@@ -114,7 +114,7 @@ if(!$db){
              <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -36px;">Pet Profile</h3>
              <label for="Fname">Pet name</label>
              <br>
-             <input type="text" name="Fname" id="Fname"  value="<?php echo $PetName;?>" required="">  
+             <input name="Fname" id="Fname" type="text" value="<?php echo $PetName;?>"  required="" >  
              <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 43.3%; top:28.5%"></a>
              <br><br>  
                 
