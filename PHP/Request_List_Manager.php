@@ -144,7 +144,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 <div class="CAPTION" ><strong> Request List</strong></div>
 <div class="header_fixed">
 
-    <table>
+    <table >
         <thead>
             
             <tr>
