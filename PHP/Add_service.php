@@ -191,12 +191,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $query="INSERT INTO Manager_Services (Service_NAME, Description, Price ) VALUES ('".$SERVICE_NAME ."','".$Description."','".$Price."');";
     $result=mysqli_query($database, $query);
-
+    mysqli_close($database);
     if($result){
         header("location: Services_Manager.php");
 ob_end_flush();}
     else{
         echo "An error occured while inserting into the Manager_Services table.";}
 }
-mysqli_close($database);
+//mysqli_close($database);
 ?>

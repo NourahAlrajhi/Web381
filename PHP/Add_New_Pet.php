@@ -228,16 +228,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $query="INSERT INTO PETT (Pet_Name, Gender, Breed ,Spayed , Medical_History,DOB) VALUES ('".$PetName."','".$Gender."','". $Breed."','".$Spayed."','".$MH."','".$DOB."');";
     $result=mysqli_query($database, $query);
-
+    mysqli_close($database);
     if($result){
         header("location: Pet_List.php");
-ob_end_flush();}
+      
+ob_end_flush();
+
+}
     else{
         echo "An error occured while inserting into the branch table.";}
 }
 
 
-mysqli_close($database);
 
 /*if(isset($_POST['Reg'])){
 
