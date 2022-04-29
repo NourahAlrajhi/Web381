@@ -30,7 +30,7 @@ if(!$db){
     <head>
         <meta charset="utf-8">
         <title>Pet Profile</title>
-        <link rel="stylesheet" type="text/css" href="../HTML/mystyle.css">
+        <link rel="stylesheet" type="text/css"  />
 
 <!-- added 1 here -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,7 +42,14 @@ if(!$db){
         <link rel="stylesheet" href="../HTML/Header and Footer.css">
         <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
 <!-- ended 1 here -->
-
+<style>
+.petprofbackg{
+    background: url(../images/ResetB.svg) no-repeat; /*******/
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+</style>
     </head>
 
     <body class="petprofbackg">
@@ -99,33 +106,35 @@ if(!$db){
     <div class="signUpGirl">
         <div class="animalphot">
         <img src="../images/pet profile photo new.svg" height="125px" width="125px">
-        <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 52.4%; top:70.5%"></a>
+        <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 52.4%; top:32.5%"></a>
 
 
         </div>
     </div>
 
 
-<div class="editPetFinalPos">
+<div class="editPetFinalPos" style=" margin-top: -15%;">
         <form method="post" >
            
   
-            <div class="leftAddPet">
+            <div class="leftAddPet" style="display: inline-block; width: 27.5%; margin-right: 12%;">
              <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -36px;">Pet Profile</h3>
              <label for="Fname">Pet name</label>
              <br>
-             <input name="Fname" id="Fname" type="text" value="<?php echo $PetName;?>"  required="" >  
-             <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 43.3%; top:28.5%"></a>
+             <input name="Fname"  type="text" value="<?php echo $PetName;?>"  required=""  style =" height: 30px;  width: 70%; outline: none; border-radius: 5px; border-radius: 5px; 
+    border: 1px solid #F0EFEF ;  background-color:#F0EFEF;  padding-left: 15; font-size: 12px;">  
+    
+             <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 43.3%; top:33.5%"></a>
              <br><br>  
                 
              <label for="Pnum">Date of Birth</label>
              <br>
-             <input style="color: gray;" type="date" name="Pnum" id="Pnum"  value="<?php echo $DOB ;?>" readonly required="">  
+             <input style="color: gray; height: 30px;  width: 70%; outline: none;border-radius: 5px;  border: 1px solid #F0EFEF ; background-color:#F0EFEF; padding-left: 15;  font-size: 12px;" type="date" name="Pnum" id="Pnum"  value="<?php echo $DOB ;?>" readonly required="">  
              <br><br>
     
              <label for="Gend">Gender</label>
              <br>
-             <select name="Gend111" id="Gend" required="" disabled="true">  
+             <select name="Gend111" id="Gend" required="" disabled="true" style="   height: 30px;width: 70.2%;    outline: none; border-radius: 5px; border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px;margin-bottom: 1ex;">  
              <option value="hid" hidden ><?php echo $Gender;?></option>      
                <option value = "Male" > Male </option>
                <option value = "Female"> Female </option>
@@ -134,16 +143,16 @@ if(!$db){
     
            </div>
           
-           <div class="rightAddPet">
+           <div class="rightAddPet" style="display: inline-block; position: relative; top: 123px;">
              <label for="Lname">Breed</label>
              <br>  
-             <input style="color: gray;" type="text" name="Breed" id="Lname"  value="<?php echo   $Breed ;?>" readonly required="">
+             <input style="color: gray; height: 30px; width: 70%; outline: none;border-radius: 5px;border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px;" type="text" name="Breed" id="Lname"  value="<?php echo   $Breed ;?>" readonly required="">
              <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 87.5%; top:24.5%"></a>
              <br><br>
      
              <label for="Spayed">Spayed/Neutered Status</label>
              <br>
-             <select name="Spayed" id="Gend" required="">
+             <select name="Spayed" id="Gend" required="" style="  height: 30px; width: 70.2%; outline: none;border-radius: 5px;border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px;margin-bottom: 1ex;">
              <option value="hid" hidden > <?php echo $Spayed;?></option>
                <option value = "Spayed/Neutered "> Spayed/Neutered </option>
                <option value = "Not Spayed/Neutered"> Not Spayed/Neutered </option>
@@ -152,11 +161,11 @@ if(!$db){
     
              <label for="VaccList">Vaccination List</label>
              <br>
-             <input type="file" name="VaccList" id="VaccList">
+             <input type="file" name="VaccList" id="VaccList" style="margin-left: 15%;">
              <br><br>
              <label for="Lname">Medical History</label>
              <br>  
-             <textarea name="MedHist" id="MedHist" ><?php echo $MH;?></textarea>
+             <textarea name="MedHist" id="MedHist" style="height: 100px; width: 70%; outline: none; border-radius: 5px;border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px;"><?php echo $MH;?></textarea>
              <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 87.5%; top:63%"></a>
 
              <br><br>
@@ -166,7 +175,7 @@ if(!$db){
            <br><br><br><br><br>
            
      
-         <input type="submit" name="Reg" id="Reg" value="Save">
+         <input type="submit" name="Reg" id="Reg" value="Save" style="  width: 300px;  height: 30px;  border: none;   border-radius: 17px;   padding-left: 7px;  background-color: #635DAD; opacity: 62%;color: white;cursor: pointer; ">
            
            <br><br><br><br>
         </form>
@@ -260,6 +269,6 @@ if(mysqli_query($db,$qry)){
 }
 
 
-
+mysqli_close($db);
 
 ?>

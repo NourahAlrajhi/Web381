@@ -218,5 +218,6 @@ if(isset($_POST['SAVE'])){
     ob_end_flush();
    
 }
+mysqli_close($db);
 
 ?>

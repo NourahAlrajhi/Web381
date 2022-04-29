@@ -307,4 +307,6 @@ ob_end_flush();}
     else{
         echo "An error occured while inserting into the Appointment table.";}
 }
+mysqli_close($database);
+
 ?>

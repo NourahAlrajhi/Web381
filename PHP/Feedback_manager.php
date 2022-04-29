@@ -222,5 +222,5 @@ if(isset($_POST['BACK'])){
     ob_end_flush();
    
 }
-
+mysqli_close($db); 
 ?>
