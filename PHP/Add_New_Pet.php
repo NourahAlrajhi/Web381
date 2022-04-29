@@ -237,7 +237,7 @@ ob_end_flush();}
 }
 
 
-
+mysqli_close($database);
 
 /*if(isset($_POST['Reg'])){
 

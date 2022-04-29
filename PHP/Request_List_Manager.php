@@ -348,3 +348,5 @@ $id = $row['Appointmentid'];
 </body>
 
 </html>
+
+<?php mysqli_close($db); ?>

@@ -191,3 +191,5 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 
 </body>
 </html>
+
+<?php mysqli_close($db); ?>

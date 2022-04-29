@@ -2,7 +2,7 @@
 ob_start();
 session_start();
 
-$db = mysqli_connect("localhost" , "root" ,"","healed");
+//$db = mysqli_connect("localhost" , "root" ,"","healed");
 ?>
 
 <!DOCTYPE html>
@@ -212,4 +212,5 @@ ob_end_flush();}
     else{
         echo "An error occured while inserting into the Feedback table.";}
 }
+mysqli_close($database); 
 ?>

@@ -198,5 +198,5 @@ ob_end_flush();}
     else{
         echo "An error occured while inserting into the Manager_Services table.";}
 }
-
+mysqli_close($database);
 ?>

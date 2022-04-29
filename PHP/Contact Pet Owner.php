@@ -165,5 +165,6 @@ if(isset($_POST['Reg'])){
     ob_end_flush();
    
 }
+ mysqli_close($db); 
 
 ?>
