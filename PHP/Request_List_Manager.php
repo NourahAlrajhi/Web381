@@ -27,7 +27,24 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 <link rel="stylesheet" href="../HTML/Header and Footer.css">
 <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
 
+<style>
 
+.header_fixed6{
+background-color: white;
+    box-shadow: 0 10px 20px 0 rgba(152, 131, 245, 0.2);
+    width: 900px;
+    height: 450px;
+    border: 1px ;
+    overflow: scroll;
+    position: absolute;
+    right: 250px;
+    padding-left: 90px;
+   
+    bottom: 60px;
+    border-radius: 20px;
+    z-index: 2;
+    text-align: center;}
+</style>
 </head>
 <body class="NBODY">
    
@@ -141,8 +158,8 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 </div>-->
 
 <section>
-<div class="CAPTION" ><strong> Request List</strong></div>
-<div class="header_fixed">
+<div style=" position: absolute; top: 19vh; left: 290px;font-size: x-large;" ><strong> Request List</strong></div>
+<div class="header_fixed6">
 
     <table >
         <thead>

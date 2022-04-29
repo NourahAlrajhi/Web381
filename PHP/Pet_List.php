@@ -26,6 +26,24 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <link rel="stylesheet" href="../HTML/Header and Footer.css">
 <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
+<style>
+
+.header_fixed8{
+background-color: white;
+    box-shadow: 0 10px 20px 0 rgba(152, 131, 245, 0.2);
+    width: 950px;
+    height: 450px;
+    border: 1px ;
+    overflow: scroll;
+    position: absolute;
+    right: 250px;
+    padding-left: 50px;
+   
+    bottom: 60px;
+    border-radius: 20px;
+    z-index: 2;
+    text-align: center;}
+</style>
 </head>
 <body class="NBODY2">
  <!-- header section starts  -->
@@ -73,7 +91,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
     <section>
 
     <div class="CAPTION" ><strong>My Pet List</strong></div>
-<div class="header_fixed">
+<div class="header_fixed8">
     <table>
         <thead>
             <tr>
