@@ -10,7 +10,7 @@ if(!$db){
 
 $id = $_GET['id'];
 
-$qry = "delete from Pet where Petid = $id";
+$qry = "delete from PETT where Petid = $id";
 
 if(mysqli_query($db,$qry)){
     header('location:Pet_List.php');
