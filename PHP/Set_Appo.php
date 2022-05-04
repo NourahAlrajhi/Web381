@@ -98,7 +98,10 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
    <div id="circle"><div id="camera">
       <i class="fa-solid fa-camera fa-4x"></i>
      </div>
-     <a href="#"><img class="EditP3" src="../HTML/edit icon.svg" alt="edit button"></div></a>
+     <label>
+  <img class="EditP3" src="../HTML/edit icon.svg">
+  <input type="file" name="img_upload" style="display:none">
+</label>
 
   </div>
 
@@ -198,7 +201,12 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
 
 </html>
 
-<?php    
+<?php   
+
+
+
+
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ( !( $database = mysqli_connect( "localhost", "root", "" ) ) )
@@ -224,3 +232,15 @@ ob_end_flush();}
 
 mysqli_close($db);
 ?>
+<?php 
+if(isset($_POST['set Appointment'])) {
+    $img_name=$_FILES['img_upload']['name'];
+    $tmp_img_name=$_FILES['img_upload']['tmp_name'];
+    $random_number=rand(1,100);
+    if($img_name==''){
+        echo "<script>alert('please select img')</script>"
+        //echo "<script>window.open('Set_Appo.php?')</script>"
+    }else{
+        move_uploaded_file($tmp_img_name,$img_name);
+        
+    }?>
