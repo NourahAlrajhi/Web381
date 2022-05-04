@@ -2,8 +2,38 @@
 ob_start();
 session_start();
 
-//$db = mysqli_connect("localhost" , "root" ,"","healed");
-?>
+$db = mysqli_connect("localhost" , "root" ,"","healed");
+$flage=false;
+$id = $_GET['id'];
+    $QUERY="select * from Feedback";  
+    $run = $db -> query($QUERY);   
+    if(!empty($run->num_rows) && ($run->num_rows > 0)){
+        while($row = $run -> fetch_assoc()){  
+         if($row['APPid'] == $id )   {
+            $FEEDBACK = $row['FEEDBACK'];
+            $Service_rate = $row['Service_rate'];
+            $Visit_rate = $row['Visit_rate'];
+            $Five_checked = $row['Service_rate'] == '5' ? 'checked' : '';
+            $Four_checked = $row['Service_rate'] == '4' ? 'checked' : '';   
+            $Three_checked= $row['Service_rate'] == '3' ? 'checked' : '';  
+            $Two_checked= $row['Service_rate'] == '2' ? 'checked' : ''; 
+            $one_checked= $row['Service_rate'] == '1' ? 'checked' : ''; 
+        
+        
+        
+            $Five_checked2 = $row['Visit_rate'] == '5' ? 'checked' : '';
+            $Four_checked2 = $row['Visit_rate'] == '4' ? 'checked' : '';   
+            $Three_checked2= $row['Visit_rate'] == '3' ? 'checked' : '';  
+            $Two_checked2= $row['Visit_rate'] == '2' ? 'checked' : ''; 
+            $one_checked2= $row['Visit_rate'] == '1' ? 'checked' : ''; 
+        
+            $flage=true;
+            break;
+         }
+        }
+    }   
+
+   ?>
 
 <!DOCTYPE html>
 <html>
@@ -72,57 +102,125 @@ session_start();
           </div>
           
             <div class="container">
-              
-              <form  method="post">
-               <p class="Heading" style="font-size: 1.8rem;">How was our service?</p>
+              <?php if(!$flage) {
+            echo'  <form  method="post" >';
+            echo'  <p class="Heading" style="font-size: 1.8rem;">How was our service?</p>';
                
-              <div class="rate">
-                <input type="radio" id="star5" name="rate" value="5" />
-                <label for="star5" title="text">5 stars</label>
-                <input type="radio" id="star4" name="rate" value="4" />
-                <label for="star4" title="text">4 stars</label>
-                <input type="radio" id="star3" name="rate" value="3" />
-                <label for="star3" title="text">3 stars</label>
-                <input type="radio" id="star2" name="rate" value="2" />
-                <label for="star2" title="text">2 stars</label>
-                <input type="radio" id="star1" name="rate" value="1" />
-                <label for="star1" title="text">1 star</label>
-              </div>
+            echo'    <div class="rate">';
+
+   
+            echo'  <input type="radio" id="star5" name="rate"  value="5" />';
+            echo'     <label for="star5" title="text">5 stars</label>';
+            echo'   <input type="radio" id="star4" name="rate" value="4" />';
+            echo'   <label for="star4" title="text">4 stars</label>';
+            echo'   <input type="radio" id="star3" name="rate" value="3" />';
+            echo'   <label for="star3" title="text">3 stars</label>';
+            echo'   <input type="radio" id="star2" name="rate" value="2" />';
+            echo'    <label for="star2" title="text">2 stars</label>';
+            echo'   <input type="radio" id="star1" name="rate" value="1" />';
+            echo'   <label for="star1" title="text">1 star</label>';
+            echo'   </div>';
          
            
               
-              <div class="Q">
-                <p class="Heading" style="font-size: 1.8rem;">How was your visit?</p>
+            echo'    <div class="Q">';
+            echo'   <p class="Heading" style="font-size: 1.8rem;">How was your visit?</p>';
 
-               <!-- checked -->
-              <div class="rate" >
-                <input type="radio" id="stars5" name="rate2" value="5"  />
-                <label for="stars5" title="text">5 stars</label>
-                <input type="radio" id="stars4" name="rate2" value="4" />
-                <label for="stars4" title="text">4 stars</label>
-                <input type="radio" id="stars3" name="rate2" value="3" />
-                <label for="stars3" title="text">3 stars</label>
-                <input type="radio" id="stars2" name="rate2" value="2" />
-                <label for="stars2" title="text">2 stars</label>
-                <input type="radio" id="stars1" name="rate2" value="1" />
-                <label for="stars1" title="text">1 star</label>
-              </div>
-            </div>
+               
+            echo'    <div class="rate" >';
+            echo'     <input type="radio" id="stars5" name="rate2" value="5" />';
+            echo'    <label for="stars5" title="text">5 stars</label>';
+            echo'   <input type="radio" id="stars4" name="rate2" value="4" />';
+            echo'  <label for="stars4" title="text">4 stars</label>';
+            echo'   <input type="radio" id="stars3" name="rate2" value="3" />';
+            echo'  <label for="stars3" title="text">3 stars</label>';
+            echo'    <input type="radio" id="stars2" name="rate2" value="2" />';
+            echo'   <label for="stars2" title="text">2 stars</label>';
+            echo'   <input type="radio" id="stars1" name="rate2" value="1" />';
+            echo'   <label for="stars1" title="text">1 star</label>';
+            echo'   </div>';
+            echo'   </div>';
           
-            <div class="commReview">
-            <textarea id="comrev" name="comments_review" placeholder="Would you like to add any comments?" ></textarea>
-          </div>
-        </div>
-        <div class="Reviewbutton">
-          <input class="button" type="submit" name="feedback" value="Submit">
-        </div>
+            echo'  <div class="commReview">';
+            echo'    <textarea id="comrev" name="comments_review" placeholder="Would you like to add any comments?" ></textarea>';
+            echo'   </div>';
+            echo'   </div>';
+            echo'  <div class="Reviewbutton">';
+            echo'  <input class="button" type="submit" name="feedback" value="Submit">';
+            echo'    </div>';
         
 
-    </div>
+            echo'    </div>';
     
-</div>
+            echo'      </div>';
 
-</form>
+            echo'    </form>';
+            }
+            
+            else{
+                
+                echo'    <form action="#" method="post">';
+                echo'   <p class="Heading" style="font-size: 1.8rem;" >How was our service?</p>';
+                echo'     <div class="rateM">';
+                  
+              
+                echo'  <input type="radio" id="star5" name="rate" value="5" '.$Five_checked.'  />';
+                echo'   <label for="star5" title="text">5 stars</label>';
+   
+                echo'   <input type="radio" id="star4" name="rate" value="4" '.$Four_checked.'   />';
+                echo'   <label for="star4" title="text">4 stars</label>';
+      
+          
+                echo'    <input type="radio" id="star3" name="rate" value="3" '.$Three_checked.'  />';
+                echo'  <label for="star3" title="text">3 stars</label>  ';
+ 
+                echo'    <input type="radio" id="star2" name="rate" value="2" '.$Two_checked.' />';
+                echo'  <label for="star2" title="text">2 stars</label>  ';  
+            
+                echo'  <input type="radio" id="star1" name="rate" value="1" '.$one_checked.' />';
+                echo'   <label for="star1" title="text">1 star</label>   ';
+            
+          
+                echo'      </div>';
+          
+            
+               
+                echo' <div class="Q">';
+                echo'    <p class="Heading" style="font-size: 1.8rem;">How was your visit?</p>';
+ 
+ 
+                echo'   <div class="rateM" id="rate2"> ';
+                echo'  <input type="radio" id="stars5" name="rate2" value="5" '.$Five_checked2.'/>';
+                echo'   <label for="stars5" title="text">5 stars</label>';
+                echo'  <input type="radio" id="stars4" name="rate2" value="4" '.$Four_checked2.'/>';
+                echo'  <label for="stars4" title="text">4 stars</label>';
+                echo'   <input type="radio" id="stars3" name="rate2" value="3" '.$Three_checked2.'/>';
+                echo'   <label for="stars3" title="text">3 stars</label>';
+                echo'  <input type="radio" id="stars2" name="rate2" value="2" '.$Two_checked2.'/>';
+                echo'   <label for="stars2" title="text">2 stars</label>';
+                echo'  <input type="radio" id="stars1" name="rate2" value="1"  '.$one_checked2.' />';
+                echo'   <label for="stars1" title="text">1 star</label>';
+                echo'  </div>';
+                echo'  </div>';
+                echo'  <div class="commReview">';
+                echo'   <textarea id="comrev" name="comments review"  value="" readonly> '.$FEEDBACK.'  </textarea>';
+                echo'  </div>';
+                echo' </div>';
+                echo'  </div>';
+                echo' <div class="Reviewbutton">';
+                echo'   <button name="BACK"><a class="button">Back</a></button>';
+                echo'   </div>';
+                echo'   </div>';
+ 
+                echo'  </div>';
+     
+                echo' </div>';
+ 
+                echo' </form>';
+                
+                
+            }?>
+        
 
 </section>
 
@@ -189,7 +287,7 @@ session_start();
 
 </html>
 <?php    
-
+if(!$flage){
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ( !( $database = mysqli_connect( "localhost", "root", "" ) ) )
        die( "<p>Could not connect to database</p>" );
@@ -202,15 +300,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        $visit_rate = $_POST['rate2'];
 
        $id = $_GET['id'];
-
+      
+      
     $query="INSERT INTO Feedback (FEEDBACK,Service_rate,Visit_rate,Appid) VALUES ('".$FEEDBACK."','".$Service_rate."','".$visit_rate."','". $id ."');";
     $result=mysqli_query($database, $query);
 
     if($result){
-        header("location: upcoming and previous pet owner.php");
+        header("location:upcoming and previous pet owner.php");
+       // mysqli_close($database); 
 ob_end_flush();}
     else{
-        echo "An error occured while inserting into the Feedback table.";}
-}
-mysqli_close($database); 
+        echo "An error occured while inserting into the Feedback table.";}}}
+
+
+        //---------------------------------------//
+    else{
+
+        if(isset($_POST['BACK'])){
+
+            header('location: upcoming and previous pet owner.php');
+             ob_end_flush();
+            
+         }
+    }
+
+    mysqli_close($db); 
+
 ?>
+
+

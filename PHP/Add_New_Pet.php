@@ -85,7 +85,7 @@ session_start();
                </div>
         </div>
         
-        <form method="post" action="Add_New_Pet.php">
+        <form method="post" action="Add_New_Pet.php" enctype="multipart/form-data">
            <div class="leftAddPet">
             <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -16px;">Add New Pet</h3>
              <label for="Fname">*Pet name</label>
@@ -212,7 +212,10 @@ session_start();
 
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES['VaccList'])) {
+  //  pre_r($_FILES);
+
+ 
     if ( !( $database = mysqli_connect( "localhost", "root", "" ) ) )
        die( "<p>Could not connect to database</p>" );
 
@@ -225,12 +228,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        $Spayed = $_POST['Spayed'];
        $MH = $_POST['MedHist'];
        $DOB = $_POST['Pnum'];
+       //file upload
+$PDF=$_FILES['VaccList']['name'];
+$PDF_type=$_FILES['VaccList']['type'];
+$PDF_size=$_FILES['VaccList']['size'];
+$PDF_tem_loc=$_FILES['VaccList']['tmp_name'];
 
-    $query="INSERT INTO PETT (Pet_Name, Gender, Breed ,Spayed , Medical_History,DOB) VALUES ('".$PetName."','".$Gender."','". $Breed."','".$Spayed."','".$MH."','".$DOB."');";
+$PDF_store='Content/';
+//__DIR__.'/../../../../../../Content/'. $_FILES["VaccList"]['name']
+$MOVE=move_uploaded_file($PDF_tem_loc, $PDF_store.$PDF);
+
+
+    $query="INSERT INTO PETT (Pet_Name, Gender, Breed ,Spayed , Medical_History,DOB,Content) VALUES ('".$PetName."','".$Gender."','". $Breed."','".$Spayed."','".$MH."','".$DOB."','".$PDF."');";
     $result=mysqli_query($database, $query);
+   
     mysqli_close($database);
     if($result){
-        header("location: Pet_List.php");
+   header("location: Pet_List.php");
       
 ob_end_flush();
 
@@ -238,7 +252,11 @@ ob_end_flush();
     else{
         echo "An error occured while inserting into the branch table.";}
 }
-
+/*function pre_r($array){
+    echo '<pre>';
+    print_r($array);
+    echo '</pre>';
+        }*/
 
 
 /*if(isset($_POST['Reg'])){

@@ -283,6 +283,7 @@ body::-webkit-scrollbar-track{
     left: 357px;
     font-weight: bold;
     font-size: x-large;
+    
 }
 
 .TwoTabelBG{
@@ -594,7 +595,6 @@ font-size: 12px;
     padding-left: 24px;
     font-size: 2.5em;
     font-weight: 300;
-    
     
     }
     .ResetPasswordfield{

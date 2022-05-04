@@ -18,6 +18,7 @@ die('error in db'. mysqli_error($db));
             $Spayed = $row['Spayed'];
             $MH = $row['Medical_History'];
             $DOB = $row['DOB'];
+            $PetID=$row['Petid'];
 }
 
     }
@@ -107,21 +108,22 @@ die('error in db'. mysqli_error($db));
   
             <div class="leftAddPet">
                 <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -38px;">Pet Profile</h3>
-                <label for="Fname">Pet name</label>
+                <label for="Fname" style="position: relative;left: -68px;">Pet name</label>
                 <br>
-                <input style="color: gray;" type="text" name="Fname" id="Fname" value="<?php echo $PetName ;?>" readonly required="">  
+                <input  type="text" name="Fname" id="Fname" value="<?php echo $PetName ;?>" readonly required=""style=" height: 30px;  width: 70%; outline: none; border-radius: 5px; position: relative;left: -68px;border-radius: 5px; 
+    border: 1px solid #F0EFEF ;  background-color:#F0EFEF;  padding-left: 15; font-size: 12px;">   
                 
                 <br><br>  
                    
-                <label for="Pnum">Date of Birth</label>
+                <label for="Pnum" style="position: relative;left: -68px;">Date of Birth</label>
                 <br>
-                <input style="color: gray;" type="date" name="Pnum" id="Pnum" value="<?php echo $DOB ;?>"  readonly required="">  
+                <input style="color: gray; height: 30px;  width: 70%; outline: none;border-radius: 5px;  border: 1px solid #F0EFEF ; background-color:#F0EFEF; position: relative;left: -66px;padding-left: 15;  font-size: 12px;" type="date" name="Pnum" id="Pnum" value="<?php echo $DOB ;?>"  readonly required="">  
                 
                 <br><br>
        
-                <label for="Gend">Gender</label>
+                <label for="Gend" style="position: relative;left: -68px;">Gender</label>
                 <br>
-                <select name="Gend" id="Gend"  required="" disabled="true">
+                <select name="Gend" id="Gend"  required="" disabled="true" style=" height: 30px;width: 70.2%;    outline: none; border-radius: 5px; border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px;margin-bottom: 1ex;position: relative;left: -64px;">
                 <option value="hid" hidden ><?php echo $Gender;?></option>   
                    <option value = "Male" > Male </option>
                   <option value = "Female"> Female </option>
@@ -134,26 +136,26 @@ die('error in db'. mysqli_error($db));
               <div class="rightAddPet">
                 <label for="Lname">Breed</label>
                 <br>  
-                <input style="color: gray;" type="text" name="Breed" id="Lname"  value="<?php echo $Breed ;?>" readonly required="">
+                <input style="color: gray; height: 30px; width: 123%; outline: none;border-radius: 5px;border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px;" type="text" name="Breed" id="Lname"  value="<?php echo $Breed ;?>" readonly required="">
              
                 <br><br>
         
                 <label for="Gend">Spayed/Neutered Status</label>
                 <br>
-                <select name="Gend" id="Gend" required="" disabled="true">
+                <select name="Gend" id="Gend" required="" disabled="true"  style="  height: 30px; width: 121.2%; outline: none;border-radius: 5px;border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px;margin-bottom: 1ex;">
                 <option value="hid" hidden > <?php echo $Spayed;?></option>
                   <option value = "Spayed/Neutered" > Spayed/Neutered </option>
                   <option value = "Not Spayed/Neutered "> Not Spayed/Neutered </option>
                 </select>
                 <br><br>
-       
                 <label for="VaccList">Vaccination List</label>
-                <br>
-                <input style="color: gray;" type="file" name="VaccList" id="VaccList" disabled>
-                <br><br>
+             <br>
+            
+             <a href="displayContent2.php?id=<?php echo $PetID;?>" style="margin-left: 15%;">>Vaccination details</a>
+             <br><br>
                 <label for="Lname">Medical History</label>
                 <br>  
-                <textarea style="color: gray;" name="MedHist" id="MedHist" readonly> <?php echo $MH;?> </textarea>
+                <textarea style="height: 100px; width: 158%; outline: none; border-radius: 5px;border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px; position: relative; left: -21px;" name="MedHist" id="MedHist" readonly> <?php echo $MH;?> </textarea>
                 <br><br>
               </div>
    

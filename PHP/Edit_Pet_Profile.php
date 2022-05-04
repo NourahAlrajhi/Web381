@@ -106,7 +106,7 @@ if(!$db){
     <div class="signUpGirl">
         <div class="animalphot">
         <img src="../images/pet profile photo new.svg" height="125px" width="125px">
-        <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 52.4%; top:32.5%"></a>
+        <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 52.4%; top: 31.5%;"></a>
 
 
         </div>
@@ -119,22 +119,21 @@ if(!$db){
   
             <div class="leftAddPet" style="display: inline-block; width: 27.5%; margin-right: 12%;">
              <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -36px;">Pet Profile</h3>
-             <label for="Fname">Pet name</label>
+             <label for="Fname" style="position: relative;left: -68px;">Pet name</label>
              <br>
-             <input name="Fname"  type="text" value="<?php echo $PetName;?>"  required=""  style =" height: 30px;  width: 70%; outline: none; border-radius: 5px; border-radius: 5px; 
-    border: 1px solid #F0EFEF ;  background-color:#F0EFEF;  padding-left: 15; font-size: 12px;">  
-    
-             <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 43.3%; top:33.5%"></a>
+             <input name="Fname"  type="text" value="<?php echo $PetName;?>"  required=""   style=" height: 30px;  width: 70%; outline: none; border-radius: 5px; position: relative;left: -68px;border-radius: 5px; 
+    border: 1px solid #F0EFEF ;  background-color:#F0EFEF;  padding-left: 15; font-size: 12px;">
+             <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 43.3%; top: 37.2%;"></a>
              <br><br>  
                 
-             <label for="Pnum">Date of Birth</label>
+             <label for="Pnum" style="position: relative;left: -68px;">Date of Birth</label>
              <br>
-             <input style="color: gray; height: 30px;  width: 70%; outline: none;border-radius: 5px;  border: 1px solid #F0EFEF ; background-color:#F0EFEF; padding-left: 15;  font-size: 12px;" type="date" name="Pnum" id="Pnum"  value="<?php echo $DOB ;?>" readonly required="">  
+             <input input style="color: gray; height: 30px;  width: 70%; outline: none;border-radius: 5px;  border: 1px solid #F0EFEF ; background-color:#F0EFEF; position: relative;left: -66px;padding-left: 15;  font-size: 12px;" type="date" name="Pnum" id="Pnum"  value="<?php echo $DOB ;?>" readonly required="">  
              <br><br>
     
-             <label for="Gend">Gender</label>
+             <label for="Gend" style="position: relative;left: -68px;">Gender</label>
              <br>
-             <select name="Gend111" id="Gend" required="" disabled="true" style="   height: 30px;width: 70.2%;    outline: none; border-radius: 5px; border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px;margin-bottom: 1ex;">  
+             <select name="Gend111" id="Gend" required="" disabled="true" style=" height: 30px;width: 70.2%;    outline: none; border-radius: 5px; border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px;margin-bottom: 1ex;position: relative;left: -64px;">
              <option value="hid" hidden ><?php echo $Gender;?></option>      
                <option value = "Male" > Male </option>
                <option value = "Female"> Female </option>
@@ -146,27 +145,30 @@ if(!$db){
            <div class="rightAddPet" style="display: inline-block; position: relative; top: 123px;">
              <label for="Lname">Breed</label>
              <br>  
-             <input style="color: gray; height: 30px; width: 70%; outline: none;border-radius: 5px;border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px;" type="text" name="Breed" id="Lname"  value="<?php echo   $Breed ;?>" readonly required="">
-             <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 87.5%; top:24.5%"></a>
+             <input style="color: gray; height: 30px; width: 123%; outline: none;border-radius: 5px;border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px;" type="text" name="Breed" id="Lname"  value="<?php echo   $Breed ;?>" readonly required="">
+             <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 124.5%; top: 27.5%;"></a>
              <br><br>
      
              <label for="Spayed">Spayed/Neutered Status</label>
              <br>
-             <select name="Spayed" id="Gend" required="" style="  height: 30px; width: 70.2%; outline: none;border-radius: 5px;border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px;margin-bottom: 1ex;">
-             <option value="hid" hidden > <?php echo $Spayed;?></option>
+             <select name="Spayed" id="Gend" required="" style="  height: 30px; width: 121.2%; outline: none;border-radius: 5px;border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px;margin-bottom: 1ex;">             <option value="hid" hidden > <?php echo $Spayed;?></option>
                <option value = "Spayed/Neutered "> Spayed/Neutered </option>
                <option value = "Not Spayed/Neutered"> Not Spayed/Neutered </option>
              </select>
              <br><br>
-    
+ 
+   
              <label for="VaccList">Vaccination List</label>
              <br>
-             <input type="file" name="VaccList" id="VaccList" style="margin-left: 15%;">
+            
+             <a href="displayContent.php?id= <?php  echo $id; ?>" style="margin-left: 15%;">>Vaccination details</a>
              <br><br>
+  
              <label for="Lname">Medical History</label>
              <br>  
-             <textarea name="MedHist" id="MedHist" style="height: 100px; width: 70%; outline: none; border-radius: 5px;border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px;"><?php echo $MH;?></textarea>
-             <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 87.5%; top:63%"></a>
+             
+             <textarea name="MedHist" id="MedHist" style="height: 100px; width: 158%; outline: none; border-radius: 5px;border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px; position: relative; left: -21px;"><?php echo $MH;?></textarea>
+             <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position: absolute;left: 148.5%; top: 59%;"></a>
 
              <br><br>
            </div>
