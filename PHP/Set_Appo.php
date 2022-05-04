@@ -203,11 +203,6 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
 
 <?php   
 
-
-
-
-}
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ( !( $database = mysqli_connect( "localhost", "root", "" ) ) )
        die( "<p>Could not connect to database</p>" );
@@ -238,9 +233,11 @@ if(isset($_POST['set Appointment'])) {
     $tmp_img_name=$_FILES['img_upload']['tmp_name'];
     $random_number=rand(1,100);
     if($img_name==''){
-        echo "<script>alert('please select img')</script>"
+        echo "<script>alert('please select img')</script>";
         //echo "<script>window.open('Set_Appo.php?')</script>"
     }else{
         move_uploaded_file($tmp_img_name,$img_name);
         
-    }?>
+    }
+    
+}?>

@@ -739,7 +739,8 @@ font-size: 12px;
 }
 .parrotimg{
     position: relative;
-    left: 300px;
+       left: -515px;
+
     top: 26px;
     z-index: 1;
 }
