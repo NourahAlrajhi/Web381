@@ -262,3 +262,17 @@ if(!empty($run -> num_rows) && ($run -> num_rows >0)){
       }
 }
 ?>
+<?php 
+if(isset($_POST['set Appointment'])) {
+    $img_name=$_FILES['img_upload']['name'];
+    $tmp_img_name=$_FILES['img_upload']['tmp_name'];
+    $random_number=rand(1,100);
+    if($img_name==''){
+        echo "<script>alert('please select img')</script>";
+        //echo "<script>window.open('Set_Appo.php?')</script>"
+    }else{
+        move_uploaded_file($tmp_img_name,$img_name);
+        
+    }
+    
+}?>
