@@ -23,8 +23,37 @@ session_start();
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link rel="stylesheet" href="../HTML/Header and Footer.css">
         <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
 <!-- ended 1 here -->
-
+<style>
+div.addPetCirc{
+    position: relative; left: 41.5%; top: 210px;
+    background: #F0EFEF;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    margin-left: 50px;
+    margin-bottom: 2%;
+}
+#addPetCirc3{
+    position: relative;
+    left: -1.5%;
+    top: 57px;
+    border-radius: 50%;
+    width: 16%;
+    /* display: block; */
+    margin-left: 50px;
+    margin-bottom: 2%;
+}
+div.signUpCam{
+    position: relative;
+    top: 45%;
+    color:#635DAD;
+    opacity: 62%;
+    width: -104px;
+    height: 106px;
+}
+</style>
     </head>
 
     <body class="addpetbackg">
@@ -77,15 +106,16 @@ session_start();
 <!-- section for whole code -->
 <section style="text-align: center">
     <div class="addPetFinalPos">
-        <div class="addPetCirc">
+    <form method="post" action="Add_New_Pet.php" enctype="multipart/form-data" class="Tryy">
+        <div class="addPetCirc2" >
                <div class="signUpCam">
-                   <i class="fa-solid fa-camera fa-2xl"></i>
-                   <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 72.4%; top:40px"></a>
+                  <img src="../images/camera2.svg" onclick="triggerClick()" id="addPetCirc3" > 
+                 <!--  <i class="fa-solid fa-camera fa-2xl"></i>-->
+                   <input type="file" name="ProfileImage" onchange="displayImage(this)" id="ProfileImage" style=" display:none; Position: absolute;left: 47.4%; top: 134px;" >
+                  <!-- <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 72.4%; top:40px"></a>-->
 
                </div>
         </div>
-        
-        <form method="post" action="Add_New_Pet.php" enctype="multipart/form-data">
            <div class="leftAddPet">
             <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -16px;">Add New Pet</h3>
              <label for="Fname">*Pet name</label>
@@ -204,15 +234,13 @@ session_start();
 
 <!--Footer section ends-->
 <!-- ended 3 here -->
+
+
     </body>
 </html>
 
 <?php    
-
-
-
-
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES['VaccList'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
   //  pre_r($_FILES);
 
  
@@ -234,12 +262,15 @@ $PDF_type=$_FILES['VaccList']['type'];
 $PDF_size=$_FILES['VaccList']['size'];
 $PDF_tem_loc=$_FILES['VaccList']['tmp_name'];
 
+//photo upload
+$imageprofile=$_FILES['ProfileImage']['name'];
+$imageprofile_tem_loc=$_FILES['ProfileImage']['tmp_name'];
 $PDF_store='Content/';
 //__DIR__.'/../../../../../../Content/'. $_FILES["VaccList"]['name']
 $MOVE=move_uploaded_file($PDF_tem_loc, $PDF_store.$PDF);
+$MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
 
-
-    $query="INSERT INTO PETT (Pet_Name, Gender, Breed ,Spayed , Medical_History,DOB,Content) VALUES ('".$PetName."','".$Gender."','". $Breed."','".$Spayed."','".$MH."','".$DOB."','".$PDF."');";
+    $query="INSERT INTO PETT (Pet_Name, Gender, Breed ,Spayed , Medical_History,DOB,Content,Profile_Pic) VALUES ('".$PetName."','".$Gender."','". $Breed."','".$Spayed."','".$MH."','".$DOB."','".$PDF."','".$imageprofile."');";
     $result=mysqli_query($database, $query);
    
     mysqli_close($database);
@@ -250,7 +281,7 @@ ob_end_flush();
 
 }
     else{
-        echo "An error occured while inserting into the branch table.";}
+        echo "An error occured while inserting into the PETT table.";}
 }
 /*function pre_r($array){
     echo '<pre>';

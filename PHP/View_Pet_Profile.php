@@ -19,6 +19,7 @@ die('error in db'. mysqli_error($db));
             $MH = $row['Medical_History'];
             $DOB = $row['DOB'];
             $PetID=$row['Petid'];
+            $Profile_Pic = $row['Profile_Pic'];
 }
 
     }
@@ -99,7 +100,7 @@ die('error in db'. mysqli_error($db));
   
     <div class="signUpGirl">
         <div class="animalphot">
-        <img src="../images/pet profile photo new.svg" height="125px" width="125px">
+        <img src="Content/<?php echo $Profile_Pic;?>" style=" position: relative; left: -0.5%;top: 57px;  border-radius: 50%;width: 16%; margin-left: 50px;margin-bottom: 2%;">
         </div>
     </div>
 

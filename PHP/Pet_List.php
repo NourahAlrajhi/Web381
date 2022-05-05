@@ -117,17 +117,17 @@ $run = $db -> query($qry);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
 $id = $row['Petid'];
-        
+$Profile_Pic = $row['Profile_Pic'];
         ?>
 
       <tr>
       <td><?php echo  $i++; ?></td>
-      <td><img src="../HTML/image (1).svg"  height="50px" width="50px"></td>
+      <td><img src="Content/<?php echo $Profile_Pic;?>" height="50px" width="50px"></td>
       <td> <?php echo $row['Pet_Name'] ?> </td>
       <td> <?php echo $row['Breed'] ?> </td>
 
        
-      <td><a href="Edit_Pet_Profile.php?id=<?php echo $id; ?>" ><button >View</button></a>
+      <td><a href="Edit_Pet_Profile.php?id=<?php echo $id;?>"><button >View</button></a>
                     
                     </td>
                     <td class="DELET"><a href="delete.php?id= <?php  echo $id; ?>" onclick = "return confirm('Are you sure?')"><button>delete</button></a>
