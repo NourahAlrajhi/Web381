@@ -15,6 +15,8 @@ if(!$db){
             $service = $row['Service_name'];
             $Date = $row['Date'];
             $Time = $row['Time'];
+            $picture=$row['Picture'];
+
             
 }
 
@@ -86,7 +88,7 @@ if(!$db){
 <form action="#" method="post">
   <div class= "ServiceSelect">
    <lable class = "LablM"> Service <br>
-   <select name="service" id="Gend" required="">
+   <select name="service" class = "fieldselect" required="" disabled >
    <option value="hid" hidden > <?php echo  $service;?></option>
    <?php   
 
@@ -96,7 +98,7 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
 ?>
 
-<option value=<?php echo $row['Service_NAME'] ?> > <?php echo $row['Service_NAME'] ?> </option>
+<option value=<?php echo $row['Service_NAME'] ?>  > <?php echo $row['Service_NAME'] ?> </option>
 <?php 
 
 }
@@ -106,11 +108,10 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
    </lable>
      
   </div>
-  <div class="circle">
-   <div id="circle"><div id="camera">
-      <i class="fa-solid fa-camera fa-4x"></i>
-     </div>
-  </div>
+  <div id="#circle">
+ 
+   <img  id="circle" src="Content/<?php echo $picture ?>" />
+    
 
 </div>
 <div class="PageRows">
@@ -118,14 +119,14 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
    
      <div class= "DateSelect" >
    <lable class = "LablM">Date <br>
-      <input style="color: gray;" type="Date" id="dateS" value="<?php echo $Date ;?>" name="DATE" >
+      <input style="color: gray;" type="Date" id="dateS" value="<?php echo $Date ;?>" name="DATE" disabled>
      </lable>
      </div>
 
  
   <div class="TimeSelect" >
    <lable class = "LablM"> Time <br>
-     <input style="color: gray;" type="time" id="timeS" value="<?php echo $Time ;?>" name="TIME" >
+     <input style="color: gray;" type="time" id="timeS" value="<?php echo $Time ;?>" name="TIME" disabled>
      </lable>
     
   </div>
@@ -212,6 +213,7 @@ if(isset($_POST['BACK'])){
     $Service = $_POST['service'];
     $Date = $_POST['DATE'];
     $Time = $_POST['TIME'];
+
     
 
 $qry = "update Services set Service_name = '$Service'  , Date= '$Date' , Time= '$Time'  where Serviceid = $id ";

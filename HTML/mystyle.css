@@ -705,18 +705,15 @@ font-size: 12px;
 
 }
   
-#circle {
+.circle {
     background: #F0EFEF;
     border-radius: 50%;
     width: 140px;
     height: 140px;
-    margin-left: 80px;
+    margin-left: 200px;
+    float: left;
 }
-.circle{
-   float: left;
-    margin-left: 70px;
 
-}
 .EditP3{
     position: relative;
     top: 70px;
@@ -736,6 +733,7 @@ font-size: 12px;
     padding-left: 250px;
     font-size: 1.8em;
     bottom: 10px;
+    top: 100px;
 }
 .parrotimg{
     position: relative;
@@ -753,10 +751,17 @@ font-size: 12px;
 
 #camera{
     position: relative;
-    top: 50px;
-    left: 50px;
     color:#635DAD;
     opacity: 62%;
+    
+}
+.newpic{
+    position: relative;
+    background: #F0EFEF;
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+ 
 }
 .BackButtonDetails{
     width: 100%;

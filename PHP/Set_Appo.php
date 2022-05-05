@@ -4,6 +4,8 @@ ob_start();
 session_start();
 
 $db = mysqli_connect("localhost" , "root" ,"","healed");
+
+
 ?>
 
 <!DOCTYPE html>
@@ -64,12 +66,12 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 <div class="PageRows">
 
 <h3 class="Heading" style="font-size: 3rem;">Set Available Appointments</h3>
-<form action="Set_Appo.php" method="post">
+<form action='Set_Appo.php' method ='post' enctype="multipart/form-data">
   <div class= "ServiceSelect">
    <lable class = "LablM"> Service <br>
       <select name= "petname" class = "fieldselect" aria-placeholder="Choose Service">
          <option value="" disabled selected hidden>Choose Service</option>
-         <?php   
+        <?php   
 
 $qry = "select Service_NAME from Manager_Services";
 $run = $db -> query($qry);
@@ -95,12 +97,12 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
   
   
   <div class="circle">
-   <div id="circle"><div id="camera">
-      <i class="fa-solid fa-camera fa-4x"></i>
-     </div>
+
+      <img id="camera" src='../images/camera.svg'>
+
      <label>
   <img class="EditP3" src="../HTML/edit icon.svg">
-  <input type="file" name="img_upload" style="display:none">
+  <input type="file" name="profileImage" style="display:none"  id="appoPhoto" onchange="displayImage(this)" >
 </label>
 
   </div>
@@ -127,9 +129,9 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
      
    
    </div>
-   <img  src="../images/parrot.svg" class="parrotimg">
+   <img  src="Parrot.svg" class="parrotimg">
    <div class="ButtonRow">
-         <input class="button" type="submit" name="set Appointment" value="Add Appointment">
+         <input class="button" type="submit" name="set_Appointment" value="Add Appointment">
          
    </div>
 
@@ -198,15 +200,29 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
  
  <!--Footer secton ends-->
 </body>
+<script>
+    function displayImage(e){
+      window.alert('jjbbnm');
+      if(e.files[0]){
+            var reader = new FileReader();
+            reader.onload = function(e){
+               var hh= document.querySelector('#camera').setAttribute('src',e.target.result);
+                hh.className='newpic';
+                window.alert('jjj');
+            }
+            reader.readAsDataURL(e.files[0]);
+
+        }
+    }
+
+    
+
+    </script>
 
 </html>
 
 <?php   
 
-
-
-
-}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ( !( $database = mysqli_connect( "localhost", "root", "" ) ) )
@@ -218,9 +234,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        $Service = $_POST['petname'];
        $Date = $_POST['DATE'];
        $Time = $_POST['TIME'];
-       
+       //$Picture =  $_POST['camera'];
+       if(isset($_POST['set_Appointment'])){
+        $profileImageName = time().'_'.$_FILES['profileImage']['name'];
+        $target = 'Content/'.$profileImageName;
+        move_uploaded_file($_FILES['profileImage']['tmp_name'], $target);   
+        }
 
-    $query="INSERT INTO Services (Service_name, Date, Time ) VALUES ('". $Service."','".$Date."','". $Time."');";
+    $query="INSERT INTO Services (Service_name, Date, Time,Picture ) VALUES ('". $Service."','".$Date."','". $Time."','".  $profileImageName."');";
     $result=mysqli_query($database, $query);
 
     if($result){
@@ -232,15 +253,12 @@ ob_end_flush();}
 
 mysqli_close($db);
 ?>
-<?php 
-if(isset($_POST['set Appointment'])) {
-    $img_name=$_FILES['img_upload']['name'];
-    $tmp_img_name=$_FILES['img_upload']['tmp_name'];
-    $random_number=rand(1,100);
-    if($img_name==''){
-        echo "<script>alert('please select img')</script>"
-        //echo "<script>window.open('Set_Appo.php?')</script>"
-    }else{
-        move_uploaded_file($tmp_img_name,$img_name);
-        
-    }?>
+<?php
+$sql = "SELECT * from Services";
+$run = $db -> query($sql);
+if(!empty($run -> num_rows) && ($run -> num_rows >0)){
+      while($row = $run -> fetch_assoc()){
+          $id= $row['Serviceid'];
+      }
+}
+?>
