@@ -21,6 +21,25 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
      <link rel="stylesheet" href="../HTML/Header and Footer.css">
      <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
    <script src="https://kit.fontawesome.com/3473b55fc1.js" crossorigin="anonymous"></script>
+   <script src="script.js"></script>
+   <style>
+div.addPetCirc{
+    position: relative; left: 41.5%; top: 210px;
+    background: #F0EFEF;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    margin-left: 50px;
+    margin-bottom: 2%;
+}
+#addPetCirc3{
+    position: relative;
+    z-index: 4;
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    cursor: pointer;
+}</style>
 </head>
 <body>
    <header>
@@ -69,7 +88,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 <form action='Set_Appo.php' method ='post' enctype="multipart/form-data">
   <div class= "ServiceSelect">
    <lable class = "LablM"> Service <br>
-      <select name= "petname" class = "fieldselect" aria-placeholder="Choose Service">
+      <select name= "petname" class = "fieldselect" aria-placeholder="Choose Service" required>
          <option value="" disabled selected hidden>Choose Service</option>
         <?php   
 
@@ -98,11 +117,11 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
   
   <div class="circle">
 
-      <img id="camera" src='../images/camera.svg'>
+      <img id="addPetCirc3" src='../images/camera2.svg' onclick="triggerClick()" >
 
      <label>
-  <img class="EditP3" src="../HTML/edit icon.svg" onclick="triggerClick()" id="cameraplaceholder" >
-  <input type="file" name="profileImage" style="display:none"  id="appoPhoto" onchange="displayImage(this)" >
+ 
+  <input type="file" name="profileImage" style="display:none"  id="ProfileImage" onchange="displayImage(this)" >
 </label>
 
   </div>
@@ -200,23 +219,7 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
  
  <!--Footer secton ends-->
 </body>
-<script>
-    function displayImage(e){
-      window.alert('jjbbnm');
-      if(e.files[0]){
-            var reader = new FileReader();
-            reader.onload = function(e){
-               var hh= document.querySelector('#camera').setAttribute('src',e.target.result);
-                window.alert('jjj');
-            }
-            reader.readAsDataURL(e.files[0]);
 
-        }
-    }
-
-    
-
-    </script>
 
 </html>
 

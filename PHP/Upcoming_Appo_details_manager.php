@@ -18,7 +18,7 @@ die('error in db'. mysqli_error($db));
             $Service = $row['Service'];
             $Date = $row['Date'];
             $Time = $row['Time'];
-
+            $picture=$row['Picture'];
     }
 }
 
@@ -95,11 +95,10 @@ die('error in db'. mysqli_error($db));
    </lable>
      
   </div>
-  <div class="circle">
-   <div id="circle"><div id="camera">
-      <i class="fa-solid fa-camera fa-4x"></i>
-     </div>
-  </div>
+  <div id="#circle">
+ 
+   <img  id="circle" src="Content/<?php echo $picture ?>" />
+    
 
 </div>
 <div class="PageRows">
