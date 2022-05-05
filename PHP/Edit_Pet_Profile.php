@@ -1,4 +1,3 @@
-
 <?php 
 ob_start();
     session_start();
@@ -8,7 +7,8 @@ if(!$db){
 
     die('error in db'. mysqli_error($db));
 }else{
-    $id = $_GET['id'];
+   
+    $id =$_GET['id'];
     $qry = "select * from PETT where Petid = $id ";
     $run = $db -> query($qry);
     if(!empty($run->num_rows) && ($run->num_rows > 0)){
@@ -19,6 +19,7 @@ if(!$db){
             $Spayed = $row['Spayed'];
             $MH = $row['Medical_History'];
             $DOB = $row['DOB'];
+            $Profile_Pic = $row['Profile_Pic'];
 }
 
     }
@@ -41,6 +42,7 @@ if(!$db){
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link rel="stylesheet" href="../HTML/Header and Footer.css">
         <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
 <!-- ended 1 here -->
 <style>
 .petprofbackg{
@@ -104,9 +106,13 @@ if(!$db){
   
   
     <div class="signUpGirl">
+    <form method="post" action="Edit_Pet_Profile.php?id=<?php echo $id;?>" enctype="multipart/form-data" class="Tryy">
+
         <div class="animalphot">
-        <img src="../images/pet profile photo new.svg" height="125px" width="125px">
-        <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 52.4%; top: 31.5%;"></a>
+        <img src="Content/<?php echo $Profile_Pic;?>" style="position: relative; left: -0.5%;top: 57px;  border-radius: 50%;width: 16%; margin-left: 50px;margin-bottom: 2%;" onclick="triggerClick()" id="addPetCirc3">
+        <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 52.4%;top:49.5%;"></a>
+        <input type="file" name="ProfileImage" onchange="displayImage(this)" id="ProfileImage" style="display:none; Position: absolute;left: 47.4%; top: 134px;" >
+
 
 
         </div>
@@ -114,7 +120,6 @@ if(!$db){
 
 
 <div class="editPetFinalPos" style=" margin-top: -15%;">
-        <form method="post" >
            
   
             <div class="leftAddPet" style="display: inline-block; width: 27.5%; margin-right: 12%;">
@@ -123,7 +128,7 @@ if(!$db){
              <br>
              <input name="Fname"  type="text" value="<?php echo $PetName;?>"  required=""   style=" height: 30px;  width: 70%; outline: none; border-radius: 5px; position: relative;left: -68px;border-radius: 5px; 
     border: 1px solid #F0EFEF ;  background-color:#F0EFEF;  padding-left: 15; font-size: 12px;">
-             <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 43.3%; top: 37.2%;"></a>
+             <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 43.3%;top: 49.2%;"></a>
              <br><br>  
                 
              <label for="Pnum" style="position: relative;left: -68px;">Date of Birth</label>
@@ -177,7 +182,7 @@ if(!$db){
            <br><br><br><br><br>
            
      
-         <input type="submit" name="Reg" id="Reg" value="Save" style="  width: 300px;  height: 30px;  border: none;   border-radius: 17px;   padding-left: 7px;  background-color: #635DAD; opacity: 62%;color: white;cursor: pointer; ">
+         <input type="submit" name="Reg" id="Reg" value="Save" style="width: 300px;  height: 30px;  border: none;   border-radius: 17px;   padding-left: 7px;  background-color: #635DAD; opacity: 62%;color: white;cursor: pointer; ">
            
            <br><br><br><br>
         </form>
@@ -250,17 +255,48 @@ if(!$db){
 
 
 <?php  
-    $id = $_GET['id'];
 if(isset($_POST['Reg'])){
-
+  
 $PetName = $_POST['Fname'];
 $Spayed = $_POST['Spayed'];
 $MH = $_POST['MedHist'];
+if (!file_exists($_FILES['ProfileImage']['tmp_name']) || !is_uploaded_file($_FILES['ProfileImage']['tmp_name'])) 
+{
+    echo 'No upload';
+    $imageprofile=$Profile_Pic;
+    $qry="update PETT set Pet_Name = '$PetName' , Spayed= '$Spayed' , Medical_History= '$MH' , Profile_Pic='$imageprofile' where Petid = $id ; ";
+$result=mysqli_query($db,$qry);
+if($result){
+   // echo '<script>alert("changes updated successfully.!!");</script>';
+  header('location: Pet_List.php');
+    ob_end_flush();
+    }else{
+        echo mysqli_error($db);
+    }
+
+}
+   
+
+else
+{
+    echo 'upload';
+    $imageprofile=$_FILES['ProfileImage']['name'];
+$imageprofile_tem_loc=$_FILES['ProfileImage']['tmp_name'];
+    // Your file has been uploaded
+
+//$imageprofile = isset($_FILES['ProfileImage']) ? $_FILES['ProfileImage']['name'] : '$Profile_Pic';
 
 
-$qry = "update PETT set Pet_Name = '$PetName'  , Spayed= '$Spayed' , Medical_History= '$MH'  where Petid = $id ";
+$PDF_store='Content/';
 
-if(mysqli_query($db,$qry)){
+$MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
+
+$qry="update PETT set Pet_Name = '$PetName' , Spayed= '$Spayed' , Medical_History= '$MH' , Profile_Pic='$imageprofile' where Petid = $id ; ";
+
+  
+
+$result=mysqli_query($db,$qry);
+if($result){
    // echo '<script>alert("changes updated successfully.!!");</script>';
    header('location: Pet_List.php');
     ob_end_flush();
@@ -270,7 +306,7 @@ if(mysqli_query($db,$qry)){
 
 }
 
-
+}
 mysqli_close($db);
 
 ?>

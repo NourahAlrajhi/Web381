@@ -1103,6 +1103,8 @@ div.signUpCam{
     top: 45%;
     color:#635DAD;
     opacity: 62%;
+    width: -104px;
+    height: 106px;
 }
 
 body.signUpBod{}
