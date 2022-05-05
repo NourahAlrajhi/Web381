@@ -101,7 +101,7 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
       <img id="camera" src='../images/camera.svg'>
 
      <label>
-  <img class="EditP3" src="../HTML/edit icon.svg">
+  <img class="EditP3" src="../HTML/edit icon.svg" onclick="triggerClick()" id="cameraplaceholder" >
   <input type="file" name="profileImage" style="display:none"  id="appoPhoto" onchange="displayImage(this)" >
 </label>
 
@@ -207,7 +207,6 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
             var reader = new FileReader();
             reader.onload = function(e){
                var hh= document.querySelector('#camera').setAttribute('src',e.target.result);
-                hh.className='newpic';
                 window.alert('jjj');
             }
             reader.readAsDataURL(e.files[0]);

@@ -713,6 +713,13 @@ font-size: 12px;
     margin-left: 200px;
     float: left;
 }
+#circle {
+    background: #F0EFEF;
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    margin-left: 160px;
+}
 
 .EditP3{
     position: relative;
@@ -752,17 +759,12 @@ font-size: 12px;
 
 #camera{
     position: relative;
-    color:#635DAD;
-    opacity: 62%;
-    
-}
-.newpic{
-    position: relative;
+    color: #635DAD;
     background: #F0EFEF;
     border-radius: 50%;
     width: 140px;
     height: 140px;
- 
+    
 }
 .BackButtonDetails{
     width: 100%;
