@@ -83,17 +83,17 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 <form action='Set_Appo.php' method ='post' enctype="multipart/form-data">
   <div class= "ServiceSelect">
    <lable class = "LablM"> Service <br>
-      <select name= "petname" class = "fieldselect" aria-placeholder="Choose Service">
+      <select name= "petname" class = "fieldselect" aria-placeholder="Choose Service" id="service">
          <option value="" disabled selected hidden>Choose Service</option>
         <?php   
 
-$qry = "select * from Manager_Services";
+$qry = "select MServicesid,Picture,Service_NAME from Manager_Services";
 $run = $db -> query($qry);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
 ?>
 
-<option value=<?php echo $row['MServicesid'] ?>> <?php echo $row['Service_NAME'] ?> </option>
+<option value=<?php echo $row['MServicesid'] ?> <?php $Path=$row['Picture']?> > <?php echo $row['Service_NAME'] ?> </option>
        <!--  <option class="op"> Grooming And Bathing </option>
           <option class="op"> Dentistry </option>
           <option class="op"> Boarding </option>-->
@@ -115,9 +115,9 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
      
 
      <label>
-     <img src="../images/camera2.svg" onclick="triggerClick()" id="addPetCirc3" > 
+     <img src="../images/camera2.svg" id="addPetCirc3" > 
                  <!--  <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 72.4%; top:40px"></a>-->
-                 <input type="file" name="ProfileImage" onchange="displayImage(this)" id="ProfileImage" style=" display:none; Position: absolute;left: 47.4%; top: 134px;" >
+                <!-- <input type="file" name="ProfileImage" onchange="displayImage(this)" id="ProfileImage" style=" display:none; Position: absolute;left: 47.4%; top: 134px;" >-->
 </label>
 
   </div>
@@ -233,6 +233,15 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
     
 
     </script>
+
+<script>
+
+let select= document.querySelector('#service');
+select.addEventListener("change",()=>{
+  let img=  document.querySelector('#addPetCirc3');
+  img.src='Content/<?php echo $Path ?>';
+});
+     </script>
 
 </html>
 

@@ -153,16 +153,17 @@ if(!$db){
 
         
 <label style="position: relative;left: 12%;">Service
-   <select name="service" class = "fieldselect" >
+
+   <select name="service" class = "fieldselect" id="service" >
    <option value="" selected hidden required="" > <?php echo $service;?> </option>
    <?php   
-$qry = "select Service_NAME,MServicesid from Manager_Services";
+$qry = "select Service_NAME,MServicesid,Picture from Manager_Services";
 $run3 = $db -> query($qry);
 if(!empty($run3->num_rows) && ($run3->num_rows > 0)){
     while($row3 = $run3 -> fetch_assoc()){
 ?>
 
-<option value=<?php echo $row3['MServicesid'] ?> > <?php echo $row3['Service_NAME']?> </option>
+<option value=<?php echo $row3['MServicesid']?>> <?php echo $row3['Service_NAME']?></option>
 <?php 
 
 }
@@ -170,7 +171,7 @@ if(!empty($run3->num_rows) && ($run3->num_rows > 0)){
 ?>
 </select>
    </lable>
-     
+
 
 <div class="PageRows">
 
@@ -261,7 +262,33 @@ if(!empty($run3->num_rows) && ($run3->num_rows > 0)){
  
  <!--Footer secton ends-->
 </body>
+<script>
 
+let select= document.querySelector('#service');
+select.addEventListener("change",()=>{
+  let img= document.querySelector('#addPetCirc3');
+  var SERVICEID=select.options[select.selectedIndex].value;
+
+  $.ajax({
+type: "POST",
+  url: View_Appo_details.php,
+  data: {SERVICEID:value},
+});
+
+<?php 
+$var1 = $_POST['SERVICEID'];
+$QUERY="select Picture from Manager_Services where MServicesid = '$var1'";
+$RESULT = mysqli_query($db, $QUERY);
+    
+
+      
+while ($row = $RESULT->fetch_assoc()) { 
+    $PicName = $row['Picture'];}
+?>
+  img.src='Content/'+SERVICEID;
+  alert(img.src);
+});
+     </script>
 </html>
 
 <?php  
