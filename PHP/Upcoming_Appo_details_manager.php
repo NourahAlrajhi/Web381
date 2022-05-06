@@ -10,7 +10,7 @@ die('error in db'. mysqli_error($db));
 }else{
  $id = $_GET['id'];
   
-    $qry = "select * from Appointment where Appointmentid = $id ";
+    $qry = "select * from Appointment,Manager_Services where Appointment.SERVICEID = Manager_Services.MServicesid and Appointmentid = $id ";
     $run = $db -> query($qry);
     if(!empty($run->num_rows) && ($run->num_rows > 0)){
         while($row = $run -> fetch_assoc()){
@@ -18,7 +18,8 @@ die('error in db'. mysqli_error($db));
             $Service = $row['Service'];
             $Date = $row['Date'];
             $Time = $row['Time'];
-            $picture=$row['Picture'];
+            $PIC= $row['Picture'];
+
     }
 }
 
@@ -41,46 +42,47 @@ die('error in db'. mysqli_error($db));
 </head>
 <body>   <!-- header section starts  -->
 
-    <header>
+          <!-- header section starts  -->
 
-      <a href="#" class="logo"><img src="../images/logo.svg" alt="logo" height="50rem" ><span>ealed</span></a>
-  
-      <input type="checkbox" id="menu-bar">
-      <label for="menu-bar" class="fas fa-bars"></label>
-  
-      <nav class="navbar">
-          <ul class="nav-list">
-              <li  ><a href="../HTML/Home Pet Owner.html">Home</a>
-                <ul class="sub-menu" id="sub-menu-arrow"> 
-                  <li > <a href="Add_New_Pet.php">Add a New Pet</a></li>
-                  <li><a href="Pet_List.php">View Pet List</a></li>
-                  <li><a href="Request_List_Pet_Owner.php">View Requests List</a></li>
-  
-                  <li><a href="upcoming and previous pet owner.php">View Appointments List</a> </li>
-          
-                </ul>
-              </li>
-            
-              
-             <li><a href="../HTML/Services Pet Owner.html">Services</a></li> 
-             <li><a href="../HTML/About us PetOwner.html">About Us</a></li> 
-              <li><a href="../HTML/Contact Clinic.html">Contact Us</a></li>
-              <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user" ></i></a>
-                  <ul class="sub-menu" id="sub-menu-arrow2"> 
-                      <li ><a href="../HTML/MahaB Edit Profile Page.html">View Profile</a></li>
-                      <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
-              
-                    </ul></li>
+<header>
+
+<a href="../HTML/Home Manager.html" class="logo"><img src="../images/logo.svg" alt="logo" height="50rem" ><span>ealed</span></a>
+
+<input type="checkbox" id="menu-bar">
+<label for="menu-bar" class="fas fa-bars"></label>
+
+<nav class="navbar">
+    <ul class="nav-list">
+        <li  ><a href="./Home Manager.html">Home</a>
+            <ul class="sub-menu" id="sub-menu-arrow"> 
+              <li > <a href="Add_service.php">Add a New Service</a></li>
+              <li><a href="Appo_List.php">Set a New Appointment</a></li>
+              <li><a href="Request_List_Manager.php">View Requests List</a></li>
+
+              <li><a href="upcoming and previous manager.php">View Appointments List</a> </li>
+      
             </ul>
-          
-          <!-- ****if you're working on a pet owner view replace <i class="fa-solid fa-user-doctor"> with <i class="fa-solid fa-user"></i>  -->
-  
-  
-      </nav>
-  
-  </header>
-  
-  <!-- header section ends -->
+          </li>
+      
+        
+       <li><a href="../HTML/Services Manager.html">Services</a></li> 
+       <li><a href="../HTML/About Us Manager.html">About Us</a></li> 
+        <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user-doctor" ></i></a>
+            <ul class="sub-menu" id="sub-menu-arrow2"> 
+                <li ><a href="#">View Profile</a></li>
+                <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
+        
+              </ul></li>
+      </ul>
+    
+    <!-- ****if you're working on a pet owner view replace <i class="fa-solid fa-user-doctor"> with <i class="fa-solid fa-user"></i>  -->
+
+
+</nav>
+
+</header>
+
+<!-- header section ends -->
   <form action="#" method="post">
 <section class="AppointmentSec">
      <div class="PageBase">
@@ -95,10 +97,13 @@ die('error in db'. mysqli_error($db));
    </lable>
      
   </div>
-  <div id="#circle">
- 
-   <img  id="circle" src="Content/<?php echo $picture ?>" />
-    
+  <div class="circle2">
+   <div id="circle2">
+
+   <img src="Content/<?php echo $PIC;?>" style=" border-radius: 50%; width: 140px;height: 140px;margin-left: 200px;float: left;">
+    <!--  <i class="fa-solid fa-camera fa-4x"></i>-->
+     
+  </div>
 
 </div>
 <div class="PageRows">
