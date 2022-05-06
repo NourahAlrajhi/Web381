@@ -53,7 +53,8 @@ section{
   text-align: center;
   font-size: 2em;
   font-weight: 200;
-  margin-bottom: 150px;
+  height: 62px;
+  width: 1249px;
   
 }
 
@@ -70,13 +71,13 @@ section{
     color: #291348;
     opacity: .8;
     font-size: 2rem;
-    height: 20rem !important;
-    width: 20rem !important;
     line-height: 4rem !important;
     text-align: center;
 }
 #edit:hover{
     opacity: 1;
+    border: solid;
+    box-shadow: #333;
 }
 /*.Services .box-container{
     display: flex;
@@ -229,7 +230,8 @@ section{
               text-shadow: 20px var(--orange);
               transition: 0.2s ease-out;
           }
-          
+    
+    
           .card__description {
             padding: 0 2em 2em;
             margin: 0;
