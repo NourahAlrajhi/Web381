@@ -1,4 +1,3 @@
-
 <?php 
 ob_start();
 session_start();
@@ -21,25 +20,21 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
      <link rel="stylesheet" href="../HTML/Header and Footer.css">
      <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
    <script src="https://kit.fontawesome.com/3473b55fc1.js" crossorigin="anonymous"></script>
-   <script src="script.js"></script>
+ 
+
    <style>
-div.addPetCirc{
-    position: relative; left: 41.5%; top: 210px;
-    background: #F0EFEF;
-    border-radius: 50%;
-    width: 130px;
-    height: 130px;
-    margin-left: 50px;
-    margin-bottom: 2%;
-}
+
 #addPetCirc3{
-    position: relative;
-    z-index: 4;
+    background: #F0EFEF;
     border-radius: 50%;
     width: 140px;
     height: 140px;
-    cursor: pointer;
-}</style>
+    margin-left: 190px;
+}
+}
+
+
+   </style>
 </head>
 <body>
    <header>
@@ -88,17 +83,17 @@ div.addPetCirc{
 <form action='Set_Appo.php' method ='post' enctype="multipart/form-data">
   <div class= "ServiceSelect">
    <lable class = "LablM"> Service <br>
-      <select name= "petname" class = "fieldselect" aria-placeholder="Choose Service" required>
+      <select name= "petname" class = "fieldselect" aria-placeholder="Choose Service">
          <option value="" disabled selected hidden>Choose Service</option>
         <?php   
 
-$qry = "select Service_NAME from Manager_Services";
+$qry = "select * from Manager_Services";
 $run = $db -> query($qry);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
 ?>
 
-<option value=<?php echo $row['Service_NAME'] ?> > <?php echo $row['Service_NAME'] ?> </option>
+<option value=<?php echo $row['MServicesid'] ?>> <?php echo $row['Service_NAME'] ?> </option>
        <!--  <option class="op"> Grooming And Bathing </option>
           <option class="op"> Dentistry </option>
           <option class="op"> Boarding </option>-->
@@ -115,13 +110,14 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
   </div>
   
   
-  <div class="circle">
+  <div class="circle2">
 
-      <img id="addPetCirc3" src='../images/camera2.svg' onclick="triggerClick()" >
+     
 
      <label>
- 
-  <input type="file" name="profileImage" style="display:none"  id="ProfileImage" onchange="displayImage(this)" >
+     <img src="../images/camera2.svg" onclick="triggerClick()" id="addPetCirc3" > 
+                 <!--  <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 72.4%; top:40px"></a>-->
+                 <input type="file" name="ProfileImage" onchange="displayImage(this)" id="ProfileImage" style=" display:none; Position: absolute;left: 47.4%; top: 134px;" >
 </label>
 
   </div>
@@ -219,7 +215,24 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
  
  <!--Footer secton ends-->
 </body>
+<script>
+    function displayImage(e){
+      window.alert('jjbbnm');
+      if(e.files[0]){
+            var reader = new FileReader();
+            reader.onload = function(e){
+               var hh= document.querySelector('#camera').setAttribute('src',e.target.result);
+                hh.className='newpic';
+                window.alert('jjj');
+            }
+            reader.readAsDataURL(e.files[0]);
 
+        }
+    }
+
+    
+
+    </script>
 
 </html>
 
@@ -241,9 +254,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $profileImageName = time().'_'.$_FILES['profileImage']['name'];
         $target = 'Content/'.$profileImageName;
         move_uploaded_file($_FILES['profileImage']['tmp_name'], $target);   
-        }
+        $QUERY="select Service_NAME from Manager_Services where MServicesid= $Service ";
+        $RESULT = mysqli_query($database, $QUERY);
+    
 
-    $query="INSERT INTO Services (Service_name, Date, Time,Picture ) VALUES ('". $Service."','".$Date."','". $Time."','".  $profileImageName."');";
+      
+        while ($row = $RESULT->fetch_assoc()) { 
+            $PicName = $row['Service_NAME'];
+    $query="INSERT INTO Services (Service_name,Date,Time,Picture_id) VALUES ('". $PicName."','".$Date."','". $Time."', $Service);";}
     $result=mysqli_query($database, $query);
 
     if($result){
@@ -253,28 +271,6 @@ ob_end_flush();}
         echo "An error occured while inserting into the Services table.";}
 }
 
-mysqli_close($db);
+mysqli_close($db);}
 ?>
-<?php
-$sql = "SELECT * from Services";
-$run = $db -> query($sql);
-if(!empty($run -> num_rows) && ($run -> num_rows >0)){
-      while($row = $run -> fetch_assoc()){
-          $id= $row['Serviceid'];
-      }
-}
-?>
-<?php 
-if(isset($_POST['set Appointment'])) {
-    $img_name=$_FILES['img_upload']['name'];
-    $tmp_img_name=$_FILES['img_upload']['tmp_name'];
-    $random_number=rand(1,100);
-    if($img_name==''){
-        echo "<script>alert('please select img')</script>";
-        //echo "<script>window.open('Set_Appo.php?')</script>"
-    }else{
-        move_uploaded_file($tmp_img_name,$img_name);
-        
-    }
-    
-}?>
+

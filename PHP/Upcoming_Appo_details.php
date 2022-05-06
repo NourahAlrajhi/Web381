@@ -10,15 +10,15 @@ die('error in db'. mysqli_error($db));
 }else{
  $id = $_GET['id'];
   
-    $qry = "select * from Appointment where Appointmentid = $id ";
-    $run = $db -> query($qry);
+ $qry = "select * from Appointment,Manager_Services where Appointment.SERVICEID = Manager_Services.MServicesid and Appointmentid = $id ";
+ $run = $db -> query($qry);
     if(!empty($run->num_rows) && ($run->num_rows > 0)){
         while($row = $run -> fetch_assoc()){
             $PetName = $row['Pet_name'];
             $Service = $row['Service'];
             $Date = $row['Date'];
             $Time = $row['Time'];
-
+            $PIC= $row['Picture'];
     }
 }
 
@@ -95,9 +95,9 @@ die('error in db'. mysqli_error($db));
    </lable>
      
   </div>
-  <div class="circle">
-   <div id="circle"><div id="camera">
-      <i class="fa-solid fa-camera fa-4x"></i>
+  <div class="circle2">
+   <div id="circle2">
+   <img src="Content/<?php echo $PIC;?>" style=" border-radius: 50%; width: 140px;height: 140px;margin-left: 200px;float: left;">
      </div>
   </div>
 

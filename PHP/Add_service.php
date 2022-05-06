@@ -1,4 +1,3 @@
-
 <?php 
 ob_start();
 session_start();
@@ -23,8 +22,22 @@ session_start();
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link rel="stylesheet" href="../HTML/Header and Footer.css">
         <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
-<!-- ended 1 here -->
+        <script src="script.js"></script>
 
+<!-- ended 1 here -->
+<style>
+
+#addPetCirc3{
+    position: relative;
+    left: -1.5%;
+    top: -14px;
+    border-radius: 50%;
+    width: 16%;
+    /* display: block; */
+    margin-left: 50px;
+    margin-bottom: 2%;
+}
+</style>
     </head>
     
     <body class="addaservicepageback">
@@ -75,17 +88,19 @@ session_start();
 
 <!-- section for whole code -->
 <section style="text-align: center" >
+<form method="post" action="Add_service.php" enctype="multipart/form-data" class="Tryy">
+
     <div class="addServiceFinalPos">
     <br><br><br><br><br><br>
-        <div class="signUpCirc">
+        <div class="signUpCirc2">
                <div class="signUpCam">
-                   <i class="fa-solid fa-camera fa-2xl"></i>
-                   <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 72.4%; top:40px"></a>
+               <img src="../images/camera2.svg" onclick="triggerClick()" id="addPetCirc3" > 
+                 <!--  <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 72.4%; top:40px"></a>-->
+                 <input type="file" name="ProfileImage" onchange="displayImage(this)" id="ProfileImage" style=" display:none; Position: absolute;left: 47.4%; top: 134px;" >
 
                </div>
             </div>
         
-        <form method="post" action="Add_service.php">
             <div class="leftServ">
                 <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -12px;">Add a Service</h3>
                 <label for="Serv" >Service</label>
@@ -188,8 +203,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        $Description = $_POST['ServDescr'];
        $Price = $_POST['ServPrice'];
      
+  $imageprofile=$_FILES['ProfileImage']['name'];
+$imageprofile_tem_loc=$_FILES['ProfileImage']['tmp_name'];
+$PDF_store='Content/';
 
-    $query="INSERT INTO Manager_Services (Service_NAME, Description, Price ) VALUES ('".$SERVICE_NAME ."','".$Description."','".$Price."');";
+
+$MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
+
+    $query="INSERT INTO Manager_Services (Service_NAME, Description, Price , Picture ) VALUES ('".$SERVICE_NAME ."','".$Description."','".$Price."','".$imageprofile."');";
     $result=mysqli_query($database, $query);
     mysqli_close($database);
     if($result){

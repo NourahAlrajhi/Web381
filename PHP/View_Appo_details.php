@@ -8,15 +8,15 @@ if(!$db){
     die('error in db'. mysqli_error($db));
 }else{
     $id = $_GET['id'];
-    $qry = "select * from Services where Serviceid = $id ";
-    $run = $db -> query($qry);
+    $Q1="select * from Services,Manager_Services where Services.Picture_id = Manager_Services.MServicesid and Serviceid = $id ";
+    $run = $db -> query($Q1);
     if(!empty($run->num_rows) && ($run->num_rows > 0)){
         while($row = $run -> fetch_assoc()){
             $service = $row['Service_name'];
             $Date = $row['Date'];
             $Time = $row['Time'];
             $picture=$row['Picture'];
-
+            //$picture22=$row['Picture_id'];
             
 }
 
@@ -39,6 +39,60 @@ if(!$db){
      <link rel="stylesheet" href="../HTML/Header and Footer.css">
      <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
    <script src="https://kit.fontawesome.com/3473b55fc1.js" crossorigin="anonymous"></script>
+   <script src="script.js"></script>
+<style>
+
+
+#addPetCirc3{
+    position: relative;
+    left: 283.5%;
+    top: -31px;
+    border-radius: 50%;
+    width: 101%;
+    /* display: block; */
+    margin-left: 50px;
+    margin-bottom: 2%;
+}
+.fieldselect{
+    width: 300px;
+    height: 50px;
+    background: #F0EFEF;
+    border: #f7f7f7;
+    border-radius: 15px;
+    padding-left: 0px;
+    box-shadow : none; 
+   text-indent: 15px;
+   color: #403e63;
+}
+#dateS {
+    width: 300px;
+    height: 50px;
+    background: #F0EFEF;
+    border-radius: 15px;
+    border: none;
+    text-indent: 15px;
+    color: #403e63;
+    position: relative;
+    left: -8%;
+}
+.button {
+    border: none;
+    padding: 7px 80px;
+    border-radius: 20px;
+    background-color: #635DAD;
+    opacity: 62%;
+    color: white;
+    position: relative;
+    top: -75px;}
+    .ServiceSelect {
+    float: left;
+    width: 116px;
+    margin-top: 50px;
+    position: relative;
+    font-size: 1.5em;
+    top: -44px;
+}
+</style>
 </head>
 <body>
    <header>
@@ -85,20 +139,30 @@ if(!$db){
 
 <h3 class="Heading" style="font-size: 3rem;">Appointment Details</h3>
 
-<form action="#" method="post">
-  <div class= "ServiceSelect">
-   <lable class = "LablM"> Service <br>
-   <select name="service" class = "fieldselect" required="" disabled >
-   <option value="hid" hidden > <?php echo  $service;?></option>
-   <?php   
+<form method="post" >
 
-$qry = "select Service_NAME from Manager_Services";
-$run = $db -> query($qry);
-if(!empty($run->num_rows) && ($run->num_rows > 0)){
-    while($row = $run -> fetch_assoc()){
+  <div class= "ServiceSelect">
+   <lable class = "LablM" style=" position: relative;top: -6px;">  <br>
+
+              
+               <img src="Content/<?php echo $picture;?>"  id="addPetCirc3" > 
+                 <!--  <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 72.4%; top:40px"></a>-->
+               <!--  <input type="file" name="ProfileImage" onchange="displayImage(this)" id="ProfileImage" style=" display:none; Position: absolute;left: 47.4%; top: 134px;" >-->
+
+    
+
+        
+<label style="position: relative;left: 12%;">Service
+   <select name="service" class = "fieldselect" >
+   <option value="" selected hidden required="" > <?php echo $service;?> </option>
+   <?php   
+$qry = "select Service_NAME,MServicesid from Manager_Services";
+$run3 = $db -> query($qry);
+if(!empty($run3->num_rows) && ($run3->num_rows > 0)){
+    while($row3 = $run3 -> fetch_assoc()){
 ?>
 
-<option value=<?php echo $row['Service_NAME'] ?>  > <?php echo $row['Service_NAME'] ?> </option>
+<option value=<?php echo $row3['MServicesid'] ?> > <?php echo $row3['Service_NAME']?> </option>
 <?php 
 
 }
@@ -107,26 +171,20 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
 </select>
    </lable>
      
-  </div>
-  <div id="#circle">
- 
-   <img  id="circle" src="Content/<?php echo $picture ?>" />
-    
 
-</div>
 <div class="PageRows">
 
    
-     <div class= "DateSelect" >
-   <lable class = "LablM">Date <br>
-      <input style="color: gray;" type="Date" id="dateS" value="<?php echo $Date ;?>" name="DATE" disabled>
+     <div class= "DateSelect"  style=" position: relative; top: -45%;">
+   <lable class = "LablM" style="     position: relative; left: 218%;top: -7px;">Date <br>
+      <input style="color: gray;position: relative; left: -42%;"  required="" type="Date" id="dateS" value="<?php echo $Date ;?>" name="DATE" >
      </lable>
      </div>
 
  
-  <div class="TimeSelect" >
-   <lable class = "LablM"> Time <br>
-     <input style="color: gray;" type="time" id="timeS" value="<?php echo $Time ;?>" name="TIME" disabled>
+  <div class="TimeSelect" style="     position: relative;top: -29%;" >
+   <lable class = "LablM"  style=" position: relative;left: 10%; top:20%"> Time <br>
+     <input style="color: gray;" type="time" required="" id="timeS" value="<?php echo $Time ;?>" name="TIME" >
      </lable>
     
   </div>
@@ -136,7 +194,7 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
    
    </div>
    <div class="BackButtonDetails">
-    <button name="BACK"><a class="button" >Back</a></button>
+    <button style="background: none;" name="BACK"><a class="button" >Back</a></button>
       </div>
     </div>
    
@@ -209,26 +267,30 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
 <?php  
     $id = $_GET['id'];
 if(isset($_POST['BACK'])){
-
+   $ss=$service;
     $Service = $_POST['service'];
     $Date = $_POST['DATE'];
     $Time = $_POST['TIME'];
 
-    
+    $QUERY="select Service_NAME from Manager_Services where MServicesid= $Service ";
+    if($RESULT = mysqli_query($db, $QUERY)){
+        while($row = $RESULT->fetch_assoc()){ 
+            $ss= $row['Service_NAME'];}}
 
-$qry = "update Services set Service_name = '$Service'  , Date= '$Date' , Time= '$Time'  where Serviceid = $id ";
 
-if(mysqli_query($db,$qry)){
-   // echo '<script>alert("changes updated successfully.!!");</script>';
-   header('location: Appo_List.php');
-    ob_end_flush();
-    }else{
-        echo mysqli_error($db);
-    }
+$qry = " UPDATE Services SET Service_name='$ss', Date='$Date',Time='$Time', Picture_id = $Service  where   Serviceid = $id "; 
+
+$result=mysqli_query($db, $qry);
+if($result){
+    //echo '<script>alert("changes updated successfully.!!");</script>';
+     header('location: Appo_List.php');
+       ob_end_flush();
+       }else{
+           echo mysqli_error($db);
+       }
+
 
 }
-
-
 mysqli_close($db); 
 
 ?>

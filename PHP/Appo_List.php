@@ -1,4 +1,3 @@
-
 <?php 
 session_start();
 $db = mysqli_connect("localhost" , "root" ,"","healed");
@@ -103,10 +102,21 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
 $id = $row['Serviceid'];
   
+$Q1="select * from Services,Manager_Services where Services.Picture_id = Manager_Services.MServicesid and Serviceid = $id ";
+
+$run2 = $db -> query($Q1);
+if(!empty($run2->num_rows) && ($run2->num_rows > 0)){
+    while($row2 = $run2 -> fetch_assoc()){
+        $Profile_Pic = $row2['Picture'];
+       
+}
+
+}
+
         ?>
             <tr>
                 <td><?php echo  $i++; ?></td>
-                <td><img src="../HTML/image (2).svg" style="height:50px" width="50px"></td>
+                <td><img src="Content/<?php echo $Profile_Pic;?>" style="height:50px" width="50px"></td>
                 <td> <?php echo $row['Service_name'] ?> </td>
                 
                 
