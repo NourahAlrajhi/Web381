@@ -176,7 +176,7 @@ if(!empty($run3->num_rows) && ($run3->num_rows > 0)){
 
    
      <div class= "DateSelect"  style=" position: relative; top: -45%;">
-   <lable class = "LablM" style="     position: relative; left: 218%;top: -7px;">Date <br>
+   <lable class = "LablM" style="position: relative; left: 218%;top: -7px;">Date <br>
       <input style="color: gray;position: relative; left: -42%;"  required="" type="Date" id="dateS" value="<?php echo $Date ;?>" name="DATE" >
      </lable>
      </div>
@@ -265,7 +265,7 @@ if(!empty($run3->num_rows) && ($run3->num_rows > 0)){
 </html>
 
 <?php  
-    $id = $_GET['id'];
+ 
 if(isset($_POST['BACK'])){
    $ss=$service;
     $Service = $_POST['service'];
@@ -277,10 +277,10 @@ if(isset($_POST['BACK'])){
         while($row = $RESULT->fetch_assoc()){ 
             $ss= $row['Service_NAME'];}}
 
+   $id = $_GET['id'];
+$qry2 ="update Services set Service_name='$ss', Date='$Date',Time='$Time', Picture_id = $Service where Serviceid = $id "; 
 
-$qry = " UPDATE Services SET Service_name='$ss', Date='$Date',Time='$Time', Picture_id = $Service  where   Serviceid = $id "; 
-
-$result=mysqli_query($db, $qry);
+$result=mysqli_query($db, $qry2);
 if($result){
     //echo '<script>alert("changes updated successfully.!!");</script>';
      header('location: Appo_List.php');
