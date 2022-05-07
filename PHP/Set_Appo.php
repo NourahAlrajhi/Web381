@@ -26,7 +26,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
    <style>
 
 #addPetCirc3{
-    background: #F0EFEF;
+   
     border-radius: 50%;
     width: 140px;
     height: 140px;
@@ -111,7 +111,7 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
   </div>
   
   
-  <div class="circle2">
+
 
      
 
@@ -121,7 +121,7 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
                 <!-- <input type="file" name="ProfileImage" onchange="displayImage(this)" id="ProfileImage" style=" display:none; Position: absolute;left: 47.4%; top: 134px;" >-->
 </label>
 
-  </div>
+  
 
 </div>
 <div class="PageRows">
