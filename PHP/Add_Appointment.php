@@ -120,13 +120,13 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
                         <option value="" selected hidden>Choose a service</option>
                         <?php   
 
-$qry = "select Service_NAME from Manager_Services";
+$qry = "select Service_NAME,MServicesid from Manager_Services";
 $run = $db -> query($qry);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
 ?>
 
-                        <option value=<?php echo $row['Service_NAME'] ?> > <?php echo $row['Service_NAME'] ?> </option>
+                        <option value=<?php echo $row['MServicesid'] ?> > <?php echo $row['Service_NAME'] ?> </option>
                       <!--  <option > Dentistry</option>
                         <option > Boarding</option>-->
                         <?php 
@@ -290,14 +290,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        $QUERY="select Pet_Name from PETT where Petid= $PETID";
        $RESULT = mysqli_query($database, $QUERY);
        
+
+      
+   
        $Service = $_POST['service'];
        $Date = $_POST['DATE'];
        $Note = $_POST['note'];
        $Time = $_POST['TIME'];
+
+       $QUERY2="select Service_NAME from Manager_Services where MServicesid= $Service";
+     if($RESULT2 = mysqli_query($db, $QUERY2)){
+
+       while ($row2 = $RESULT2->fetch_assoc()) { 
+           $PicName2 = $row2['Service_NAME'];
     
     while ($row = $RESULT->fetch_assoc()) { 
         $PetName = $row['Pet_Name'];
-    $query="INSERT INTO Appointment (Pet_name,Service,Date,Note,Time,Status,PETid) VALUES ('".$PetName."','".$Service."','".$Date."','".$Note."','".$Time."','".''."', $PETID);";}
+    $query="INSERT INTO Appointment (Pet_name,Service,Date,Note,Time,Status,PETid ,SERVICEID) VALUES ('".$PetName."','". $PicName2."','".$Date."','".$Note."','".$Time."','".''."', $PETID,$Service);";}}
+
 
     $result=mysqli_query($database, $query);
 
@@ -308,5 +318,9 @@ ob_end_flush();}
         echo "An error occured while inserting into the Appointment table.";}
 }
 mysqli_close($database);
+
+}
+
+   
 
 ?>
