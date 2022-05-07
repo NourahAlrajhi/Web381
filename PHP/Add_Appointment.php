@@ -190,13 +190,14 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
            </div>
         
            <div class="button1">
-            <input type = "submit"  value ="Send" class="button" style=" font-size:150% ; position: absolute; 
-            left:45%; bottom: 20%;">
+            <input type = "submit"  value ="Send" class="button" style=" font-size:250% ; position: absolute; 
+            left:45%; bottom: -15%; ">
              <img class = "back2" src ="../images/girl1.svg">
             </div>
           
 </form>
 <br> <br><br> <br> 
+<br><br><br><br><br><br><br><br>
 </div>
 
 
@@ -317,7 +318,7 @@ ob_end_flush();}
     else{
         echo "An error occured while inserting into the Appointment table.";}
 }
-mysqli_close($database);
+mysqli_close($db);
 
 }
 

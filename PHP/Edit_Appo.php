@@ -109,7 +109,7 @@ if(!$db){
                         <textarea name= "note" class = "field2" ><?php echo $Note;?></textarea>
                            
                     </lable>
-                    <a href="">  <img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; right: 29.5%; top:35%"></a>
+                    <a href="">   <img class = "back8"  width="40px" src ="./edit icon.svg" style=" Position:absolute; left: 52%; top:45% "></a>
                 </div>
     
                 <div class = "input-box">
@@ -135,16 +135,17 @@ if(!$db){
         
     
                </div>
-            
+               <br>
                <div class="button1">
-                <input name="SAVE"  type = "submit"  value ="Save" class="button" style="  font-size:150% ; position: absolute; 
+                <input name="SAVE"  type = "submit"  value ="Save" class="button" style="  font-size:250% ; position: absolute; 
                 left:45%;">
                 </div>
             
     </form>
+    
+    <br><br><br>
+    <br><br><br>
     </div>
-
-
 
 
    </section>
