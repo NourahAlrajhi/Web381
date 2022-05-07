@@ -396,7 +396,7 @@ th.HEADER{
     box-shadow: rgba(152, 131, 245, 0.2);
 }
 .part1 .title {
-    font-size: 23px;
+    font-size: 30px;
     font-weight: 500px;
     position: relative;
 
@@ -409,44 +409,45 @@ th.HEADER{
 }
 form  .input-box{
     margin-bottom: 15px;
-    width:calc(100% / 2 - 20px)
+    margin-left: 15px;
+    width:200px;
     
 }
  .input-box .details{
     display: block;
-    font-size: 15px;
+    font-size: 25px;
     font-weight: 500px;
     margin-bottom: 5px;
 }
  .input-box select {
-height: 30px;
-width: 70%;
+height: 60px;
+width: 160%;
 outline: none;
 border-radius: 5px;
 border: 1px solid #F0EFEF ;
 background-color:#F0EFEF;
 padding-left: 15; 
-font-size: 12px;
+font-size: 18px;
 }
  .input-box input {
-    height: 30px;
-    width: 70%;
+    height: 60px;
+    width: 160%;
     outline: none;
     border-radius: 5px;
     border: 1px solid #F0EFEF;
     background-color:#F0EFEF     ;
     padding-left: 15; 
-    font-size: 12px;
+    font-size: 18px;
     }
  .input-box textarea{
-    height: 100px;
-    width: 70%;
+    height: 150px;
+    width: 160%;
     outline: none;
     border-radius: 5px;
     border: 1px solid #F0EFEF ;
     background-color:#F0EFEF;
     padding-left: 15; 
-    font-size: 12px;
+    font-size: 18px;
     }
     .back1{
         position: absolute;
@@ -458,11 +459,11 @@ font-size: 12px;
     .back2{
         position: absolute;
         left: 40%;;
-        bottom: 13.5%;
+        bottom: -24%;
         background-attachment: fixed;
         z-index: 0;
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
     }
     .input-box .email{
         display: block;
