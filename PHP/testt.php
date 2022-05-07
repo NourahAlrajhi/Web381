@@ -1,8 +1,27 @@
 <?php 
 ob_start();
-session_start();
-
+    session_start();
 $db = mysqli_connect("localhost" , "root" ,"","healed");
+
+if(!$db){
+
+    die('error in db'. mysqli_error($db));
+}else{
+    $id = $_GET['id'];
+    $Q1="select * from Services,Manager_Services where Services.Picture_id = Manager_Services.MServicesid and Serviceid = $id ";
+    $run = $db -> query($Q1);
+    if(!empty($run->num_rows) && ($run->num_rows > 0)){
+        while($row = $run -> fetch_assoc()){
+            $service = $row['Service_name'];
+            $Date = $row['Date'];
+            $Time = $row['Time'];
+            $picture=$row['Picture'];
+            //$picture22=$row['Picture_id'];
+            
+}
+
+    }
+}
 
 
 ?>
@@ -13,29 +32,68 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="icon" href="../images/logo.svg">
-    <title>Set Available Appointment </title>
+    <title>Appointment Details </title>
     <link rel="stylesheet" type="text/css" href="../HTML/mystyle.css">
      <!-- font awesome cdn link  -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
      <link rel="stylesheet" href="../HTML/Header and Footer.css">
      <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
    <script src="https://kit.fontawesome.com/3473b55fc1.js" crossorigin="anonymous"></script>
- 
+   <script src="script.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"> </script>
+<style>
 
-   <style>
 
 #addPetCirc3{
-    background: #F0EFEF;
+    position: relative;
+    left: 283.5%;
+    top: -31px;
     border-radius: 50%;
-    width: 140px;
-    height: 140px;
-    margin-left: 190px;
+    width: 101%;
+    /* display: block; */
+    margin-left: 50px;
+    margin-bottom: 2%;
 }
+.fieldselect{
+    width: 300px;
+    height: 50px;
+    background: #F0EFEF;
+    border: #f7f7f7;
+    border-radius: 15px;
+    padding-left: 0px;
+    box-shadow : none; 
+   text-indent: 15px;
+   color: #403e63;
 }
-
-
-   </style>
+#dateS {
+    width: 300px;
+    height: 50px;
+    background: #F0EFEF;
+    border-radius: 15px;
+    border: none;
+    text-indent: 15px;
+    color: #403e63;
+    position: relative;
+    left: -8%;
+}
+.button {
+    border: none;
+    padding: 7px 80px;
+    border-radius: 20px;
+    background-color: #635DAD;
+    opacity: 62%;
+    color: white;
+    position: relative;
+    top: -75px;}
+    .ServiceSelect {
+    float: left;
+    width: 116px;
+    margin-top: 50px;
+    position: relative;
+    font-size: 1.5em;
+    top: -44px;
+}
+</style>
 </head>
 <body>
    <header>
@@ -80,63 +138,55 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
      <div class="PageBase">
 <div class="PageRows">
 
-<h3 class="Heading" style="font-size: 3rem;">Set Available Appointments</h3>
-<form action='Set_Appo.php' method ='post' enctype="multipart/form-data">
+<h3 class="Heading" style="font-size: 3rem;">Appointment Details</h3>
+
+<form method="post" >
+
   <div class= "ServiceSelect">
-   <lable class = "LablM"> Service <br>
-      <select name= "petname" class = "fieldselect" aria-placeholder="Choose Service" id="service" onchange="getpic();">
-         <option value="" disabled selected hidden>Choose Service</option>
-        <?php   
+   <lable class = "LablM" style=" position: relative;top: -6px;">  <br>
 
-$qry = "select MServicesid,Picture,Service_NAME from Manager_Services";
-$run = $db -> query($qry);
-if(!empty($run->num_rows) && ($run->num_rows > 0)){
-    while($row = $run -> fetch_assoc()){
-?>
-
-<option value=<?php echo $row['MServicesid'] ?> <?php $Path=$row['Picture']?> > <?php echo $row['Service_NAME'] ?> </option>
-       <!--  <option class="op"> Grooming And Bathing </option>
-          <option class="op"> Dentistry </option>
-          <option class="op"> Boarding </option>-->
-
-          <?php 
-
-}
-}
-?>
-          </select>
-   </lable>
-   
-     
-  </div>
-  
-  
-  <div class="circle2">
-
-     
-
-     <label>
-     <img src="../images/camera2.svg" id="addPetCirc3" > 
+           
+            <img src="Content/<?php echo $picture;?>"  id="addPetCirc3" > 
                  <!--  <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 72.4%; top:40px"></a>-->
-                <!-- <input type="file" name="ProfileImage" onchange="displayImage(this)" id="ProfileImage" style=" display:none; Position: absolute;left: 47.4%; top: 134px;" >-->
-</label>
+               <!--  <input type="file" name="ProfileImage" onchange="displayImage(this)" id="ProfileImage" style=" display:none; Position: absolute;left: 47.4%; top: 134px;" >-->
 
-  </div>
+    
 
-</div>
+        
+<label style="position: relative;left: 12%;">Service
+
+   <select name="service" class = "fieldselect" id="service" onchange="getpic();" >
+   <option value="" selected hidden required="" > <?php echo $service;?> </option>
+   <?php   
+$qry = "select Service_NAME,MServicesid,Picture from Manager_Services";
+$run3 = $db -> query($qry);
+if(!empty($run3->num_rows) && ($run3->num_rows > 0)){
+    while($row3 = $run3 -> fetch_assoc()){
+?>
+
+<option value=<?php echo $row3['MServicesid']?>> <?php echo $row3['Service_NAME']?></option>
+<?php 
+
+}
+}
+?>
+</select>
+   </lable>
+
+
 <div class="PageRows">
 
    
-     <div class= "DateSelect" >
-   <lable class = "LablM">Date <br>
-      <input type="Date" id="dateS" required name="DATE">
+     <div class= "DateSelect"  style=" position: relative; top: -45%;">
+   <lable class = "LablM" style="position: relative; left: 218%;top: -7px;">Date <br>
+      <input style="color: gray;position: relative; left: -42%;"  required="" type="Date" id="dateS" value="<?php echo $Date ;?>" name="DATE" >
      </lable>
      </div>
 
  
-  <div class="TimeSelect" >
-   <lable class = "LablM"> Time <br>
-     <input type="time" id="timeS" required name="TIME">
+  <div class="TimeSelect" style="     position: relative;top: -29%;" >
+   <lable class = "LablM"  style=" position: relative;left: 10%; top:20%"> Time <br>
+     <input style="color: gray;" type="time" required="" id="timeS" value="<?php echo $Time ;?>" name="TIME" >
      </lable>
     
   </div>
@@ -145,16 +195,13 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
      
    
    </div>
-   <img  src="Parrot.svg" class="parrotimg">
-   <div class="ButtonRow">
-         <input class="button" type="submit" name="set_Appointment" value="Add Appointment">
-         
-   </div>
-
-   </div>
+   <div class="BackButtonDetails">
+    <button style="background: none;" name="BACK"><a class="button" >Back</a></button>
+      </div>
+    </div>
    
 </form>
-  
+<div class="GirlDogimg"><img src="../HTML/girl and dog.svg" width="300px"></div>
 </section>
 
 <!-- Footer secton starts -->
@@ -167,10 +214,10 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
        </div>
        <div class="box">
            <h3>Quick links</h3>
-           <a href="#">Home</a>
-           <a href="#">Services</a>
-           <a href="#">About US</a>
-           <a href="#">Contact Us</a>
+           <a href="./Home Manager.html">Home</a>
+           <a href="./Services Manager.html">Services</a>
+           <a href="./About Us Manager.html">About US</a>
+           <a href="./Contact Clinic.html">Contact Us</a>
                
        </div>
        <div class="box">
@@ -216,81 +263,61 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
  
  <!--Footer secton ends-->
 </body>
+
+
 <script>
-    function displayImage(e){
-      window.alert('jjbbnm');
-      if(e.files[0]){
-            var reader = new FileReader();
-            reader.onload = function(e){
-               var hh= document.querySelector('#camera').setAttribute('src',e.target.result);
-                hh.className='newpic';
-                window.alert('jjj');
-            }
-            reader.readAsDataURL(e.files[0]);
-
-        }
-    }
-
-    function getpic(){
+function getpic(){
     let select= document.querySelector('#service');
     let img= document.querySelector('#addPetCirc3');
     var SERVICEID=select.options[select.selectedIndex].value;
    // alert(SERVICEID); 
 
   
-  $.post("json.php",
-{name: SERVICEID}, function(data){
+               $.post("json.php",
+{ name: SERVICEID}, function(data){
     var Resonse = $.parseJSON(data);
   //  $("#display").append(Resonse[0].Activity);
 //alert(Resonse[0].Picture);
    img.src='Content/'+Resonse[0].Picture;
-
+  alert(img.src);
 
 
 } );
                
             }
-
+            
+         
     </script>
-
 
 </html>
 
-<?php   
+<?php  
+ 
+if(isset($_POST['BACK'])){
+   $ss=$service;
+    $Service = $_POST['service'];
+    $Date = $_POST['DATE'];
+    $Time = $_POST['TIME'];
+
+    $QUERY="select Service_NAME from Manager_Services where MServicesid= $Service ";
+    if($RESULT = mysqli_query($db, $QUERY)){
+        while($row = $RESULT->fetch_assoc()){ 
+            $ss= $row['Service_NAME'];}}
+
+   $id = $_GET['id'];
+$qry2 ="update Services set Service_name='$ss', Date='$Date',Time='$Time', Picture_id = $Service where Serviceid = $id "; 
+
+$result=mysqli_query($db, $qry2);
+if($result){
+    //echo '<script>alert("changes updated successfully.!!");</script>';
+     header('location: Appo_List.php');
+       ob_end_flush();
+       }else{
+           echo mysqli_error($db);
+       }
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if ( !( $database = mysqli_connect( "localhost", "root", "" ) ) )
-       die( "<p>Could not connect to database</p>" );
-
-    if ( !mysqli_select_db( $database, "healed") )
-       die( "<p>Could not open URL database</p>" );
-
-       $Service = $_POST['petname'];
-       $Date = $_POST['DATE'];
-       $Time = $_POST['TIME'];
-       //$Picture =  $_POST['camera'];
-       if(isset($_POST['set_Appointment'])){
-        $profileImageName = time().'_'.$_FILES['profileImage']['name'];
-        $target = 'Content/'.$profileImageName;
-        move_uploaded_file($_FILES['profileImage']['tmp_name'], $target);   
-        $QUERY="select Service_NAME from Manager_Services where MServicesid= $Service ";
-        $RESULT = mysqli_query($database, $QUERY);
-    
-
-      
-        while ($row = $RESULT->fetch_assoc()) { 
-            $PicName = $row['Service_NAME'];
-    $query="INSERT INTO Services (Service_name,Date,Time,Picture_id) VALUES ('". $PicName."','".$Date."','". $Time."', $Service);";}
-    $result=mysqli_query($database, $query);
-
-    if($result){
-        header("location: Appo_List.php");
-ob_end_flush();}
-    else{
-        echo "An error occured while inserting into the Services table.";}
 }
+mysqli_close($db); 
 
-mysqli_close($db);}
 ?>
-
