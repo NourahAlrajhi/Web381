@@ -83,7 +83,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
                  <!-- <a href="" class="card">-->
                  <div class="card">
                     <img src="doctorM.svg" id='adPic1' class="card__image" alt=""  />
-                    <input type="file" name="profileImage" style="display:none"  id="AboutUsImage1" >
+                    <input type="file" name="Aboutimg1" style="display:none"  id="AboutUsImage1" >
                     <div class="card__overlay">
                       <div class="card__header">
                         <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
@@ -106,7 +106,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
                       <!-- <a href="" class="card">-->
                       <div class="card">
                       <img id='adPic2' src="clinic2.svg" class="card__image" alt=""   />
-                      <input type="file" name="profileImage" style="display:none"  id="AboutUsImage2" >
+                      <input type="file" name="Aboutimg2" style="display:none"  id="AboutUsImage2" >
                       <div class="card__overlay">
                         <div class="card__header" >
                           <svg class="card__arc" xmlns="http://www.w/2000/svg" ><path /></svg>                     
@@ -124,7 +124,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
                 <!-- <a href="" class="card">-->
                 <div class="card">
                       <img src="locationAboutus.svg" id='adPic3'  class="card__image" alt=""   />
-                      <input type="file" name="profileImage" style="display:none"  id="AboutUsImage3" >
+                      <input type="file" name="Aboutimg3" style="display:none"  id="AboutUsImage3" >
                       <div class="card__overlay">
                         <div class="card__header">
                           <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
@@ -212,10 +212,11 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 function editFunc(){
   window.alert('jkndf');
   document.getElementById("AboutUs-P").disabled = false;
+  document.getElementById("AboutUs-P").style.cursor='text';
   CardDesc1=document.getElementById("cardDescription1");
   CardDesc2=document.getElementById("cardDescription2");
   CardDesc3=document.getElementById("cardDescription3");
-  AboutImage1 =document.querySelector('#AboutUsImage1');
+  AboutImage1 =document.getElementById('#AboutUsImage1');
   AboutImage2 =document.querySelector('#AboutUsImage2');
   AboutImage3 =document.querySelector('#AboutUsImage3');
   CardDesc1.disabled = false;
@@ -282,6 +283,7 @@ reader.readAsDataURL(e.files[0]);
 }
 function SaveFunc(){
   document.getElementById("AboutUs-P").disabled = true;
+  document.getElementById("AboutUs-P").style.cursor='default';
   CardDesc1=document.getElementById("cardDescription1");
   CardDesc2=document.getElementById("cardDescription2");
   CardDesc3=document.getElementById("cardDescription3");
@@ -300,43 +302,8 @@ function SaveFunc(){
  
 
 }
-//function triggerClick(o){
- //if(.)
-   /// document.querySelector('#AboutUsImage1').click();
-   // document.querySelector('#AboutUsImage1').click();
-//}
-  
 </script>
-<style>
-        .button{
-            border: none;
-            padding: 7px 80px;
-            border-radius: 20px;
-            background-color: #635DAD;
-            opacity: 62%;
-            color: white;
-            position: relative;
-    left: 400px;
-            
-    }
-    .button:hover { 
-            opacity: 100%;
-            box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
-         }
-.cardDescription{
-         font-size: 1.1em;
-    max-height: 209px;
-    max-width: 350px;
-    width: 349px;
-    height: 96px;
-    padding: 0 20px 20px 20px;
-  cursor: default;}
-  .card__image{
-    cursor: default;
 
-  }
-
-  </style>
 </html>
 <?php   
 
