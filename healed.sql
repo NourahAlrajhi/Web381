@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 05, 2022 at 04:15 PM
+-- Generation Time: May 06, 2022 at 02:05 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.28
 
@@ -35,17 +35,18 @@ CREATE TABLE `Appointment` (
   `Note` varchar(10000) NOT NULL,
   `Time` varchar(100) NOT NULL,
   `Status` varchar(100) NOT NULL,
-  `PETid` int(11) NOT NULL
+  `PETid` int(11) NOT NULL,
+  `SERVICEID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `Appointment`
 --
 
-INSERT INTO `Appointment` (`Appointmentid`, `Pet_name`, `Service`, `Date`, `Note`, `Time`, `Status`, `PETid`) VALUES
-(17, 'Lola', 'Spa', '2022-04-30', ' Be Carful please', '10:10', 'Done', 2),
-(19, 'Lulu', 'Spa', '2022-05-18', ' So Important', '15:30', 'yes', 16),
-(20, 'Simon', 'Spa', '2022-05-18', ' Getting ready', '15:30', '', 17);
+INSERT INTO `Appointment` (`Appointmentid`, `Pet_name`, `Service`, `Date`, `Note`, `Time`, `Status`, `PETid`, `SERVICEID`) VALUES
+(17, 'Lola', 'Spa', '2022-04-30', ' Be Carful please', '10:10', 'Done', 2, 4),
+(19, 'Lulu', 'Spa', '2022-05-18', ' So Important', '15:30', 'yes', 16, 4),
+(20, 'Simon', 'Spa', '2022-05-18', ' Getting ready', '15:30', '', 17, 4);
 
 -- --------------------------------------------------------
 
@@ -87,7 +88,9 @@ CREATE TABLE `Manager_Services` (
 --
 
 INSERT INTO `Manager_Services` (`MServicesid`, `Service_NAME`, `Description`, `Price`, `Picture`) VALUES
-(4, 'vaccination', 'vaccination to get well', 50, 'vecteezy_medical-syringe-hypodermic-needle-inject-needle-concept-of_.jpg');
+(4, 'vaccination', 'vaccination to get well', 50, 'vecteezy_medical-syringe-hypodermic-needle-inject-needle-concept-of_.jpg'),
+(5, 'Boarding', 'Very clean', 25, 'Boarding.svg'),
+(6, 'bath', 'get clean', 22, 'Grooming&Bathing.svg');
 
 -- --------------------------------------------------------
 
@@ -113,7 +116,7 @@ CREATE TABLE `PETT` (
 
 INSERT INTO `PETT` (`Petid`, `Pet_Name`, `Gender`, `Breed`, `Spayed`, `Medical_History`, `DOB`, `Content`, `Profile_Pic`) VALUES
 (1, 'Broc', 'Female', 'Ragdoll', 'hid', 'sick Health', '2014-07-30', '', '20201125p1_generated.jpg'),
-(2, 'Lola', 'Female', 'Schnoodle', 'hid', 'Good_Health', '2012-10-23', '', '20210331p1_generated.jpg'),
+(2, 'Lole', 'Female', 'Schnoodle', 'hid', 'Good_Health', '2012-10-23', '', '20210331p1_generated.jpg'),
 (16, 'Lulu', 'Female', 'Chow Chow', 'hid', 'Good health', '2020-11-25', 'IMG_1787.jpg', '20210331p1_generated.jpg'),
 (17, 'Simon', 'Male', 'Chow Chow', 'hid', 'No history', '2018-08-19', 'Tutorial#11 - GUI Modelling 2.pdf', 'dog&cat.svg'),
 (18, 'Loci', 'Female', 'Schnoodle', 'Spayed/Neutered ', 'Sick', '2018-09-14', 'IMG_1787.jpg', '20201125p1_generated.jpg'),
@@ -138,7 +141,9 @@ CREATE TABLE `Services` (
 --
 
 INSERT INTO `Services` (`Serviceid`, `Service_name`, `Date`, `Time`, `Picture_id`) VALUES
-(7, 'vaccination', '2022-05-13', '10:51', 4);
+(7, 'Boarding', '2022-05-21', '15:00', 5),
+(8, 'vaccination ', '2022-05-15', '23:05', 4),
+(9, 'bath', '2022-05-31', '19:52', 6);
 
 --
 -- Indexes for dumped tables
@@ -149,7 +154,8 @@ INSERT INTO `Services` (`Serviceid`, `Service_name`, `Date`, `Time`, `Picture_id
 --
 ALTER TABLE `Appointment`
   ADD PRIMARY KEY (`Appointmentid`),
-  ADD KEY `petid` (`PETid`);
+  ADD KEY `petid` (`PETid`),
+  ADD KEY `serviceiddddd` (`SERVICEID`);
 
 --
 -- Indexes for table `Feedback`
@@ -185,7 +191,7 @@ ALTER TABLE `Services`
 -- AUTO_INCREMENT for table `Appointment`
 --
 ALTER TABLE `Appointment`
-  MODIFY `Appointmentid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `Appointmentid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `Feedback`
@@ -197,7 +203,7 @@ ALTER TABLE `Feedback`
 -- AUTO_INCREMENT for table `Manager_Services`
 --
 ALTER TABLE `Manager_Services`
-  MODIFY `MServicesid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `MServicesid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `PETT`
@@ -209,7 +215,7 @@ ALTER TABLE `PETT`
 -- AUTO_INCREMENT for table `Services`
 --
 ALTER TABLE `Services`
-  MODIFY `Serviceid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `Serviceid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
@@ -219,7 +225,8 @@ ALTER TABLE `Services`
 -- Constraints for table `Appointment`
 --
 ALTER TABLE `Appointment`
-  ADD CONSTRAINT `petid` FOREIGN KEY (`PETid`) REFERENCES `PETT` (`Petid`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `petid` FOREIGN KEY (`PETid`) REFERENCES `PETT` (`Petid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `serviceiddddd` FOREIGN KEY (`SERVICEID`) REFERENCES `Manager_Services` (`MServicesid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `Feedback`

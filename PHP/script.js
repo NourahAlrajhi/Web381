@@ -14,3 +14,5 @@ reader.onload = function(e){
 reader.readAsDataURL(e.files[0]);
     }
 }
+
+
