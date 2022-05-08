@@ -40,6 +40,7 @@ if(!$db){
      <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
    <script src="https://kit.fontawesome.com/3473b55fc1.js" crossorigin="anonymous"></script>
    <script src="script.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"> </script>
 <style>
 
 
@@ -144,8 +145,8 @@ if(!$db){
   <div class= "ServiceSelect">
    <lable class = "LablM" style=" position: relative;top: -6px;">  <br>
 
-              
-               <img src="Content/<?php echo $picture;?>"  id="addPetCirc3" > 
+           
+            <img src="Content/<?php echo $picture;?>"  id="addPetCirc3" > 
                  <!--  <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 72.4%; top:40px"></a>-->
                <!--  <input type="file" name="ProfileImage" onchange="displayImage(this)" id="ProfileImage" style=" display:none; Position: absolute;left: 47.4%; top: 134px;" >-->
 
@@ -154,7 +155,7 @@ if(!$db){
         
 <label style="position: relative;left: 12%;">Service
 
-   <select name="service" class = "fieldselect" id="service" >
+   <select name="service" class = "fieldselect" id="service" onchange="getpic();" >
    <option value="" selected hidden required="" > <?php echo $service;?> </option>
    <?php   
 $qry = "select Service_NAME,MServicesid,Picture from Manager_Services";
@@ -262,33 +263,32 @@ if(!empty($run3->num_rows) && ($run3->num_rows > 0)){
  
  <!--Footer secton ends-->
 </body>
+
+
 <script>
+function getpic(){
+    let select= document.querySelector('#service');
+    let img= document.querySelector('#addPetCirc3');
+    var SERVICEID=select.options[select.selectedIndex].value;
+   // alert(SERVICEID); 
 
-let select= document.querySelector('#service');
-select.addEventListener("change",()=>{
-  let img= document.querySelector('#addPetCirc3');
-  var SERVICEID=select.options[select.selectedIndex].value;
+  
+               $.post("json.php",
+{ name: SERVICEID}, function(data){
+    var Resonse = $.parseJSON(data);
+  //  $("#display").append(Resonse[0].Activity);
+//alert(Resonse[0].Picture);
+   img.src='Content/'+Resonse[0].Picture;
 
-  $.ajax({
-type: "POST",
-  url: View_Appo_details.php,
-  data: {SERVICEID:value},
-});
 
-<?php 
-$var1 = $_POST['SERVICEID'];
-$QUERY="select Picture from Manager_Services where MServicesid = '$var1'";
-$RESULT = mysqli_query($db, $QUERY);
-    
 
-      
-while ($row = $RESULT->fetch_assoc()) { 
-    $PicName = $row['Picture'];}
-?>
-  img.src='Content/'+SERVICEID;
-  alert(img.src);
-});
-     </script>
+} );
+               
+            }
+            
+         
+    </script>
+
 </html>
 
 <?php  

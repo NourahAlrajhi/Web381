@@ -21,11 +21,12 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
      <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
    <script src="https://kit.fontawesome.com/3473b55fc1.js" crossorigin="anonymous"></script>
  
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"> </script>
 
    <style>
 
 #addPetCirc3{
-    background: #F0EFEF;
+   
     border-radius: 50%;
     width: 140px;
     height: 140px;
@@ -47,7 +48,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
           <ul class="nav-list">
               <li  ><a href="../HTML/Home Manager.html">Home</a>
                   <ul class="sub-menu" id="sub-menu-arrow"> 
-                    <li > <a href="../HTML/MahaB Add A Service Page.html">Add a New Service</a></li>
+                    <li > <a href="Add_service.php">Add a New Service</a></li>
                     <li><a href="Appo_List.php">Set a New Appointment</a></li>
                     <li><a href="Request_List_Manager.php">View Requests List</a></li>
     
@@ -83,7 +84,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 <form action='Set_Appo.php' method ='post' enctype="multipart/form-data">
   <div class= "ServiceSelect">
    <lable class = "LablM"> Service <br>
-      <select name= "petname" class = "fieldselect" aria-placeholder="Choose Service" id="service">
+      <select name= "petname" class = "fieldselect" aria-placeholder="Choose Service" id="service" onchange="getpic();">
          <option value="" disabled selected hidden>Choose Service</option>
         <?php   
 
@@ -110,7 +111,7 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
   </div>
   
   
-  <div class="circle2">
+
 
      
 
@@ -120,7 +121,7 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
                 <!-- <input type="file" name="ProfileImage" onchange="displayImage(this)" id="ProfileImage" style=" display:none; Position: absolute;left: 47.4%; top: 134px;" >-->
 </label>
 
-  </div>
+  
 
 </div>
 <div class="PageRows">
@@ -230,18 +231,28 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
         }
     }
 
-    
+    function getpic(){
+    let select= document.querySelector('#service');
+    let img= document.querySelector('#addPetCirc3');
+    var SERVICEID=select.options[select.selectedIndex].value;
+   // alert(SERVICEID); 
+
+  
+  $.post("json.php",
+{name: SERVICEID}, function(data){
+    var Resonse = $.parseJSON(data);
+  //  $("#display").append(Resonse[0].Activity);
+//alert(Resonse[0].Picture);
+   img.src='Content/'+Resonse[0].Picture;
+
+
+
+} );
+               
+            }
 
     </script>
 
-<script>
-
-let select= document.querySelector('#service');
-select.addEventListener("change",()=>{
-  let img=  document.querySelector('#addPetCirc3');
-  img.src='Content/<?php echo $Path ?>';
-});
-     </script>
 
 </html>
 

@@ -132,11 +132,13 @@ if(!$db){
                </div>
 
                <div class="button1">
-                <input name="SAVE" type = "submit"  value ="Back" class="button" style="  font-size:150% ; position: absolute; 
+                <input name="SAVE" type = "submit"  value ="Back" class="button" style="  font-size:250% ; position: absolute; 
                 left:45%;">
                </div>
                 </div>
     </form>
+    <br><br><br>
+    <br><br><br>
     </div>
 
 
