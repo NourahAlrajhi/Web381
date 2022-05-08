@@ -5,7 +5,31 @@ session_start();
 
 $db = mysqli_connect("localhost" , "root" ,"","healed");
 
+if(!$db){
 
+  die('error in db'. mysqli_error($db));
+}else{
+
+  $Q1="select * from AboutUs where AboutID= 1";
+  $run = $db -> query($Q1);
+  if(!empty($run->num_rows) && ($run->num_rows > 0)){
+      while($row = $run -> fetch_assoc()){
+         // $AboutD = $row['AboutDescription'];
+          $CardPic1=$row['CardPic_1'];
+          $CardPic2=$row['CardPic_2'];
+          $CardPic3=$row['CardPic_3'];
+          //$CardD2 = $row['CardDescription_2'];
+          //$CardD3 = $row['CardDescription_3'];
+          //$picture22=$row['Picture_id'];
+          
+
+  }
+}
+/*$AboutDesc = $_POST['AboutUs-P'];
+$CardDc1 = $_POST['cardDescription1'];
+$CardDc2 = $_POST['cardDescription2'];
+$CardDc3 = $_POST['cardDescription3'];*/
+}
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +46,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 
     <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
-
+ 
 
 </head>
 
@@ -72,18 +96,19 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 
 <!-- Services secton starts -->
 <section class="Services" id="Services">
+<form action='About Us Manager.php' method ='post' enctype="multipart/form-data">
     <h1 class="heading">About Us </h1>
    <!--<p id='AboutUs-P' class="AboutUs-P">We are a full-service animal hospital that offers a wide selection of comprehensive veterinary services to maintain your pet's health, from routine exams and vaccinations to dental care, geriatric care, surgery, and internal medicine. </p>-->
-    <textarea id='AboutUs-P'  class="AboutUs-P" disabled="disabled"   >We are a full-service animal hospital that offers a wide selection of comprehensive veterinary services to maintain your pet's health, from routine exams and vaccinations to dental care, geriatric care, surgery, and internal medicine.</textarea>
-    
+    <textarea name='AboutUs-P' class='AboutUs-P' id='AboutUs-P' readonly="" ><?php echo $AboutDesc ?></textarea>
+
     <div class="box-container">
         
             <ul class="cards">
                 <li class="Aboutuscard">
                  <!-- <a href="" class="card">-->
                  <div class="card">
-                    <img src="doctorM.svg" id='adPic1' class="card__image" alt=""  />
-                    <input type="file" name="Aboutimg1" style="display:none"  id="AboutUsImage1" >
+                    <img src=<?php echo  "content2/". $CardPic1 ?>  id='adPic1' class="card__image" alt=""  />
+                    <input type="file" name="Aboutimg1" style="display:none"  id="AboutUsImage1" value=<?php echo  "content2/". $CardPic1 ?>>
                     <div class="card__overlay">
                       <div class="card__header">
                         <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
@@ -94,7 +119,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
                               
                         </div>
                       </div>
-                      <textarea class='cardDescription' id='cardDescription1' disabled="disabled" >We understand that great veterinary care begins with taking the time to get to know your pet and talking with you. We value your relationship with us and are happy to have you join our veterinary family.</textarea>
+                      <textarea class='cardDescription' id='cardDescription1' name='cardDescription1'readonly="" ><?php echo $CardDc1 ?></textarea>
                     </div>
                     
  
@@ -105,7 +130,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
                 <li class="Aboutuscard">
                       <!-- <a href="" class="card">-->
                       <div class="card">
-                      <img id='adPic2' src="clinic2.svg" class="card__image" alt=""   />
+                      <img id='adPic2' src=<?php echo  "content2/".$CardPic2 ?> class="card__image" alt=""   />
                       <input type="file" name="Aboutimg2" style="display:none"  id="AboutUsImage2" >
                       <div class="card__overlay">
                         <div class="card__header" >
@@ -115,7 +140,8 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
                             <h3 class="card__title">Why Trust Us?</h3>            
                           </div>
                         </div>
-                        <textarea class='cardDescription' id='cardDescription2' disabled="disabled" >You'll love our highly skilled compassionate veterinarians,We offer a comprehensive range of services in one spot And We prioritize your pet's long-term health by focusing on preventive services.</textarea>
+                        <textarea class='cardDescription' id='cardDescription2' name='cardDescription2' readonly="" ><?php echo $CardDc2 ?></textarea>
+   
                       </div>
                     <!-- </a>--> 
                     </div>    
@@ -123,7 +149,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
                   <li class="Aboutuscard">
                 <!-- <a href="" class="card">-->
                 <div class="card">
-                      <img src="locationAboutus.svg" id='adPic3'  class="card__image" alt=""   />
+                      <img src=<?php echo  "content2/".$CardPic3 ?>  id='adPic3'  class="card__image" alt=""   />
                       <input type="file" name="Aboutimg3" style="display:none"  id="AboutUsImage3" >
                       <div class="card__overlay">
                         <div class="card__header">
@@ -132,7 +158,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
                             <h3 class="card__title">Where To find us?</h3>            
                           </div>
                         </div>
-                        <textarea class='cardDescription' id='cardDescription3' disabled="disabled" >-District Unit No.1، Prince Muhammad Ibn Saad Ibn Abdulaziz Rd, Al Aqiq, Riyadh 13511<br> -8255 Al Imam Saud Ibn Abdul Aziz Branch Rd, King Fahd, 2993 , Riyadh 12274</textarea>
+                        <textarea class='cardDescription' id='cardDescription3'name='cardDescription3' readonly="" ><?php echo $CardDc3 ?></textarea>
                       </div>
                       <!-- </a>-->   
                       </div>  
@@ -140,8 +166,9 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 
                 </ul>
         </div>
-        <input class="button" type="submit" name="EditBtn" value="Edit" onclick='editFunc()'>
+        <input class="button" type="button" name="EditBtn" value="Edit" onclick='editFunc()'>
         <input class="button" type="submit" name="SaveBtn" value="Save" onclick='SaveFunc()'>
+</form>
 </section>
 
 
@@ -151,6 +178,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 <div class="footer">
   <div class="box-container">
       <div class="box" id="footeraboutus">
+
           <h3>About Us</h3>
           <p>We are a full-service animal hospital that offers a wide selection of comprehensive veterinary services to maintain your pet's health, from routine exams and vaccinations to dental care, geriatric care, surgery, and internal medicine.</p>
               
@@ -203,15 +231,10 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 </div>
 
 
-
-
-<!--Footer secton ends-->
-
-</body>
 <script>
 function editFunc(){
   window.alert('jkndf');
-  document.getElementById("AboutUs-P").disabled = false;
+  document.getElementById("AboutUs-P").readOnly = false;
   document.getElementById("AboutUs-P").style.cursor='text';
   CardDesc1=document.getElementById("cardDescription1");
   CardDesc2=document.getElementById("cardDescription2");
@@ -219,9 +242,9 @@ function editFunc(){
   AboutImage1 =document.getElementById('#AboutUsImage1');
   AboutImage2 =document.querySelector('#AboutUsImage2');
   AboutImage3 =document.querySelector('#AboutUsImage3');
-  CardDesc1.disabled = false;
-  CardDesc2.disabled = false;
-  CardDesc3.disabled = false;
+  CardDesc1.readOnly = false;
+  CardDesc2.readOnly = false;
+  CardDesc3.readOnly = false;
   CardDesc1.style.cursor='text';
   CardDesc2.style.cursor='text';
   CardDesc3.style.cursor='text';
@@ -282,27 +305,32 @@ reader.readAsDataURL(e.files[0]);
 
 }
 function SaveFunc(){
-  document.getElementById("AboutUs-P").disabled = true;
+
+  document.getElementById("AboutUs-P").readOnly = true;
   document.getElementById("AboutUs-P").style.cursor='default';
   CardDesc1=document.getElementById("cardDescription1");
   CardDesc2=document.getElementById("cardDescription2");
   CardDesc3=document.getElementById("cardDescription3");
-  CardDesc1.disabled = true;
-  CardDesc2.disabled = true;
-  CardDesc3.disabled = true;
+  CardDesc1.readOnly = true;
+  CardDesc2.readOnly = true;
+  CardDesc3.readOnly = true;
   CardDesc1.style.cursor='default';
   CardDesc2.style.cursor='default';
   CardDesc3.style.cursor='default';
   AboutImage1 =document.querySelector('#AboutUsImage1');
   AboutImage2 =document.querySelector('#AboutUsImage2');
   AboutImage3 =document.querySelector('#AboutUsImage3');
-  AboutImage1.disabled=true;
-  AboutImage2.disabled=true;
-  AboutImage3.disabled=true;
- 
+  AboutImage1.readOnly = true;
+  AboutImage2.readOnly = true;
+  AboutImage3.readOnly = true;
 
 }
 </script>
+
+<!--Footer secton ends-->
+
+</body>
+
 
 </html>
 <?php   
@@ -315,48 +343,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ( !mysqli_select_db( $database, "healed") )
        die( "<p>Could not open URL database</p>" );
 
-       $Service = $_POST['petname'];
-       $Date = $_POST['DATE'];
-       $Time = $_POST['TIME'];
-       //$Picture =  $_POST['camera'];
-       if(isset($_POST['set_Appointment'])){
-        $profileImageName = time().'_'.$_FILES['profileImage']['name'];
-        $target = 'Content/'.$profileImageName;
-        move_uploaded_file($_FILES['profileImage']['tmp_name'], $target);   
+       $AboutDescription = $_POST['AboutUs-P'];
+       $CardDesc1 = $_POST['cardDescription1'];
+       $CardDesc2 = $_POST['cardDescription2'];
+       $CardDesc3 = $_POST['cardDescription3'];
+       //$query="INSERT INTO `AboutUs`( `AboutDescription`, `CardDescription_1`, `CardPic_1`, `CardDescription_2`, `CardPic_2`, `CardDescription_3`, `CardPic_3`) VALUES ('[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]');";
+
+
+       if(isset($_POST['SaveBtn'])){
+       
+        $ImageName1= time().'_'.$_FILES['Aboutimg1']['name'];
+        $target1 = "content2/". $ImageName1;
+        if(move_uploaded_file($_FILES['Aboutimg1']['tmp_name'], $target1)){
+          $CardPic1=$ImageName1;
+        }else{
+          $ImageName1=$CardPic1;
+        }
+       $ImageName2= time().'_'.$_FILES['Aboutimg2']['name'];
+        $target2 = "content2/".$ImageName2;
+        if(move_uploaded_file($_FILES['Aboutimg2']['tmp_name'], $target2)){
+          $CardPic2=$ImageName2;
+        } else{
+          $ImageName2=$CardPic2;
+
         }
 
-    $query="INSERT INTO AboutUs () VALUES ('". $Service."','".$Date."','". $Time."','".  $profileImageName."');";
-    $result=mysqli_query($database, $query);
+        $ImageName3= time().'_'.$_FILES['Aboutimg3']['name'];
+        $target3 = "content2/". $ImageName3;
+        if(move_uploaded_file($_FILES['Aboutimg3']['tmp_name'], $target3)){
+          $CardPic3=$ImageName3;
 
-    if($result){
-        header("location: Appo_List.php");
+        } else{
+          $ImageName3=$CardPic3;
+        }
+        //$query="INSERT INTO AboutUs (AboutDescription,CardDescription_1,CardPic_1,CardDescription_2,CardPic_2,CardDescription_3,CardPic_3) VALUES ('".$AboutDescription."','".$CardDesc1."','".' $CardPic1'."','".$CardDesc2."','".'$CardPic2'."','".$CardDesc3."', 'hhh');";
+        $qry2 ="update AboutUs set AboutDescription='$AboutDescription', CardDescription_1='$CardDesc1',CardPic_1='$ImageName1', CardDescription_2 = '$CardDesc2',CardPic_2='$ImageName2',CardDescription_3='$CardDesc3',CardPic_3='$ImageName3' where AboutID = 1 "; 
+
+   
+    $result=mysqli_query($database,$qry2);
+ 
+
+  /* if($result){
+        header("location: About Us Manager.php");
 ob_end_flush();}
     else{
-        echo "An error occured while inserting into the Services table.";}
+                  echo "An error occured while inserting into the Services table.";}*/
+    }
 }
 
 mysqli_close($db);
 ?>
-<?php
-$sql = "SELECT * from Services";
-$run = $db -> query($sql);
-if(!empty($run -> num_rows) && ($run -> num_rows >0)){
-      while($row = $run -> fetch_assoc()){
-          $id= $row['Serviceid'];
-      }
-}
-?>
-<?php 
-if(isset($_POST['set Appointment'])) {
-    $img_name=$_FILES['img_upload']['name'];
-    $tmp_img_name=$_FILES['img_upload']['tmp_name'];
-    $random_number=rand(1,100);
-    if($img_name==''){
-        echo "<script>alert('please select img')</script>";
-        //echo "<script>window.open('Set_Appo.php?')</script>"
-    }else{
-        move_uploaded_file($tmp_img_name,$img_name);
-        
-    }
-    
-}?>
+
