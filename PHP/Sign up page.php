@@ -148,7 +148,10 @@ if (isset($_POST['reg_user'])) {
 
     <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; top: 80px;">Sign up</h3>
 
-<div class="signUpCirc" style="left: 40.5%">
+    <a href="./MahaB Sign Up Admin.html"> <button type="button" class="loginTypeButtonNotChosen" style="position: relative; top: 85px;">Manager</button></a>
+            <button type="button" class="loginTypeButtonChosen" style="position: relative; top: 85px;">Pet Owner</button>
+            
+<div class="signUpCirc" style="left: 38.5%">
 
 <div class="signUpCam">
 
