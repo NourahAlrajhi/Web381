@@ -3,24 +3,24 @@
 ob_start();
 session_start();
 
-$db = mysqli_connect("localhost" , "root" ,"","healed");
+$db = mysqli_connect("localhost" , "root" ,"","healed1");
 
 if(!$db){
 
   die('error in db'. mysqli_error($db));
 }else{
 
-  $Q1="select * from AboutUs where AboutID= 1";
+  $Q1="select * from AboutUs where AboutId = 1";
   $run = $db -> query($Q1);
   if(!empty($run->num_rows) && ($run->num_rows > 0)){
       while($row = $run -> fetch_assoc()){
-         // $AboutD = $row['AboutDescription'];
+          $AboutD = $row['AboutDescription'];
           $CardPic1=$row['CardPic_1'];
           $CardPic2=$row['CardPic_2'];
           $CardPic3=$row['CardPic_3'];
-          //$CardD2 = $row['CardDescription_2'];
-          //$CardD3 = $row['CardDescription_3'];
-          //$picture22=$row['Picture_id'];
+          $CardD1 = $row['CardDescription_1'];
+          $CardD2 = $row['CardDescription_2'];
+          $CardD3 = $row['CardDescription_3'];
           
 
   }
@@ -99,7 +99,7 @@ $CardDc3 = $_POST['cardDescription3'];*/
 <form action='About Us Manager.php' method ='post' enctype="multipart/form-data">
     <h1 class="heading">About Us </h1>
    <!--<p id='AboutUs-P' class="AboutUs-P">We are a full-service animal hospital that offers a wide selection of comprehensive veterinary services to maintain your pet's health, from routine exams and vaccinations to dental care, geriatric care, surgery, and internal medicine. </p>-->
-    <textarea name='AboutUs-P' class='AboutUs-P' id='AboutUs-P' readonly="" ><?php echo $AboutDesc ?></textarea>
+    <textarea name='AboutUs-P' class='AboutUs-P' id='AboutUs-P' readonly="" ><?php echo  $AboutD ?></textarea>
 
     <div class="box-container">
         
@@ -119,7 +119,7 @@ $CardDc3 = $_POST['cardDescription3'];*/
                               
                         </div>
                       </div>
-                      <textarea class='cardDescription' id='cardDescription1' name='cardDescription1'readonly="" ><?php echo $CardDc1 ?></textarea>
+                      <textarea class='cardDescription' id='cardDescription1' name='cardDescription1'readonly="" ><?php echo  $CardD1 ?></textarea>
                     </div>
                     
  
@@ -140,7 +140,7 @@ $CardDc3 = $_POST['cardDescription3'];*/
                             <h3 class="card__title">Why Trust Us?</h3>            
                           </div>
                         </div>
-                        <textarea class='cardDescription' id='cardDescription2' name='cardDescription2' readonly="" ><?php echo $CardDc2 ?></textarea>
+                        <textarea class='cardDescription' id='cardDescription2' name='cardDescription2' readonly="" ><?php echo  $CardD2 ?></textarea>
    
                       </div>
                     <!-- </a>--> 
@@ -158,7 +158,7 @@ $CardDc3 = $_POST['cardDescription3'];*/
                             <h3 class="card__title">Where To find us?</h3>            
                           </div>
                         </div>
-                        <textarea class='cardDescription' id='cardDescription3'name='cardDescription3' readonly="" ><?php echo $CardDc3 ?></textarea>
+                        <textarea class='cardDescription' id='cardDescription3'name='cardDescription3' readonly="" ><?php echo  $CardD3 ?></textarea>
                       </div>
                       <!-- </a>-->   
                       </div>  
@@ -340,7 +340,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ( !( $database = mysqli_connect( "localhost", "root", "" ) ) )
        die( "<p>Could not connect to database</p>" );
 
-    if ( !mysqli_select_db( $database, "healed") )
+    if ( !mysqli_select_db( $database, "healed1") )
        die( "<p>Could not open URL database</p>" );
 
        $AboutDescription = $_POST['AboutUs-P'];
@@ -377,7 +377,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           $ImageName3=$CardPic3;
         }
         //$query="INSERT INTO AboutUs (AboutDescription,CardDescription_1,CardPic_1,CardDescription_2,CardPic_2,CardDescription_3,CardPic_3) VALUES ('".$AboutDescription."','".$CardDesc1."','".' $CardPic1'."','".$CardDesc2."','".'$CardPic2'."','".$CardDesc3."', 'hhh');";
-        $qry2 ="update AboutUs set AboutDescription='$AboutDescription', CardDescription_1='$CardDesc1',CardPic_1='$ImageName1', CardDescription_2 = '$CardDesc2',CardPic_2='$ImageName2',CardDescription_3='$CardDesc3',CardPic_3='$ImageName3' where AboutID = 1 "; 
+        $qry2 ="update AboutUs set AboutDescription='$AboutDescription', CardDescription_1='$CardDesc1',CardPic_1='$ImageName1', CardDescription_2 = '$CardDesc2',CardPic_2='$ImageName2',CardDescription_3='$CardDesc3',CardPic_3='$ImageName3' where AboutId = 1 "; 
 
    
     $result=mysqli_query($database,$qry2);

@@ -156,7 +156,8 @@ if(!$db){
      
              <label for="Spayed">Spayed/Neutered Status</label>
              <br>
-             <select name="Spayed" id="Gend" required="" style="  height: 30px; width: 121.2%; outline: none;border-radius: 5px;border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px;margin-bottom: 1ex;">             <option value="hid" hidden > <?php echo $Spayed;?></option>
+             <select name="Spayed" id="Gend" required="" style="  height: 30px; width: 121.2%; outline: none;border-radius: 5px;border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px;margin-bottom: 1ex;"> 
+              <option value="hid" hidden > <?php echo $Spayed;?></option>
                <option value = "Spayed/Neutered "> Spayed/Neutered </option>
                <option value = "Not Spayed/Neutered"> Not Spayed/Neutered </option>
              </select>
