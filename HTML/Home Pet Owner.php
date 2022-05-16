@@ -29,24 +29,25 @@
 
     <nav class="navbar">
         <ul class="nav-list">
-            <li  ><a href="./Home Manager.html">Home</a>
-                <ul class="sub-menu" id="sub-menu-arrow"> 
-                  <li > <a href="./MahaB Add A Service Page.html">Add a New Service</a></li>
-                  <li><a href="./availabel apointment manager.html">Set a New Appointment</a></li>
-                  <li><a href="./request list manager.html">View Requests List</a></li>
-  
-                  <li><a href="./upcoming and previous manager.html">View Appointments List</a> </li>
-          
-                </ul>
-              </li>
+            <li  ><a href="./Home Pet Owner.php">Home</a>
+              <ul class="sub-menu" id="sub-menu-arrow"> 
+                <li > <a href="../PHP/Add_New_Pet.php">Add a New Pet</a></li>
+                <li><a href="../PHP/Pet_List.php">View Pet List</a></li>
+                <li><a href="../PHP/Request_List_Pet_Owner.php">View Requests List</a></li>
+
+                <li><a href="../PHP/upcoming and previous pet owner.php">View Appointments List</a> </li>
+        
+              </ul>
+            </li>
           
             
-           <li><a href="./Services Manager.html">Services</a></li> 
-           <li><a href="./About Us Manager.html">About Us</a></li> 
-            <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user-doctor"></i></a>
+            <li><a href="../PHP/Services Pet Owner.php">Services</a></li> 
+           <li><a href="../HTML/About us PetOwner.php">About Us</a></li> 
+            <li><a href="../PHP/Contact Pet Owner.php">Contact Us</a></li>
+            <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
-                    <li ><a href="#">View Profile</a></li>
-                    <li><a href="./LnadingPage.html">Sign Out</a></li>
+                    <li ><a href="../HTML/MahaB Edit Profile Page.html">View Profile</a></li>
+                    <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
             
                   </ul></li>
           </ul>
@@ -67,17 +68,18 @@
        
        <div class="options">
         <span class="optionsspan1"><img src="../images/Parrot.svg" alt="">
-        <a href="./MahaB Add A Service Page.html" class="btn ">Add a New Service</a> 
+        <a href="../PHP/Add_New_Pet.php" class="btn ">Add a New Pet</a> 
         
         <p>
-          <a href="./availabel apointment manager.html" class="btn ">Set a New Appointment</a> 
+            <a href="../PHP/Request_List_Pet_Owner.php" class="btn "><span style="color: transparent;">..</span>View requests list<span style="color: transparent;">..</span></a> 
+
        </p> </span>
 
        <span class="optionsspanright"><img src="../images/sleepingcat.svg" alt="">
-        <a href="./request list manager.html" class="btn ">View requests list</a> 
+        <a href="../PHP/Pet_List.php" class="btn "><span style="color: transparent;">-</span>View pet List <span style="color: transparent;">-</span></a> 
         
         <p>
-          <a href="./availabel apointment manager.html" class="btn ">View Appointments list</a> 
+          <a href="../PHP/upcoming and previous pet owner.php" class="btn ">  View Appointment list </a> 
        </p> </span>
        
            
@@ -103,9 +105,10 @@
         </div>
         <div class="box">
             <h3>Quick links</h3>
-            <a href="./Home Manager.html">Home</a>
-            <a href="./Services Manager.html">Services</a>
-            <a href="./About Us Manager.html">About US</a>
+            <a href="./Home Pet Owner.html">Home</a>
+            <a href="./Services Pet Owner.html">Services</a>
+            <a href="./About us PetOwner.html">About US</a>
+            <a href="./Contact Clinic.html">Contact Us</a>
                 
         </div>
         <div class="box">
@@ -150,6 +153,8 @@
 
 
 <!--Footer section ends-->
+
+
 
 
 

@@ -37,7 +37,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 
     <nav class="navbar">
         <ul class="nav-list">
-            <li  ><a href="../HTML/Home Pet Owner.html">Home</a>
+            <li  ><a href="../HTML/Home Pet Owner.php">Home</a>
               <ul class="sub-menu" id="sub-menu-arrow"> 
                 <li > <a href="Add_New_Pet.php">Add a New Pet</a></li>
                 <li><a href="Pet_List.php">View Pet List</a></li>
@@ -49,9 +49,9 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
             </li>
           
             
-           <li><a href="../HTML/Services Pet Owner.html">Services</a></li> 
-           <li><a href="../HTML/About us PetOwner.html">About Us</a></li> 
-            <li><a href="../HTML/Contact Clinic.html">Contact Us</a></li>
+           <li><a href="Services Pet Owner.php">Services</a></li> 
+           <li><a href="../HTML/About us PetOwner.php">About Us</a></li> 
+            <li><a href="Contact Pet Owner.php">Contact Us</a></li>
             <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
                     <li ><a href="../HTML/MahaB Edit Profile Page.html">View Profile</a></li>
@@ -218,10 +218,10 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
         </div>
         <div class="box">
             <h3>Quick links</h3>
-            <a href="../HTML/Home Pet Owner.html">Home</a>
-            <a href="../HTML/Services Pet Owner.html">Services</a>
-            <a href="../HTML/About us PetOwner.html">About US</a>
-            <a href="../HTML/Contact Clinic.html">Contact Us</a>
+            <a href="../HTML/Home Pet Owner.php">Home</a>
+            <a href="Services_Manager.php">Services</a>
+            <a href="../HTML/About us PetOwner.php">About US</a>
+            <a href="Contact Pet Owner.php">Contact Us</a>
                 
         </div>
         <div class="box">

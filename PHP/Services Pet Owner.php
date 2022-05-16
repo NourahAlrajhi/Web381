@@ -1,31 +1,7 @@
 
 <?php 
-ob_start();
 session_start();
-
-$db = mysqli_connect("localhost" , "root" ,"","healed1");
-
-if(!$db){
-
-  die('error in db'. mysqli_error($db));
-}else{
-
-  $Q1="select * from AboutUs where AboutId = 1";
-  $run = $db -> query($Q1);
-  if(!empty($run->num_rows) && ($run->num_rows > 0)){
-      while($row = $run -> fetch_assoc()){
-          $AboutD = $row['AboutDescription'];
-          $CardPic1=$row['CardPic_1'];
-          $CardPic2=$row['CardPic_2'];
-          $CardPic3=$row['CardPic_3'];
-          $CardD1 = $row['CardDescription_1'];
-          $CardD2 = $row['CardDescription_2'];
-          $CardD3 = $row['CardDescription_3'];
-          
-
-  }
-}
-}
+$db = mysqli_connect("localhost" , "root" ,"","healed");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,12 +9,12 @@ if(!$db){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../images/logo.svg">
-    <title>About Us</title>
+    <title>Services</title>
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="./test.css">
-        <link rel="stylesheet" href="./Header and Footer.css">
+    <link rel="stylesheet" href="../HTML/LandingPage.css">
+        <link rel="stylesheet" href="../HTML/Header and Footer.css">
 
     <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
     
@@ -60,19 +36,19 @@ if(!$db){
         <ul class="nav-list">
             <li  ><a href="../HTML/Home Pet Owner.php">Home</a>
               <ul class="sub-menu" id="sub-menu-arrow"> 
-                <li > <a href="../PHP/Add_New_Pet.php">Add a New Pet</a></li>
-                <li><a href="../PHP/Pet_List.php">View Pet List</a></li>
-                <li><a href="../PHP/Request_List_Pet_Owner.php">View Requests List</a></li>
+                <li > <a href="Add_New_Pet.php">Add a New Pet</a></li>
+                <li><a href="Pet_List.php">View Pet List</a></li>
+                <li><a href="Request_List_Pet_Owner.php">View Requests List</a></li>
 
-                <li><a href="../PHP/upcoming and previous pet owner.php">View Appointments List</a> </li>
+                <li><a href="upcoming and previous pet owner.php">View Appointments List</a> </li>
         
               </ul>
             </li>
           
             
-           <li><a href="../PHP/Services Pet Owner.php">Services</a></li> 
+           <li><a href="Services Pet Owner.php">Services</a></li> 
            <li><a href="../HTML/About us PetOwner.php">About Us</a></li> 
-            <li><a href="../PHP/Contact Pet Owner.php">Contact Us</a></li>
+            <li><a href="Contact Pet Owner.php">Contact Us</a></li>
             <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
                     <li ><a href="../HTML/MahaB Edit Profile Page.html">View Profile</a></li>
@@ -93,64 +69,59 @@ if(!$db){
 
 <!-- Services secton starts -->
 <section class="Services" id="Services">
-    <h1 class="heading">About Us</i></h1>
-    <p class="AboutUs-P"><?php echo  $AboutD ?></p>
-    
-    <div class="box-container">
-        
-            <ul class="cards">
-                <li class="Aboutuscard">
-                  <a href="" class="card">
-                    <img src=<?php echo  "content2/". $CardPic1 ?> class="card__image" alt="" />
+  <h1 class="heading">Our Services </h1>
+  <div class="box-container">
+      
+          <ul class="cards">
+              <li>
+                <a href="./rquest list pet owner.html" class="card">
+                  <img src="../images/Grooming&Bathing.svg" class="card__image" alt="" />
+                  <div class="card__overlay">
+                    <div class="card__header">
+                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+                      <div class="card__header-text">
+                        <h3 class="card__title">Grooming and Bathing</h3>            
+                        <span class="card__status">Book Now</span>
+                      </div>
+                    </div>
+                    <p class="card__description">Bathing and Grooming:  Routine and therapeutic bathing services are available.  We also have a groomer available for all your pets' beauty needs.
+                    </p>
+                  </div>
+                </a>      
+              </li>
+              <li>
+                  <a href="./rquest list pet owner.html" class="card">
+                    <img src="../images/Dentistry.svg" class="card__image" alt="" />
+                    <div class="card__overlay">
+                      <div class="card__header">
+                        <svg class="card__arc" xmlns="http://www.w/2000/svg"><path /></svg>                     
+                        <div class="card__header-text">
+                          <h3 class="card__title">Dentistry</h3>            
+                          <span class="card__status">Book Now</span>
+                        </div>
+                      </div>
+                      <p class="card__description">Our dental services include teeth cleaning and polishing, digital dental x-rays, tooth extractions and oral surgery.</p>
+                    </div>
+                  </a>      
+                </li>
+                <li>
+                  <a href="./rquest list pet owner.html" class="card">
+                    <img src="../images/Boarding.svg" class="card__image" alt="" />
                     <div class="card__overlay">
                       <div class="card__header">
                         <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
                         <div class="card__header-text">
-                          
-                          <h3 class="card__title">Our Pet Care Philosophy</h3> 
-                          
-                              
+                          <h3 class="card__title">Boarding</h3>            
+                          <span class="card__status">Book Now</span>
                         </div>
                       </div>
-                      <p class="card__description"><?php echo  $CardD1 ?></p>
+                      <p class="card__description">We provide pet boarding as a service to our clients. All boarders receive personal attention from our caring staff.</p>
                     </div>
-                    
- 
-                  </a>
-                  
+                  </a>      
                 </li>
-                <li class="Aboutuscard">
-                    <a href="" class="card">
-                      <img src=<?php echo  "content2/". $CardPic2 ?> class="card__image" alt="" />
-                      <div class="card__overlay">
-                        <div class="card__header">
-                          <svg class="card__arc" xmlns="http://www.w/2000/svg"><path /></svg>                     
-                          <div class="card__header-text">
-            
-                            <h3 class="card__title">Why Trust Us?</h3>            
-                          </div>
-                        </div>
-                        <p class="card__description"><?php echo  $CardD1 ?></p>
-                      </div>
-                    </a>      
-                  </li>
-                  <li class="Aboutuscard">
-                    <a href="" class="card">
-                      <img src=<?php echo  "content2/". $CardPic3 ?> class="card__image" alt="" />
-                      <div class="card__overlay">
-                        <div class="card__header">
-                          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
-                          <div class="card__header-text">
-                            <h3 class="card__title">Where To find us?</h3>            
-                          </div>
-                        </div>
-                        <p class="card__description"><?php echo  $CardD3?></p>
-                      </div>
-                    </a>      
-                  </li>
 
-                </ul>
-        </div>
+              </ul>
+      </div>
 
 </section>
 
@@ -161,7 +132,8 @@ if(!$db){
   <div class="box-container">
       <div class="box" id="footeraboutus">
           <h3>About Us</h3>
-          <p>We are a full-service animal hospital that offers a wide selection of comprehensive veterinary services to maintain your pet's health, from routine exams and vaccinations to dental care, geriatric care, surgery, and internal medicine.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
+              Nulla quis sem at nibh elementumn.</p>
               
       </div>
       <div class="box">

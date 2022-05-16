@@ -62,7 +62,7 @@ die('error in db'. mysqli_error($db));
 
     <nav class="navbar">
         <ul class="nav-list">
-            <li  ><a href="../HTML/Home Pet Owner.html">Home</a>
+            <li  ><a href="../HTML/Home Pet Owner.php">Home</a>
               <ul class="sub-menu" id="sub-menu-arrow"> 
                 <li > <a href="Add_New_Pet.php">Add a New Pet</a></li>
                 <li><a href="Pet_List.php">View Pet List</a></li>
@@ -74,9 +74,9 @@ die('error in db'. mysqli_error($db));
             </li>
           
             
-           <li><a href="../HTML/Services Pet Owner.html">Services</a></li> 
-           <li><a href="../HTML/About us PetOwner.html">About Us</a></li> 
-            <li><a href="../HTML/Contact Clinic.html">Contact Us</a></li>
+           <li><a href="Services Pet Owner.php">Services</a></li> 
+           <li><a href="../HTML/About us PetOwner.php">About Us</a></li> 
+            <li><a href="Contact Pet Owner.php">Contact Us</a></li>
             <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
                     <li ><a href="../HTML/MahaB Edit Profile Page.html">View Profile</a></li>
@@ -84,7 +84,6 @@ die('error in db'. mysqli_error($db));
             
                   </ul></li>
           </ul>
-        
         <!-- ****if you're working on a pet owner view replace <i class="fa-solid fa-user-doctor"> with <i class="fa-solid fa-user"></i>  -->
 
 

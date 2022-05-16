@@ -62,7 +62,7 @@ die('error in db'. mysqli_error($db));
 
     <nav class="navbar">
         <ul class="nav-list">
-        <li  ><a href="../HTML/Home Manager.html">Home</a>
+            <li  ><a href="../HTML/Home Manager.php">Home</a>
                 <ul class="sub-menu" id="sub-menu-arrow"> 
                   <li > <a href="Add_service.php">Add a New Service</a></li>
                   <li><a href="Appo_List.php">Set a New Appointment</a></li>
@@ -74,8 +74,8 @@ die('error in db'. mysqli_error($db));
               </li>
           
             
-            <li><a href="../HTML/Services Manager.html">Services</a></li> 
-           <li><a href="../HTML/About Us Manager.html">About Us</a></li> 
+           <li><a href="Services_Manager.php">Services</a></li> 
+           <li><a href="../HTML/About Us Manager.php">About Us</a></li> 
             <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user-doctor" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
                     <li ><a href="#">View Profile</a></li>

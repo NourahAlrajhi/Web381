@@ -61,29 +61,28 @@ $CardDc3 = $_POST['cardDescription3'];*/
       <label for="menu-bar" class="fas fa-bars"></label>
   
       <nav class="navbar">
-          <ul class="nav-list">
-              <li  ><a href="./Home Manager.html">Home</a>
-                  <ul class="sub-menu" id="sub-menu-arrow"> 
-                    <li > <a href="./MahaB Add A Service Page.html">Add a New Service</a></li>
-                    <li><a href="./availabel apointment manager.html">Set a New Appointment</a></li>
-                    <li><a href="./request list manager.html">View Requests List</a></li>
-    
-                    <li><a href="./upcoming and previous manager.html">View Appointments List</a> </li>
-            
-                  </ul>
-                </li>
-            
-              
-             <li><a href="./Services Manager.html">Services</a></li> 
-             <li><a href="./About Us Manager.html">About Us</a></li> 
-              <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user-doctor" ></i></a>
-                  <ul class="sub-menu" id="sub-menu-arrow2"> 
-                      <li ><a href="#">View Profile</a></li>
-                      <li><a href="./LnadingPage.html">Sign Out</a></li>
-              
-                    </ul></li>
-            </ul>
+        <ul class="nav-list">
+            <li  ><a href="../HTML/Home Manager.php">Home</a>
+                <ul class="sub-menu" id="sub-menu-arrow"> 
+                  <li > <a href="../PHP/Add_service.php">Add a New Service</a></li>
+                  <li><a href="../PHP/Appo_List.php">Set a New Appointment</a></li>
+                  <li><a href="../PHP/Request_List_Manager.php">View Requests List</a></li>
+  
+                  <li><a href="../PHP/upcoming and previous manager.php">View Appointments List</a> </li>
           
+                </ul>
+              </li>
+          
+            
+           <li><a href="../PHP/Services_Manager.php">Services</a></li> 
+           <li><a href="../HTML/About Us Manager.php">About Us</a></li> 
+            <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user-doctor" ></i></a>
+                <ul class="sub-menu" id="sub-menu-arrow2"> 
+                    <li ><a href="#">View Profile</a></li>
+                    <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
+            
+                  </ul></li>
+          </ul>
           <!-- ****if you're working on a pet owner view replace <i class="fa-solid fa-user-doctor"> with <i class="fa-solid fa-user"></i>  -->
   
   
