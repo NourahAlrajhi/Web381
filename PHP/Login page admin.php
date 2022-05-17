@@ -24,11 +24,13 @@ if (isset($_POST['log'])) {
         $results = $db -> query($query);
         if(!empty($results->num_rows) && ($results->num_rows > 0)){
             while($row = $results -> fetch_assoc()){
-                $imageprofile = $row['Profile_Pic'];          
+                $imageprofile = $row['Profile_Pic']; 
+                $Profileid = $row['Managerid'];          
     }
     if (mysqli_num_rows($results) == 1) {
         $_SESSION['Email'] = $Email;
         $_SESSION['Profile_Pic'] = $imageprofile;
+        $_SESSION['Managerid'] = $Profileid;
         $_SESSION['success'] = "You are now logged in";
         }
        

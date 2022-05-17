@@ -58,6 +58,7 @@ if (isset($_POST['Reg'])) {
     mysqli_query($db, $query);
     $_SESSION['Email'] = $Email;
     $_SESSION['Profile_Pic'] = $imageprofile;
+     // $_SESSION['Managerid'] = $Profileid;
     $_SESSION['success'] = "You are now logged in";
     header('location: ../HTML/Home Pet Owner.php'); //DAAANAAAAAAAA's HOME PAGE
 }
