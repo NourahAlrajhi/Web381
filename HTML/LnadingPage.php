@@ -54,7 +54,7 @@
         <h3><span>Healed </span>Veterinary Clinic</h3>
         <h3>We Make Your Pets Look Thier Best!</h3>
         <p > <strong style="font-size: 2rem;">Hello!</strong>  We help your little friends to be healthy and you to be happy! Our clinic Healed have the latest equipment and the best specialists.  </p>
-        <a href="./MahaB Sign Up Page.html" class="btn">Sign Up Now</a>
+        <a href="../PHP/Sign up page.php" class="btn">Sign Up Now</a>
         </div>
         <div class="image">
             <img src="../images/dog&cat.svg" alt="">

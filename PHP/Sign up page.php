@@ -12,7 +12,7 @@ $Email = "";
 $Gend = "";
 $errors = array();
 //sign up
-if (isset($_POST['reg_user'])) {
+if (isset($_POST['Reg'])) {
     // receive all input values from the form
     $Fname = mysqli_real_escape_string($db, $_POST['Fname']);
     $Lname = mysqli_real_escape_string($db, $_POST['Lname']);
@@ -21,6 +21,11 @@ if (isset($_POST['reg_user'])) {
     $Gend = mysqli_real_escape_string($db, $_POST['Gend']);
     $Pass = mysqli_real_escape_string($db, $_POST['Pass']);
   
+    $imageprofile=$_FILES['ProfileImage']['name'];
+    $imageprofile_tem_loc=$_FILES['ProfileImage']['tmp_name'];
+    $PDF_store='Content/';
+    $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
+
     // form validation: ensure that the form is correctly filled ...
     // by adding (array_push()) corresponding error unto $errors array
     if (empty($Fname)) { array_push($errors, "First name is required"); }
@@ -31,7 +36,7 @@ if (isset($_POST['reg_user'])) {
     if (empty($Pass)) { array_push($errors, "Password is required"); }
     // first check the database to make sure 
   // a user does not already exist with the same Email and/or phone number
-  $user_check_query = "SELECT * FROM users WHERE Email='$Email' OR Pnum='$Pnum' LIMIT 1";
+  $user_check_query = "SELECT * FROM Users WHERE Email='$Email' OR Pnum='$Pnum' LIMIT 1";
   $result = mysqli_query($db, $user_check_query);
   $user = mysqli_fetch_assoc($result);
   
@@ -48,12 +53,13 @@ if (isset($_POST['reg_user'])) {
   if (count($errors) == 0) {
     $Pass = md5($Pass);//encrypt the password before saving in the database
 
-    $query = "INSERT INTO users (Fname, Lname, Pnum, Email, Gend, Pass) 
-              VALUES('$Fname', '$Lname', '$Pnum', '$Email', '$Gend', '$Pass')";
+    $query = "INSERT INTO Users (Fname, Lname, Pnum, Email, Gend, Pass,Profile_Pic) 
+              VALUES('$Fname', '$Lname', '$Pnum', '$Email', '$Gend', '$Pass' ,'$imageprofile' )";
     mysqli_query($db, $query);
     $_SESSION['Email'] = $Email;
+    $_SESSION['Profile_Pic'] = $imageprofile;
     $_SESSION['success'] = "You are now logged in";
-    header('location: index.php'); //DAAANAAAAAAAA HOME PAGE
+    header('location: ../HTML/Home Pet Owner.php'); //DAAANAAAAAAAA's HOME PAGE
 }
 }
 
@@ -71,7 +77,7 @@ if (isset($_POST['reg_user'])) {
 
 <title>Sign Up</title>
 
-<link rel="stylesheet" type="text/css" href="mystyle.css">
+<link rel="stylesheet" type="text/css" href="../HTML/mystyle.css">
 
 <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -89,12 +95,22 @@ if (isset($_POST['reg_user'])) {
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-<link rel="stylesheet" href="Header and Footer.css">
+<link rel="stylesheet" href="../HTML/Header and Footer.css">
 
 <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
-
+<script src="script.js"></script>
 <!-- ended 1 here -->
+<style>
 
+div.signUpCam{
+  position: relative;left: 38.5%; top: 100px;
+    border-radius: 50%;
+    width: 80px;
+    height: 105px;
+    margin-left: 50px;
+    margin-bottom: 2%;
+}
+</style>
 </head>
 
 <body class="signUpBod">
@@ -115,15 +131,15 @@ if (isset($_POST['reg_user'])) {
 
 <ul class="nav-list">
 
-<li ><a href="./LnadingPage.html">Home</a>
+<li ><a href="../HTML/LnadingPage.php">Home</a>
 
 </li>
 
-<li><a href="./LnadingPage.html#Services">Services</a></li>
+<li><a href="../HTML/LnadingPage.php#Services">Services</a></li>
 
-<li><a href="./LnadingPage.html#Aboutus">About Us</a></li>
+<li><a href="../HTML/LnadingPage.php#Aboutus">About Us</a></li>
 
-<li><a href="./LnadingPage.html#contact us">Contact Us</a></li>
+<li><a href="../HTML/LnadingPage.php#contact us">Contact Us</a></li>
 
 </ul>
 
@@ -139,29 +155,32 @@ if (isset($_POST['reg_user'])) {
 
 <!-- section for whole code -->
 
-<section class="loginpage" style="text-align: center">
+<section class="loginpage" style="text-align: center" >
 
 <div class="signUpFinalPos">
 
-<form method="post" action="Sign up page.php">
+<form method="post" action="Sign up page.php" enctype="multipart/form-data">
 <?php include('errors.php'); ?>
 
-    <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; top: 80px;">Sign up</h3>
 
-    <a href="./MahaB Sign Up Admin.html"> <button type="button" class="loginTypeButtonNotChosen" style="position: relative; top: 85px;">Manager</button></a>
-            <button type="button" class="loginTypeButtonChosen" style="position: relative; top: 85px;">Pet Owner</button>
+    <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative;top: 24px;left: -7px;">Sign up</h3>
+    <div class="signUpCirc2" style="left: 0.1%; position: relative;top: -53px;    left: -6px;">
+    <a href="Sign up admin.php"> <button type="button" class="loginTypeButtonNotChosen" style="position: relative; top: 85px;">Manager</button></a>
+            <button type="button" class="loginTypeButtonChosen" style="position: relative; top: 85px;">Pet Owner</button></div>
             
-<div class="signUpCirc" style="left: 38.5%">
 
-<div class="signUpCam">
 
-<i class="fa-solid fa-camera fa-2xl"></i>
-<a href="#"><img class = "back8" src ="./edit icon.svg" style=" Position:absolute; left: 63.4%; top:48px"></a>
+<div class="signUpCam" style="border-radius: 50%;">
+
+<img src="../images/camera2.svg" onclick="triggerClick()" id="addPetCirc3" style="width: 137px;border-radius: 50%;" > 
+  <input type="file" name="ProfileImage" onchange="displayImage(this)" id="ProfileImage" style=" display:none; Position: absolute;left: 47.4%; top: 134px;" >
+<!-- <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 72.4%; top:40px"></a>-->
+<!--<i class="fa-solid fa-camera fa-2xl"></i>-->
 
 
 </div>
 
-</div>
+
 
 <div class="firstCol">
 
@@ -169,7 +188,7 @@ if (isset($_POST['reg_user'])) {
 
 <br>
 
-<input type="text" name="Fname" id="Fname" placeholder="Enter First name" required="" value="<?php echo $Fname; ?>">
+<input type="text" name="Fname" id="Fname" placeholder="Enter First name" required="" >
 
 <br><br>
 
@@ -177,7 +196,7 @@ if (isset($_POST['reg_user'])) {
 
 <br>
 
-<input type="number" name="Pnum" id="Pnum" placeholder="05xxxxxxxx" required="" min="0500000000" max="0599999999" value="<?php echo $Pnum; ?>">
+<input type="number" name="Pnum" id="Pnum" placeholder="05xxxxxxxx" required="" min="0500000000" max="0599999999" >
 
 <br><br>
 
@@ -199,7 +218,7 @@ if (isset($_POST['reg_user'])) {
 
 <br>
 
-<input type="text" name="Lname" id="Lname" placeholder="Enter Last name" required="" value="<?php echo $Lname; ?>">
+<input type="text" name="Lname" id="Lname" placeholder="Enter Last name" required="" >
 
 <br><br>
 
@@ -207,7 +226,7 @@ if (isset($_POST['reg_user'])) {
 
 <br>
 
-<input type="email" name="Email" id="Email" placeholder="Enter Email" required="" value="<?php echo $Email; ?>">
+<input type="email" name="Email" id="Email" placeholder="Enter Email" required="" >
 
 <br><br>
 
@@ -215,7 +234,7 @@ if (isset($_POST['reg_user'])) {
 
 <br>
 
-<select name="Gend" id="Gend" placeholder="Choose Gender" required="" value="<?php echo $Gend; ?>">
+<select name="Gend" id="Gend" placeholder="Choose Gender" required="" >
 <option value = "" disabled selected hidden> Choose Gender </option>
 
 <option value = "Male"> Male </option>
@@ -244,7 +263,7 @@ and our <a class="loginLink" href="#">privacy policy</a> </label>
 
 <br><br>
 
-Already have an account? <a class="loginLink" href="Login page pet owner.php">Log in</a>
+Already have an account? <a class="loginLink" href="Login page pet owner.php">Log in</a><!-- لازم نحط صفجة لوق ان هنا -->
 
 <br><br>
 
@@ -276,13 +295,13 @@ Already have an account? <a class="loginLink" href="Login page pet owner.php">Lo
 
 <h3>Quick links</h3>
 
-<a href="./LnadingPage.html">Home</a>
+<a href="../HTML/LnadingPage.php">Home</a>
 
-<a href="./LnadingPage.html#Services">Services</a>
+<a href="../HTML/LnadingPage.php#Services">Services</a>
 
-<a href="./LnadingPage.html#Aboutus">About Us</a>
+<a href="../HTML/LnadingPage.php#Aboutus">About Us</a>
 
-<a href="./LnadingPage.html#contact us">Contact Us</a>
+<a href="../HTML/LnadingPage.php#contact us">Contact Us</a>
 
 </div>
 
