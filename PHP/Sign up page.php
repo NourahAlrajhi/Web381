@@ -32,7 +32,6 @@ if (isset($_POST['Reg'])) {
     if (empty($Fname)) { array_push($errors, "First name is required"); }
     if(preg_match('/[^a-zA-Z]/', $Fname)) { array_push($errors, "Invalid first name characters"); }
     if (empty($Lname)) { array_push($errors, "Last name is required"); }
-    if(preg_match('/[^a-zA-Z]/', $Fname)) { array_push($errors, "Invalid last name characters"); }
     if(preg_match('/[^a-zA-Z]/', $Lname)) { array_push($errors, "Invalid last name characters"); }
     if (empty($Pnum)) { array_push($errors, "Phone number is required"); }
     if (empty($Email)) { array_push($errors, "Email is required"); }
@@ -201,7 +200,7 @@ div.signUpCam{
 
 <br>
 
-<input type="number" name="Pnum" id="Pnum" placeholder="05xxxxxxxx" required="" min="0500000000" max="0599999999" >
+<input type="number" name="Pnum" id="Pnum" placeholder="05xxxxxxxx" required="" min="0500000000" max="0599999999" value ="<?php if(isset($_POST["Pnum"])) echo $_POST["Pnum"]; ?>" >
 
 <br><br>
 
@@ -209,7 +208,7 @@ div.signUpCam{
 
 <br>
 
-<input type="password" name="Pass" id="Pass1" placeholder="Enter Password" required="">
+<input type="password" name="Pass" id="Pass1" placeholder="Enter Password" required="" value ="<?php if(isset($_POST["Pass"])) echo $_POST["Pass"]; ?>">
 
 <br><br>
 
@@ -223,7 +222,7 @@ div.signUpCam{
 
 <br>
 
-<input type="text" name="Lname" id="Lname" placeholder="Enter Last name" required="" >
+<input type="text" name="Lname" id="Lname" placeholder="Enter Last name" required="" value ="<?php if(isset($_POST["Lname"])) echo $_POST["Lname"]; ?>" >
 
 <br><br>
 
@@ -231,7 +230,7 @@ div.signUpCam{
 
 <br>
 
-<input type="email" name="Email" id="Email" placeholder="Enter Email" required="" >
+<input type="email" name="Email" id="Email" placeholder="Enter Email" required="" value ="<?php if(isset($_POST["Email"])) echo $_POST["Email"]; ?>">
 
 <br><br>
 
@@ -239,7 +238,7 @@ div.signUpCam{
 
 <br>
 
-<select name="Gend" id="Gend" placeholder="Choose Gender" required="" >
+<select name="Gend" id="Gend" placeholder="Choose Gender" required="" value ="<?php if(isset($_POST["Gend"])) echo $_POST["Gend"]; ?>">
 <option value = "" disabled selected hidden> Choose Gender </option>
 
 <option value = "Male"> Male </option>
