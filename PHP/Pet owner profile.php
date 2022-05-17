@@ -139,8 +139,8 @@ div.signUpCam{
                 
              <label for="Pnum">Phone number</label>
              <br>
-             <input type="number" name="Pnum" id="Pnum" value="<?php echo $Pnum;?>" readonly required="" min="0500000000" max="0599999999"> 
-             <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 87.4%; top:53.5%"></a>
+             <input style="color: gray;"  type="number" name="Pnum" id="Pnum" value="<?php echo $Pnum;?>" readonly required="" min="0500000000" max="0599999999"> 
+           <!--  <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 87.4%; top:53.5%"></a>-->
              <br><br>
     
              <label for="Pass">Password</label>
@@ -273,9 +273,9 @@ if (!file_exists($_FILES['ProfileImage']['tmp_name']) || !is_uploaded_file($_FIL
     $qry="update Users set Fname = '$Fname' , Lname= '$Lastname' ,  Pass='$Pass' , Profile_Pic='$imageprofile'  where userid = $id2 or Email='$id' ; ";
    
 $result=mysqli_query($db,$qry);
-echo '<script>alert("changes updated successfully.!!");</script>';
+
 if($result){
-   // echo '<script>alert("changes updated successfully.!!");</script>';
+   //echo '<script>alert("changes updated successfully.!!");</script>';
   header('location: ../HTML/Home Pet Owner.php');
     ob_end_flush();
     }else{
@@ -299,7 +299,7 @@ $PDF_store='Content/';
 
 $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
 
-$qry="update Users set Fname = '$Fname ' , Lname= '$Lastname' , Pnum= '$Passowrd' , Pass='$Passowrd' , Profile_Pic='$imageprofile' where userid = $id2 ; ";
+$qry="update Users set Fname = '$Fname ' , Lname= '$Lastname' , Pass='$Passowrd' , Profile_Pic='$imageprofile' where userid = $id2 ; ";
 
   
 
