@@ -193,7 +193,7 @@ div.signUpCam{
 
 <br>
 
-<input type="text" name="Fname" id="Fname" placeholder="Enter First name" required="" value="<?=$Fnum?>">
+<input type="text" name="Fname" id="Fname" placeholder="Enter First name" required="" <?=(isset($Fname)?$Fname:""?>>
 
 <br><br>
 
