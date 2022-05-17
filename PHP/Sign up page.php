@@ -31,7 +31,7 @@ if (isset($_POST['Reg'])) {
     if (empty($Fname)) { array_push($errors, "First name is required"); }
     if(preg_match('/[^a-zA-Z]/', $Fname)) { array_push($errors, "Invalid first name characters"); }
     if (empty($Lname)) { array_push($errors, "Last name is required"); }
-    if(preg_match('/[^a-zA-Z]/', $Fname)) { array_push($errors, "Invalid last name characters"); }
+    if(preg_match('/[^a-zA-Z]/', $Lname)) { array_push($errors, "Invalid last name characters"); }
     if (empty($Pnum)) { array_push($errors, "Phone number is required"); }
     if (empty($Email)) { array_push($errors, "Email is required"); }
     if (empty($Gend)) { array_push($errors, "Gender is required"); }
