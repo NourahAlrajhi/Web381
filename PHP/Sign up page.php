@@ -193,7 +193,7 @@ div.signUpCam{
 
 <br>
 
-<input type="text" name="Fname" id="Fname" placeholder="Enter First name" required="" value="<?php if(isset($Fname)){echo $Fname};?>">
+<input type="text" name="Fname" id="Fname" placeholder="Enter First name" required="" <?php if(isset($Fname)){echo $Fname};?>>
 
 <br><br>
 
