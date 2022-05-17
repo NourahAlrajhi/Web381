@@ -29,6 +29,7 @@ if (isset($_POST['Reg'])) {
     // form validation: ensure that the form is correctly filled ...
     // by adding (array_push()) corresponding error unto $errors array
     if (empty($Fname)) { array_push($errors, "First name is required"); }
+    if (ctype_digit($string)) { array_push($errors, "First name is required"); }
     if (empty($Lname)) { array_push($errors, "Last name is required"); }
     if (empty($Pnum)) { array_push($errors, "Phone number is required"); }
     if (empty($Email)) { array_push($errors, "Email is required"); }
