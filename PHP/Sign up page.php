@@ -12,13 +12,6 @@ $Email = "";
 $Gend = "";
 $errors = array();
 
-if(isset($_POST['Reg'])) {
-    $Fname = $_POST['Fname'];
-    $Lname = $_POST['Lname'];
-    $Pnum = $_POST['Pnum'];
-    $Email = $_POST['Email'];
-    $Gend = $_POST['Gend'];
- }
 //sign up
 if (isset($_POST['Reg'])) {
     // receive all input values from the form
