@@ -192,7 +192,7 @@ div.signUpCam{
 
 <br>
 
-<input type="text" name="Fname" id="Fname" placeholder="Enter First name" required="" <?php if (!empty($_POST["Fname"])) { echo $_POST["Fname"]; } else { echo ''; }; ?>>
+<input type="text" name="Fname" id="Fname" placeholder="Enter First name" required="" <?php if(isset($_POST["Fname"])) echo $_POST["Fname"]; ?> >
 
 <br><br>
 
