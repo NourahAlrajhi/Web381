@@ -60,7 +60,7 @@ if (isset($_POST['Reg'])) {
     $_SESSION['Profile_Pic'] = $imageprofile;
    // $_SESSION['Managerid'] = $Profileid;
     $_SESSION['success'] = "You are now logged in";
-    header('location: ../HTML/Home Manager.php'); //DAAANAAAAAAAA's HOME PAGE
+    header('location: login page admin.php'); //DAAANAAAAAAAA's HOME PAGE
 }
 }
 

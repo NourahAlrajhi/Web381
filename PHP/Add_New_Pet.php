@@ -269,8 +269,8 @@ $PDF_store='Content/';
 //__DIR__.'/../../../../../../Content/'. $_FILES["VaccList"]['name']
 $MOVE=move_uploaded_file($PDF_tem_loc, $PDF_store.$PDF);
 $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
-
-    $query="INSERT INTO PETT (Pet_Name, Gender, Breed ,Spayed , Medical_History,DOB,Content,Profile_Pic) VALUES ('".$PetName."','".$Gender."','". $Breed."','".$Spayed."','".$MH."','".$DOB."','".$PDF."','".$imageprofile."');";
+$PETOWNER=$_SESSION['Userrid'];
+    $query="INSERT INTO PETT (Pet_Name, Gender, Breed ,Spayed , Medical_History,DOB,Content,Profile_Pic,Userid) VALUES ('".$PetName."','".$Gender."','". $Breed."','".$Spayed."','".$MH."','".$DOB."','".$PDF."','".$imageprofile."',$PETOWNER)";
     $result=mysqli_query($database, $query);
    
     mysqli_close($database);
