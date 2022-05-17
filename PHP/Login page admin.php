@@ -4,13 +4,50 @@ ob_start();
 session_start();
 //connect
 $db = mysqli_connect("localhost" , "root" ,"","healed");
+//initialize
+$errors = array();
+// LOGIN USER
+if (isset($_POST['log'])) {
+    $Email = mysqli_real_escape_string($db, $_POST['Email']);
+    $Pass = mysqli_real_escape_string($db, $_POST['Pass']);
+  
+    if (empty($Email)) {
+        array_push($errors, "Email is required");
+    }
+    if (empty($Pass)) {
+        array_push($errors, "Password is required");
+    }
+  
+    if (count($errors) == 0) {
+        $Pass = md5($Pass);
+        $query = "SELECT * FROM Manager WHERE Email='$Email' AND Pass='$Pass'";
+        $results = $db -> query($query);
+        if(!empty($results->num_rows) && ($results->num_rows > 0)){
+            while($row = $results -> fetch_assoc()){
+                $imageprofile = $row['Profile_Pic'];          
+    }
+    if (mysqli_num_rows($results) == 1) {
+        $_SESSION['Email'] = $Email;
+        $_SESSION['Profile_Pic'] = $imageprofile;
+        $_SESSION['success'] = "You are now logged in";
+        }
+       
+            header('location: ../HTML/Home Manager.php');
+          }else {
+           // echo '<script>alert("Wrong username/password combination")</script>';
+            array_push($errors, "Wrong username/password combination");
+          }
+       
+    }
+  }
+  
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>Log in</title>
-        <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <link rel="stylesheet" type="text/css" href="../HTML/mystyle.css">
 
 <!-- added 1 here -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,12 +56,12 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 
         <!-- font awesome cdn link  -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        <link rel="stylesheet" href="Header and Footer.css">
+        <link rel="stylesheet" href="../HTML/Header and Footer.css">
         <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
 <!-- ended 1 here -->
 
     </head>
-    <body class="">
+    <body >
 
 <!-- added 2 here -->
 <!-- header section starts  -->
@@ -38,14 +75,14 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 
     <nav class="navbar">
         <ul class="nav-list">
-            <li  ><a href="./LnadingPage.html">Home</a>
+            <li  ><a href="../HTML/LnadingPage.php">Home</a>
               
             </li>
           
             
-           <li><a href="./LnadingPage.html#Services">Services</a></li> 
-           <li><a href="./LnadingPage.html#Aboutus">About Us</a></li> 
-            <li><a href="./LnadingPage.html#contact us">Contact Us</a></li>
+           <li><a href="../HTML/LnadingPage.php#Services">Services</a></li> 
+           <li><a href="../HTML/LnadingPage.php#Aboutus">About Us</a></li> 
+            <li><a href="../HTML/LnadingPage.php#contact us">Contact Us</a></li>
             
           </ul>
         
@@ -55,43 +92,44 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
     </nav>
 
 </header>
+
 <!-- header section ends -->
 <!-- ended 2 here -->
 
 <!-- section for whole code -->
 <section class="loginpage" style="text-align: center;">
-    <div class="loginFinalPos">
+       <div class="loginFinalPos">
 
         <form method="post" action="Login page admin.php">
         <?php include('errors.php'); ?>
             <br><br>
             <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative;">Log in</h3>
             <br>
-            <button type="button" class="loginTypeButtonChosen">Manager</button>
-           <a href="./MahaB Login Page Pet Owner.html"> <button type="button" class="loginTypeButtonNotChosen">Pet Owner</button></a>
+           <button type="button" class="loginTypeButtonChosen">Manager</button>
+  <a href="Login page admin.php"> <button type="button" class="loginTypeButtonNotChosen">Pet Owner</button></a>
             <br><br>
             <hr class="horizontalLine"> Or <hr class="horizontalLine">
             <br><br>
-            <label for="Uname">Username</label>
+            <label for="Uname">Email</label>
             <br>
-            <input class="input-box" type="text" name="Uname" id="Uname" placeholder="Enter Username" required=>    
+            <input class="input-box" type="email" name="Email" id="Uname" placeholder="Enter Email" required=>    
             <br><br>     
             <label for="Pass">Password</label>
             <br>  
             <input class="input-box" type="Password" name="Pass" id="Pass" placeholder="Enter Password" required=>    
-            <br><br>
-            <input type="checkbox" id="check"> <label for="check">Remeber me</label> <br> <br>
+            <br>
+            <input type="checkbox" id="check"> <label for="check">Remeber me</label><br> 
             <a class="loginLink" href="Reset Password.html">Forget Password?</a>
             <br><br>
-           <a href="./Home Manager.html">
-            <input type="submit" name="log" id="log" value="Log in"></a>
+            
+            <input type="submit" name="log" id="log" value="Log in">
             <br><br>
-            <!-- Don't have account yet? <a class="loginLink" href="MahaB Sign Up Page.html">New Account</a> -->
-        </form></div>
+            Don't have account yet? <a class="loginLink" href="Sign up admin.php">New Account</a>
+        </form> </div>
     </section>
-<!-- ended section for whole code -->
+    <!-- ended section for whole code -->
 
-<!-- added 3 here -->
+    <!-- added 3 here -->
     <!-- Footer secton starts -->
     <div class="footer">
         <div class="box-container">
@@ -102,11 +140,11 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
             </div>
             <div class="box">
                 <h3>Quick links</h3>
-                <a href="./LnadingPage.html">Home</a>
+                <a href="../HTML/LnadingPage.php">Home</a>
                 
-                <a href="./LnadingPage.html#Services">Services</a>
-              <a href="./LnadingPage.html#Aboutus">About Us</a>
-              <a href="./LnadingPage.html#contact us">Contact Us</a>
+                <a href="../HTML/LnadingPage.php#Services">Services</a>
+              <a href="../HTML/LnadingPage.php#Aboutus">About Us</a>
+              <a href="../HTML/LnadingPage.php#contact us">Contact Us</a>
             </div>
             <div class="box">
                 <h3>Find Us</h3>
@@ -151,5 +189,6 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 
 <!--Footer secton ends-->
 <!-- ended 3 here -->
+
     </body>
 </html>
