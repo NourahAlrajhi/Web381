@@ -203,11 +203,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        $Description = $_POST['ServDescr'];
        $Price = $_POST['ServPrice'];
 
-<<<<<<< HEAD
-  $imageprofile=$_FILES['ProfileImage']['name'];
-$imageprofile_tem_loc=$_FILES['ProfileImage']['tmp_name'];
-$PDF_store='Content/';
-=======
        if (empty($SERVICE_NAME)) { array_push($errors,"Service name is required"); }
        if(preg_match('/[^a-zA-Z]/',$SERVICE_NAME)) { array_push($errors, "Invalid service name characters"); }
        if (empty($Description)) { array_push($Description, "Service description is required"); }
@@ -218,7 +213,6 @@ $imageprofile_tem_loc=$_FILES['ProfileImage']['tmp_name'];
 $PDF_store='Contentttt/';
 
 
->>>>>>> a2bc8024a6dfe1096df2ecb0b804dde12e156383
 $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
 
        if (empty($SERVICE_NAME)) { array_push($errors, "Service name is required"); }
