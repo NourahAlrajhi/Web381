@@ -3,7 +3,7 @@
 ob_start();
 session_start();
 
-$db = mysqli_connect("localhost" , "root" ,"","healed");
+$db = mysqli_connect("localhost" , "root" ,"","healed1");
 
 if(!$db){
 
@@ -79,7 +79,7 @@ $CardDc3 = $_POST['cardDescription3'];*/
             <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user-doctor" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
                     <li ><a href="#">View Profile</a></li>
-                    <li><a href="../HTML/LnadingPage.php">Sign Out</a></li>
+                    <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
             
                   </ul></li>
           </ul>
@@ -351,14 +351,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
        if(isset($_POST['SaveBtn'])){
        
-        $ImageName1= time().'_'.$_FILES['Aboutimg1']['name'];
+        $ImageName1= $_FILES['Aboutimg1']['name'];
         $target1 = "content2/". $ImageName1;
         if(move_uploaded_file($_FILES['Aboutimg1']['tmp_name'], $target1)){
           $CardPic1=$ImageName1;
         }else{
           $ImageName1=$CardPic1;
         }
-       $ImageName2= time().'_'.$_FILES['Aboutimg2']['name'];
+       $ImageName2= $_FILES['Aboutimg2']['name'];
         $target2 = "content2/".$ImageName2;
         if(move_uploaded_file($_FILES['Aboutimg2']['tmp_name'], $target2)){
           $CardPic2=$ImageName2;
@@ -367,7 +367,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         }
 
-        $ImageName3= time().'_'.$_FILES['Aboutimg3']['name'];
+        $ImageName3= $_FILES['Aboutimg3']['name'];
         $target3 = "content2/". $ImageName3;
         if(move_uploaded_file($_FILES['Aboutimg3']['tmp_name'], $target3)){
           $CardPic3=$ImageName3;
