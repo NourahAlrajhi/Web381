@@ -3,7 +3,7 @@
 ob_start();
 session_start();
 
-$db = mysqli_connect("localhost" , "root" ,"","healed1");
+$db = mysqli_connect("localhost" , "root" ,"","healed");
 
 if(!$db){
 
@@ -79,7 +79,7 @@ $CardDc3 = $_POST['cardDescription3'];*/
             <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user-doctor" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
                     <li ><a href="#">View Profile</a></li>
-                    <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
+                    <li><a href="../HTML/LnadingPage.php">Sign Out</a></li>
             
                   </ul></li>
           </ul>

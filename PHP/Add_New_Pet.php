@@ -87,8 +87,8 @@ div.signUpCam{
             <li><a href="Contact Pet Owner.php">Contact Us</a></li>
             <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
-                    <li ><a href="../HTML/MahaB Edit Profile Page.html">View Profile</a></li>
-                    <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
+                    <li ><a href="Pet owner profile.php">View Profile</a></li>
+                    <li><a href="../HTML/LnadingPage.php">Sign Out</a></li>
             
                   </ul></li>
           </ul>
@@ -269,8 +269,8 @@ $PDF_store='Content/';
 //__DIR__.'/../../../../../../Content/'. $_FILES["VaccList"]['name']
 $MOVE=move_uploaded_file($PDF_tem_loc, $PDF_store.$PDF);
 $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
-
-    $query="INSERT INTO PETT (Pet_Name, Gender, Breed ,Spayed , Medical_History,DOB,Content,Profile_Pic) VALUES ('".$PetName."','".$Gender."','". $Breed."','".$Spayed."','".$MH."','".$DOB."','".$PDF."','".$imageprofile."');";
+$PETOWNER=$_SESSION['Userrid'];
+    $query="INSERT INTO PETT (Pet_Name, Gender, Breed ,Spayed , Medical_History,DOB,Content,Profile_Pic,Userid) VALUES ('".$PetName."','".$Gender."','". $Breed."','".$Spayed."','".$MH."','".$DOB."','".$PDF."','".$imageprofile."',$PETOWNER)";
     $result=mysqli_query($database, $query);
    
     mysqli_close($database);

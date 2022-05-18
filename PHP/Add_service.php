@@ -1,7 +1,7 @@
 <?php 
 ob_start();
 session_start();
-
+$errors = array();
 //$db = mysqli_connect("localhost" , "root" ,"","healed");
 ?>
 <!DOCTYPE html>
@@ -71,7 +71,7 @@ session_start();
             <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user-doctor" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
                     <li ><a href="#">View Profile</a></li>
-                    <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
+                    <li><a href="../HTML/LnadingPage.php">Sign Out</a></li>
             
                   </ul></li>
           </ul>
@@ -89,7 +89,7 @@ session_start();
 <!-- section for whole code -->
 <section style="text-align: center" >
 <form method="post" action="Add_service.php" enctype="multipart/form-data" class="Tryy">
-
+<?php include('errors.php'); ?>
     <div class="addServiceFinalPos">
     <br><br><br><br><br><br>
         <div class="signUpCirc2">
@@ -105,18 +105,18 @@ session_start();
                 <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -12px;">Add a Service</h3>
                 <label for="Serv" >Service</label>
                 <br>
-                <input type="text" name="Fname" id="Fname" placeholder="Enter Service" required="">
+                <input type="text" name="Fname" id="Fname" placeholder="Enter Service" required="" value ="<?php if(isset($_POST["Fname"])) echo $_POST["Fname"]; ?>">
                 <br><br>
                 <label for="ServDescr">Description</label>
                 <br>  
-                <textarea name="ServDescr" id="ServDescr" placeholder="Enter Description..." required=""></textarea>
+                <textarea name="ServDescr" id="ServDescr" placeholder="Enter Description..." required="" value ="<?php if(isset($_POST["ServDescr"])) echo $_POST["ServDescr"]; ?>"></textarea>
                 <br><br>
             </div>
 
             <div class="rightServ">
                 <label for="ServPrice">Price</label>
                 <br>
-                <input type="number" name="ServPrice" id="ServPrice" placeholder="Choose Price" required="">
+                <input type="number" name="ServPrice" id="ServPrice" placeholder="Choose Price" required="" value ="<?php if(isset($_POST["ServPrice"])) echo $_POST["ServPrice"]; ?>">
                 <br><br>
                 
             </div>
@@ -199,10 +199,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ( !mysqli_select_db( $database, "healed") )
        die( "<p>Could not open URL database</p>" );
 
-       $SERVICE_NAME = $_POST['Fname'];
+       $SERVICE_NAME = mysqli_real_escape_string($database, $_POST['Fname']);
        $Description = $_POST['ServDescr'];
        $Price = $_POST['ServPrice'];
-     
+
+       if (empty($SERVICE_NAME)) { array_push($errors,"Service name is required"); }
+       if(preg_match('/[^a-zA-Z]/',$SERVICE_NAME)) { array_push($errors, "Invalid service name characters"); }
+       if (empty($Description)) { array_push($Description, "Service description is required"); }
+       if (empty($Price)) { array_push($Price, "Service price is required"); }
+
   $imageprofile=$_FILES['ProfileImage']['name'];
 $imageprofile_tem_loc=$_FILES['ProfileImage']['tmp_name'];
 $PDF_store='Content/';
@@ -210,6 +215,7 @@ $PDF_store='Content/';
 
 $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
 
+if (count($errors) == 0) {
     $query="INSERT INTO Manager_Services (Service_NAME, Description, Price , Picture ) VALUES ('".$SERVICE_NAME ."','".$Description."','".$Price."','".$imageprofile."');";
     $result=mysqli_query($database, $query);
     mysqli_close($database);
@@ -218,6 +224,7 @@ $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
 ob_end_flush();}
     else{
         echo "An error occured while inserting into the Manager_Services table.";}
+}
 }
 //mysqli_close($database);
 ?>

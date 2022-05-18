@@ -10,10 +10,10 @@ if(!$db){
 
 $id = $_GET['id'];
 
-$qry = "delete from Appointment where Appointmentid = $id";
+$qry = "delete from Users where userid = $id";
 
 if(mysqli_query($db,$qry)){
-    header('location: Request_List_Pet_Owner.php');
+    header('location: ../HTML/LnadingPage.php');
     ob_end_flush();
 }else{
     echo mysqli_error($db);

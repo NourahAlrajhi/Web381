@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 06, 2022 at 02:05 PM
+-- Generation Time: May 17, 2022 at 08:40 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.28
 
@@ -20,6 +20,23 @@ SET time_zone = "+00:00";
 --
 -- Database: `healed`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `AboutUs`
+--
+
+CREATE TABLE `AboutUs` (
+  `AboutId` int(11) NOT NULL,
+  `AboutDescription` text NOT NULL,
+  `CardDescription_1` text NOT NULL,
+  `CardPic_1` varchar(500) NOT NULL,
+  `CardDescription_2` text NOT NULL,
+  `CardPic_2` varchar(500) NOT NULL,
+  `CardDescription_3` text NOT NULL,
+  `CardPic_3` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -46,7 +63,8 @@ CREATE TABLE `Appointment` (
 INSERT INTO `Appointment` (`Appointmentid`, `Pet_name`, `Service`, `Date`, `Note`, `Time`, `Status`, `PETid`, `SERVICEID`) VALUES
 (17, 'Lola', 'Spa', '2022-04-30', ' Be Carful please', '10:10', 'Done', 2, 4),
 (19, 'Lulu', 'Spa', '2022-05-18', ' So Important', '15:30', 'yes', 16, 4),
-(20, 'Simon', 'Spa', '2022-05-18', ' Getting ready', '15:30', '', 17, 4);
+(20, 'Simon', 'Spa', '2022-05-18', ' Getting ready', '15:30', '', 17, 4),
+(25, 'Loci', 'Boarding', '2022-05-31', ' so Important', '23:05', 'Done', 18, 5);
 
 -- --------------------------------------------------------
 
@@ -67,7 +85,32 @@ CREATE TABLE `Feedback` (
 --
 
 INSERT INTO `Feedback` (`Feedbackid`, `FEEDBACK`, `Service_rate`, `Visit_rate`, `APPid`) VALUES
-(9, 'Soo Happy!!', '3', '3', 17);
+(9, 'Soo Happy!!', '3', '3', 17),
+(11, 'good services , but bad visit', '5', '2', 25);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Manager`
+--
+
+CREATE TABLE `Manager` (
+  `Managerid` int(11) NOT NULL,
+  `Fname` varchar(30) NOT NULL,
+  `Lname` varchar(30) NOT NULL,
+  `Pnum` varchar(300) NOT NULL,
+  `Email` varchar(300) NOT NULL,
+  `Gend` varchar(300) NOT NULL,
+  `Pass` varchar(300) NOT NULL,
+  `Profile_Pic` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `Manager`
+--
+
+INSERT INTO `Manager` (`Managerid`, `Fname`, `Lname`, `Pnum`, `Email`, `Gend`, `Pass`, `Profile_Pic`) VALUES
+(1, 'Boba', 'Jems', '0541998205', 'EmilyKevin@example.com', 'Male', '654d72eed5f5776644d96240e13e01bd', 'Emailicon.svg');
 
 -- --------------------------------------------------------
 
@@ -118,9 +161,9 @@ INSERT INTO `PETT` (`Petid`, `Pet_Name`, `Gender`, `Breed`, `Spayed`, `Medical_H
 (1, 'Broc', 'Female', 'Ragdoll', 'hid', 'sick Health', '2014-07-30', '', '20201125p1_generated.jpg'),
 (2, 'Lole', 'Female', 'Schnoodle', 'hid', 'Good_Health', '2012-10-23', '', '20210331p1_generated.jpg'),
 (16, 'Lulu', 'Female', 'Chow Chow', 'hid', 'Good health', '2020-11-25', 'IMG_1787.jpg', '20210331p1_generated.jpg'),
-(17, 'Simon', 'Male', 'Chow Chow', 'hid', 'No history', '2018-08-19', 'Tutorial#11 - GUI Modelling 2.pdf', 'dog&cat.svg'),
-(18, 'Loci', 'Female', 'Schnoodle', 'Spayed/Neutered ', 'Sick', '2018-09-14', 'IMG_1787.jpg', '20201125p1_generated.jpg'),
-(31, 'Bobe', 'Male', 'Ragdoll', 'Spayed/Neutered ', 'Good health', '2022-05-08', 'pet profile photo new.svg', '20210331p1_generated.jpg');
+(17, 'Simon', 'Male', 'Chow Chow', 'Spayed/Neutered ', 'No history', '2018-08-19', 'Tutorial#11 - GUI Modelling 2.pdf', 'dog&cat.svg'),
+(18, 'Loci', 'Female', 'Schnoodle', 'hid', 'Sick', '2018-09-14', 'IMG_1787.jpg', '20201125p1_generated.jpg'),
+(31, 'Bobe', 'Male', 'Ragdoll', 'hid', 'Good health', '2022-05-08', 'pet profile photo new.svg', '20210331p1_generated.jpg');
 
 -- --------------------------------------------------------
 
@@ -142,12 +185,47 @@ CREATE TABLE `Services` (
 
 INSERT INTO `Services` (`Serviceid`, `Service_name`, `Date`, `Time`, `Picture_id`) VALUES
 (7, 'Boarding', '2022-05-21', '15:00', 5),
-(8, 'vaccination ', '2022-05-15', '23:05', 4),
-(9, 'bath', '2022-05-31', '19:52', 6);
+(8, 'bath', '2022-05-15', '23:05', 6),
+(9, 'vaccination', '2022-05-31', '19:52', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Users`
+--
+
+CREATE TABLE `Users` (
+  `userid` int(11) NOT NULL,
+  `Fname` varchar(30) NOT NULL,
+  `Lname` varchar(30) NOT NULL,
+  `Pnum` varchar(30) NOT NULL,
+  `Email` varchar(200) NOT NULL,
+  `Gend` varchar(200) NOT NULL,
+  `Pass` varchar(200) NOT NULL,
+  `Profile_Pic` varchar(400) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `Users`
+--
+
+INSERT INTO `Users` (`userid`, `Fname`, `Lname`, `Pnum`, `Email`, `Gend`, `Pass`, `Profile_Pic`) VALUES
+(1, 'Sam', 'Amber', '0531220603', 'Sam22@hotmail.com', 'Male', 'aec7a53251b6ca1c61d326117c3714a1', 'image (3).svg'),
+(2, 'Jes', 'Jemmy', '0529117492', 'Jes21@hotmail.com', 'Female', '0683e8c37220885bc5f04306325ae31f', 'CONTACTUSS.svg'),
+(3, 'Alic', 'Kevin', '0541997267', 'Alic32@hotmail.com', 'Female', '5eb07fb962ef341cba1aa0c22f11e387', 'dog&cat.svg'),
+(4, 'Marco', 'Jems', '0531990406', 'Marco0202@outlook.com', 'Male', '65ca4a4cf47df5496e603153e69f2c86', 'Boarding.svg'),
+(5, 'Mice', 'Jems', '0529881692', 'Mice00@gmail.com', 'Male', '8899dc99244812841efcd02fc87dd96b', 'Dentistry.svg'),
+(6, 'kk', 'aad', '0542009729', 'EmilyKevin@example.com', 'Female', '784aa8df4aea1e0568bdae08989477d6', 'bg LP.svg');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `AboutUs`
+--
+ALTER TABLE `AboutUs`
+  ADD PRIMARY KEY (`AboutId`);
 
 --
 -- Indexes for table `Appointment`
@@ -163,6 +241,12 @@ ALTER TABLE `Appointment`
 ALTER TABLE `Feedback`
   ADD PRIMARY KEY (`Feedbackid`),
   ADD KEY `feedback_ibfk_1` (`APPid`);
+
+--
+-- Indexes for table `Manager`
+--
+ALTER TABLE `Manager`
+  ADD PRIMARY KEY (`Managerid`);
 
 --
 -- Indexes for table `Manager_Services`
@@ -184,20 +268,38 @@ ALTER TABLE `Services`
   ADD KEY `service` (`Picture_id`);
 
 --
+-- Indexes for table `Users`
+--
+ALTER TABLE `Users`
+  ADD PRIMARY KEY (`userid`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `AboutUs`
+--
+ALTER TABLE `AboutUs`
+  MODIFY `AboutId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `Appointment`
 --
 ALTER TABLE `Appointment`
-  MODIFY `Appointmentid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `Appointmentid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `Feedback`
 --
 ALTER TABLE `Feedback`
-  MODIFY `Feedbackid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `Feedbackid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `Manager`
+--
+ALTER TABLE `Manager`
+  MODIFY `Managerid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `Manager_Services`
@@ -216,6 +318,12 @@ ALTER TABLE `PETT`
 --
 ALTER TABLE `Services`
   MODIFY `Serviceid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `Users`
+--
+ALTER TABLE `Users`
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
