@@ -137,9 +137,9 @@ $errors = array();
                 
             </div>
             <br><br>
-            <input type="submit" name="AddServ" id="AddServ" value="Add Service">
+            
             <a href="../HTML/Home Manager.php"><input type="button" name="Reg2" id="Reg2" value="Back"></a>
-
+            <input type="submit" name="AddServ" id="AddServ" value="Add Service">
         </form>
     </section>
 </div>
