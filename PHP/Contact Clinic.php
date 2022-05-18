@@ -161,7 +161,7 @@ mail($to,$subject,$msg);
         
     </div>
 
-      <!--<center>  <input type="submit" class="btn" value="send">  </center>-->
+      <center>  <input type="button" class="btn" value="Back">  </center>
     </form>
 
 </section>

@@ -4,6 +4,27 @@ ob_start();
 session_start();
 
 $db = mysqli_connect("localhost" , "root" ,"","healed");
+if(!$db){
+
+    die('error in db'. mysqli_error($db));
+}else{
+ $id = $_GET['id'];
+ $QUERY="select * 
+ from PETT,Appointment,Users 
+ where PETT.Petid = Appointment.PETid and PETT.Userid = Users.Userid and Appointmentid = $id ";;  
+    $run = $db -> query($QUERY);  
+    if(!empty($run->num_rows) && ($run->num_rows > 0))
+    {
+        while($row = $run -> fetch_assoc())
+        {
+           
+             $Email = $row['Email'];
+             $Pnum = $row['Pnum'];
+
+    
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -73,19 +94,29 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
     <div class="image">
         <img src="../images/CONTACTUSS.svg" alt="">
     </div>
-    <form method="post">
+
+
+    <form action="Home Pet Owner.html" method ="post">
         <h1 class="heading">Contact Pet Owner</h1>
         <div class="inputbox">
-            <input type="text" required>
-            <label >Name</label>
+            <div><img class = "back6" src ="../images/Emailicon.svg" width="33px" >
+                <a href="mailto:<?php echo $Email ?>" style="font-size:17px; position: absolute; bottom: 8%; 
+                left: 10%; font-s;"> Email Pet Owner </a>
+                </div>
         </div>
-        
+        <br><br>
         <div class="inputbox">
-            <textarea required name="" id="" cols="30" rows="10"></textarea>
-            <label >Message</label>
-        </div>
-        <input type="submit" class="btn" value="send" name="Reg">
+            <div><img class = "back6" src ="../images/phone icon.svg">
+                <a href="tel:<?php echo $Pnum?>" style="font-size:17px; position: absolute; bottom: 8%; 
+                left: 10%; font-s;"> Call Pet Owner </a>
+        </div> 
+        
+    </div>
+
+      <center>  <input type="button" class="btn" value="Back">  </center>
     </form>
+
+</section>
 
 </section>
 
@@ -166,5 +197,5 @@ if(isset($_POST['Reg'])){
    
 }
  mysqli_close($db); 
-
+ 
 ?>
