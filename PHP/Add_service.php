@@ -210,7 +210,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   $imageprofile=$_FILES['ProfileImage']['name'];
 $imageprofile_tem_loc=$_FILES['ProfileImage']['tmp_name'];
-$PDF_store='Content/';
+$PDF_store='Contentttt/';
 
 
 $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);

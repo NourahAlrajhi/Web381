@@ -24,7 +24,7 @@ if (isset($_POST['Reg'])) {
   
     $imageprofile=$_FILES['ProfileImage']['name'];
     $imageprofile_tem_loc=$_FILES['ProfileImage']['tmp_name'];
-    $PDF_store='Content/';
+    $PDF_store='Contentttt/';
     $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
 
     // form validation: ensure that the form is correctly filled ...

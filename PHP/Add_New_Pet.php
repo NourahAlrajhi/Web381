@@ -265,7 +265,7 @@ $PDF_tem_loc=$_FILES['VaccList']['tmp_name'];
 //photo upload
 $imageprofile=$_FILES['ProfileImage']['name'];
 $imageprofile_tem_loc=$_FILES['ProfileImage']['tmp_name'];
-$PDF_store='Content/';
+$PDF_store='Contentttt/';
 //__DIR__.'/../../../../../../Content/'. $_FILES["VaccList"]['name']
 $MOVE=move_uploaded_file($PDF_tem_loc, $PDF_store.$PDF);
 $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);

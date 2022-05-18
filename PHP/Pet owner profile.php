@@ -295,7 +295,7 @@ $imageprofile_tem_loc=$_FILES['ProfileImage']['tmp_name'];
 //$imageprofile = isset($_FILES['ProfileImage']) ? $_FILES['ProfileImage']['name'] : '$Profile_Pic';
 
 
-$PDF_store='Content/';
+$PDF_store='Contentttt/';
 
 $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
 

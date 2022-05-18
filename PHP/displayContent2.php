@@ -77,13 +77,13 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
     $QUERY=mysqli_query($db, $Q1);
     while($info=mysqli_fetch_array($QUERY)){
         // Store the file name into variable
-$file = 'Content/'.$info['Content'].'';
+$file = 'Contentttt/'.$info['Content'].'';
 //$filename = 'filename.pdf';
   
 // Header content type
 header('Content-type: application/png');
   
-header('Content-Disposition: inline; filename="Content/'.$info['Content'].'"');
+header('Content-Disposition: inline; filename="Contentttt/'.$info['Content'].'"');
   
 header('Content-Transfer-Encoding: binary');
   

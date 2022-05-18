@@ -116,7 +116,7 @@ if(!empty($run2->num_rows) && ($run2->num_rows > 0)){
         ?>
             <tr>
                 <td><?php echo  $i++; ?></td>
-                <td><img src="Content/<?php echo $Profile_Pic;?>" style="height:50px; width=50px; border-radius: 50%;"></td>
+                <td><img src="Contentttt/<?php echo $Profile_Pic;?>" style="height:50px; width=50px; border-radius: 50%;"></td>
                 <td> <?php echo $row['Service_name'] ?> </td>
                 
               <!-- View_Appo_details.php -->  

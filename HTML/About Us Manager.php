@@ -3,7 +3,7 @@
 ob_start();
 session_start();
 
-$db = mysqli_connect("localhost" , "root" ,"","healed1");
+$db = mysqli_connect("localhost" , "root" ,"","healed");
 
 if(!$db){
 
@@ -339,13 +339,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ( !( $database = mysqli_connect( "localhost", "root", "" ) ) )
        die( "<p>Could not connect to database</p>" );
 
-    if ( !mysqli_select_db( $database, "healed1") )
+    if ( !mysqli_select_db( $database, "healed") )
        die( "<p>Could not open URL database</p>" );
 
        $AboutDescription = $_POST['AboutUs-P'];
        $CardDesc1 = $_POST['cardDescription1'];
        $CardDesc2 = $_POST['cardDescription2'];
        $CardDesc3 = $_POST['cardDescription3'];
+       
        //$query="INSERT INTO `AboutUs`( `AboutDescription`, `CardDescription_1`, `CardPic_1`, `CardDescription_2`, `CardPic_2`, `CardDescription_3`, `CardPic_3`) VALUES ('[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]');";
 
 
@@ -364,9 +365,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           $CardPic2=$ImageName2;
         } else{
           $ImageName2=$CardPic2;
-
         }
-
         $ImageName3= $_FILES['Aboutimg3']['name'];
         $target3 = "content2/". $ImageName3;
         if(move_uploaded_file($_FILES['Aboutimg3']['tmp_name'], $target3)){

@@ -122,7 +122,7 @@ $Profile_Pic = $row['Profile_Pic'];
 
       <tr>
       <td><?php echo  $i++; ?></td>
-      <td><img src="Content/<?php echo $Profile_Pic;?>" height="50px" width="50px"></td>
+      <td><img src="Contentttt/<?php echo $Profile_Pic;?>" height="50px" width="50px"></td>
       <td> <?php echo $row['Pet_Name'] ?> </td>
       <td> <?php echo $row['Breed'] ?> </td>
 
