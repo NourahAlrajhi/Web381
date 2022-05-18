@@ -199,7 +199,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ( !mysqli_select_db( $database, "healed") )
        die( "<p>Could not open URL database</p>" );
 
-       $SERVICE_NAME = $_POST['Fname'];
+       $SERVICE_NAME = mysqli_real_escape_string($db, $_POST['Fname']);
        $Description = $_POST['ServDescr'];
        $Price = $_POST['ServPrice'];
 
