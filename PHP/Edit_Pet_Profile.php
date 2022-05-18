@@ -108,7 +108,7 @@ if(!$db){
     <form method="post" action="Edit_Pet_Profile.php?id=<?php echo $id;?>" enctype="multipart/form-data" class="Tryy">
 
         <div class="animalphot">
-        <img src="Content/<?php echo $Profile_Pic;?>" style="position: relative; left: -0.5%;top: 57px;  border-radius: 50%;width: 16%; margin-left: 50px;margin-bottom: 2%;" onclick="triggerClick()" id="addPetCirc3">
+        <img src="Contentttt/<?php echo $Profile_Pic;?>" style="position: relative; left: -0.5%;top: 57px;  border-radius: 50%;width: 16%; margin-left: 50px;margin-bottom: 2%;" onclick="triggerClick()" id="addPetCirc3">
         <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 52.4%;top:49.5%;"></a>
         <input type="file" name="ProfileImage" onchange="displayImage(this)" id="ProfileImage" style="display:none; Position: absolute;left: 47.4%; top: 134px;" >
 
@@ -287,7 +287,7 @@ $imageprofile_tem_loc=$_FILES['ProfileImage']['tmp_name'];
 //$imageprofile = isset($_FILES['ProfileImage']) ? $_FILES['ProfileImage']['name'] : '$Profile_Pic';
 
 
-$PDF_store='Content/';
+$PDF_store='Contentttt/';
 
 $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
 

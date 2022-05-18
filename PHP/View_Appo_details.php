@@ -146,7 +146,7 @@ if(!$db){
    <lable class = "LablM" style=" position: relative;top: -6px;">  <br>
 
            
-            <img src="Content/<?php echo $picture;?>"  id="addPetCirc3" > 
+            <img src="Contentttt/<?php echo $picture;?>"  id="addPetCirc3" > 
                  <!--  <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 72.4%; top:40px"></a>-->
                <!--  <input type="file" name="ProfileImage" onchange="displayImage(this)" id="ProfileImage" style=" display:none; Position: absolute;left: 47.4%; top: 134px;" >-->
 
@@ -278,7 +278,7 @@ function getpic(){
     var Resonse = $.parseJSON(data);
   //  $("#display").append(Resonse[0].Activity);
 //alert(Resonse[0].Picture);
-   img.src='Content/'+Resonse[0].Picture;
+   img.src='Contentttt/'+Resonse[0].Picture;
 
 
 

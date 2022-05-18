@@ -79,7 +79,7 @@ $CardDc3 = $_POST['cardDescription3'];*/
             <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user-doctor" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
                     <li ><a href="#">View Profile</a></li>
-                    <li><a href="../HTML/LnadingPage.php">Sign Out</a></li>
+                    <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
             
                   </ul></li>
           </ul>
@@ -339,35 +339,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ( !( $database = mysqli_connect( "localhost", "root", "" ) ) )
        die( "<p>Could not connect to database</p>" );
 
-    if ( !mysqli_select_db( $database, "healed1") )
+    if ( !mysqli_select_db( $database, "healed") )
        die( "<p>Could not open URL database</p>" );
 
        $AboutDescription = $_POST['AboutUs-P'];
        $CardDesc1 = $_POST['cardDescription1'];
        $CardDesc2 = $_POST['cardDescription2'];
        $CardDesc3 = $_POST['cardDescription3'];
+       
        //$query="INSERT INTO `AboutUs`( `AboutDescription`, `CardDescription_1`, `CardPic_1`, `CardDescription_2`, `CardPic_2`, `CardDescription_3`, `CardPic_3`) VALUES ('[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]');";
 
 
        if(isset($_POST['SaveBtn'])){
        
-        $ImageName1= time().'_'.$_FILES['Aboutimg1']['name'];
+        $ImageName1= $_FILES['Aboutimg1']['name'];
         $target1 = "content2/". $ImageName1;
         if(move_uploaded_file($_FILES['Aboutimg1']['tmp_name'], $target1)){
           $CardPic1=$ImageName1;
         }else{
           $ImageName1=$CardPic1;
         }
-       $ImageName2= time().'_'.$_FILES['Aboutimg2']['name'];
+       $ImageName2= $_FILES['Aboutimg2']['name'];
         $target2 = "content2/".$ImageName2;
         if(move_uploaded_file($_FILES['Aboutimg2']['tmp_name'], $target2)){
           $CardPic2=$ImageName2;
         } else{
           $ImageName2=$CardPic2;
-
         }
-
-        $ImageName3= time().'_'.$_FILES['Aboutimg3']['name'];
+        $ImageName3= $_FILES['Aboutimg3']['name'];
         $target3 = "content2/". $ImageName3;
         if(move_uploaded_file($_FILES['Aboutimg3']['tmp_name'], $target3)){
           $CardPic3=$ImageName3;
@@ -382,11 +381,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result=mysqli_query($database,$qry2);
  
 
-  /* if($result){
+  if($result){
         header("location: About Us Manager.php");
 ob_end_flush();}
     else{
-                  echo "An error occured while inserting into the Services table.";}*/
+                  echo "An error occured while inserting into the Services table.";}
     }
 }
 
