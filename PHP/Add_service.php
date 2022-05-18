@@ -89,7 +89,7 @@ session_start();
 <!-- section for whole code -->
 <section style="text-align: center" >
 <form method="post" action="Add_service.php" enctype="multipart/form-data" class="Tryy">
-
+<?php include('errors.php'); ?>
     <div class="addServiceFinalPos">
     <br><br><br><br><br><br>
         <div class="signUpCirc2">
