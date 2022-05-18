@@ -100,7 +100,7 @@ die('error in db'. mysqli_error($db));
   <div class="circle2">
    <div id="circle2">
 
-   <img src="Content/<?php echo $PIC;?>" style=" border-radius: 50%; width: 140px;height: 140px;margin-left: 200px;float: left;">
+   <img src="Contentttt/<?php echo $PIC;?>" style=" border-radius: 50%; width: 140px;height: 140px;margin-left: 200px;float: left;">
     <!--  <i class="fa-solid fa-camera fa-4x"></i>-->
      
   </div>

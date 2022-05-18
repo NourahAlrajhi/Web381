@@ -51,6 +51,22 @@ if(!$db){
     background-position: center;
     z-index: -1;
 }
+#Reg2{
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;  
+    background-color: #635DAD;
+    opacity: 62%;
+    color: white;
+    cursor: pointer;
+}
+
+#Reg2:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+}
 </style>
     </head>
 
@@ -108,7 +124,7 @@ if(!$db){
     <form method="post" action="Edit_Pet_Profile.php?id=<?php echo $id;?>" enctype="multipart/form-data" class="Tryy">
 
         <div class="animalphot">
-        <img src="Content/<?php echo $Profile_Pic;?>" style="position: relative; left: -0.5%;top: 57px;  border-radius: 50%;width: 16%; margin-left: 50px;margin-bottom: 2%;" onclick="triggerClick()" id="addPetCirc3">
+        <img src="Contentttt/<?php echo $Profile_Pic;?>" style="position: relative; left: -0.5%;top: 57px;  border-radius: 50%;width: 16%; margin-left: 50px;margin-bottom: 2%;" onclick="triggerClick()" id="addPetCirc3">
         <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 52.4%;top:49.5%;"></a>
         <input type="file" name="ProfileImage" onchange="displayImage(this)" id="ProfileImage" style="display:none; Position: absolute;left: 47.4%; top: 134px;" >
 
@@ -181,7 +197,7 @@ if(!$db){
            <br><br><br><br><br>
            <br><br><br><br><br>
            
-     
+           <a href="Pet_List.php"><input type="button" name="Reg2" id="Reg2" value="Back"></a>
          <input type="submit" name="Reg" id="Reg" value="Save" style="width: 300px;  height: 30px;  border: none;   border-radius: 17px;   padding-left: 7px;  background-color: #635DAD; opacity: 62%;color: white;cursor: pointer; ">
            
            <br><br><br><br>
@@ -287,7 +303,7 @@ $imageprofile_tem_loc=$_FILES['ProfileImage']['tmp_name'];
 //$imageprofile = isset($_FILES['ProfileImage']) ? $_FILES['ProfileImage']['name'] : '$Profile_Pic';
 
 
-$PDF_store='Content/';
+$PDF_store='Contentttt/';
 
 $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
 

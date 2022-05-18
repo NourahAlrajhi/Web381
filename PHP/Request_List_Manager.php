@@ -44,6 +44,24 @@ background-color: white;
     border-radius: 20px;
     z-index: 2;
     text-align: center;}
+    #Reg2{
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;  
+    background-color: #635DAD;
+    opacity: 62%;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    bottom: -550px;
+}
+
+#Reg2:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+}
 </style>
 </head>
 <body class="NBODY">
@@ -212,7 +230,7 @@ if(!empty($run3->num_rows) && ($run3->num_rows > 0)){
         ?>
             <tr>
                 <td><?php echo  $i++; ?></td>
-                <td><a href="View_Pet_Profile4.php?id=<?php echo $id;?>" style="box-shadow: 0 0 black;"><img src="Content/<?php echo $Profile_Pic;?>"  height="50px" width="50px"></a></td>
+                <td><a href="View_Pet_Profile4.php?id=<?php echo $id;?>" style="box-shadow: 0 0 black;"><img src="Contentttt/<?php echo $Profile_Pic;?>"  height="50px" width="50px"></a></td>
                 <td> <?php echo $Owner_Name;?> </td>
                 <td> <?php echo $row['Pet_name'] ?>  </td>
                 <td><?php echo $row['Service'] ?></td>
@@ -301,6 +319,7 @@ if(!empty($run3->num_rows) && ($run3->num_rows > 0)){
         </tbody>
     </table>
 </div>
+<a href="../HTML/Home Manager.php"><input type="button" name="Reg2" id="Reg2" value="Back"></a>
 
 <img class="BACKGROUND" src="./background.svg">
 

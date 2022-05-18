@@ -37,6 +37,22 @@ $errors = array();
     margin-left: 50px;
     margin-bottom: 2%;
 }
+#Reg2{
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;  
+    background-color: #635DAD;
+    opacity: 62%;
+    color: white;
+    cursor: pointer;
+}
+
+#Reg2:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+}
 </style>
     </head>
     
@@ -109,7 +125,7 @@ $errors = array();
                 <br><br>
                 <label for="ServDescr">Description</label>
                 <br>  
-                <textarea name="ServDescr" id="ServDescr" placeholder="Enter Description..." required="" value ="<?php if(isset($_POST["ServDescr"])) echo $_POST["ServDescr"]; ?>"></textarea>
+                <textarea name="ServDescr" id="ServDescr" placeholder="Enter Description..." required="" ><?php if(isset($_POST["ServDescr"])) echo $_POST["ServDescr"]; ?></textarea>
                 <br><br>
             </div>
 
@@ -121,8 +137,9 @@ $errors = array();
                 
             </div>
             <br><br>
+            
+            <a href="../HTML/Home Manager.php"><input type="button" name="Reg2" id="Reg2" value="Back"></a>
             <input type="submit" name="AddServ" id="AddServ" value="Add Service">
-
         </form>
     </section>
 </div>
@@ -210,10 +227,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   $imageprofile=$_FILES['ProfileImage']['name'];
 $imageprofile_tem_loc=$_FILES['ProfileImage']['tmp_name'];
-$PDF_store='Content/';
+$PDF_store='Contentttt/';
 
 
 $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
+
+       if (empty($SERVICE_NAME)) { array_push($errors, "Service name is required"); }
+       if(preg_match('/[^a-zA-Z]/', $SERVICE_NAME)) { array_push($errors, "Invalid service name characters");}
+       if (empty($Description)) { array_push($errors, "Service description is required"); }
+       if (empty($Price)) { array_push($errors, "Service price is required"); }
 
 if (count($errors) == 0) {
     $query="INSERT INTO Manager_Services (Service_NAME, Description, Price , Picture ) VALUES ('".$SERVICE_NAME ."','".$Description."','".$Price."','".$imageprofile."');";
@@ -222,9 +244,9 @@ if (count($errors) == 0) {
     if($result){
         header("location: Services_Manager.php");
 ob_end_flush();}
+    }
     else{
         echo "An error occured while inserting into the Manager_Services table.";}
-}
 }
 //mysqli_close($database);
 ?>

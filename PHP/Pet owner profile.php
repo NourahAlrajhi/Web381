@@ -120,7 +120,7 @@ div.signUpCam{
         
         <form method="post" action="Pet owner profile.php?id=<?php echo $_SESSION['Userrid'];?>" enctype="multipart/form-data">
         <div class="signUpCam" style="border-radius: 50%;">
-               <img src="Content/<?php echo $Profile_Pic;?>" style="position: relative; left: -46.5%;top: -53px;border-radius: 50%; width: 118%; height: 100px; margin-left: 50px;margin-bottom: 2%;" onclick="triggerClick()" id="addPetCirc3">
+               <img src="Contentttt/<?php echo $Profile_Pic;?>" style="position: relative; left: -46.5%;top: -53px;border-radius: 50%; width: 118%; height: 100px; margin-left: 50px;margin-bottom: 2%;" onclick="triggerClick()" id="addPetCirc3">
         <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 94.4%; top: 24.5%;"></a>
         <input type="file" name="ProfileImage" onchange="displayImage(this)" id="ProfileImage" style="display:none; Position: absolute;left: 47.4%; top: 134px;" >
 
@@ -295,7 +295,7 @@ $imageprofile_tem_loc=$_FILES['ProfileImage']['tmp_name'];
 //$imageprofile = isset($_FILES['ProfileImage']) ? $_FILES['ProfileImage']['name'] : '$Profile_Pic';
 
 
-$PDF_store='Content/';
+$PDF_store='Contentttt/';
 
 $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
 

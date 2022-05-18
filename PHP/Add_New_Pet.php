@@ -2,6 +2,7 @@
 <?php 
 ob_start();
 session_start();
+$errors = array();
 
 //$db = mysqli_connect("localhost" , "root" ,"","healed");
 ?>
@@ -53,6 +54,23 @@ div.signUpCam{
     width: -104px;
     height: 106px;
 }
+#Reg2{
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;  
+    background-color: #635DAD;
+    opacity: 62%;
+    color: white;
+    cursor: pointer;
+}
+
+#Reg2:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+}
+
 </style>
     </head>
 
@@ -107,6 +125,7 @@ div.signUpCam{
 <section style="text-align: center">
     <div class="addPetFinalPos">
     <form method="post" action="Add_New_Pet.php" enctype="multipart/form-data" class="Tryy">
+    <?php include('errors.php'); ?>
         <div class="addPetCirc2" >
                <div class="signUpCam">
                   <img src="../images/camera2.svg" onclick="triggerClick()" id="addPetCirc3" > 
@@ -120,17 +139,17 @@ div.signUpCam{
             <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -16px;">Add New Pet</h3>
              <label for="Fname">*Pet name</label>
              <br>
-             <input type="text" name="Fname" id="Fname" placeholder="Enter Pet name" required="">  
+             <input type="text" name="Fname" id="Fname" placeholder="Enter Pet name" required="" value ="<?php if(isset($_POST["Fname"])) echo $_POST["Fname"]; ?>">  
              <br><br>  
                 
              <label for="Pnum">*Date of Birth</label>
              <br>
-             <input type="date" name="Pnum" id="Pnum" required="">    
+             <input type="date" name="Pnum" id="Pnum" required="" value ="<?php if(isset($_POST["Pnum"])) echo $_POST["Pnum"]; ?>">    
              <br><br>
     
              <label for="Gend">*Gender</label>
              <br>
-             <select name="Gend" id="Gend" placeholder="Choose Gender" required="">
+             <select name="Gend" id="Gend" placeholder="Choose Gender" required="" value ="<?php if(isset($_POST["Gend"])) echo $_POST["Gend"]; ?>">
                <option value = "" disabled selected hidden> Choose Gender </option>
                <option value = "Male"> Male </option>
                <option value = "Female"> Female </option>
@@ -142,7 +161,7 @@ div.signUpCam{
            <div class="rightAddPet">
              <label for="Lname">*Breed</label>
              <br>  
-             <input type="text" name="Breed" id="Lname" placeholder="Enter Breed" required="">
+             <input type="text" name="Breed" id="Lname" placeholder="Enter Breed" required="" value ="<?php if(isset($_POST["Breed"])) echo $_POST["Breed"]; ?>">
              <br><br>
      
              <label for="Gend">*Spayed/Neutered Status</label>
@@ -156,7 +175,7 @@ div.signUpCam{
     
              <label for="VaccList">Vaccination List</label>
              <br>
-             <input type="file" name="VaccList" id="VaccList">
+             <input type="file" name="VaccList" id="VaccList" value ="<?php if(isset($_POST["VaccList"])) echo $_POST["VaccList"]; ?>">
              <br><br>
              <label for="Lname">Medical History</label>
              <br>  
@@ -166,8 +185,9 @@ div.signUpCam{
 
            <br><br><br><br><br>
            <br><br><br><br><br>
-           <input type="submit" name="Reg" id="Reg" value="Add Pet">
            
+        <a href="../HTML/Home Pet Owner.php"><input type="button" name="Reg2" id="Reg2" value="Back"></a>
+        <input type="submit" name="Reg" id="Reg" value="Add Pet">
            <br><br><br><br>
         </form>
     </div>
@@ -265,10 +285,20 @@ $PDF_tem_loc=$_FILES['VaccList']['tmp_name'];
 //photo upload
 $imageprofile=$_FILES['ProfileImage']['name'];
 $imageprofile_tem_loc=$_FILES['ProfileImage']['tmp_name'];
-$PDF_store='Content/';
+$PDF_store='Contentttt/';
 //__DIR__.'/../../../../../../Content/'. $_FILES["VaccList"]['name']
 $MOVE=move_uploaded_file($PDF_tem_loc, $PDF_store.$PDF);
 $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
+
+if (empty($PetName)) { array_push($errors, "Pet name is required"); }
+if(preg_match('/[^a-zA-Z]/', $PetName)) { array_push($errors, "Invalid pet name characters");}
+if (empty($Gender)) { array_push($errors, "Pet gender is required"); }
+if (empty($Breed)) { array_push($errors, "Pet breed is required"); }
+if(preg_match('/[^a-zA-Z]/', $Breed)) { array_push($errors, "Invalid breed characters");}
+if (empty($Spayed)) { array_push($errors, "Pet spayed/neutered status is required"); }
+if (empty($DOB)) { array_push($errors, "Pet date of birth is required"); }
+
+if (count($errors) == 0) {
 $PETOWNER=$_SESSION['Userrid'];
     $query="INSERT INTO PETT (Pet_Name, Gender, Breed ,Spayed , Medical_History,DOB,Content,Profile_Pic,Userid) VALUES ('".$PetName."','".$Gender."','". $Breed."','".$Spayed."','".$MH."','".$DOB."','".$PDF."','".$imageprofile."',$PETOWNER)";
     $result=mysqli_query($database, $query);
@@ -278,7 +308,7 @@ $PETOWNER=$_SESSION['Userrid'];
    header("location: Pet_List.php");
       
 ob_end_flush();
-
+    }
 }
     else{
         echo "An error occured while inserting into the PETT table.";}

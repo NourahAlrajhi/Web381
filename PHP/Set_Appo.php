@@ -272,7 +272,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        //$Picture =  $_POST['camera'];
        if(isset($_POST['set_Appointment'])){
         $profileImageName = time().'_'.$_FILES['profileImage']['name'];
-        $target = 'Content/'.$profileImageName;
+        $target = 'Contentttt/'.$profileImageName;
         move_uploaded_file($_FILES['profileImage']['tmp_name'], $target);   
         $QUERY="select Service_NAME from Manager_Services where MServicesid= $Service ";
         $RESULT = mysqli_query($database, $QUERY);

@@ -43,6 +43,26 @@ background-color: white;
     border-radius: 20px;
     z-index: 2;
     text-align: center;}
+    button.SETApp3{
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    
+    color: white;
+
+    background-color: #635DAD;
+            opacity: 62%;
+            position: absolute;
+            bottom: -5.5%;
+    left: 173px;
+    width: 10%;
+           
+           
+}
+button.SETApp3:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+}
 </style>
 </head>
 <body class="NBODY4">
@@ -134,7 +154,7 @@ if(!empty($run2->num_rows) && ($run2->num_rows > 0)){
      
                 <tr>
                     <td><?php echo  $i++; ?></td>
-                    <td ><a  href="View_Pet_Profile.php?id=<?php echo $id;?>" style="box-shadow: 0 0 black;"> <img src="Content/<?php echo $Profile_Pic;?>"  height="50px" width="50px"></a></td>
+                    <td ><a  href="View_Pet_Profile.php?id=<?php echo $id;?>" style="box-shadow: 0 0 black;"> <img src="Contentttt/<?php echo $Profile_Pic;?>"  height="50px" width="50px"></a></td>
                     <td> <?php echo $row['Pet_name'] ?> </td>
                 <td> <?php echo $row['Service'] ?></td>
                    
@@ -275,6 +295,7 @@ if(!empty($run2->num_rows) && ($run2->num_rows > 0)){
     height=" 60px"></div>
 </div>
 
+<a href="../HTML/Home Pet Owner.php"><button class="SETApp3">Back</button></a>
 
 
 </section>

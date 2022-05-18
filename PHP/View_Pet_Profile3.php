@@ -98,7 +98,7 @@ die('error in db'. mysqli_error($db));
   
     <div class="signUpGirl">
         <div class="animalphot">
-        <img src="Content/<?php echo $Profile_Pic;?>" style=" position: relative; left: -0.5%;top: 57px;  border-radius: 50%;width: 16%; margin-left: 50px;margin-bottom: 2%;">
+        <img src="Contentttt/<?php echo $Profile_Pic;?>" style=" position: relative; left: -0.5%;top: 57px;  border-radius: 50%;width: 16%; margin-left: 50px;margin-bottom: 2%;">
         </div>
     </div>
 
