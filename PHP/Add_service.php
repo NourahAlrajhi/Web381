@@ -105,18 +105,18 @@ session_start();
                 <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -12px;">Add a Service</h3>
                 <label for="Serv" >Service</label>
                 <br>
-                <input type="text" name="Fname" id="Fname" placeholder="Enter Service" required="">
+                <input type="text" name="Fname" id="Fname" placeholder="Enter Service" required="" value ="<?php if(isset($_POST["Fname"])) echo $_POST["Fname"]; ?>">
                 <br><br>
                 <label for="ServDescr">Description</label>
                 <br>  
-                <textarea name="ServDescr" id="ServDescr" placeholder="Enter Description..." required=""></textarea>
+                <textarea name="ServDescr" id="ServDescr" placeholder="Enter Description..." required="" value ="<?php if(isset($_POST["ServDescr"])) echo $_POST["ServDescr"]; ?>"></textarea>
                 <br><br>
             </div>
 
             <div class="rightServ">
                 <label for="ServPrice">Price</label>
                 <br>
-                <input type="number" name="ServPrice" id="ServPrice" placeholder="Choose Price" required="">
+                <input type="number" name="ServPrice" id="ServPrice" placeholder="Choose Price" required="" value ="<?php if(isset($_POST["ServPrice"])) echo $_POST["ServPrice"]; ?>">
                 <br><br>
                 
             </div>
@@ -202,7 +202,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        $SERVICE_NAME = $_POST['Fname'];
        $Description = $_POST['ServDescr'];
        $Price = $_POST['ServPrice'];
-     
+
+       if (empty($SERVICE_NAME)) { array_push($errors, "Service name is required"); }
+       if(preg_match('/[^a-zA-Z]/', $SERVICE_NAME)) { array_push($errors, "Invalid service name characters"); }
+       if (empty($Description)) { array_push($Description, "Service description is required"); }
+       if (empty($Price)) { array_push($Price, "Service price is required"); }
+
   $imageprofile=$_FILES['ProfileImage']['name'];
 $imageprofile_tem_loc=$_FILES['ProfileImage']['tmp_name'];
 $PDF_store='Content/';
