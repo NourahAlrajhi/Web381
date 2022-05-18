@@ -382,11 +382,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result=mysqli_query($database,$qry2);
  
 
-  /* if($result){
+  if($result){
         header("location: About Us Manager.php");
 ob_end_flush();}
     else{
-                  echo "An error occured while inserting into the Services table.";}*/
+                  echo "An error occured while inserting into the Services table.";}
     }
 }
 
