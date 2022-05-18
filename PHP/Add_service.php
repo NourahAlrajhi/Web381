@@ -204,6 +204,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        $Price = $_POST['ServPrice'];
        $errors = array();
 
+       if (empty($SERVICE_NAME)) { array_push($errors,"Service name is required"); }
+       if(preg_match('/[^a-zA-Z]/',$SERVICE_NAME)) { array_push($errors, "Invalid service name characters"); }
        if (empty($SERVICE_NAME)) { array_push($errors, "Service name is required"); }
        if(preg_match('/[^a-zA-Z]/', $SERVICE_NAME)) { array_push($errors, "Invalid service name characters"); }
        if (empty($Description)) { array_push($Description, "Service description is required"); }
