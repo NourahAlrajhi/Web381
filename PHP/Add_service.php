@@ -1,7 +1,7 @@
 <?php 
 ob_start();
 session_start();
-
+$errors = array();
 //$db = mysqli_connect("localhost" , "root" ,"","healed");
 ?>
 <!DOCTYPE html>
@@ -202,7 +202,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        $SERVICE_NAME = mysqli_real_escape_string($database, $_POST['Fname']);
        $Description = $_POST['ServDescr'];
        $Price = $_POST['ServPrice'];
-       $errors = array();
 
        if (empty($SERVICE_NAME)) { array_push($errors,"Service name is required"); }
        if(preg_match('/[^a-zA-Z]/',$SERVICE_NAME)) { array_push($errors, "Invalid service name characters"); }
