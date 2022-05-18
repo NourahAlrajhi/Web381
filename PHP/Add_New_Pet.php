@@ -185,9 +185,9 @@ div.signUpCam{
 
            <br><br><br><br><br>
            <br><br><br><br><br>
-           <input type="submit" name="Reg" id="Reg" value="Add Pet">
+           
         <a href="../HTML/Home Pet Owner.php"><input type="button" name="Reg2" id="Reg2" value="Back"></a>
-
+        <input type="submit" name="Reg" id="Reg" value="Add Pet">
            <br><br><br><br>
         </form>
     </div>
