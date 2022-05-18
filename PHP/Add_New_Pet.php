@@ -53,6 +53,23 @@ div.signUpCam{
     width: -104px;
     height: 106px;
 }
+#Reg2{
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;  
+    background-color: #635DAD;
+    opacity: 62%;
+    color: white;
+    cursor: pointer;
+}
+
+#Reg2:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+}
+
 </style>
     </head>
 
@@ -167,7 +184,8 @@ div.signUpCam{
            <br><br><br><br><br>
            <br><br><br><br><br>
            <input type="submit" name="Reg" id="Reg" value="Add Pet">
-           
+        <a href="../HTML/Home Pet Owner.php"><input type="button" name="Reg2" id="Reg2" value="Back"></a>
+
            <br><br><br><br>
         </form>
     </div>
