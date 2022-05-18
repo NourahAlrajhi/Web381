@@ -1,7 +1,7 @@
 <?php 
 ob_start();
 session_start();
-$errors = array();
+
 //$db = mysqli_connect("localhost" , "root" ,"","healed");
 ?>
 <!DOCTYPE html>
@@ -202,6 +202,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        $SERVICE_NAME = mysqli_real_escape_string($database, $_POST['Fname']);
        $Description = $_POST['ServDescr'];
        $Price = $_POST['ServPrice'];
+       $errors = array();
 
        if (empty($SERVICE_NAME)) { array_push($errors, "Service name is required"); }
        if(preg_match('/[^a-zA-Z]/', $SERVICE_NAME)) { array_push($errors, "Invalid service name characters"); }
@@ -215,6 +216,7 @@ $PDF_store='Content/';
 
 $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
 
+if (count($errors) == 0) {
     $query="INSERT INTO Manager_Services (Service_NAME, Description, Price , Picture ) VALUES ('".$SERVICE_NAME ."','".$Description."','".$Price."','".$imageprofile."');";
     $result=mysqli_query($database, $query);
     mysqli_close($database);
@@ -223,6 +225,7 @@ $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
 ob_end_flush();}
     else{
         echo "An error occured while inserting into the Manager_Services table.";}
+}
 }
 //mysqli_close($database);
 ?>
