@@ -59,7 +59,7 @@ background-color: white;
 
     <nav class="navbar">
         <ul class="nav-list">
-            <li  ><a href="./Home Manager.html">Home</a>
+            <li  ><a href="../HTML/Home Manager.php">Home</a>
                 <ul class="sub-menu" id="sub-menu-arrow"> 
                   <li > <a href="Add_service.php">Add a New Service</a></li>
                   <li><a href="Appo_List.php">Set a New Appointment</a></li>
@@ -71,12 +71,12 @@ background-color: white;
               </li>
           
             
-           <li><a href="../HTML/Services Manager.html">Services</a></li> 
-           <li><a href="../HTML/About Us Manager.html">About Us</a></li> 
+           <li><a href="Services_Manager.php">Services</a></li> 
+           <li><a href="../HTML/About Us Manager.php">About Us</a></li> 
             <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user-doctor" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
                     <li ><a href="#">View Profile</a></li>
-                    <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
+                    <li><a href="../HTML/LnadingPage.php">Sign Out</a></li>
             
                   </ul></li>
           </ul>
@@ -196,15 +196,24 @@ $run2 = $db -> query($Q1);
 if(!empty($run2->num_rows) && ($run2->num_rows > 0)){
     while($row2 = $run2 -> fetch_assoc()){
         $Profile_Pic = $row2['Profile_Pic'];
+        $Pet_Owner_name = $row2['Userid'];
 }
 
 }
+$Q2="select * from PETT,Users,Appointment where PETT.Petid = Appointment.PETid and PETT.Userid = Users.userid and Appointmentid = $id ";
 
+$run3 = $db -> query($Q2);
+if(!empty($run3->num_rows) && ($run3->num_rows > 0)){
+    while($row3 = $run3 -> fetch_assoc()){
+        $Owner_Name = $row3['Fname'];
+}
+
+}
         ?>
             <tr>
                 <td><?php echo  $i++; ?></td>
                 <td><a href="View_Pet_Profile4.php?id=<?php echo $id;?>" style="box-shadow: 0 0 black;"><img src="Content/<?php echo $Profile_Pic;?>"  height="50px" width="50px"></a></td>
-                <td> ... </td>
+                <td> <?php echo $Owner_Name;?> </td>
                 <td> <?php echo $row['Pet_name'] ?>  </td>
                 <td><?php echo $row['Service'] ?></td>
                 <td> <a href="View_Appo_Request.php?id= <?php echo $id;?>" ><button >See more</button> </a></td>

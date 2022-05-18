@@ -1,3 +1,32 @@
+
+<?php 
+ob_start();
+session_start();
+
+$db = mysqli_connect("localhost" , "root" ,"","healed");
+
+if(!$db){
+
+  die('error in db'. mysqli_error($db));
+}else{
+
+  $Q1="select * from AboutUs where AboutId = 1";
+  $run = $db -> query($Q1);
+  if(!empty($run->num_rows) && ($run->num_rows > 0)){
+      while($row = $run -> fetch_assoc()){
+          $AboutD = $row['AboutDescription'];
+          $CardPic1=$row['CardPic_1'];
+          $CardPic2=$row['CardPic_2'];
+          $CardPic3=$row['CardPic_3'];
+          $CardD1 = $row['CardDescription_1'];
+          $CardD2 = $row['CardDescription_2'];
+          $CardD3 = $row['CardDescription_3'];
+          
+
+  }
+}
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,29 +57,30 @@
       <label for="menu-bar" class="fas fa-bars"></label>
   
       <nav class="navbar">
-          <ul class="nav-list">
-              <li  ><a href="./Home Pet Owner.html">Home</a>
-                <ul class="sub-menu" id="sub-menu-arrow"> 
-                  <li > <a href="./MahaB Add New Pet.html">Add a New Pet</a></li>
-                  <li><a href="./my pit list pet owner.html">View Pet List</a></li>
-                  <li><a href="./rquest list pet owner.html">View Requests List</a></li>
-  
-                  <li><a href="./upcoming and previous pet owner.html">View Appointments List</a> </li>
+        <ul class="nav-list">
+            <li  ><a href="../HTML/Home Pet Owner.php">Home</a>
+              <ul class="sub-menu" id="sub-menu-arrow"> 
+                <li > <a href="../PHP/Add_New_Pet.php">Add a New Pet</a></li>
+                <li><a href="../PHP/Pet_List.php">View Pet List</a></li>
+                <li><a href="../PHP/Request_List_Pet_Owner.php">View Requests List</a></li>
+
+                <li><a href="../PHP/upcoming and previous pet owner.php">View Appointments List</a> </li>
+        
+              </ul>
+            </li>
           
-                </ul>
-              </li>
             
-              
-             <li><a href="./Services Pet Owner.html">Services</a></li> 
-             <li><a href="./About us PetOwner.html">About Us</a></li> 
-              <li><a href="./Contact Clinic.html">Contact Us</a></li>
-              <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user" ></i></a>
-                  <ul class="sub-menu" id="sub-menu-arrow2"> 
-                      <li ><a href="MahaB Edit Profile Page.html">View Profile</a></li>
-                      <li><a href="./LnadingPage.html">Sign Out</a></li>
-              
-                    </ul></li>
-            </ul>
+           <li><a href="../PHP/Services Pet Owner.php">Services</a></li> 
+           <li><a href="../HTML/About us PetOwner.php">About Us</a></li> 
+            <li><a href="../PHP/Contact Pet Owner.php">Contact Us</a></li>
+            <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user" ></i></a>
+                <ul class="sub-menu" id="sub-menu-arrow2"> 
+                    <li ><a href="Pet owner profile.php">View Profile</a></li>
+                    <li><a href="../HTML/LnadingPage.php">Sign Out</a></li>
+            
+                  </ul></li>
+          </ul>
+        
           
           <!-- ****if you're working on a pet owner view replace <i class="fa-solid fa-user-doctor"> with <i class="fa-solid fa-user"></i>  -->
   
@@ -64,14 +94,14 @@
 <!-- Services secton starts -->
 <section class="Services" id="Services">
     <h1 class="heading">About Us</i></h1>
-    <p class="AboutUs-P">We are a full-service animal hospital that offers a wide selection of comprehensive veterinary services to maintain your pet's health, from routine exams and vaccinations to dental care, geriatric care, surgery, and internal medicine. </p>
+    <p class="AboutUs-P"><?php echo  $AboutD ?></p>
     
     <div class="box-container">
         
             <ul class="cards">
                 <li class="Aboutuscard">
                   <a href="" class="card">
-                    <img src="doctorM.svg" class="card__image" alt="" />
+                    <img src=<?php echo  "content2/". $CardPic1 ?> class="card__image" alt="" />
                     <div class="card__overlay">
                       <div class="card__header">
                         <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
@@ -82,7 +112,7 @@
                               
                         </div>
                       </div>
-                      <p class="card__description">We understand that great veterinary care begins with taking the time to get to know your pet and talking with you. We value your relationship with us and are happy to have you join our veterinary family.</p>
+                      <p class="card__description"><?php echo  $CardD1 ?></p>
                     </div>
                     
  
@@ -91,7 +121,7 @@
                 </li>
                 <li class="Aboutuscard">
                     <a href="" class="card">
-                      <img src="clinic2.svg" class="card__image" alt="" />
+                      <img src=<?php echo  "content2/". $CardPic2 ?> class="card__image" alt="" />
                       <div class="card__overlay">
                         <div class="card__header">
                           <svg class="card__arc" xmlns="http://www.w/2000/svg"><path /></svg>                     
@@ -100,13 +130,13 @@
                             <h3 class="card__title">Why Trust Us?</h3>            
                           </div>
                         </div>
-                        <p class="card__description">You'll love our highly skilled compassionate veterinarians,We offer a comprehensive range of services in one spot And We prioritize your pet's long-term health by focusing on preventive services.</p>
+                        <p class="card__description"><?php echo  $CardD1 ?></p>
                       </div>
                     </a>      
                   </li>
                   <li class="Aboutuscard">
                     <a href="" class="card">
-                      <img src="locationAboutus.svg" class="card__image" alt="" />
+                      <img src=<?php echo  "content2/". $CardPic3 ?> class="card__image" alt="" />
                       <div class="card__overlay">
                         <div class="card__header">
                           <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
@@ -114,7 +144,7 @@
                             <h3 class="card__title">Where To find us?</h3>            
                           </div>
                         </div>
-                        <p class="card__description">-District Unit No.1، Prince Muhammad Ibn Saad Ibn Abdulaziz Rd, Al Aqiq, Riyadh 13511<br> -8255 Al Imam Saud Ibn Abdul Aziz Branch Rd, King Fahd, 2993 , Riyadh 12274</p>
+                        <p class="card__description"><?php echo  $CardD3?></p>
                       </div>
                     </a>      
                   </li>

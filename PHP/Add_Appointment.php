@@ -37,7 +37,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 
     <nav class="navbar">
         <ul class="nav-list">
-            <li  ><a href="../HTML/Home Pet Owner.html">Home</a>
+            <li  ><a href="../HTML/Home Pet Owner.php">Home</a>
               <ul class="sub-menu" id="sub-menu-arrow"> 
                 <li > <a href="Add_New_Pet.php">Add a New Pet</a></li>
                 <li><a href="Pet_List.php">View Pet List</a></li>
@@ -49,14 +49,16 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
             </li>
           
             
-           <li><a href="../HTML/Services Pet Owner.html">Services</a></li> 
-           <li><a href="../HTML/About us PetOwner.html">About Us</a></li> 
-            <li><a href="../HTML/Contact Clinic.html">Contact Us</a></li>
+           <li><a href="Services Pet Owner.php">Services</a></li> 
+           <li><a href="../HTML/About us PetOwner.php">About Us</a></li> 
+            <li><a href="Contact Pet Owner.php">Contact Us</a></li>
             <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
-                    <li ><a href="../HTML/MahaB Edit Profile Page.html">View Profile</a></li>
-                    <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
+                    <li ><a href="Pet owner profile.php">View Profile</a></li>
+                    <li><a href="../HTML/LnadingPage.php">Sign Out</a></li>
             
+                   
+
                   </ul></li>
           </ul>
         
@@ -120,13 +122,13 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
                         <option value="" selected hidden>Choose a service</option>
                         <?php   
 
-$qry = "select Service_NAME from Manager_Services";
+$qry = "select Service_NAME,MServicesid from Manager_Services";
 $run = $db -> query($qry);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
 ?>
 
-                        <option value=<?php echo $row['Service_NAME'] ?> > <?php echo $row['Service_NAME'] ?> </option>
+                        <option value=<?php echo $row['MServicesid'] ?> > <?php echo $row['Service_NAME'] ?> </option>
                       <!--  <option > Dentistry</option>
                         <option > Boarding</option>-->
                         <?php 
@@ -218,10 +220,10 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
         </div>
         <div class="box">
             <h3>Quick links</h3>
-            <a href="../HTML/Home Pet Owner.html">Home</a>
-            <a href="../HTML/Services Pet Owner.html">Services</a>
-            <a href="../HTML/About us PetOwner.html">About US</a>
-            <a href="../HTML/Contact Clinic.html">Contact Us</a>
+            <a href="../HTML/Home Pet Owner.php">Home</a>
+            <a href="Services_Manager.php">Services</a>
+            <a href="../HTML/About us PetOwner.php">About US</a>
+            <a href="Contact Pet Owner.php">Contact Us</a>
                 
         </div>
         <div class="box">
@@ -291,14 +293,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        $QUERY="select Pet_Name from PETT where Petid= $PETID";
        $RESULT = mysqli_query($database, $QUERY);
        
+
+      
+   
        $Service = $_POST['service'];
        $Date = $_POST['DATE'];
        $Note = $_POST['note'];
        $Time = $_POST['TIME'];
+
+       $QUERY2="select Service_NAME from Manager_Services where MServicesid= $Service";
+     if($RESULT2 = mysqli_query($db, $QUERY2)){
+
+       while ($row2 = $RESULT2->fetch_assoc()) { 
+           $PicName2 = $row2['Service_NAME'];
     
     while ($row = $RESULT->fetch_assoc()) { 
         $PetName = $row['Pet_Name'];
-    $query="INSERT INTO Appointment (Pet_name,Service,Date,Note,Time,Status,PETid) VALUES ('".$PetName."','".$Service."','".$Date."','".$Note."','".$Time."','".''."', $PETID);";}
+    $query="INSERT INTO Appointment (Pet_name,Service,Date,Note,Time,Status,PETid ,SERVICEID) VALUES ('".$PetName."','". $PicName2."','".$Date."','".$Note."','".$Time."','".''."', $PETID,$Service);";}}
+
 
     $result=mysqli_query($database, $query);
 
@@ -309,5 +321,9 @@ ob_end_flush();}
         echo "An error occured while inserting into the Appointment table.";}
 }
 mysqli_close($db);
+
+}
+
+   
 
 ?>

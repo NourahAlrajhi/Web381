@@ -70,7 +70,7 @@ div.signUpCam{
 
     <nav class="navbar">
         <ul class="nav-list">
-            <li  ><a href="../HTML/Home Pet Owner.html">Home</a>
+            <li  ><a href="../HTML/Home Pet Owner.php">Home</a>
               <ul class="sub-menu" id="sub-menu-arrow"> 
                 <li > <a href="Add_New_Pet.php">Add a New Pet</a></li>
                 <li><a href="Pet_List.php">View Pet List</a></li>
@@ -82,13 +82,13 @@ div.signUpCam{
             </li>
           
             
-           <li><a href="../HTML/Services Pet Owner.html">Services</a></li> 
-           <li><a href="../HTML/About us PetOwner.html">About Us</a></li> 
-            <li><a href="../HTML/Contact Clinic.html">Contact Us</a></li>
+           <li><a href="Services Pet Owner.php">Services</a></li> 
+           <li><a href="../HTML/About us PetOwner.php">About Us</a></li> 
+            <li><a href="Contact Pet Owner.php">Contact Us</a></li>
             <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user" ></i></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
-                    <li ><a href="../HTML/MahaB Edit Profile Page.html">View Profile</a></li>
-                    <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
+                    <li ><a href="Pet owner profile.php">View Profile</a></li>
+                    <li><a href="../HTML/LnadingPage.php">Sign Out</a></li>
             
                   </ul></li>
           </ul>
@@ -269,8 +269,8 @@ $PDF_store='Content/';
 //__DIR__.'/../../../../../../Content/'. $_FILES["VaccList"]['name']
 $MOVE=move_uploaded_file($PDF_tem_loc, $PDF_store.$PDF);
 $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
-
-    $query="INSERT INTO PETT (Pet_Name, Gender, Breed ,Spayed , Medical_History,DOB,Content,Profile_Pic) VALUES ('".$PetName."','".$Gender."','". $Breed."','".$Spayed."','".$MH."','".$DOB."','".$PDF."','".$imageprofile."');";
+$PETOWNER=$_SESSION['Userrid'];
+    $query="INSERT INTO PETT (Pet_Name, Gender, Breed ,Spayed , Medical_History,DOB,Content,Profile_Pic,Userid) VALUES ('".$PetName."','".$Gender."','". $Breed."','".$Spayed."','".$MH."','".$DOB."','".$PDF."','".$imageprofile."',$PETOWNER)";
     $result=mysqli_query($database, $query);
    
     mysqli_close($database);
