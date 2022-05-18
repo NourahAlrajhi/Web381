@@ -24,7 +24,30 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <link rel="stylesheet" href="../HTML/Header and Footer.css">
 <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
+<style>
 
+
+button.SETApp3{
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    
+    color: white;
+
+    background-color: #635DAD;
+            opacity: 62%;
+            position: absolute;
+            bottom: 75.5%;
+    left: 173px;
+    width: 10%;
+           
+           
+}
+button.SETApp3:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+}
+</style>
 </head>
 <body class="NBODY">
      <!-- header section starts  -->
@@ -71,7 +94,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 <!-- header section ends -->
 
     <section style="min-height:60vh;">
-
+    <a href="../HTML/Home Pet Owner.php"><button class="SETApp3">Back</button></a>
     <div class="Tabeltitel" ><strong> Upcoming Appointments</strong></div>
 
     <div class="header_fixed4">
@@ -273,6 +296,7 @@ if(!empty($run2->num_rows) && ($run2->num_rows > 0)){
         </table>
 
     </div>
+    
 
     
 <div class="TwoTabelBG"><img  src="../HTML/image (1) 9.46.53 PM.svg"></div>

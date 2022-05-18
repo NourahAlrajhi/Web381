@@ -37,6 +37,22 @@ $errors = array();
     margin-left: 50px;
     margin-bottom: 2%;
 }
+#Reg2{
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;  
+    background-color: #635DAD;
+    opacity: 62%;
+    color: white;
+    cursor: pointer;
+}
+
+#Reg2:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+}
 </style>
     </head>
     
@@ -122,6 +138,7 @@ $errors = array();
             </div>
             <br><br>
             <input type="submit" name="AddServ" id="AddServ" value="Add Service">
+            <a href="../HTML/Home Manager.php"><input type="button" name="Reg2" id="Reg2" value="Back"></a>
 
         </form>
     </section>

@@ -23,7 +23,29 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <link rel="stylesheet" href="../HTML/Header and Footer.css">
 <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
+<style>
+  button.SETApp3{
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    
+    color: white;
 
+    background-color: #635DAD;
+            opacity: 62%;
+            position: absolute;
+            bottom: -5.5%;
+    left: 173px;
+    width: 11%;
+           
+           
+}
+button.SETApp3:hover{
+    opacity: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+}
+
+</style>
 </head>
 
 <body class="NBODY3">
@@ -240,6 +262,8 @@ if(!empty($run2->num_rows) && ($run2->num_rows > 0)){
 
  <div class="CAT2" ><img src="../images/image 10.09.42 PM.svg " width=" 60px" ;
     height=" 60px"></div>
+    <a href="../HTML/Home Manager.php"><button class="SETApp3">Back</button></a>
+
 </div>
 </section>
 <!-- Footer secton starts -->
