@@ -1,7 +1,7 @@
 <?php 
 ob_start();
 session_start();
-
+$errors = array();
 //$db = mysqli_connect("localhost" , "root" ,"","healed");
 ?>
 <!DOCTYPE html>
@@ -89,7 +89,7 @@ session_start();
 <!-- section for whole code -->
 <section style="text-align: center" >
 <form method="post" action="Add_service.php" enctype="multipart/form-data" class="Tryy">
-
+<?php include('errors.php'); ?>
     <div class="addServiceFinalPos">
     <br><br><br><br><br><br>
         <div class="signUpCirc2">
@@ -202,7 +202,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        $SERVICE_NAME = mysqli_real_escape_string($database, $_POST['Fname']);
        $Description = $_POST['ServDescr'];
        $Price = $_POST['ServPrice'];
-       $errors = array();
 
        if (empty($SERVICE_NAME)) { array_push($errors,"Service name is required"); }
        if(preg_match('/[^a-zA-Z]/',$SERVICE_NAME)) { array_push($errors, "Invalid service name characters"); }
