@@ -11,7 +11,7 @@ if(!$db){
  $id = $_GET['id'];
  $QUERY="select * 
  from PETT,Appointment,Users 
- where PETT.Petid = Appointment.PETid and PETT.Userid = Users.Userid and Appointmentid = $id ";;  
+ where PETT.Petid = Appointment.PETid and PETT.Userid = Users.Userid and Appointmentid = $id "; 
     $run = $db -> query($QUERY);  
     if(!empty($run->num_rows) && ($run->num_rows > 0))
     {
