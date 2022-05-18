@@ -1,7 +1,7 @@
 <?php 
 ob_start();
 session_start();
-
+$errors = array();
 //$db = mysqli_connect("localhost" , "root" ,"","healed");
 ?>
 <!DOCTYPE html>
