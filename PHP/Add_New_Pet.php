@@ -280,6 +280,7 @@ if(preg_match('/[^a-zA-Z]/', $Breed)) { array_push($errors, "Invalid breed chara
 if (empty($Spayed)) { array_push($errors, "Pet spayed/neutered status is required"); }
 if (empty($DOB)) { array_push($errors, "Pet date of birth is required"); }
 
+if (count($errors) == 0) {
 $PETOWNER=$_SESSION['Userrid'];
     $query="INSERT INTO PETT (Pet_Name, Gender, Breed ,Spayed , Medical_History,DOB,Content,Profile_Pic,Userid) VALUES ('".$PetName."','".$Gender."','". $Breed."','".$Spayed."','".$MH."','".$DOB."','".$PDF."','".$imageprofile."',$PETOWNER)";
     $result=mysqli_query($database, $query);
@@ -289,7 +290,7 @@ $PETOWNER=$_SESSION['Userrid'];
    header("location: Pet_List.php");
       
 ob_end_flush();
-
+    }
 }
     else{
         echo "An error occured while inserting into the PETT table.";}
