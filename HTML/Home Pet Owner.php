@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +18,27 @@
     <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
     
 
+<style>
+#profile{
+    font-size: 2rem;
 
+}
+#profile i{
+    margin: 0rem 0;
+    margin-right: 1rem;
+    border-radius: 50%;
+    background:rgb(255, 240, 227);
+ 
+    font-size: 2rem;
+    height:4rem;
+    width:4rem;
+    line-height: 4rem;
+    text-align: center;
+    z-index: 10001;
+
+}
+
+</style>
 </head>
 <body>
     
@@ -44,7 +68,7 @@
             <li><a href="../PHP/Services Pet Owner.php">Services</a></li> 
            <li><a href="../HTML/About us PetOwner.php">About Us</a></li> 
             <li><a href="../PHP/Contact Pet Owner.php">Contact Us</a></li>
-            <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user" ></i></a>
+            <li class="move-right-btn" ><a href="#"id="profile"><?php if(isset($_SESSION['Profile_Pic'])){ ?> <img height="50rem" src="http://localhost/Web381/PHP/Contentttt/<?php echo $_SESSION['Profile_Pic']; ?>" class="profile-pic">  <?php } else { ?> <i class="fa-solid fa-user" ></i>  <?php } ?></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
                     <li ><a href="../PHP/Pet owner profile.php">View Profile</a></li>
                     <li><a href="../HTML/LnadingPage.php">Sign Out</a></li>

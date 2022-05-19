@@ -2,13 +2,98 @@
 ob_start();
 session_start();
 $errors = array();
-//$db = mysqli_connect("localhost" , "root" ,"","healed");
+$db = mysqli_connect("localhost" , "root" ,"","healed");
 ?>
+
+
+
+<?php    
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ( !( $database = mysqli_connect( "localhost", "root", "" ) ) )
+       die( "<p>Could not connect to database</p>" );
+
+    if ( !mysqli_select_db( $database, "healed") )
+       die( "<p>Could not open URL database</p>" );
+
+
+
+       $SERVICE_NAME = mysqli_real_escape_string($database, $_POST['Fname']);
+       $Description = $_POST['ServDescr'];
+       $Price = $_POST['ServPrice'];
+
+       if (empty($SERVICE_NAME)) { array_push($errors,"Service name is required"); }
+       if(preg_match('/[^a-zA-Z]/',$SERVICE_NAME)) { array_push($errors, "Invalid service name characters"); }
+       if (empty($Description)) { array_push($Description, "Service description is required"); }
+       if (empty($Price)) { array_push($Price, "Service price is required"); }
+
+
+
+       if (isset($_FILES['ProfileImage']) && $_FILES['ProfileImage']['size'] != 0) {
+    
+
+       
+  $imageprofile=$_FILES['ProfileImage']['name'];
+  $imageprofile_tem_loc=$_FILES['ProfileImage']['tmp_name'];
+  $PDF_store='Contentttt/';
+  
+  
+  $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
+        
+    }
+    
+    if ($_FILES['ProfileImage']['size'] != 0) {
+    
+        $updateQuery = "UPDATE Manager_Services SET `Service_NAME` = '" .  $SERVICE_NAME . "', `Description` = '" . $Description . "' , `Picture` = '" . $imageprofile . "' WHERE `MServicesid` = '" . $_GET['id'] . "'";
+                
+    
+        if (mysqli_query($db, $updateQuery)) {
+    
+        
+            ?>
+            <script>
+             alert("Service update successfully!");
+             window.location.href = "Services_Manager.php";
+              </script>
+                        <?php
+        } else {
+            echo "Error: " . $updateQuery . "<br>" . mysqli_error($db);
+            echo "<p style='color:red;text-align:center;margin: 10px 0;'>Can't Update.</p>";
+        }
+    
+    
+    
+      
+    } else {
+        $updateQuery = "UPDATE Manager_Services SET `Service_NAME` = '" . $SERVICE_NAME . "', `Description` = '" . $Description . "' WHERE `MServicesid` = '" . $_GET['id'] . "'";
+                
+    
+                if (mysqli_query($db, $updateQuery)) {
+    
+                
+                    ?>
+                    <script>
+                      alert("Service update successfully!");
+                      window.location.href = "Services_Manager.php";
+                      </script>
+                                <?php
+                } else {
+                    echo "Error: " . $updateQuery . "<br>" . mysqli_error($db);
+                    echo "<p style='color:red;text-align:center;margin: 10px 0;'>Can't Update.</p>";
+                }
+    }
+    
+    
+}
+
+//mysqli_close($database);
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Add A Service</title>
+        <title>Edit Service</title>
         <link rel="stylesheet" type="text/css" href="../HTML/mystyle.css">
         <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/3473b55fc1.js" crossorigin="anonymous"></script> -->
@@ -37,6 +122,7 @@ $errors = array();
     margin-left: 50px;
     margin-bottom: 2%;
 }
+
 #Reg2{
     width: 300px;  
     height: 30px;  
@@ -84,7 +170,7 @@ $errors = array();
             
            <li><a href="Services_Manager.php">Services</a></li> 
            <li><a href="../HTML/About Us Manager.php">About Us</a></li> 
-           <li class="move-right-btn" ><a href="#"id="profile"><?php if(isset($_SESSION['Profile_Pic'])){ ?> <img height="50rem" src="http://localhost/Web381/PHP/Contentttt/<?php echo $_SESSION['Profile_Pic']; ?>" class="profile-pic">  <?php } else { ?> <i class="fa-solid fa-user" ></i>  <?php } ?></a>
+            <li class="move-right-btn" ><a href="#"id="profile"><?php if(isset($_SESSION['Profile_Pic'])){ ?> <img height="50rem" src="http://localhost/Web381/PHP/Contentttt/<?php echo $_SESSION['Profile_Pic']; ?>" class="profile-pic">  <?php } else { ?> <i class="fa-solid fa-user" ></i>  <?php } ?></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
                     <li ><a href="#">View Profile</a></li>
                     <li><a href="../HTML/LnadingPage.php">Sign Out</a></li>
@@ -104,13 +190,23 @@ $errors = array();
 
 <!-- section for whole code -->
 <section style="text-align: center" >
-<form method="post" action="Add_service.php" enctype="multipart/form-data" class="Tryy">
+<?php
+
+
+$Q2="SELECT * from manager_services WHERE `MServicesid` = ".$_GET['id']."";
+
+$run3 = $db -> query($Q2);
+if(!empty($run3->num_rows) && ($run3->num_rows > 0)){
+while($row3 = $run3 -> fetch_assoc()){
+
+?>
+<form method="post" action="" enctype="multipart/form-data" class="Tryy">
 <?php include('errors.php'); ?>
     <div class="addServiceFinalPos">
     <br><br><br><br><br><br>
         <div class="signUpCirc2">
                <div class="signUpCam">
-               <img src="../images/camera2.svg" onclick="triggerClick()" id="addPetCirc3" > 
+               <img src="Contentttt/<?php echo $row3['Picture']; ?>" onclick="triggerClick()" id="addPetCirc3" > 
                  <!--  <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 72.4%; top:40px"></a>-->
                  <input type="file" name="ProfileImage" onchange="displayImage(this)" id="ProfileImage" style=" display:none; Position: absolute;left: 47.4%; top: 134px;" >
 
@@ -118,29 +214,36 @@ $errors = array();
             </div>
         
             <div class="leftServ">
-                <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -12px;">Add a Service</h3>
+                <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -12px;">Edit Service</h3>
                 <label for="Serv" >Service</label>
                 <br>
-                <input type="text" name="Fname" id="Fname" placeholder="Enter Service" required="" value ="<?php if(isset($_POST["Fname"])) echo $_POST["Fname"]; ?>">
+                <input type="text" name="Fname" id="Fname" placeholder="Enter Service" required="" value ="<?php if(isset($_POST["Fname"])){ echo $_POST["Fname"];}else{echo $row3['Service_NAME'];} ?>">
                 <br><br>
                 <label for="ServDescr">Description</label>
                 <br>  
-                <textarea name="ServDescr" id="ServDescr" placeholder="Enter Description..." required="" ><?php if(isset($_POST["ServDescr"])) echo $_POST["ServDescr"]; ?></textarea>
+                <textarea name="ServDescr" id="ServDescr" placeholder="Enter Description..." required="" value =""><?php if(isset($_POST["ServDescr"])){ echo $_POST["ServDescr"];}else{echo $row3['Description'];} ?></textarea>
                 <br><br>
             </div>
 
             <div class="rightServ">
                 <label for="ServPrice">Price</label>
                 <br>
-                <input type="number" name="ServPrice" id="ServPrice" placeholder="Choose Price" required="" value ="<?php if(isset($_POST["ServPrice"])) echo $_POST["ServPrice"]; ?>">
+                <input type="number" name="ServPrice" id="ServPrice" placeholder="Choose Price" required="" value ="<?php if(isset($_POST["ServPrice"])){ echo $_POST["ServPrice"];}else{echo $row3['Price'];} ?>">
                 <br><br>
                 
             </div>
             <br><br>
-            
-            <a href="../HTML/Home Manager.php"><input type="button" name="Reg2" id="Reg2" value="Back"></a>
-            <input type="submit" name="AddServ" id="AddServ" value="Add Service">
+            <a href="Services_Manager.php"><input type="button" name="Reg2" id="Reg2" value="Back"></a>
+
+            <input type="submit" name="AddServ" id="AddServ" value="Edit Service">
+
         </form>
+        <?php
+}
+
+}
+
+        ?>
     </section>
 </div>
 </body>
@@ -207,46 +310,3 @@ $errors = array();
 <!-- ended 3 here -->
     </body>
 </html>
-<?php    
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if ( !( $database = mysqli_connect( "localhost", "root", "" ) ) )
-       die( "<p>Could not connect to database</p>" );
-
-    if ( !mysqli_select_db( $database, "healed") )
-       die( "<p>Could not open URL database</p>" );
-
-       $SERVICE_NAME = mysqli_real_escape_string($database, $_POST['Fname']);
-       $Description = $_POST['ServDescr'];
-       $Price = $_POST['ServPrice'];
-
-       if (empty($SERVICE_NAME)) { array_push($errors,"Service name is required"); }
-       if(preg_match('/[^a-zA-Z]/',$SERVICE_NAME)) { array_push($errors, "Invalid service name characters"); }
-       if (empty($Description)) { array_push($Description, "Service description is required"); }
-       if (empty($Price)) { array_push($Price, "Service price is required"); }
-
-  $imageprofile=$_FILES['ProfileImage']['name'];
-$imageprofile_tem_loc=$_FILES['ProfileImage']['tmp_name'];
-$PDF_store='Contentttt/';
-
-
-$MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
-
-       if (empty($SERVICE_NAME)) { array_push($errors, "Service name is required"); }
-       if(preg_match('/[^a-zA-Z]/', $SERVICE_NAME)) { array_push($errors, "Invalid service name characters");}
-       if (empty($Description)) { array_push($errors, "Service description is required"); }
-       if (empty($Price)) { array_push($errors, "Service price is required"); }
-
-if (count($errors) == 0) {
-    $query="INSERT INTO Manager_Services (Service_NAME, Description, Price , Picture ) VALUES ('".$SERVICE_NAME ."','".$Description."','".$Price."','".$imageprofile."');";
-    $result=mysqli_query($database, $query);
-    mysqli_close($database);
-    if($result){
-        header("location: Services_Manager.php");
-ob_end_flush();}
-    }
-    else{
-        echo "An error occured while inserting into the Manager_Services table.";}
-}
-//mysqli_close($database);
-?>

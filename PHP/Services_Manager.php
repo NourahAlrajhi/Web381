@@ -50,7 +50,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
             
            <li><a href="Services_Manager.php">Services</a></li> 
            <li><a href="../HTML/About Us Manager.php">About Us</a></li> 
-            <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user-doctor" ></i></a>
+            <li class="move-right-btn" ><a href="#"id="profile"><?php if(isset($_SESSION['Profile_Pic'])){ ?> <img height="50rem" src="http://localhost/Web381/PHP/Contentttt/<?php echo $_SESSION['Profile_Pic']; ?>" class="profile-pic">  <?php } else { ?> <i class="fa-solid fa-user" ></i>  <?php } ?></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
                     <li ><a href="#">View Profile</a></li>
                     <li><a href="../HTML/LnadingPage.php">Sign Out</a></li>
@@ -75,52 +75,40 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
     <div class="box-container">
         
       <ul class="cards">
-          <li>
-            <a href="" class="card">
-              <img src="../images/Grooming&Bathing.svg" class="card__image" alt="" />
-              <div class="card__overlay">
-                <div class="card__header">
-                  <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
-                  <div class="card__header-text">
-                    <h3 class="card__title">Grooming and Bathing</h3>            
-                    <span class="card__status"></span>
-                  </div>
+      <?php
+
+
+$Q2="SELECT * from manager_services";
+
+$run3 = $db -> query($Q2);
+if(!empty($run3->num_rows) && ($run3->num_rows > 0)){
+while($row3 = $run3 -> fetch_assoc()){
+
+?>
+
+<li>
+          <a href="Edit_service.php?id=<?php echo $row3['MServicesid']; ?>" class="card">
+            <img src="Contentttt/<?php echo $row3['Picture']; ?>" class="card__image" alt="" />
+            <div class="card__overlay">
+              <div class="card__header">
+                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+                <div class="card__header-text">
+                  <h3 class="card__title"><?php echo $row3['Service_NAME']; ?></h3>            
+                  <span class="card__status">Book Now</span>
                 </div>
-                <p class="card__description">Bathing and Grooming:  Routine and therapeutic bathing services are available.  We also have a groomer available for all your pets' beauty needs.
-                </p>
               </div>
-            </a>      
-          </li>
-          <li>
-              <a href="" class="card">
-                <img src="../images/Dentistry.svg" class="card__image" alt="" />
-                <div class="card__overlay">
-                  <div class="card__header">
-                    <svg class="card__arc" xmlns="http://www.w/2000/svg"><path /></svg>                     
-                    <div class="card__header-text">
-                      <h3 class="card__title">Dentistry</h3>            
-                      <span class="card__status"></span>
-                    </div>
-                  </div>
-                  <p class="card__description">Our dental services include teeth cleaning and polishing, digital dental x-rays, tooth extractions and oral surgery.</p>
-                </div>
-              </a>      
-            </li>
-            <li>
-              <a href="" class="card">
-                <img src="../images/Boarding.svg" class="card__image" alt="" />
-                <div class="card__overlay">
-                  <div class="card__header">
-                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
-                    <div class="card__header-text">
-                      <h3 class="card__title">Boarding</h3>            
-                      <span class="card__status"></span>
-                    </div>
-                  </div>
-                  <p class="card__description">We provide pet boarding as a service to our clients. All boarders receive personal attention from our caring staff.</p>
-                </div>
-              </a>      
-            </li>
+              <p class="card__description"><?php echo $row3['Description']; ?></p>
+            </div>
+          </a>      
+        </li>
+<?php
+//  $Profile_Pic = $row2['Profile_Pic'];
+}
+
+}
+
+  ?>
+         
 
           </ul>
   </div>

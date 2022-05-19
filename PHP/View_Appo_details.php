@@ -118,7 +118,7 @@ if(!$db){
             
            <li><a href="Services_Manager.php">Services</a></li> 
            <li><a href="../HTML/About Us Manager.php">About Us</a></li> 
-            <li class="move-right-btn" ><a href="#"id="profile"><i class="fa-solid fa-user-doctor" ></i></a>
+           <li class="move-right-btn" ><a href="#"id="profile"><?php if(isset($_SESSION['Profile_Pic'])){ ?> <img height="50rem" src="http://localhost/Web381/PHP/Contentttt/<?php echo $_SESSION['Profile_Pic']; ?>" class="profile-pic">  <?php } else { ?> <i class="fa-solid fa-user" ></i>  <?php } ?></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
                     <li ><a href="#">View Profile</a></li>
                     <li><a href="../HTML/LnadingPage.php">Sign Out</a></li>
