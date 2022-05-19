@@ -179,7 +179,7 @@ div.signUpCam{
            
            <br><br><br><br>
 
-           <a href=""><input type="button" name="Reg" id="Reg" value="Back" style="font-size: 2rem;"></a>
+           <a href="../HTML/Home Pet Owner.php"><input type="button" name="Reg" id="Reg" value="Back" style="font-size: 2rem;"></a>
            <input type="submit" name="Reg" id="Reg" value="Save" style="font-size: 2rem;">
 
            <br><br>
@@ -295,7 +295,7 @@ $imageprofile_tem_loc=$_FILES['ProfileImage']['tmp_name'];
 
 //$imageprofile = isset($_FILES['ProfileImage']) ? $_FILES['ProfileImage']['name'] : '$Profile_Pic';
 
-
+ //$_SESSION['Profile_Pic']=$imageprofile;
 $PDF_store='Contentttt/';
 
 $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);

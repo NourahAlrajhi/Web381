@@ -18,7 +18,27 @@ session_start();
     <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
     
 
+    <style>
+#profile{
+    font-size: 2rem;
 
+}
+#profile i{
+    margin: 0rem 0;
+    margin-right: 1rem;
+    border-radius: 50%;
+    background:rgb(255, 240, 227);
+ 
+    font-size: 2rem;
+    height:4rem;
+    width:4rem;
+    line-height: 4rem;
+    text-align: center;
+    z-index: 10001;
+
+}
+
+</style>
 </head>
 <body>
     

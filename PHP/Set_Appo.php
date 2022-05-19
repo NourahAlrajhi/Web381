@@ -243,7 +243,7 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
     var Resonse = $.parseJSON(data);
   //  $("#display").append(Resonse[0].Activity);
 //alert(Resonse[0].Picture);
-   img.src='Content/'+Resonse[0].Picture;
+   img.src='Contentttt/'+Resonse[0].Picture;
 
 
 
