@@ -81,8 +81,8 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
                     <select  required name= "petname" class = "field1" value="Choose" >
                         <option value="" selected hidden>Choose a pet</option>
 <?php   
-
-$qry = "select Pet_Name,Petid from PETT";
+$PETOWNER=$_SESSION['Userrid'];
+$qry = "select Pet_Name,Petid from PETT where Userid=$PETOWNER";
 $run = $db -> query($qry);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
