@@ -62,6 +62,7 @@
 <!-- header section ends -->
 <!-- home section starts  -->
 <section class="home" id="home">
+
     <div class="content">
         <div class="writtenContent" >
         <h3>Start Your Journey With A <span>CLICK!</span></h3>

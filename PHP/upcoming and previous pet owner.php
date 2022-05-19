@@ -119,8 +119,10 @@ button.SETApp3:hover{
             <tbody>
             <?php 
         $i=1;
-        $qry = "select * from Appointment where Status='yes'";
-$run = $db -> query($qry);
+        $PETOWNER=$_SESSION['Userrid'];
+        $Q2="select * from PETT,Appointment where PETT.Petid = Appointment.PETid and PETT.Userid =$PETOWNER and Status='yes'";
+      //  $qry = "select * from Appointment where Status='yes'";
+$run = $db -> query($Q2);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
 $id = $row['Appointmentid'];
@@ -137,7 +139,7 @@ if(!empty($run2->num_rows) && ($run2->num_rows > 0)){
         ?>
                 <tr>
                     <td><?php echo  $i++; ?></td>
-                    <td ><a href="View_Pet_Profile2.php?id=<?php echo $id;?>" style="box-shadow: 0 0 black;"> <img src="Content/<?php echo $Profile_Pic;?>" height="50px" width="50px"></a></td>
+                    <td ><a href="View_Pet_Profile2.php?id=<?php echo $id;?>" style="box-shadow: 0 0 black;"> <img src="Contentttt/<?php echo $Profile_Pic;?>" height="50px" width="50px"></a></td>
                     <td> <?php echo $row['Pet_name'] ?> </td>
                     <td><?php echo $row['Service'] ?></td>
                     <td> <a href="Upcoming_Appo_details.php?id= <?php echo $id;?>"> <button >View</button></a></td>
@@ -220,8 +222,10 @@ if(!empty($run2->num_rows) && ($run2->num_rows > 0)){
             <tbody>
             <?php 
         $i=1;
-        $qry = "select * from Appointment where Status='Done'";
-$run = $db -> query($qry);
+        $PETOWNER=$_SESSION['Userrid'];
+        $Q2="select * from PETT,Appointment where PETT.Petid = Appointment.PETid and PETT.Userid =$PETOWNER and Status='Done'";
+      //  $qry = "select * from Appointment where Status='Done'";
+$run = $db -> query($Q2);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
 $id = $row['Appointmentid'];
@@ -240,7 +244,7 @@ if(!empty($run2->num_rows) && ($run2->num_rows > 0)){
         ?>
                 <tr>
                     <td><?php echo  $i++; ?></td>
-                    <td ><a href="View_Pet_Profile2.php?id=<?php echo $id;?>" style="box-shadow: 0 0 black;"> <img src="Content/<?php echo $Profile_Pic;?>"  height="50px" width="50px"></a></td>
+                    <td ><a href="View_Pet_Profile2.php?id=<?php echo $id;?>" style="box-shadow: 0 0 black;"> <img src="Contentttt/<?php echo $Profile_Pic;?>"  height="50px" width="50px"></a></td>
                     <td> <?php echo $row['Pet_name'] ?>  </td>
                     <td><?php echo $row['Service'] ?></td>
                     <td><a href="Upcoming_Appo_details.php?id= <?php echo $id;?>"><button >View</button></a></td>

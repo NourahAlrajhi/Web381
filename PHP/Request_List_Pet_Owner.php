@@ -131,9 +131,12 @@ button.SETApp3:hover{
             <tbody>
 
             <?php 
+            $PETOWNER=$_SESSION['Userrid'];
         $i=1;
-        $qry = "select * from Appointment";
-$run = $db -> query($qry);
+        $Q2="select * from PETT,Appointment where PETT.Petid = Appointment.PETid and PETT.Userid =$PETOWNER";
+
+       // $qry = "select * from Appointment";
+$run = $db -> query($Q2);
 
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){

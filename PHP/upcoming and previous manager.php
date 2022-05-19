@@ -143,7 +143,7 @@ if(!empty($run2->num_rows) && ($run2->num_rows > 0)){
         ?>
                 <tr>
                     <td><?php echo  $i++; ?></td>
-                    <td ><a href="View_Pet_Profile3.php?id=<?php echo $id;?>" style="box-shadow: 0 0 black;"> <img src="Content/<?php echo $Profile_Pic;?>"  height="50px" width="50px"></a></td>
+                    <td ><a href="View_Pet_Profile3.php?id=<?php echo $id;?>" style="box-shadow: 0 0 black;"> <img src="Contentttt/<?php echo $Profile_Pic;?>"  height="50px" width="50px"></a></td>
                     <td>  <?php echo $row['Pet_name'] ?> </td>
                  <td><?php echo $row['Service'] ?></td>
                     <td><a href="Upcoming_Appo_details_manager.php?id= <?php echo $id;?>"><button >View</button></a></td>
@@ -243,7 +243,7 @@ if(!empty($run2->num_rows) && ($run2->num_rows > 0)){
         ?>
                 <tr>
                     <td><?php echo  $i++; ?></td>
-                    <td ><a href="View_Pet_Profile3.php?id=<?php echo $id;?>" style="box-shadow: 0 0 black;"> <img src="Content/<?php echo $Profile_Pic;?>"  height="50px" width="50px"></a></td>
+                    <td ><a href="View_Pet_Profile3.php?id=<?php echo $id;?>" style="box-shadow: 0 0 black;"> <img src="Contentttt/<?php echo $Profile_Pic;?>"  height="50px" width="50px"></a></td>
                     <td> <?php echo $row['Pet_name'] ?> </td>
                 <td> <?php echo $row['Service'] ?></td> 
                     <td><a href="Upcoming_Appo_details_manager.php?id= <?php echo $id;?>"><button >View</button></a></td>

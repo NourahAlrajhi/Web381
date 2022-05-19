@@ -129,8 +129,9 @@ background-color: white;
         <tbody>
 
         <?php 
+        $PETOWNER=$_SESSION['Userrid'];
         $i=1;
-        $qry = "select * from PETT";
+        $qry = "select * from PETT where Userid=$PETOWNER";
 $run = $db -> query($qry);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){

@@ -109,11 +109,7 @@ if(!$db){
                         <textarea name= "note" class = "field2" ><?php echo $Note;?></textarea>
                            
                     </lable>
-<<<<<<< HEAD
-                    <a href="">   <img class = "back8"  width="40px" src ="..\images\edit icon.svg" style=" Position:absolute; left: 52%; top:45% "></a>
-=======
                     <a href="">   <img class = "back8"  width="40px" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 52%; top:45% "></a>
->>>>>>> 0abe1a8605391d297297dfd416dfbdd29208d57e
                 </div>
     
                 <div class = "input-box">
