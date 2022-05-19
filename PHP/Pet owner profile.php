@@ -131,19 +131,19 @@ div.signUpCam{
     
            <div class="firstCol">
             <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -38px;">My Profile</h3>
-             <label sfor="Fname">First name</label>
+             <label sfor="Fname" style="font-size: 1.6rem;">First name</label>
              <br>
              <input type="text" name="Fname" id="Fname" value="<?php echo $Fname;?>" required="">  
              <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 87.4%; top:27.4%"></a>
              <br><br>  
                 
-             <label for="Pnum">Phone number</label>
+             <label for="Pnum" style="font-size: 1.6rem;">Phone number</label>
              <br>
              <input style="color: gray;"  type="number" name="Pnum" id="Pnum" value="<?php echo $Pnum;?>" readonly required="" min="0500000000" max="0599999999"> 
            <!--  <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 87.4%; top:53.5%"></a>-->
              <br><br>
     
-             <label for="Pass">Password</label>
+             <label for="Pass" style="font-size: 1.6rem;">Password</label>
              <br>  
              <input type="password" name="Pass" id="Pass1" value="<?php echo $Pass;?>" required="">
              <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 87.4%; top:79.5%"></a>
@@ -156,18 +156,18 @@ div.signUpCam{
     
            <div class="secondCol">
               <br>
-             <label for="Lname">Last name</label>
+             <label for="Lname" style="font-size: 1.6rem;">Last name</label>
              <br>  
              <input type="text" name="Lname" id="Lname" value="<?php echo $Lname;?>"  required="">
              <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 87.4%; "></a>
              <br><br>
     
-             <label for="Email">Email</label>
+             <label for="Email" style="font-size: 1.6rem;">Email</label>
              <br>  
              <input style="color: gray;" type="email" name="Email" id="Email" placeholder="Enter Email" value="<?php echo $Email;?>" readonly required="">
              <br><br>
     
-             <label for="Gend">Gender</label>
+             <label for="Gend" style="font-size: 1.6rem;">Gender</label>
              <br>
              <select name="Gend" id="Gend" placeholder="Choose Gender" required="" disabled="true">
              <option value="hid" hidden ><?php echo $Gend;?></option>      
@@ -178,11 +178,12 @@ div.signUpCam{
            </div>
            
            <br><br><br><br>
-           
-           <input type="submit" name="Reg" id="Reg" value="Save">
+
+           <a href=""><input type="button" name="Reg" id="Reg" value="Back" style="font-size: 2rem;"></a>
+           <input type="submit" name="Reg" id="Reg" value="Save" style="font-size: 2rem;">
 
            <br><br>
-           <a href="deleteProfile.php?id= <?php  echo $_SESSION['Userrid']; ?>" onclick = "return confirm('Are you sure?')"><button type="button" id="delAcc">Delete Account</button></a>
+           <a href="deleteProfile.php?id= <?php  echo $_SESSION['Userrid']; ?>" onclick = "return confirm('Are you sure?')"><button type="button" id="delAcc" style="font-size: 2rem;">Delete Account</button></a>
            
            
 

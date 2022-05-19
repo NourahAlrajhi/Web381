@@ -163,20 +163,20 @@ div.signUpCam{
 
 <div class="signUpFinalPos">
 
-<form method="post" action="Sign up page.php" enctype="multipart/form-data">
+<form method="post" action="Sign up page.php" enctype="multipart/form-data" style="position: relative; top: -50px;">
 <?php include('errors.php'); ?>
 
 
-    <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative;top: 24px;left: -7px;">Sign up</h3>
-    <div class="signUpCirc2" style="left: 0.1%; position: relative;top: -53px;    left: -6px;">
-    <a href="Sign up admin.php"> <button type="button" class="loginTypeButtonNotChosen" style="position: relative; top: 85px;">Manager</button></a>
-            <button type="button" class="loginTypeButtonChosen" style="position: relative; top: 85px;">Pet Owner</button></div>
+    <h3 class="Heading" style="font-size: 3rem; margin-bottom: 1rem; position: relative;top: 24px;left: -7px;">Sign up</h3>
+    <div class="signUpCirc2" style="position: relative;top: -53px;">
+    <a href="Sign up admin.php"> <button type="button" class="loginTypeButtonNotChosen" style="position: relative; top: 85px; font-size: 2rem;">Manager</button></a>
+            <button type="button" class="loginTypeButtonChosen" style="position: relative; top: 85px; font-size: 2rem;">Pet Owner</button></div>
             
 
 
 <div class="signUpCam" style="border-radius: 50%;">
 
-<img src="../images/camera2.svg" onclick="triggerClick()" id="addPetCirc3" style="width: 137px;border-radius: 50%;" > 
+<img src="../images/camera2.svg" onclick="triggerClick()" id="addPetCirc3" style="width: 137px;border-radius: 50%; position: relative; top: -40px; right: 7px;" > 
   <input type="file" name="ProfileImage" onchange="displayImage(this)" id="ProfileImage" style=" display:none; Position: absolute;left: 47.4%; top: 134px;" >
 <!-- <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 72.4%; top:40px"></a>-->
 <!--<i class="fa-solid fa-camera fa-2xl"></i>-->
@@ -188,15 +188,15 @@ div.signUpCam{
 
 <div class="firstCol">
 
-<label for="Fname">*First name</label>
+<label for="Fname" style="font-size: 1.6rem;">*First name</label>
 
 <br>
 
-<input type="text" name="Fname" id="Fname" class="field1" placeholder="Enter First name" required="" value ="<?php if(isset($_POST["Fname"])) echo $_POST["Fname"]; ?>">
+<input type="text" name="Fname" id="Fname" placeholder="Enter First name" required="" value ="<?php if(isset($_POST["Fname"])) echo $_POST["Fname"]; ?>">
 
 <br><br>
 
-<label for="Pnum">*Phone number</label>
+<label for="Pnum" style="font-size: 1.6rem;">*Phone number</label>
 
 <br>
 
@@ -204,7 +204,7 @@ div.signUpCam{
 
 <br><br>
 
-<label for="Pass">*Password</label>
+<label for="Pass" style="font-size: 1.6rem;">*Password</label>
 
 <br>
 
@@ -218,7 +218,7 @@ div.signUpCam{
 
 <br>
 
-<label for="Lname">*Last name</label>
+<label for="Lname" style="font-size: 1.6rem;">*Last name</label>
 
 <br>
 
@@ -226,7 +226,7 @@ div.signUpCam{
 
 <br><br>
 
-<label for="Email">*Email</label>
+<label for="Email" style="font-size: 1.6rem;">*Email</label>
 
 <br>
 
@@ -234,7 +234,7 @@ div.signUpCam{
 
 <br><br>
 
-<label for="Gend">*Gender</label>
+<label for="Gend" style="font-size: 1.6rem;">*Gender</label>
 
 <br>
 
@@ -251,23 +251,23 @@ div.signUpCam{
 
 </div>
 
-<br><br><br><br>
+<br><br>
 
 <input type="checkbox" id="check" required="">
 
-<label for="check">By creating an account you agree to the <br>
+<label for="check" style="font-size: 1.3rem;">By creating an account you agree to the <br>
 
-<a class="loginLink" href="#">terms of use</a>
+<a class="loginLink" href="#" style="font-size: 1.3rem;">terms of use</a>
 
 and our <a class="loginLink" href="#">privacy policy</a> </label>
 
 <br><br>
 
-<input type="submit" name="Reg" id="Reg" value="Create account">
+<input type="submit" name="Reg" id="Reg" value="Create account" style="font-size: 2rem;">
 
 <br><br>
 
-Already have an account? <a class="loginLink" href="Login page pet owner.php">Log in</a><!-- لازم نحط صفجة لوق ان هنا -->
+<p style="font-size: 1.3rem;">Already have an account? <a class="loginLink" href="Login page pet owner.php">Log in</a></p> <!-- لازم نحط صفجة لوق ان هنا -->
 
 <br><br>
 

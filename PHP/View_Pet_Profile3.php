@@ -108,21 +108,21 @@ die('error in db'. mysqli_error($db));
            
   
             <div class="leftAddPet">
-                <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -38px;">Pet Profile</h3>
-                <label for="Fname" style="position: relative;left: -68px;">Pet name</label>
+            <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -105px;">Pet Profile</h3>
+                <label for="Fname" style="position: relative;left: -68px; font-size: 1.6rem;">Pet name</label>
                 <br>
                 <input  type="text" name="Fname" id="Fname" value="<?php echo $PetName ;?>" readonly required=""style=" height: 30px;  width: 70%; outline: none; border-radius: 5px; position: relative;left: -68px;border-radius: 5px; 
     border: 1px solid #F0EFEF ;  background-color:#F0EFEF;  padding-left: 15; font-size: 12px;">   
                 
                 <br><br>  
                    
-                <label for="Pnum" style="position: relative;left: -68px;">Date of Birth</label>
+                <label for="Pnum" style="position: relative;left: -68px; font-size: 1.6rem;">Date of Birth</label>
                 <br>
                 <input style="color: gray; height: 30px;  width: 70%; outline: none;border-radius: 5px;  border: 1px solid #F0EFEF ; background-color:#F0EFEF; position: relative;left: -66px;padding-left: 15;  font-size: 12px;" type="date" name="Pnum" id="Pnum" value="<?php echo $DOB ;?>"  readonly required="">  
                 
                 <br><br>
        
-                <label for="Gend" style="position: relative;left: -68px;">Gender</label>
+                <label for="Gend" style="position: relative;left: -68px; font-size: 1.6rem;">Gender</label>
                 <br>
                 <select name="Gend" id="Gend"  required="" disabled="true" style=" height: 30px;width: 70.2%;    outline: none; border-radius: 5px; border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px;margin-bottom: 1ex;position: relative;left: -64px;">
                 <option value="hid" hidden ><?php echo $Gender;?></option>   
@@ -135,13 +135,13 @@ die('error in db'. mysqli_error($db));
               </div>
              
               <div class="rightAddPet">
-                <label for="Lname">Breed</label>
+                <label for="Lname" style="font-size: 1.6rem;">Breed</label>
                 <br>  
                 <input style="color: gray; height: 30px; width: 123%; outline: none;border-radius: 5px;border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px;" type="text" name="Breed" id="Lname"  value="<?php echo $Breed ;?>" readonly required="">
              
                 <br><br>
         
-                <label for="Gend">Spayed/Neutered Status</label>
+                <label for="Gend" style="font-size: 1.6rem;">Spayed/Neutered Status</label>
                 <br>
                 <select name="Gend" id="Gend" required="" disabled="true"  style="  height: 30px; width: 121.2%; outline: none;border-radius: 5px;border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px;margin-bottom: 1ex;">
                 <option value="hid" hidden > <?php echo $Spayed;?></option>
@@ -149,12 +149,12 @@ die('error in db'. mysqli_error($db));
                   <option value = "Not Spayed/Neutered "> Not Spayed/Neutered </option>
                 </select>
                 <br><br>
-                <label for="VaccList">Vaccination List</label>
+                <label for="VaccList" style="font-size: 1.6rem;">Vaccination List</label>
              <br>
             
              <a href="displayContent2.php?id=<?php echo $PetID;?>" style="margin-left: 15%;">>Vaccination details</a>
              <br><br>
-                <label for="Lname">Medical History</label>
+                <label for="Lname" style="font-size: 1.6rem;">Medical History</label>
                 <br>  
                 <textarea style="height: 100px; width: 158%; outline: none; border-radius: 5px;border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px; position: relative; left: -21px;" name="MedHist" id="MedHist" readonly> <?php echo $MH;?> </textarea>
                 <br><br>
@@ -166,7 +166,7 @@ die('error in db'. mysqli_error($db));
 
 
             
-         <input type="submit" name="Reg" id="Reg" value="Back">
+         <input type="submit" name="Reg" id="Reg" value="Back" style="font-size: 2rem;">
            
            <br><br><br><br>
 

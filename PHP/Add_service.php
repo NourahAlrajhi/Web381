@@ -106,7 +106,7 @@ $errors = array();
 <section style="text-align: center" >
 <form method="post" action="Add_service.php" enctype="multipart/form-data" class="Tryy">
 <?php include('errors.php'); ?>
-    <div class="addServiceFinalPos">
+    <div class="addServiceFinalPos" style="position:relative; top:-50px;">
     <br><br><br><br><br><br>
         <div class="signUpCirc2">
                <div class="signUpCam">
@@ -119,18 +119,18 @@ $errors = array();
         
             <div class="leftServ">
                 <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -12px;">Add a Service</h3>
-                <label for="Serv" >Service</label>
+                <label for="Serv" style="font-size: 1.6rem;">*Service</label>
                 <br>
                 <input type="text" name="Fname" id="Fname" placeholder="Enter Service" required="" value ="<?php if(isset($_POST["Fname"])) echo $_POST["Fname"]; ?>">
                 <br><br>
-                <label for="ServDescr">Description</label>
+                <label for="ServDescr" style="font-size: 1.6rem;">*Description</label>
                 <br>  
                 <textarea name="ServDescr" id="ServDescr" placeholder="Enter Description..." required="" ><?php if(isset($_POST["ServDescr"])) echo $_POST["ServDescr"]; ?></textarea>
                 <br><br>
             </div>
 
             <div class="rightServ">
-                <label for="ServPrice">Price</label>
+                <label for="ServPrice" style="font-size: 1.6rem;">*Price</label>
                 <br>
                 <input type="number" name="ServPrice" id="ServPrice" placeholder="Choose Price" required="" value ="<?php if(isset($_POST["ServPrice"])) echo $_POST["ServPrice"]; ?>">
                 <br><br>
@@ -138,8 +138,8 @@ $errors = array();
             </div>
             <br><br>
             
-            <a href="../HTML/Home Manager.php"><input type="button" name="Reg2" id="Reg2" value="Back"></a>
-            <input type="submit" name="AddServ" id="AddServ" value="Add Service">
+            <a href="../HTML/Home Manager.php"><input type="button" name="Reg2" id="Reg2" value="Back" style="font-size: 2rem;"></a>
+            <input type="submit" name="AddServ" id="AddServ" value="Add Service" style="font-size: 2rem;">
         </form>
     </section>
 </div>

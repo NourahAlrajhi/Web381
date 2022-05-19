@@ -124,7 +124,7 @@ div.signUpCam{
 <!-- section for whole code -->
 <section style="text-align: center">
     <div class="addPetFinalPos">
-    <form method="post" action="Add_New_Pet.php" enctype="multipart/form-data" class="Tryy">
+    <form method="post" action="Add_New_Pet.php" enctype="multipart/form-data" class="Tryy" style="position:relative; top:-30px;">
     <?php include('errors.php'); ?>
         <div class="addPetCirc2" >
                <div class="signUpCam">
@@ -137,17 +137,17 @@ div.signUpCam{
         </div>
            <div class="leftAddPet">
             <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -16px;">Add New Pet</h3>
-             <label for="Fname">*Pet name</label>
+             <label for="Fname" style="font-size: 1.6rem;">*Pet name</label>
              <br>
              <input type="text" name="Fname" id="Fname" placeholder="Enter Pet name" required="" value ="<?php if(isset($_POST["Fname"])) echo $_POST["Fname"]; ?>">  
              <br><br>  
                 
-             <label for="Pnum">*Date of Birth</label>
+             <label for="Pnum" style="font-size: 1.6rem;">*Date of Birth</label>
              <br>
              <input type="date" name="Pnum" id="Pnum" required="" value ="<?php if(isset($_POST["Pnum"])) echo $_POST["Pnum"]; ?>">    
              <br><br>
     
-             <label for="Gend">*Gender</label>
+             <label for="Gend" style="font-size: 1.6rem;">*Gender</label>
              <br>
              <select name="Gend" id="Gend" placeholder="Choose Gender" required="" value ="<?php if(isset($_POST["Gend"])) echo $_POST["Gend"]; ?>">
                <option value = "" disabled selected hidden> Choose Gender </option>
@@ -159,12 +159,12 @@ div.signUpCam{
            </div>
           
            <div class="rightAddPet">
-             <label for="Lname">*Breed</label>
+             <label for="Lname" style="font-size: 1.6rem;">*Breed</label>
              <br>  
              <input type="text" name="Breed" id="Lname" placeholder="Enter Breed" required="" value ="<?php if(isset($_POST["Breed"])) echo $_POST["Breed"]; ?>">
              <br><br>
      
-             <label for="Gend">*Spayed/Neutered Status</label>
+             <label for="Gend" style="font-size: 1.6rem;">*Spayed/Neutered Status</label>
              <br>
              <select name="Spayed" id="Gend" placeholder="Choose Status" required="">
                <option value = "" disabled selected hidden> Choose Status </option>
@@ -173,11 +173,11 @@ div.signUpCam{
              </select>
              <br><br>
     
-             <label for="VaccList">Vaccination List</label>
+             <label for="VaccList" style="font-size: 1.6rem;">Vaccination List</label>
              <br>
              <input type="file" name="VaccList" id="VaccList" value ="<?php if(isset($_POST["VaccList"])) echo $_POST["VaccList"]; ?>">
              <br><br>
-             <label for="Lname">Medical History</label>
+             <label for="Lname" style="font-size: 1.6rem;">Medical History</label>
              <br>  
              <textarea name="MedHist" id="MedHist" placeholder="Enter Medical History"></textarea>
              <br><br>
@@ -186,8 +186,8 @@ div.signUpCam{
            <br><br><br><br><br>
            <br><br><br><br><br>
            
-        <a href="../HTML/Home Pet Owner.php"><input type="button" name="Reg2" id="Reg2" value="Back"></a>
-        <input type="submit" name="Reg" id="Reg" value="Add Pet">
+        <a href="../HTML/Home Pet Owner.php"><input type="button" name="Reg2" id="Reg2" value="Back" style="font-size: 2rem;"></a>
+        <input type="submit" name="Reg" id="Reg" value="Add Pet" style="font-size: 2rem;">
            <br><br><br><br>
         </form>
     </div>
