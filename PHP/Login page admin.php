@@ -102,31 +102,31 @@ if (isset($_POST['log'])) {
 <section class="loginpage" style="text-align: center;">
        <div class="loginFinalPos">
 
-        <form method="post" action="Login page admin.php">
+        <form method="post" action="Login page admin.php" style="position:relative; top:-85px;">
         <?php include('errors.php'); ?>
             <br><br>
-            <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative;">Log in</h3>
+            <h3 class="Heading" style="font-size: 3rem; margin-bottom: 1rem; position: relative;">Log in</h3>
             <br>
-           <button type="button" class="loginTypeButtonChosen">Manager</button>
-  <a href="Login page admin.php"> <button type="button" class="loginTypeButtonNotChosen">Pet Owner</button></a>
+           <button type="button" class="loginTypeButtonChosen" style="font-size: 2rem;">Manager</button>
+  <a href="Login page pet owner.php"> <button type="button" class="loginTypeButtonNotChosen" style="font-size: 2rem;">Pet Owner</button></a>
             <br><br>
-            <hr class="horizontalLine"> Or <hr class="horizontalLine">
-            <br><br>
-            <label for="Uname">Email</label>
+
+            <br>
+            <label for="Uname" style="font-size: 1.6rem;">Email</label>
             <br>
             <input class="input-box" type="email" name="Email" id="Uname" placeholder="Enter Email" required=>    
             <br><br>     
-            <label for="Pass">Password</label>
+            <label for="Pass" style="font-size: 1.6rem;">Password</label>
             <br>  
             <input class="input-box" type="Password" name="Pass" id="Pass" placeholder="Enter Password" required=>    
-            <br>
-            <input type="checkbox" id="check"> <label for="check">Remeber me</label><br> 
-            <a class="loginLink" href="Reset Password.html">Forget Password?</a>
+            <br><br>
+            <input type="checkbox" id="check"> <label for="check" style="font-size: 1.3rem;">Remember me</label><br> 
+            <a class="loginLink" href="Reset Password.html" style="font-size: 1.3rem;">Forget Password?</a>
             <br><br>
             
-            <input type="submit" name="log" id="log" value="Log in">
+            <input type="submit" name="log" id="log" value="Log in" style="font-size: 2rem;">
             <br><br>
-            Don't have account yet? <a class="loginLink" href="Sign up admin.php">New Account</a>
+            <p style="font-size: 1.3rem;">Don't have account yet? <a class="loginLink" href="Sign up admin.php">New Account</a></p>
         </form> </div>
     </section>
     <!-- ended section for whole code -->

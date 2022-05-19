@@ -138,20 +138,20 @@ if(!$db){
            
   
             <div class="leftAddPet" style="display: inline-block; width: 27.5%; margin-right: 12%;">
-             <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -36px;">Pet Profile</h3>
-             <label for="Fname" style="position: relative;left: -68px;">Pet name</label>
+             <h3 class="Heading" style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; left: -105px;">Pet Profile</h3>
+             <label for="Fname" style="position: relative;left: -68px; font-size: 1.6rem;">Pet name</label>
              <br>
              <input name="Fname"  type="text" value="<?php echo $PetName;?>"  required=""   style=" height: 30px;  width: 70%; outline: none; border-radius: 5px; position: relative;left: -68px;border-radius: 5px; 
     border: 1px solid #F0EFEF ;  background-color:#F0EFEF;  padding-left: 15; font-size: 12px;">
              <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 43.3%;top: 49.2%;"></a>
              <br><br>  
                 
-             <label for="Pnum" style="position: relative;left: -68px;">Date of Birth</label>
+             <label for="Pnum" style="position: relative;left: -68px; font-size: 1.6rem;">Date of Birth</label>
              <br>
              <input input style="color: gray; height: 30px;  width: 70%; outline: none;border-radius: 5px;  border: 1px solid #F0EFEF ; background-color:#F0EFEF; position: relative;left: -66px;padding-left: 15;  font-size: 12px;" type="date" name="Pnum" id="Pnum"  value="<?php echo $DOB ;?>" readonly required="">  
              <br><br>
     
-             <label for="Gend" style="position: relative;left: -68px;">Gender</label>
+             <label for="Gend" style="position: relative;left: -68px; font-size: 1.6rem;">Gender</label>
              <br>
              <select name="Gend111" id="Gend" required="" disabled="true" style=" height: 30px;width: 70.2%;    outline: none; border-radius: 5px; border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px;margin-bottom: 1ex;position: relative;left: -64px;">
              <option value="hid" hidden ><?php echo $Gender;?></option>      
@@ -163,13 +163,13 @@ if(!$db){
            </div>
           
            <div class="rightAddPet" style="display: inline-block; position: relative; top: 123px;">
-             <label for="Lname">Breed</label>
+             <label for="Lname" style="font-size: 1.6rem;">Breed</label>
              <br>  
              <input style="color: gray; height: 30px; width: 123%; outline: none;border-radius: 5px;border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px;" type="text" name="Breed" id="Lname"  value="<?php echo   $Breed ;?>" readonly required="">
              <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 124.5%; top: 27.5%;"></a>
              <br><br>
      
-             <label for="Spayed">Spayed/Neutered Status</label>
+             <label for="Spayed" style="font-size: 1.6rem;">Spayed/Neutered Status</label>
              <br>
              <select name="Spayed" id="Gend" required="" style="  height: 30px; width: 121.2%; outline: none;border-radius: 5px;border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px;margin-bottom: 1ex;"> 
               <option value="hid" hidden > <?php echo $Spayed;?></option>
@@ -179,13 +179,13 @@ if(!$db){
              <br><br>
  
    
-             <label for="VaccList">Vaccination List</label>
+             <label for="VaccList" style="font-size: 1.6rem;">Vaccination List</label>
              <br>
             
              <a href="displayContent.php?id= <?php  echo $id; ?>" style="margin-left: 15%;">>Vaccination details</a>
              <br><br>
   
-             <label for="Lname">Medical History</label>
+             <label for="Lname" style="font-size: 1.6rem;">Medical History</label>
              <br>  
              
              <textarea name="MedHist" id="MedHist" style="height: 100px; width: 158%; outline: none; border-radius: 5px;border: 1px solid #F0EFEF ;background-color:#F0EFEF;padding-left: 15; font-size: 12px; position: relative; left: -21px;"><?php echo $MH;?></textarea>
@@ -197,8 +197,8 @@ if(!$db){
            <br><br><br><br><br>
            <br><br><br><br><br>
            
-           <a href="Pet_List.php"><input type="button" name="Reg2" id="Reg2" value="Back"></a>
-         <input type="submit" name="Reg" id="Reg" value="Save" style="width: 300px;  height: 30px;  border: none;   border-radius: 17px;   padding-left: 7px;  background-color: #635DAD; opacity: 62%;color: white;cursor: pointer; ">
+           <a href="Pet_List.php"><input type="button" name="Reg2" id="Reg2" value="Back" style="font-size: 2rem;"></a>
+         <input type="submit" name="Reg" id="Reg" value="Save" style="width: 300px;  height: 30px;  border: none;   border-radius: 17px;   padding-left: 7px;  background-color: #635DAD; opacity: 62%;color: white;cursor: pointer; font-size: 2rem;">
            
            <br><br><br><br>
         </form>
