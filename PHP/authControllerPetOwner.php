@@ -84,7 +84,7 @@ if(isset($_POST['ChangePassP'])){
     $specialChars = preg_match('@[^\w]@', $password);
 
 
-    if( strlen($password) < 8|| !$number ||  !$uppercase || !$specialChars || !$lowercase ){
+    if( strlen($password) < 8|| !$number  ||  !$lowercase ){
         $errors['password_error'] = 'Use 8 or more characters with a mix of letters, numbers & symbols';
     }else{
 
