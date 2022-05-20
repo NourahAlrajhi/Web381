@@ -291,10 +291,14 @@ $MOVE=move_uploaded_file($PDF_tem_loc, $PDF_store.$PDF);
 $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
 
 if (empty($PetName)) { array_push($errors, "Pet name is required"); }
-if(preg_match('/[^a-zA-Z]/', $PetName)) { array_push($errors, "Invalid pet name characters");}
+if(preg_match('/[^a-zA-Z]/', $PetName)) { array_push($errors, "Invalid pet name characters"); echo '<script>';
+    echo 'alert("Invalid pet name characters")';
+    echo '</script>';}
 if (empty($Gender)) { array_push($errors, "Pet gender is required"); }
 if (empty($Breed)) { array_push($errors, "Pet breed is required"); }
-if(preg_match('/[^a-zA-Z]/', $Breed)) { array_push($errors, "Invalid breed characters");}
+if(preg_match('/[^a-zA-Z]/', $Breed)) { array_push($errors, "Invalid breed characters"); echo '<script>';
+    echo 'alert("Invalid breed name characters")';
+    echo '</script>';}
 if (empty($Spayed)) { array_push($errors, "Pet spayed/neutered status is required"); }
 if (empty($DOB)) { array_push($errors, "Pet date of birth is required"); }
 
