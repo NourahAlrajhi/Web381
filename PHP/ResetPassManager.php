@@ -1,5 +1,5 @@
 
-<?php include_once ('authController.php'); ?>
+<?php include_once ('authControllerManager.php'); ?>
 <?php
 
 //connect
@@ -68,12 +68,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed1");
    <form action="ResetPassManager.php" method="POST">
    
    <div class= "ResetPasswordfield">
-   <?php
-   if(isset($_SESSION['message'])){
-       ?>
-       <p id='msg'><?php echo $_SESSION['message']; ?></p>
-       <?php
-   }?>
+  
    <?php
    if($errors>0){
        foreach($errors AS $displaeErrors){
@@ -89,6 +84,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed1");
       <input name= "newpassword" type="password" class = "field1" required >-->
        </div>
        <div class="Resetbutton">
+       <a href='Login page admin.php'><input class="button" type="button" value="Back"></a>
         <input class="button" type="submit" name="resetM" value="Rest Password">
          </div>
    </div>

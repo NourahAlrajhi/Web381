@@ -147,6 +147,8 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
    </div>
    <img  src="Parrot.svg" class="parrotimg">
    <div class="ButtonRow">
+   <a href='Appo_List.php'> <input class="button" type="button"  value="Back"></a>
+         
          <input class="button" type="submit" name="set_Appointment" value="Add Appointment">
          
    </div>

@@ -10,16 +10,14 @@ if(isset($_POST['resetM'])){
     $email=$_POST['Email'];
     $_SESSION['email']=$email;
   
- echo "<script>alert('$email');</script>";
 
-    $emailCheckQuery ="Select * from users where Email ='$email'";
+    $emailCheckQuery ="Select * from Manager where Email ='$email'";
     $emailCheckResult = mysqli_query($db,$emailCheckQuery);
 
     if($emailCheckResult){
         if(mysqli_num_rows($emailCheckResult)>0){
-            echo "<script>alert('hgjk');</script>";
             $code = rand(999999,111111);
-            $updateQuery = "update users set code = '$code' where Email ='$email'";
+            $updateQuery = "update Manager set code = '$code' where Email ='$email'";
             $updateResult =mysqli_query($db,$updateQuery);
             if($updateResult){
        
@@ -35,12 +33,12 @@ if(isset($_POST['resetM'])){
                 $mail ->SetFrom('no-reply@healed.com');
                 $mail ->Subject = "Reset Your Password ";
                 $mail ->Body =  "Your Verification code is $code ";
-                $mail ->AddAddress('Maha.alnuaim2@gmail.com');
+                $mail ->AddAddress($email);
         
                 if($mail ->Send()){
                $message = " We Have Sent a verification code to your Email<br> '$email'";
                 $_SESSION['message']=$message;
-                header('location: VerifyEmail.php');
+                header('location: VerifyEmailManager.php');
                 }else{
                   $errors['otp_errors']='faild sending code';
                 }
@@ -58,13 +56,13 @@ if(isset($_POST['resetM'])){
 if(isset($_POST['verifyEmail'])){
     $_SESSION['message']="";
     $otpVerify = mysqli_real_escape_string($db,$_POST['otpVerify']);
-    $verifyQuery = "Select * from users where code ='$otpVerify'";
+    $verifyQuery = "Select * from Manager where code ='$otpVerify'";
     $runVerifyQuery = mysqli_query($db,$verifyQuery);
     if($runVerifyQuery){
         if(mysqli_num_rows($runVerifyQuery)>0){
-            $newQuery ="update users set code = '0'";
+            $newQuery ="update Manager set code = '0'";
             $run = mysqli_query($db,$newQuery);
-            header("location: NewPass.php");
+            header("location: NewPassManager.php");
         }else{
             $errors['verficication_error']="Invalid Verification Code";
 
@@ -80,17 +78,24 @@ if(isset($_POST['ChangePass'])){
     $password = $_POST['newpassword'];
     $confirmpassword = $_POST['confirmpassword'];
 
+    $uppercase = preg_match('@[A-Z]@', $password);
+    $lowercase = preg_match('@[a-z]@', $password);
+    $number    = preg_match('@[0-9]@', $password);
+    $specialChars = preg_match('@[^\w]@', $password);
 
-    if(strlen(trim($password))<8){
+
+    if( strlen($password) < 8|| !$number ||  !$uppercase || !$specialChars || !$lowercase ){
         $errors['password_error'] = 'Use 8 or more characters with a mix of letters, numbers & symbols';
     }else{
+
+
         if($password  != $confirmpassword){
             $errors['password_error'] = 'Password not matched';
         }else{
             $password = md5($_POST['newpassword']); 
             $email= $_SESSION['email'];
             $code =0;
-            $updatePassword ="UPDATE users SET Pass = '$password' WHERE Email = '$email'";
+            $updatePassword ="UPDATE Manager SET Pass = '$password' WHERE Email = '$email'";
             $runVerifyQuery = mysqli_query($db,$updatePassword) or die("Query Failed");
             session_unset();
             session_destroy();

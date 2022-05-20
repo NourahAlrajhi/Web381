@@ -1,5 +1,5 @@
 
-<?php include_once ('authController.php'); ?>
+<?php include_once ('authControllerManager.php'); ?>
 <?php
 
 //connect
@@ -81,7 +81,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed1");
 
       
    </div>
-   <form action="VerifyEmail.php" method="POST">
+   <form action="VerifyEmailManager.php" method="POST">
    <div class= "ResetPasswordfield">
    <?php
    if(isset($_SESSION['message'])){
@@ -103,6 +103,7 @@ $db = mysqli_connect("localhost" , "root" ,"","healed1");
       <input class = "field1" name="otpVerify" type="number" placeholder="Verification Code" required>
       </div>
       <div class="Resetbutton">
+      <a href='ResetPassManager.php'><input class="button" type="button"  value="Back" ></a>
       <input class="button" type="submit" name="verifyEmail" value="Verify Password" >
 </div>
    </form>

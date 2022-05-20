@@ -1,4 +1,4 @@
-<?php include_once ('authController.php'); ?>
+<?php include_once ('authControllerManager.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,12 +56,7 @@
    <form action="#" method="POST">
    
    <div class= "ResetPasswordfield">
-   <?php
-   if(isset($_SESSION['message'])){
-       ?>
-       <p id='msg'><?php echo $_SESSION['message']; ?></p>
-       <?php
-   }?>
+ 
    <?php
    if($errors>0){
        foreach($errors AS $displayErrors){
@@ -75,11 +70,12 @@
       <input name= "newpassword" type="password" class = "field1" required >
       <label class="Heading" style="font-size: 2rem;font-weight: 300;">confirmPassword</label>
       <input name= "confirmpassword" type="password" class = "field1" required >
-    
+
+     <a href='VerifyEmailManager.php'> <input id='Backbtn' class="button" type="button"  value="Back"></a>
         <input id='confirmbtn' class="button" type="submit" name="ChangePass" value="Save">
 
        </div>
-    
+
    </div>
  
    </form>
