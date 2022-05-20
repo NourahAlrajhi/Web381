@@ -360,7 +360,7 @@ and our <a class="loginLink" href="#">privacy policy</a> </label>
 
 <i class="fas fa-envelope"></i>
 
-<p>costumerService@Healed.com <br> costumerService2@Healed.com</p>
+<p>healedpetclinic@gmail.com<br>healedpetclinic@gmail.com</p>
 
 </div>
 
