@@ -3,7 +3,7 @@
 ob_start();
 session_start();
 
-$db = mysqli_connect("localhost" , "root" ,"","healed1");
+$db = mysqli_connect("localhost" , "root" ,"","healed");
 
 if(!$db){
 
@@ -347,7 +347,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ( !( $database = mysqli_connect( "localhost", "root", "" ) ) )
        die( "<p>Could not connect to database</p>" );
 
-    if ( !mysqli_select_db( $database, "healed1") )
+    if ( !mysqli_select_db( $database, "healed") )
        die( "<p>Could not open URL database</p>" );
 
        $AboutDescription = $_POST['AboutUs-P'];

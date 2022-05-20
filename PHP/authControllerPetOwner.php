@@ -4,7 +4,7 @@ require_once('../phpmailer/PHPMailerAutoload.php');
 ob_start();
 session_start();
 
-$db = mysqli_connect("localhost" , "root" ,"","healed1");
+$db = mysqli_connect("localhost" , "root" ,"","healed");
 $errors = [];
 if(isset($_POST['resetP'])){
     $email=$_POST['EmailP'];
