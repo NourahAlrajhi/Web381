@@ -92,7 +92,10 @@ $Profile_Pic = $row['Profile_Pic'];}}
     color: white;
     position: relative;
     top: -75px;
-float:right;}
+float:right;
+margin-right: 100px;
+    left: 150px;
+}
 
     .ServiceSelect {
     float: left;
@@ -108,7 +111,14 @@ float:right;}
 
 }
 #edit1{
-
+    position: absolute;
+    left: 15em;
+   top: 2em;
+}
+#edit2{
+position: absolute;
+    left: 21em;
+    top: 2em;
 }
 </style>
 </head>
@@ -187,8 +197,9 @@ if(!empty($run3->num_rows) && ($run3->num_rows > 0)){
 }
 }
 ?>
-</select>
 
+</select>
+<img id='edit2' src="../images/edit icon.svg">
    </lable>
 
 
@@ -204,7 +215,7 @@ if(!empty($run3->num_rows) && ($run3->num_rows > 0)){
 
   
  
-  <div class="TimeSelect" style="     position: relative;top: -29%;" >
+  <div class="TimeSelect" style="     position: relative;top: -29%;" ><img id='edit1' src="../images/edit icon.svg">
    <lable class = "LablM"  style=" position: relative;left: 10%; top:20%"> Time <br>
      <input style="color: gray;" type="time" required="" id="timeS" value="<?php echo $Time ;?>" name="TIME" >
      
@@ -217,7 +228,7 @@ if(!empty($run3->num_rows) && ($run3->num_rows > 0)){
    </div>
 
    <div class="BackButtonDetails">
-   <a href= ><input type='button' class='button' name="BACK" value='Back'></a>
+   <a href='Appo_List.php'><input type='button' class='button' name="BACK" value='Back'></a>
     <button style="background: none;" name="BACK"><a class="button" >Save</a></button>
       </div>
     </div>
