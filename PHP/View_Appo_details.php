@@ -1,7 +1,7 @@
 <?php 
 ob_start();
     session_start();
-$db = mysqli_connect("localhost" , "root" ,"","healed");
+$db = mysqli_connect("localhost" , "root" ,"","healed1");
 
 if(!$db){
 
@@ -91,7 +91,9 @@ $Profile_Pic = $row['Profile_Pic'];}}
     opacity: 62%;
     color: white;
     position: relative;
-    top: -75px;}
+    top: -75px;
+float:right;}
+
     .ServiceSelect {
     float: left;
     width: 116px;
@@ -99,6 +101,14 @@ $Profile_Pic = $row['Profile_Pic'];}}
     position: relative;
     font-size: 1.5em;
     top: -44px;
+}
+#edit{
+    position: absolute;
+    left: 37em;
+
+}
+#edit1{
+
 }
 </style>
 </head>
@@ -157,7 +167,7 @@ $Profile_Pic = $row['Profile_Pic'];}}
                  <!--  <a href="#"><img class = "back8" src ="../HTML/edit icon.svg" style=" Position:absolute; left: 72.4%; top:40px"></a>-->
                <!--  <input type="file" name="ProfileImage" onchange="displayImage(this)" id="ProfileImage" style=" display:none; Position: absolute;left: 47.4%; top: 134px;" >-->
 
-    <img src="../images/edit icon.svg">
+    
 
         
 <label style="position: relative;left: 12%;">Service
@@ -178,6 +188,7 @@ if(!empty($run3->num_rows) && ($run3->num_rows > 0)){
 }
 ?>
 </select>
+
    </lable>
 
 
@@ -188,22 +199,26 @@ if(!empty($run3->num_rows) && ($run3->num_rows > 0)){
    <lable class = "LablM" style="position: relative; left: 218%;top: -7px;">Date <br>
       <input style="color: gray;position: relative; left: -42%;"  required="" type="Date" id="dateS" value="<?php echo $Date ;?>" name="DATE" >
      </lable>
-     </div>
+     
+     <img id='edit' src="../images/edit icon.svg"></div>
 
+  
  
   <div class="TimeSelect" style="     position: relative;top: -29%;" >
    <lable class = "LablM"  style=" position: relative;left: 10%; top:20%"> Time <br>
      <input style="color: gray;" type="time" required="" id="timeS" value="<?php echo $Time ;?>" name="TIME" >
+     
      </lable>
-    
+  
   </div>
 
      
-     
    
    </div>
+
    <div class="BackButtonDetails">
-    <button style="background: none;" name="BACK"><a class="button" >Back</a></button>
+   <a href= ><input type='button' class='button' name="BACK" value='Back'></a>
+    <button style="background: none;" name="BACK"><a class="button" >Save</a></button>
       </div>
     </div>
    
