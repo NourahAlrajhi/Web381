@@ -36,6 +36,12 @@ if (isset($_POST['Reg'])) {
     if (empty($Email)) { array_push($errors, "Email is required"); }
     if (empty($Gend)) { array_push($errors, "Gender is required"); }
     if (empty($Pass)) { array_push($errors, "Password is required"); }
+    if(strlen($Pass)<8) { array_push($errors, "Password should be longer than 8 characters"); }
+    $uppercases = preg_match('@[A-Z]@', $Pass);
+    $lowercases = preg_match('@[a-z]@', $Pass);
+    $numbers = preg_match('@[0-9]@', $Pass);
+    $specialCharss = preg_match('@[\w]@', $Pass);
+    if(!$uppercases || !$lowercases || !$numbers || !$specialCharss) { array_push($errors, "Password should be a combination of uppercase and lowercase letters, numbers, and special characters"); }
     // first check the database to make sure 
   // a user does not already exist with the same Email and/or phone number
   $user_check_query = "SELECT * FROM Manager WHERE Email='$Email' OR Pnum='$Pnum' LIMIT 1";
