@@ -133,7 +133,7 @@ while($row3 = $run3 -> fetch_assoc()){
             </div>
               
               
-              <button onclick="window.location.href = './about us landingP.html' "class="aboutbutton">
+              <button onclick="window.location.href = './About Us LandingP.php' "class="aboutbutton">
               </button>
             </div>
     </div>
