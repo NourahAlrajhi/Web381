@@ -3,7 +3,7 @@
 ob_start();
 session_start();
 
-$db = mysqli_connect("localhost" , "root" ,"","healed");
+$db = mysqli_connect("localhost" , "root" ,"","healed1");
 
 if(!$db){
 
@@ -240,7 +240,7 @@ $Profile_Pic = $row['Profile_Pic'];}}
 
 <script>
 function editFunc(){
-  window.alert('jkndf');
+
   document.getElementById("AboutUs-P").readOnly = false;
   document.getElementById("AboutUs-P").style.cursor='text';
   CardDesc1=document.getElementById("cardDescription1");
@@ -258,27 +258,27 @@ function editFunc(){
 
 
 document.querySelector('#adPic1').onclick=function (){
-  window.alert('jyy77f');
+
   document.querySelector('#AboutUsImage1').click();
 }
 document.querySelector('#adPic2').onclick=function (){
-  window.alert('334');
+
   document.querySelector('#AboutUsImage2').click();
 }
 document.querySelector('#adPic3').onclick=function (){
-  window.alert('211');
+
   document.querySelector('#AboutUsImage3').click();
 }
   document.querySelector('#AboutUsImage1').onchange=function (){
-    window.alert('7776');
+
   displayImage1(this);
 }
 document.querySelector('#AboutUsImage2').onchange=function (){
-    window.alert('99');
+
   displayImage2(this);
 }
 document.querySelector('#AboutUsImage3').onchange=function (){
-    window.alert('00');
+
   displayImage3(this);
 }
 

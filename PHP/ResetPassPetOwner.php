@@ -1,9 +1,4 @@
-<?php 
-ob_start();
-session_start();
-
-$db = mysqli_connect("localhost" , "root" ,"","healed1");
-?>
+<?php include_once ('authControllerPetOwner.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,15 +56,23 @@ $db = mysqli_connect("localhost" , "root" ,"","healed1");
    <form action="ResetPassPetOwner.php" method="post">
    
    <div class= "ResetPasswordfield">
+   <?php
+   if($errors>0){
+       foreach($errors AS $displaeErrors){
+           ?>
+           <p id='msg'><?php echo $displaeErrors;?></p>
+           <?php
+       }
+   }
+   ?>
    <p id='msg1'></p>
     <label class="Heading" style="font-size: 2rem;font-weight: 300;">Email Address</label>
-    <input name= "EmailAddress" type="email" class = "field1" required>
-    <label class="Heading" style="font-size: 2rem;font-weight: 300;">New Password</label>
-    <input id ='pass' name= "newpassword" type="password" class = "field1" required>
-   <p id='msg'></p>
+    <input name= "EmailP" type="email" class = "field1" required>
+    
        </div>
        <div class="Resetbutton">
-      <input class="button" id='reset' type="submit" name="reset" value="Rest Password" >
+       <a href='Login page pet owner.php'><input class="button" type="button" value="Back"></a>
+        <input class="button" type="submit" name="resetP" value="Rest Password">
    </div>
  
    </form>

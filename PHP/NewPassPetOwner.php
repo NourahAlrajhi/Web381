@@ -1,6 +1,4 @@
-
-<?php include_once ('authControllerManager.php'); ?>
-
+<?php include_once ('authControllerPetOwner.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,29 +11,7 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
      <link rel="stylesheet" href="Header and Footer.css">
      <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
-  <style>
-       .PassField{
-            height: 50px;
-            width: 500px;
-            outline: none;
-            border-radius: 20px;
-            border: 1px solid #ebebee;
-            background-color: #F0EFEF;
-            padding-left: 20px;
-            font-size: 12px;
-            position: relative;
-            top: 50px;
-     
-        }
-
-    .label{
-        position: relative;
-    bottom: 0;
-    top: 120px;
-    }
-   
-
-      </style>
+  
    
    
 </head>
@@ -77,14 +53,10 @@
 
       
    </div>
-   <form action="VerifyEmailManager.php" method="POST">
+   <form action="#" method="POST">
+   
    <div class= "ResetPasswordfield">
-   <?php
-   if(isset($_SESSION['message'])){
-       ?>
-       <p id='msg'><?php echo $_SESSION['message']; ?></p>
-       <?php
-   }?>
+ 
    <?php
    if($errors>0){
        foreach($errors AS $displayErrors){
@@ -94,16 +66,20 @@
        }
    }
    ?>
-       <label class="Heading" style="font-size: 2rem;font-weight: 300;">Verification Code</label>
+   <label class="Heading" style="font-size: 2rem;font-weight: 300;">New Password</label>
+      <input name= "newpassword" type="password" class = "field1" required >
+      <label class="Heading" style="font-size: 2rem;font-weight: 300;">confirmPassword</label>
+      <input name= "confirmpassword" type="password" class = "field1" required >
 
-      <input class = "field1" name="otpVerify" type="number" placeholder="Verification Code" required>
-      </div>
-      <div class="Resetbutton">
-      <a href='ResetPassManager.php'><input class="button" type="button"  value="Back" ></a>
-      <input class="button" type="submit" name="verifyEmail" value="Verify Password" >
-</div>
+     <a href='VerifyEmailPetOwner.php'> <input id='Backbtn' class="button" type="button"  value="Back"></a>
+        <input id='confirmbtn' class="button" type="submit" name="ChangePassP" value="Save">
+
+       </div>
+
+   </div>
+ 
    </form>
-
+  
    </div>
    
 </section>
@@ -164,6 +140,8 @@
   
  
  <!--Footer secton ends-->
+
+
 
 </body>
 

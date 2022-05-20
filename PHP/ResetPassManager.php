@@ -1,10 +1,6 @@
 
 <?php include_once ('authControllerManager.php'); ?>
-<?php
 
-//connect
-$db = mysqli_connect("localhost" , "root" ,"","healed1");
-?>
 <!DOCTYPE html>
 <html>
 <head>
