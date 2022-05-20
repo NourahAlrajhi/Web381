@@ -1,6 +1,5 @@
 
-<?php include_once ('authControllerManager.php'); ?>
-
+<?php include_once ('authControllerPetOwner.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,7 +76,7 @@
 
       
    </div>
-   <form action="VerifyEmailManager.php" method="POST">
+   <form action="VerifyEmailPetOwner.php" method="POST">
    <div class= "ResetPasswordfield">
    <?php
    if(isset($_SESSION['message'])){
@@ -99,8 +98,8 @@
       <input class = "field1" name="otpVerify" type="number" placeholder="Verification Code" required>
       </div>
       <div class="Resetbutton">
-      <a href='ResetPassManager.php'><input class="button" type="button"  value="Back" ></a>
-      <input class="button" type="submit" name="verifyEmail" value="Verify Password" >
+      <a href='ResetPassPetOwner.php'><input class="button" type="button"  value="Back" ></a>
+      <input class="button" type="submit" name="verifyEmailP" value="Verify Password" >
 </div>
    </form>
 

@@ -114,7 +114,7 @@ $Profile_Pic = $row['Profile_Pic'];}}
                 <li class="Aboutuscard">
                  <!-- <a href="" class="card">-->
                  <div class="card">
-                    <img src=<?php echo  "content2/". $CardPic1 ?>  id='adPic1' class="card__image" alt=""  />
+                    <img src="<?php echo  "content2/".$CardPic1 ?>"  id='adPic1' class="card__image" alt=""  />
                     <input type="file" name="Aboutimg1" style="display:none"  id="AboutUsImage1" value=<?php echo  "content2/". $CardPic1 ?>>
                     <div class="card__overlay">
                       <div class="card__header">
@@ -137,7 +137,7 @@ $Profile_Pic = $row['Profile_Pic'];}}
                 <li class="Aboutuscard">
                       <!-- <a href="" class="card">-->
                       <div class="card">
-                      <img id='adPic2' src=<?php echo  "content2/".$CardPic2 ?> class="card__image" alt=""   />
+                      <img id='adPic2' src="<?php echo  "content2/".$CardPic2 ?>" class="card__image" alt=""   />
                       <input type="file" name="Aboutimg2" style="display:none"  id="AboutUsImage2" >
                       <div class="card__overlay">
                         <div class="card__header" >
@@ -156,7 +156,7 @@ $Profile_Pic = $row['Profile_Pic'];}}
                   <li class="Aboutuscard">
                 <!-- <a href="" class="card">-->
                 <div class="card">
-                      <img src=<?php echo  "content2/".$CardPic3 ?>  id='adPic3'  class="card__image" alt=""   />
+                      <img src="<?php echo  "content2/".$CardPic3 ?> " id='adPic3'  class="card__image" alt=""   />
                       <input type="file" name="Aboutimg3" style="display:none"  id="AboutUsImage3" >
                       <div class="card__overlay">
                         <div class="card__header">
@@ -240,7 +240,7 @@ $Profile_Pic = $row['Profile_Pic'];}}
 
 <script>
 function editFunc(){
-  window.alert('jkndf');
+
   document.getElementById("AboutUs-P").readOnly = false;
   document.getElementById("AboutUs-P").style.cursor='text';
   CardDesc1=document.getElementById("cardDescription1");
@@ -258,27 +258,27 @@ function editFunc(){
 
 
 document.querySelector('#adPic1').onclick=function (){
-  window.alert('jyy77f');
+
   document.querySelector('#AboutUsImage1').click();
 }
 document.querySelector('#adPic2').onclick=function (){
-  window.alert('334');
+
   document.querySelector('#AboutUsImage2').click();
 }
 document.querySelector('#adPic3').onclick=function (){
-  window.alert('211');
+
   document.querySelector('#AboutUsImage3').click();
 }
   document.querySelector('#AboutUsImage1').onchange=function (){
-    window.alert('7776');
+
   displayImage1(this);
 }
 document.querySelector('#AboutUsImage2').onchange=function (){
-    window.alert('99');
+
   displayImage2(this);
 }
 document.querySelector('#AboutUsImage3').onchange=function (){
-    window.alert('00');
+
   displayImage3(this);
 }
 
@@ -382,6 +382,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else{
           $ImageName3=$CardPic3;
         }
+        echo '<script>alert("jgggkgkg");</script>';
         //$query="INSERT INTO AboutUs (AboutDescription,CardDescription_1,CardPic_1,CardDescription_2,CardPic_2,CardDescription_3,CardPic_3) VALUES ('".$AboutDescription."','".$CardDesc1."','".' $CardPic1'."','".$CardDesc2."','".'$CardPic2'."','".$CardDesc3."', 'hhh');";
         $qry2 ="update AboutUs set AboutDescription='$AboutDescription', CardDescription_1='$CardDesc1',CardPic_1='$ImageName1', CardDescription_2 = '$CardDesc2',CardPic_2='$ImageName2',CardDescription_3='$CardDesc3',CardPic_3='$ImageName3' where AboutId = 1 "; 
 

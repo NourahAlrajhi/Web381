@@ -1,3 +1,32 @@
+
+<?php 
+ob_start();
+session_start();
+
+$db = mysqli_connect("localhost" , "root" ,"","healed");
+
+if(!$db){
+
+  die('error in db'. mysqli_error($db));
+}else{
+
+  $Q1="select * from AboutUs where AboutId = 1";
+  $run = $db -> query($Q1);
+  if(!empty($run->num_rows) && ($run->num_rows > 0)){
+      while($row = $run -> fetch_assoc()){
+          $AboutD = $row['AboutDescription'];
+          $CardPic1=$row['CardPic_1'];
+          $CardPic2=$row['CardPic_2'];
+          $CardPic3=$row['CardPic_3'];
+          $CardD1 = $row['CardDescription_1'];
+          $CardD2 = $row['CardDescription_2'];
+          $CardD3 = $row['CardDescription_3'];
+          
+
+  }
+}
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,14 +82,14 @@
 <!-- Services secton starts -->
 <section class="Services" id="Services">
     <h1 class="heading">About Us</i></h1>
-    <p class="AboutUs-P">We are a full-service animal hospital that offers a wide selection of comprehensive veterinary services to maintain your pet's health, from routine exams and vaccinations to dental care, geriatric care, surgery, and internal medicine. </p>
+    <p class="AboutUs-P"><?php echo  $AboutD ?></p>
     
     <div class="box-container">
         
             <ul class="cards">
                 <li class="Aboutuscard">
                   <a href="" class="card">
-                    <img src="doctorM.svg" class="card__image" alt="" />
+                    <img src="<?php echo  "content2/". $CardPic1 ?>"  class="card__image" alt="" />
                     <div class="card__overlay">
                       <div class="card__header">
                         <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
@@ -71,7 +100,7 @@
                               
                         </div>
                       </div>
-                      <p class="card__description">We understand that great veterinary care begins with taking the time to get to know your pet and talking with you. We value your relationship with us and are happy to have you join our veterinary family.</p>
+                      <p class="card__description"><?php echo  $CardD1 ?></p>
                     </div>
                     
  
@@ -80,7 +109,7 @@
                 </li>
                 <li class="Aboutuscard">
                     <a href="" class="card">
-                      <img src="clinic2.svg" class="card__image" alt="" />
+                      <img src="<?php echo  "content2/". $CardPic2 ?>" class="card__image" alt="" />
                       <div class="card__overlay">
                         <div class="card__header">
                           <svg class="card__arc" xmlns="http://www.w/2000/svg"><path /></svg>                     
@@ -89,7 +118,7 @@
                             <h3 class="card__title">Why Trust Us?</h3>            
                           </div>
                         </div>
-                        <p class="card__description">You'll love our highly skilled compassionate veterinarians,We offer a comprehensive range of services in one spot And We prioritize your pet's long-term health by focusing on preventive services.
+                        <p class="card__description"><?php echo  $CardD2 ?>
 
                         </p>
                       </div>
@@ -97,7 +126,7 @@
                   </li>
                   <li class="Aboutuscard">
                     <a href="" class="card">
-                      <img src="locationAboutus.svg" class="card__image" alt="" />
+                      <img src="<?php echo  "content2/". $CardPic3 ?>" class="card__image" alt="" />
                       <div class="card__overlay">
                         <div class="card__header">
                           <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
@@ -105,7 +134,7 @@
                             <h3 class="card__title">Where To find us?</h3>            
                           </div>
                         </div>
-                        <p class="card__description">-District Unit No.1، Prince Muhammad Ibn Saad Ibn Abdulaziz Rd, Al Aqiq, Riyadh 13511<br> -8255 Al Imam Saud Ibn Abdul Aziz Branch Rd, King Fahd, 2993 , Riyadh 12274</p>
+                        <p class="card__description"><?php echo  $CardD3 ?></p>
                       </div>
                     </a>      
                   </li>

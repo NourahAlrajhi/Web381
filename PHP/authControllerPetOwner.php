@@ -6,18 +6,18 @@ session_start();
 
 $db = mysqli_connect("localhost" , "root" ,"","healed");
 $errors = [];
-if(isset($_POST['resetM'])){
-    $email=$_POST['Email'];
+if(isset($_POST['resetP'])){
+    $email=$_POST['EmailP'];
     $_SESSION['email']=$email;
   
 
-    $emailCheckQuery ="Select * from Manager where Email ='$email'";
+    $emailCheckQuery ="Select * from Users where Email ='$email'";
     $emailCheckResult = mysqli_query($db,$emailCheckQuery);
 
     if($emailCheckResult){
         if(mysqli_num_rows($emailCheckResult)>0){
             $code = rand(999999,111111);
-            $updateQuery = "update Manager set code = '$code' where Email ='$email'";
+            $updateQuery = "update Users set code = '$code' where Email ='$email'";
             $updateResult =mysqli_query($db,$updateQuery);
             if($updateResult){
        
@@ -38,7 +38,7 @@ if(isset($_POST['resetM'])){
                 if($mail ->Send()){
                $message = " We Have Sent a verification code to your Email<br> '$email'";
                 $_SESSION['message']=$message;
-                header('location: VerifyEmailManager.php');
+                header('location: VerifyEmailPetOwner.php');
                 }else{
                   $errors['otp_errors']='faild sending code';
                 }
@@ -53,16 +53,16 @@ if(isset($_POST['resetM'])){
 
 }
 
-if(isset($_POST['verifyEmail'])){
+if(isset($_POST['verifyEmailP'])){
     $_SESSION['message']="";
     $otpVerify = mysqli_real_escape_string($db,$_POST['otpVerify']);
-    $verifyQuery = "Select * from Manager where code ='$otpVerify'";
+    $verifyQuery = "Select * from Users where code ='$otpVerify'";
     $runVerifyQuery = mysqli_query($db,$verifyQuery);
     if($runVerifyQuery){
         if(mysqli_num_rows($runVerifyQuery)>0){
-            $newQuery ="update Manager set code = '0'";
+            $newQuery ="update Users set code = '0'";
             $run = mysqli_query($db,$newQuery);
-            header("location: NewPassManager.php");
+            header("location: NewPassPetOwner.php");
         }else{
             $errors['verficication_error']="Invalid Verification Code";
 
@@ -74,7 +74,7 @@ if(isset($_POST['verifyEmail'])){
 
     
 }
-if(isset($_POST['ChangePass'])){
+if(isset($_POST['ChangePassP'])){
     $password = $_POST['newpassword'];
     $confirmpassword = $_POST['confirmpassword'];
 
@@ -95,11 +95,11 @@ if(isset($_POST['ChangePass'])){
             $password = md5($_POST['newpassword']); 
             $email= $_SESSION['email'];
             $code =0;
-            $updatePassword ="UPDATE Manager SET Pass = '$password' WHERE Email = '$email'";
+            $updatePassword ="UPDATE Users SET Pass = '$password' WHERE Email = '$email'";
             $runVerifyQuery = mysqli_query($db,$updatePassword) or die("Query Failed");
             session_unset();
             session_destroy();
-            header('location: Login page admin.php');
+            header('location: Login page pet owner.php');
        
         }
     }

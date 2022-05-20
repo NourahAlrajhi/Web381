@@ -146,7 +146,7 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
                         <option value="" selected hidden>Choose a Time</option>
                         <?php   
 
-$qry = "select Time from Services";
+$qry = "select DISTINCT Time from Services";
 $run = $db -> query($qry);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
@@ -170,7 +170,7 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
                         <option value="" selected hidden>Choose a Date</option>
                         <?php   
 
-$qry = "select Date from Services";
+$qry = "select DISTINCT Date from Services";
 $run = $db -> query($qry);
 if(!empty($run->num_rows) && ($run->num_rows > 0)){
     while($row = $run -> fetch_assoc()){
