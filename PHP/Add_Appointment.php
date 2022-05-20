@@ -252,7 +252,7 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
             </div>
                 <div class="info">
                     <i class="fas fa-envelope"></i>
-                    <p>costumerService@Healed.com <br> costumerService2@Healed.com</p>
+                    <p>healedpetclinic@gmail.com<br>healedpetclinic@gmail.com</p>
                 </div>
                 <div class="info">
                     <i class="fas fa-map-marker-alt"></i>

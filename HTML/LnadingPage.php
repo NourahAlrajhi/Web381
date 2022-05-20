@@ -133,7 +133,7 @@ while($row3 = $run3 -> fetch_assoc()){
             </div>
               
               
-              <button onclick="window.location.href = './about us landingP.html' "class="aboutbutton">
+              <button onclick="window.location.href = './About Us LandingP.php' "class="aboutbutton">
               </button>
             </div>
     </div>
@@ -218,7 +218,7 @@ while($row3 = $run3 -> fetch_assoc()){
             </div>
                 <div class="info">
                     <i class="fas fa-envelope"></i>
-                    <p>costumerService@Healed.com <br> costumerService2@Healed.com</p>
+                    <p>healedpetclinic@gmail.com<br>healedpetclinic@gmail.com</p>
                 </div>
                 <div class="info">
                     <i class="fas fa-map-marker-alt"></i>
