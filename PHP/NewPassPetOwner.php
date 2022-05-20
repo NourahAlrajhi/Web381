@@ -25,12 +25,14 @@
 
     <nav class="navbar">
         <ul class="nav-list">
-            <li  ><a href="./LnadingPage.html">Home</a>
+            <li  ><a href="../HTML/LnadingPage.php">Home</a>
               
             </li>
-           <li><a href="./LnadingPage.html#Services">Services</a></li> 
-           <li><a href="./LnadingPage.html#About us">About Us</a></li> 
-            <li><a href="./LnadingPage.html#contact us">Contact Us</a></li>
+          
+            
+           <li><a href="../HTML/LnadingPage.php#Services">Services</a></li> 
+           <li><a href="../HTML/LnadingPage.php#Aboutus">About Us</a></li> 
+            <li><a href="../HTML/LnadingPage.php#contact us">Contact Us</a></li>
             
           </ul>
         
