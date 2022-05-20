@@ -98,10 +98,23 @@ if(!$db){
     
                 <div class = "input-box">
                     <lable class = "details"> Pet <br>
-                        <select disabled="true" name= "petname" class = "field1" >
-                        <option value="hid" hidden ><?php echo $PetName;?></option>   
+                        <select  name= "petname" class = "field1" >
+                        <option value="" selected hidden required=""><?php echo $PetName;?> </option>
+                    <?php   
+$PETOWNER=$_SESSION['Userrid'];
+$qry = "select Pet_Name,Petid from PETT where Userid=$PETOWNER";
+$run = $db -> query($qry);
+if(!empty($run->num_rows) && ($run->num_rows > 0)){
+    while($row = $run -> fetch_assoc()){
+?>
+
+<option value=<?php echo $row['Petid'] ?> > <?php echo $row['Pet_Name'] ?> </option>
+<?php 
+
+}
+}
+?>
                             </select>
-                    </lable>
                     </div>
     
                 <div class = "input-box">
@@ -222,9 +235,13 @@ $id = $_GET['id'];
 if(isset($_POST['SAVE'])){
 
  $Note = $_POST['note'];
+$PETNAME=$_POST['petname'];
 
-
-$qry = "update Appointment set Note = '$Note' where Appointmentid = $id ";
+$QUERY="select Pet_Name from PETT where Petid= $PETNAME";
+if($RESULT = mysqli_query($db, $QUERY)){ 
+    while ($row = $RESULT->fetch_assoc()) { 
+    $PetName = $row['Pet_Name'];
+$qry = "update Appointment set Note = '$Note' , Pet_name='$PetName', PETid = $PETNAME where Appointmentid = $id ";
 
 if(mysqli_query($db,$qry)){
    // echo '<script>alert("changes updated successfully.!!");</script>';
@@ -234,6 +251,6 @@ if(mysqli_query($db,$qry)){
         echo mysqli_error($db);
     }
 
-}
+}}}
 mysqli_close($db);
 ?>
