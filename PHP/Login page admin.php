@@ -121,7 +121,7 @@ if (isset($_POST['log'])) {
             <input class="input-box" type="Password" name="Pass" id="Pass" placeholder="Enter Password" required=>    
             <br><br>
             <input type="checkbox" id="check"> <label for="check" style="font-size: 1.3rem;">Remember me</label><br> 
-            <a class="loginLink" href="Reset Password.html" style="font-size: 1.3rem;">Forget Password?</a>
+            <a class="loginLink" href="ResetPassManager.php" style="font-size: 1.3rem;">Forget Password?</a>
             <br><br>
             
             <input type="submit" name="log" id="log" value="Log in" style="font-size: 2rem;">

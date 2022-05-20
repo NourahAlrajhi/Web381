@@ -102,8 +102,8 @@ div.signUpCam{
             
            <li><a href="Services Pet Owner.php">Services</a></li> 
            <li><a href="../HTML/About us PetOwner.php">About Us</a></li> 
-            <li><a href="Contact Pet Owner.php">Contact Us</a></li>
-            <li class="move-right-btn" ><a href="#"id="profile"><?php if(isset($_SESSION['Profile_Pic'])){ ?> <img height="50rem" src="http://localhost/Web381/PHP/Contentttt/<?php echo $_SESSION['Profile_Pic']; ?>" class="profile-pic">  <?php } else { ?> <i class="fa-solid fa-user" ></i>  <?php } ?></a>
+            <li><a href="Contact Clinic.php">Contact Us</a></li>
+            <li class="move-right-btn" ><a href="#"id="profile"><?php if(isset($_SESSION['Profile_Pic'])){ ?> <img height="50rem" src="Contentttt/<?php echo $_SESSION['Profile_Pic']; ?>" class="profile-pic">  <?php } else { ?> <i class="fa-solid fa-user" ></i>  <?php } ?></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
                     <li ><a href="Pet owner profile.php">View Profile</a></li>
                     <li><a href="../HTML/LnadingPage.php">Sign Out</a></li>
@@ -291,10 +291,14 @@ $MOVE=move_uploaded_file($PDF_tem_loc, $PDF_store.$PDF);
 $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
 
 if (empty($PetName)) { array_push($errors, "Pet name is required"); }
-if(preg_match('/[^a-zA-Z]/', $PetName)) { array_push($errors, "Invalid pet name characters");}
+if(preg_match('/[^a-zA-Z]/', $PetName)) { array_push($errors, "Invalid pet name characters"); echo '<script>';
+    echo 'alert("Invalid pet name characters")';
+    echo '</script>';}
 if (empty($Gender)) { array_push($errors, "Pet gender is required"); }
 if (empty($Breed)) { array_push($errors, "Pet breed is required"); }
-if(preg_match('/[^a-zA-Z]/', $Breed)) { array_push($errors, "Invalid breed characters");}
+//if(preg_match('/[^a-zA-Z]/', $Breed)) { array_push($errors, "Invalid breed characters"); echo '<script>';
+    //echo 'alert("Invalid breed name characters")';
+    //echo '</script>';}
 if (empty($Spayed)) { array_push($errors, "Pet spayed/neutered status is required"); }
 if (empty($DOB)) { array_push($errors, "Pet date of birth is required"); }
 

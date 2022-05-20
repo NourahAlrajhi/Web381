@@ -30,6 +30,14 @@ $CardDc1 = $_POST['cardDescription1'];
 $CardDc2 = $_POST['cardDescription2'];
 $CardDc3 = $_POST['cardDescription3'];*/
 }
+$PETOWNER=$_SESSION['Managerid'];
+
+$qry = "select * from Manager where Managerid=$PETOWNER";
+$run = $db -> query($qry);
+if(!empty($run->num_rows) && ($run->num_rows > 0)){
+    while($row = $run -> fetch_assoc()){
+
+$Profile_Pic = $row['Profile_Pic'];}}
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,7 +84,7 @@ $CardDc3 = $_POST['cardDescription3'];*/
             
            <li><a href="../PHP/Services_Manager.php">Services</a></li> 
            <li><a href="../HTML/About Us Manager.php">About Us</a></li> 
-           <li class="move-right-btn" ><a href="#"id="profile"><?php if(isset($_SESSION['Profile_Pic'])){ ?> <img height="50rem" src="http://localhost/Web381/PHP/Contentttt/<?php echo $_SESSION['Profile_Pic']; ?>" class="profile-pic">  <?php } else { ?> <i class="fa-solid fa-user" ></i>  <?php } ?></a>
+           <li class="move-right-btn" ><a href="#"id="profile"> <img height="50rem" src="../PHP/Contentttt/<?php echo $Profile_Pic ?> " ></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
                     <li ><a href="#">View Profile</a></li>
                     <li><a href="../HTML/LnadingPage.html">Sign Out</a></li>
