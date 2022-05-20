@@ -89,7 +89,7 @@ if(!$db){
             <ul class="cards">
                 <li class="Aboutuscard">
                   <a href="" class="card">
-                    <img src=<?php echo  "content2/". $CardPic1 ?>  class="card__image" alt="" />
+                    <img src="<?php echo  "content2/". $CardPic1 ?>"  class="card__image" alt="" />
                     <div class="card__overlay">
                       <div class="card__header">
                         <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
@@ -109,7 +109,7 @@ if(!$db){
                 </li>
                 <li class="Aboutuscard">
                     <a href="" class="card">
-                      <img src=<?php echo  "content2/". $CardPic2 ?> class="card__image" alt="" />
+                      <img src="<?php echo  "content2/". $CardPic2 ?>" class="card__image" alt="" />
                       <div class="card__overlay">
                         <div class="card__header">
                           <svg class="card__arc" xmlns="http://www.w/2000/svg"><path /></svg>                     
@@ -126,7 +126,7 @@ if(!$db){
                   </li>
                   <li class="Aboutuscard">
                     <a href="" class="card">
-                      <img src=<?php echo  "content2/". $CardPic3 ?> class="card__image" alt="" />
+                      <img src="<?php echo  "content2/". $CardPic3 ?>" class="card__image" alt="" />
                       <div class="card__overlay">
                         <div class="card__header">
                           <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
