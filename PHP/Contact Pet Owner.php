@@ -25,6 +25,14 @@ if(!$db){
         }
     }
 }
+$PETOWNER=$_SESSION['Managerid'];
+
+$qry = "select * from Manager where Managerid=$PETOWNER";
+$run = $db -> query($qry);
+if(!empty($run->num_rows) && ($run->num_rows > 0)){
+    while($row = $run -> fetch_assoc()){
+
+$Profile_Pic = $row['Profile_Pic'];}}
 ?>
 
 <!DOCTYPE html>
@@ -57,28 +65,28 @@ if(!$db){
 
     <nav class="navbar">
         <ul class="nav-list">
-            <li  ><a href="../HTML/Home Pet Owner.php">Home</a>
-              <ul class="sub-menu" id="sub-menu-arrow"> 
-                <li > <a href="Add_New_Pet.php">Add a New Pet</a></li>
-                <li><a href="Pet_List.php">View Pet List</a></li>
-                <li><a href="Request_List_Pet_Owner.php">View Requests List</a></li>
-
-                <li><a href="upcoming and previous pet owner.php">View Appointments List</a> </li>
-        
-              </ul>
-            </li>
+            <li  ><a href="../HTML/Home Manager.php">Home</a>
+                <ul class="sub-menu" id="sub-menu-arrow"> 
+                  <li > <a href="Add_service.php">Add a New Service</a></li>
+                  <li><a href="Appo_List.php">Set a New Appointment</a></li>
+                  <li><a href="Request_List_Manager.php">View Requests List</a></li>
+  
+                  <li><a href="upcoming and previous manager.php">View Appointments List</a> </li>
+          
+                </ul>
+              </li>
           
             
-           <li><a href="Services Pet Owner.php">Services</a></li> 
-           <li><a href="../HTML/About us PetOwner.php">About Us</a></li> 
-            <li><a href="Contact Pet Owner.php">Contact Us</a></li>
-            <li class="move-right-btn" ><a href="#"id="profile"><?php if(isset($_SESSION['Profile_Pic'])){ ?> <img height="50rem" src="http://localhost/Web381/PHP/Contentttt/<?php echo $_SESSION['Profile_Pic']; ?>" class="profile-pic">  <?php } else { ?> <i class="fa-solid fa-user" ></i>  <?php } ?></a>
+           <li><a href="Services_Manager.php">Services</a></li> 
+           <li><a href="../HTML/About Us Manager.php">About Us</a></li> 
+           <li class="move-right-btn" ><a href="#"id="profile"> <img height="50rem" src="Contentttt/<?php echo $Profile_Pic ?> " ></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
-                    <li ><a href="Pet owner profile.php">View Profile</a></li>
+                    <li ><a href="#">View Profile</a></li>
                     <li><a href="../HTML/LnadingPage.php">Sign Out</a></li>
             
                   </ul></li>
           </ul>
+        
         <!-- ****if you're working on a pet owner view replace <i class="fa-solid fa-user-doctor"> with <i class="fa-solid fa-user"></i>  -->
 
 

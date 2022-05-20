@@ -25,6 +25,15 @@ die('error in db'. mysqli_error($db));
 
 }
 
+$PETOWNER=$_SESSION['Managerid'];
+
+$qry = "select * from Manager where Managerid=$PETOWNER";
+$run = $db -> query($qry);
+if(!empty($run->num_rows) && ($run->num_rows > 0)){
+    while($row = $run -> fetch_assoc()){
+
+$Profile_Pic = $row['Profile_Pic'];}}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -67,7 +76,7 @@ die('error in db'. mysqli_error($db));
             
            <li><a href="Services_Manager.php">Services</a></li> 
            <li><a href="../HTML/About Us Manager.php">About Us</a></li> 
-           <li class="move-right-btn" ><a href="#"id="profile"><?php if(isset($_SESSION['Profile_Pic'])){ ?> <img height="50rem" src="http://localhost/Web381/PHP/Contentttt/<?php echo $_SESSION['Profile_Pic']; ?>" class="profile-pic">  <?php } else { ?> <i class="fa-solid fa-user" ></i>  <?php } ?></a>
+           <li class="move-right-btn" ><a href="#"id="profile"><img height="50rem" src="Contentttt/<?php echo $Profile_Pic ?> " ></a>
                 <ul class="sub-menu" id="sub-menu-arrow2"> 
                     <li ><a href="#">View Profile</a></li>
                     <li><a href="../HTML/LnadingPage.php">Sign Out</a></li>
