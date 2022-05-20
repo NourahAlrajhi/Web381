@@ -296,9 +296,9 @@ if(preg_match('/[^a-zA-Z]/', $PetName)) { array_push($errors, "Invalid pet name 
     echo '</script>';}
 if (empty($Gender)) { array_push($errors, "Pet gender is required"); }
 if (empty($Breed)) { array_push($errors, "Pet breed is required"); }
-if(preg_match('/[^a-zA-Z]/', $Breed)) { array_push($errors, "Invalid breed characters"); echo '<script>';
-    echo 'alert("Invalid breed name characters")';
-    echo '</script>';}
+//if(preg_match('/[^a-zA-Z]/', $Breed)) { array_push($errors, "Invalid breed characters"); echo '<script>';
+    //echo 'alert("Invalid breed name characters")';
+    //echo '</script>';}
 if (empty($Spayed)) { array_push($errors, "Pet spayed/neutered status is required"); }
 if (empty($DOB)) { array_push($errors, "Pet date of birth is required"); }
 
