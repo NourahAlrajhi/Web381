@@ -121,7 +121,7 @@ $Profile_Pic = $row['Profile_Pic'];}}
         
     </div>
 
-    <a href="Home Pet Owner.php">
+    <a href="Appo_List.php">
       <center>  <input type="button" class="btn" value="Back">  </center>
                 </a>
       
