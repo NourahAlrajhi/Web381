@@ -160,8 +160,8 @@ mail($to,$subject,$msg);
         
     </div>
 
-      <a href="Appo_List.php">
-      <center> <input type="button" class="btn" value="Back">  </center>
+      <a href="../HTML/Home Pet Owner.php">
+      <center>  <input type="button" class="btn" value="Back">  </center>
                 </a>
     </form>
 
