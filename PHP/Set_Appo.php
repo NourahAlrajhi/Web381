@@ -39,6 +39,13 @@ $Profile_Pic = $row['Profile_Pic'];}}
     height: 140px;
     margin-left: 190px;
 }
+
+header .navbar  a{
+  
+  color:black ; 
+ 
+}
+
 }
 
 

@@ -45,7 +45,13 @@ die('error in db'. mysqli_error($db));
         <link rel="stylesheet" href="../HTML/Header and Footer.css">
         <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
 <!-- ended 1 here -->
-
+<style> 
+header .navbar  a{
+  
+  color:black ; 
+ 
+}
+</style>
     </head>
 
     <body class="petprofbackg">

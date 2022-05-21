@@ -34,6 +34,12 @@
     }
    
 
+header .navbar  a{
+  
+  color:black ; 
+ 
+}
+
       </style>
    
    

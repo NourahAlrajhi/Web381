@@ -37,7 +37,11 @@ session_start();
     z-index: 10001;
 
 }
-
+header .navbar  a{
+  
+    color:black ; 
+   
+}
 </style>
 </head>
 <body>

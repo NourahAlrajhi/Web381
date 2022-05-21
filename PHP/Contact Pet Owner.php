@@ -50,7 +50,13 @@ $Profile_Pic = $row['Profile_Pic'];}}
     <link rel="stylesheet" href="../HTML/contact template.css">
     
 
-
+    <style> 
+header .navbar  a{
+  
+  color:black ; 
+ 
+}
+</style>
 </head>
 
 <body>

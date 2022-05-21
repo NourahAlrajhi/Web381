@@ -62,6 +62,13 @@ div.signUpCam{
     margin-bottom: 2%;
 }
     
+
+header .navbar  a{
+  
+  color:black ; 
+ 
+}
+
 </style>
     </head>
 

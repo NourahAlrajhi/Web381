@@ -47,6 +47,13 @@ $Profile_Pic = $row['Profile_Pic'];}}
     
   
    <script src="https://kit.fontawesome.com/3473b55fc1.js" crossorigin="anonymous"></script>
+   <style> 
+header .navbar  a{
+  
+  color:black ; 
+ 
+}
+</style>
 </head>
 <body >
   <header>

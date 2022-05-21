@@ -86,7 +86,14 @@ mail($to,$subject,$msg);
     <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
     
 
+<style>
+header .navbar  a{
+  
+  color:black ; 
+ 
+}
 
+</style>
 </head>
 
 <body>

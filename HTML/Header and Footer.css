@@ -164,11 +164,10 @@ header ul{
 
 }
 header .navbar a:hover{
-    opacity: .8;
+    opacity: .9;
     cursor: pointer;
-
-
 }
+
 header input{
     display:none;  
 }

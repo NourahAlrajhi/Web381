@@ -38,6 +38,13 @@ die('error in db'. mysqli_error($db));
      <link rel="stylesheet" href="../HTML/Header and Footer.css">
      <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
    <script src="https://kit.fontawesome.com/3473b55fc1.js" crossorigin="anonymous"></script>
+   <style> 
+header .navbar  a{
+  
+  color:black ; 
+ 
+}
+</style>
 </head>
 <body>   <!-- header section starts  -->
 

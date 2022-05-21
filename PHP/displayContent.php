@@ -29,6 +29,13 @@ $db = mysqli_connect("localhost" , "root" ,"","healed");
     background-position: center;
     z-index: -1;
 }
+
+header .navbar  a{
+  
+  color:black ; 
+ 
+}
+
 </style>
     </head>
 

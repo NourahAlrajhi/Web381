@@ -40,7 +40,13 @@ if(!$db){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="../HTML/Header and Footer.css">
     <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
-    
+    <style> 
+header .navbar  a{
+  
+  color:black ; 
+ 
+}
+</style>
 
 </head>
 

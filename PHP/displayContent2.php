@@ -30,7 +30,13 @@ $Profile_Pic = $row['Profile_Pic'];}}
         <link rel="stylesheet" href="../HTML/Header and Footer.css">
         <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
 <!-- ended 1 here -->
-
+<style> 
+header .navbar  a{
+  
+  color:black ; 
+ 
+}
+</style>
     </head>
 
     <body class="petprofbackg">

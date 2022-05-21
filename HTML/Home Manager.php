@@ -47,6 +47,14 @@ $Profile_Pic = $row['Profile_Pic'];}}
 
 }
 
+ 
+header .navbar  a{
+  
+  color:black ; 
+ 
+}
+
+
 </style>
 </head>
 <body>

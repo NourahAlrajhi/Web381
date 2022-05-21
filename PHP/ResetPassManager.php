@@ -18,7 +18,17 @@
     background-color: #ff74ab38;
     width: 300px;
     margin-top: 10px;
-    }</style>
+    }
+    
+
+header .navbar  a{
+  
+  color:black ; 
+ 
+}
+
+    
+    </style>
 
    
    
