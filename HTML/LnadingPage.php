@@ -149,25 +149,28 @@ while($row3 = $run3 -> fetch_assoc()){
     <div class="image">
         <img src="../images/CONTACTUSS.svg" alt="">
     </div>
-    <form action="">
-        <h1 class="heading">Contact Us</h1>
+    
+    <form action="Home Pet Owner.html" method ="post">
+        <h1 class="heading">Contact Clinic</h1>
         <div class="inputbox">
-            <input type="text" required>
-            <label >Name</label>
+            <label >Email Us:</label>
+            <br><br><br>
+            <div><img class = "back6" src ="../images/Emailicon.svg" width="33px" >
+                <a href="mailto:healedpetclinic@gmail.com"style="font-size:18px; position: absolute; bottom: 8%; 
+                left: 10%; font-s;"> healedpetclinic@gmail.com </a>
+                </div>
         </div>
+
         <div class="inputbox">
-            <input type="email" required>
-            <label >Email</label>
-        </div>
-        <div class="inputbox">
-            <input type="number" required>
-            <label >Phone</label>
-        </div>
-        <div class="inputbox">
-            <textarea required name="" id="" cols="30" rows="10"></textarea>
-            <label >Message</label>
-        </div>
-        <input type="submit" class="btn" value="send" h>
+            <label >Call Us:</label>
+            <br><br><br>
+            <div><img class = "back6" src ="../images/phone icon.svg">
+                <a href="tel:123-456-789 "style="font-size:18px; position: absolute; bottom: 8%; 
+                left: 10%; font-s;"> 123-456-789 </a>
+        </div> 
+        
+    </div>
+
     </form>
 
 </section>

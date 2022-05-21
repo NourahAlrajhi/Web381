@@ -108,20 +108,23 @@ $Profile_Pic = $row['Profile_Pic'];}}
         <h1 class="heading">Contact Pet Owner</h1>
         <div class="inputbox">
             <div><img class = "back6" src ="../images/Emailicon.svg" width="33px" >
-                <a href="mailto:<?php echo $Email ?>" style="font-size:17px; position: absolute; bottom: 8%; 
+                <a href="mailto:<?php echo $Email ?>" style="font-size:18px; position: absolute; bottom: 8%; 
                 left: 10%; font-s;"> Email Pet Owner </a>
                 </div>
         </div>
         <br><br>
         <div class="inputbox">
             <div><img class = "back6" src ="../images/phone icon.svg">
-                <a href="tel:<?php echo $Pnum?>" style="font-size:17px; position: absolute; bottom: 8%; 
+                <a href="tel:<?php echo $Pnum?>" style="font-size:18px; position: absolute; bottom: 8%; 
                 left: 10%; font-s;"> Call Pet Owner </a>
         </div> 
         
     </div>
 
+    <a href="Home Pet Owner.php">
       <center>  <input type="button" class="btn" value="Back">  </center>
+                </a>
+      
     </form>
 
 </section>

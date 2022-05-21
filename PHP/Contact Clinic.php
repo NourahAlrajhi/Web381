@@ -145,8 +145,8 @@ mail($to,$subject,$msg);
             <label >Email Us:</label>
             <br><br><br>
             <div><img class = "back6" src ="../images/Emailicon.svg" width="33px" >
-                <a href="mailto:costumerService@Healed.com "style="font-size:14px; position: absolute; bottom: 8%; 
-                left: 10%; font-s;"> costumerService@Healed.com </a>
+                <a href="mailto:healedpetclinic@gmail.com"style="font-size:18px; position: absolute; bottom: 8%; 
+                left: 10%; font-s;"> healedpetclinic@gmail.com </a>
                 </div>
         </div>
 
@@ -154,13 +154,15 @@ mail($to,$subject,$msg);
             <label >Call Us:</label>
             <br><br><br>
             <div><img class = "back6" src ="../images/phone icon.svg">
-                <a href="tel:123-456-789 "style="font-size:14px; position: absolute; bottom: 8%; 
+                <a href="tel:123-456-789 "style="font-size:18px; position: absolute; bottom: 8%; 
                 left: 10%; font-s;"> 123-456-789 </a>
         </div> 
         
     </div>
 
+      <a href="Appo_List.php">
       <center>  <input type="button" class="btn" value="Back">  </center>
+                </a>
     </form>
 
 </section>

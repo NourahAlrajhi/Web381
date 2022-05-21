@@ -193,8 +193,14 @@ if(!empty($run->num_rows) && ($run->num_rows > 0)){
         
            <div class="button1">
             <input type = "submit"  value ="Send" class="button" style=" font-size:250% ; position: absolute; 
-            left:45%; bottom: -15%; ">
+            left:35%; bottom: -15%; ">
              <img class = "back2" src ="../images/girl1.svg">
+            </div>
+            <div>
+                <a href="Appo_List.php">
+                <input type = "button"  value ="Back" class="button" style=" font-size:250% ; position: absolute; 
+            left:55%; bottom: -15%; ">
+                </a>
             </div>
           
 </form>
