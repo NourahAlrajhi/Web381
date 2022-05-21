@@ -161,7 +161,7 @@ mail($to,$subject,$msg);
     </div>
 
       <a href="Appo_List.php">
-      <center>  <input type="button" class="btn" value="Back">  </center>
+      <center> <input type="button" class="btn" value="Back">  </center>
                 </a>
     </form>
 
